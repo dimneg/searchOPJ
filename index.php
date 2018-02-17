@@ -257,6 +257,9 @@
 </div>
 </form>
 <?php
+
+include 'indexSearch.php'; 
+
 $time_pre = microtime(true);
 $prefix='' ;
 $varKeyword = $_POST['formKeyword']; 
@@ -272,11 +275,35 @@ $calls = 0;
 $Results = [[]];
 $AlreadyFound = 0;
 $Boost = 1;
-$Actual_link ='';
-$Lang ='';
+$Actual_link = '';
+$Lang = '';
 $Domain ='';
 $term1 = '';
 $term2 = '';
 $term12 = '';
 
-/
+if($_POST['formSubmit'] == "search") {   
+    if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
+        $varKeyword = prepareKeyword($varKeyword) ;   
+    }
+    else {
+        $varKeyword = rtrim(ltrim($varKeyword));  
+    }
+}
+
+ $words = explode(' ', $varKeyword);  
+
+ #read all data
+ $search = new indexSearch();
+ if (is_numeric($varKeyword)){ //probaby afm
+     if (strlen(utf8_decode($varKeyword)) <=6 ) {
+          $search->getAll('',$varKeyword,$DbPath);	
+     }
+     else {
+         $search->getAllShort('*',$varKeyword,$DbPath);	
+     }
+ }
+ else { #name
+     $varKeyword = tranlateAbbFull($varKeyword);
+     
+ }
