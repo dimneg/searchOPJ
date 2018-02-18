@@ -350,6 +350,38 @@ if($_POST['formSubmit'] == "search") {
              if (strlen(utf8_decode($varKeyword)) <=4 ) {
                  $search->getAll('*',$varKeyword,DbPath);	
              }
+             else {  # latin, >4,1 word : exact-> fuzzy-> like
+                  $search->getAll('',$varKeyword,DbPath);
+                  $search->getAll('~0.75',$varKeyword,DbPath);	
+                  $search->getAll('*',$varKeyword,DbPath);		
+			 
+             }
+         }
+         else {
+             if (count($words) >1) {
+                 $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
+                 $term1 = $termsArray[0];  
+	         $term2 = $termsArray[1];
+		 $term12 = $termsArray[2];
+		 $varKeyword = rtrim($termsArray[3]);
+                 $search->getAll('',$varKeyword,DbPath);
+                 $search->getAll('',$term12,DbPath);
+                 if (strlen(utf8_decode($term1)) <=4 ){
+                     $search->getAll('*',$term1,DbPath);	  
+                 }
+                 else {
+                     $search->getAll('~0.75',$term1,DbPath);
+                     $search->getAll('*',$term1,DbPath);
+                 }
+                 if (strlen(utf8_decode($term2)) <=4 ){
+                       $search->getAll('',$term2,DbPath);
+                 }
+                 else {
+                     $search->getAll('~0.75',$term2,DbPath);
+                     $search->getAll('*',$term2,DbPath);
+                 }
+                 
+             }
          }
      }
      
