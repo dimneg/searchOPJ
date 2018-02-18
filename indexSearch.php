@@ -11,6 +11,7 @@
  *
  * @author dimitris negkas
  */
+include 'config.php';
 class indexSearch {
    function getAll($LuceneOperand,$varKeyword,$DbPath){
        global $Limit;
@@ -75,13 +76,16 @@ class indexSearch {
     
    function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword) {
         global $AlreadyFound;
+        $couchUserPwd = ".couchUser.':'.couchPass.";
+        
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);
         //echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERPWD, 'dimneg:dim1978');
+        #curl_setopt($ch, CURLOPT_USERPWD, 'dimneg:dim1978');
+        curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                        'Content-type: application/json; charset=utf-8',
                        'Accept: */*'
