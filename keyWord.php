@@ -170,5 +170,81 @@ class keyWord {
 $translated=$varKeyword;
 return $translated;  
 }
-function Unaccent($string)
+
+   function unAccent($string){
+       $string =  str_replace('Ά','Α',$string);
+       $string =  str_replace('Έ','Ε',$string);
+       $string =  str_replace('Ί','Ι',$string);
+       $string =  str_replace('Ή','Η',$string);
+       $string =  str_replace('Ύ','Υ',$string);
+       $string =  str_replace('Ό','Ο',$string);
+       $string =  str_replace('Ώ','Ω',$string);
+       return $string;
+   }
+   
+   function prepareKeyword($word){
+    $word= rtrim(ltrim(str_replace('ς','σ', $word)));
+    $word = str_replace('ά','α',$word);
+    $word = str_replace('έ','ε',$word);
+    $word = str_replace('ή','η',$word);
+    $word = str_replace('ί','ι',$word);
+    $word = str_replace('ύ','υ',$word);
+    $word = str_replace('ό','ο',$word);
+    $word = str_replace('ώ','ω',$word);
+    $word = str_replace('πατρ.',' ',$word);
+    $word = str_replace('<',' ',$word);
+    $word = str_replace('>',' ',$word);
+    $word = str_replace('&',' ',$word);
+    $word = str_replace('-',' ',$word);
+    $word = str_replace('||',' ',$word);
+    $word = str_replace(' ||',' ',$word);
+    $word = str_replace('|| ',' ',$word);
+    $word = str_replace(',,',' ',$word);
+    $word = str_replace(',',' ',$word);
+    return $word;
+    }
+    
+   function prepareExactKeyword($word){
+       $word = ltrim($word);
+       $words = explode(' ', $word);
+       $wordArray = [];
+       if (count($words) > 1) {
+           $t1 = ' ';
+           $t2 = ' ';
+           $t12 = ' ';
+           $word ='';
+           $i = 0;
+           $len = count($words);
+           foreach($words as $w) {	
+               if ($i == 0) {
+                   if (mb_strlen($w, 'utf-8') > 3) { 
+                       $t1 = $w;
+                   }	
+                   $w='"'.$w.'+';	
+               } 
+               else {
+                    if (($i > 0) && ($i < ($len-1))){
+                        if ($i == 1) {
+                             if	(mb_strlen($w, 'utf-8') >3 ){ 
+                                 $t2 = $w;	
+                             }
+                        }
+                        $w=$w.'+';	
+                    }
+                    else{
+                         if ($i == ($len - 1) ){
+                              if ($i == 1) {
+                                   $t2 = $w;	
+                              }
+                              $w = $w.'"';
+                         }
+                         $word .= $w; 	
+                         $i++;	
+                    }
+                    $t12= '"'.$t1."+".$t2.'"';
+               }
+               return [$t1,$t2,$t12,$word];
+           }
+       }
+   } 
 }

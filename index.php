@@ -259,9 +259,10 @@
 <?php
 
 include 'indexSearch.php'; 
+include 'keyWord.php';
 
 $time_pre = microtime(true);
-$prefix='' ;
+$prefix = '' ;
 $varKeyword = $_POST['formKeyword']; 
 $rowKeyword = $varKeyword;
 
@@ -282,9 +283,11 @@ $term1 = '';
 $term2 = '';
 $term12 = '';
 
+$newKeyWord = new keyWord();
+
 if($_POST['formSubmit'] == "search") {   
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
-        $varKeyword = prepareKeyword($varKeyword) ;   
+        $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
     else {
         $varKeyword = rtrim(ltrim($varKeyword));  
@@ -297,13 +300,36 @@ if($_POST['formSubmit'] == "search") {
  $search = new indexSearch();
  if (is_numeric($varKeyword)){ //probaby afm
      if (strlen(utf8_decode($varKeyword)) <=6 ) {
-          $search->getAll('',$varKeyword,$DbPath);	
+          $search->getAll('',$varKeyword,DbPath);	
      }
      else {
-         $search->getAllShort('*',$varKeyword,$DbPath);	
+         $search->getAllShort('*',$varKeyword,DbPath);	
      }
  }
  else { #name
-     $varKeyword = tranlateAbbFull($varKeyword);
+     $varKeyword = $newKeyWord->tranlateAbbFull($varKeyword);
+     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){  #greek found
+        if (count($words) === 1){
+            if (strlen(utf8_decode($varKeyword)) <= 4 ){ # greek  like
+                 $search->getAllGreek('*',$varKeyword,DbPath); 
+            }
+            else { # exact, fuzzy and then like
+                $search->getAllGreek('',$varKeyword,DbPath);  	
+                $search->getAllGreek('~0.75', $varKeyword, DbPath);
+                $search->getAllGreek('*',$varKeyword,DbPath);
+            }
+        }
+        else{
+            if (count($words) > 1) {
+                $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
+                $term1 = $termsArray[0];
+                $term2 = $termsArray[1];
+                $term12 = $termsArray[2];
+                $varKeyword = $termsArray[3];
+                $search->getAllGreek('',$varKeyword,DbPath);
+                $search->getAllGreek('',$term12,DbPath);
+            }
+        }
+     }
      
  }
