@@ -261,6 +261,7 @@
 include 'indexSearch.php'; 
 include 'keyWord.php';
 include 'results.php';
+include 'config.php';
 
 $time_pre = microtime(true);
 $prefix = '' ;
@@ -286,7 +287,7 @@ $term12 = '';
 
 $newKeyWord = new keyWord();
 
-if($_POST['formSubmit'] == "search") {   
+if($_POST['formSubmit'] == "index.php") {   
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
         $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
