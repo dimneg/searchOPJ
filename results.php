@@ -679,7 +679,7 @@ $double=array();
 //make array unique
 
 
-$uniqueResults = unique_multidim_array($Results,'link');
+$uniqueResults = $this->unique_multidim_array($Results,'link');
 
 ////////check for diaugeiaKhmdhs////////
 ////////////////////////////////////////
