@@ -328,8 +328,29 @@ if($_POST['formSubmit'] == "search") {
                 $varKeyword = $termsArray[3];
                 $search->getAllGreek('',$varKeyword,DbPath);
                 $search->getAllGreek('',$term12,DbPath);
+                if (strlen(utf8_decode($term1)) <=4 ){	
+                     $search->getAllGreek('*',$term1,DbPath);
+                }
+                else {
+                     $search->getAllGreek('~0.75',$term1,DbPath);	
+                     $search->getAllGreek('*',$term1,DbPath);	
+                }
+                if (strlen(utf8_decode($term2)) <=4 ){	
+                    $search->getAllGreek('',$term2,DbPath);	
+                }
+                else {
+                    $search->getAllGreek('~0.75',$term2,DbPath);	
+                    $search->getAllGreek('*',$term2,DbPath);
+                }
             }
         }
+     }
+     else { #english and greek
+         if (count($words) == 1){
+             if (strlen(utf8_decode($varKeyword)) <=4 ) {
+                 $search->getAll('*',$varKeyword,DbPath);	
+             }
+         }
      }
      
  }
