@@ -84,8 +84,7 @@ class indexSearch {
         //echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        #curl_setopt($ch, CURLOPT_USERPWD, 'dimneg:dim1978');
-        curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
+       curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                        'Content-type: application/json; charset=utf-8',
                        'Accept: */*'
