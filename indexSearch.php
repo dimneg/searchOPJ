@@ -33,22 +33,22 @@ class indexSearch {
    function getAllGreek($LuceneOperand,$varKeyword,$DbPath){
        global $Limit;
 
-       prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
+       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
 							
-       prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
 								 
-       prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
 								
-       prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword); 
-       prepareResults($DbPath,"elod_fuel_prices_products","Product","by_fuelPrices_ProductName",$LuceneOperand,50,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword); 
+       $this->prepareResults($DbPath,"elod_fuel_prices_products","Product","by_fuelPrices_ProductName",$LuceneOperand,50,"score",$varKeyword);
        #prepareResults($DbPath,"elod_fuel_prices_shops","Shop","by_fuelprices_ShopName",$LuceneOperand,25,"score",$varKeyword);			  
 			  
-       prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword);
 		  
 		
     }
@@ -56,21 +56,21 @@ class indexSearch {
    function getAllShort($LuceneOperand,$varKeyword,$DbPath){
        global $Limit;
 
-       prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
+       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
 							
-       prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
 								 
-       prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this-> prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
 								
 			  
 			  
-       prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword);
 		  
-       prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword); 
-       prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword); 
+       $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword);
 	
     } 
     
@@ -84,7 +84,7 @@ class indexSearch {
         //echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-       curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
+        curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                        'Content-type: application/json; charset=utf-8',
                        'Accept: */*'
@@ -227,15 +227,15 @@ class indexSearch {
         }
         //echo $Boost;
 
-        if(isset ($json['rows'])) 
-         $newdata =  array (
+        if(isset ($json['rows'])) {
+             $newdata =  array (
              // 'name' => $r['fields']['term'][1],
                   'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,
                  /* 'smallimage' => (isset($product_option_value_description_query->row['smallimage'])) ?
                 $product_option_value_description_query->row['smallimage'] : null, */
 
-              'vat' => $r['fields']['term'][0],
-              'link' => $prefix.$r['id'],
+                 'vat' => $r['fields']['term'][0],
+                  'link' => $prefix.$r['id'],
                   'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,
                   'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
                   'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,
@@ -243,17 +243,17 @@ class indexSearch {
                   'countryName'=>(isset($r['fields']['countryName']) ) ? $r['fields']['countryName'] : null ,
                   'score' =>  $r['score'],
                   'id' => $r['id'],
-              'lastUpdate'=> $r['fields']['lastUpdate'],
+                  'lastUpdate'=> $r['fields']['lastUpdate'],
                //ΔΙΑΥΓΕΙΑ
-              'award0'=>(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null ,
+                   'award0'=>(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null ,
                   'award1'=> (isset($r['fields']['awardAmount1']) ) ? $r['fields']['awardAmount1'] : null ,
-              'award2'=> (isset($r['fields']['awardAmount2']) ) ? $r['fields']['awardAmount2'] : null ,
+                  'award2'=> (isset($r['fields']['awardAmount2']) ) ? $r['fields']['awardAmount2'] : null ,
                   'awardCnt0'=> (isset($r['fields']['awardCounter0']) ) ? $r['fields']['awardCounter0'] : null ,
                   'awardCnt1'=> (isset($r['fields']['awardCounter1']) ) ? $r['fields']['awardCounter1'] : null ,
                   'awardCnt2'=> (isset($r['fields']['awardCounter2']) ) ? $r['fields']['awardCounter2'] : null ,
                  // 'awardItemsNo'=> $r['fields']['awardItemsNo'], //Not in use
                   'spend0'=> (isset($r['fields']['spendAmount0']) ) ? $r['fields']['spendAmount0'] : null ,
-              'spend1'=> (isset($r['fields']['spendAmount1']) ) ? $r['fields']['spendAmount1'] : null ,
+                  'spend1'=> (isset($r['fields']['spendAmount1']) ) ? $r['fields']['spendAmount1'] : null ,
                   'spend2'=> (isset($r['fields']['spendAmount2']) ) ? $r['fields']['spendAmount2'] : null ,
                   'spendCnt0'=>  (isset($r['fields']['spendCounter0']) ) ? $r['fields']['spendCounter0'] : null ,
                   'spendCnt1'=>  (isset($r['fields']['spendCounter1']) ) ? $r['fields']['spendCounter1'] : null ,
@@ -264,10 +264,10 @@ class indexSearch {
                   'contractAmountCur'=> (isset($r['fields']['contractsAmount1']) ) ? $r['fields']['contractsAmount1'] : null ,
                    // 'contract2'=> $r['fields']['contractsAmount2'],
                   'paymentAmountPrev'=> (isset($r['fields']['paymentsAmount0']) ) ? $r['fields']['paymentsAmount0'] : null ,
-              'paymentAmountCur'=> (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ,
+                  'paymentAmountCur'=> (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ,
                    // 'payment2'=> $r['fields']['paymentsAmount2'], 	  
-              'contractItemsNo'=> (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ,
-              'paymentItemsNo'=>  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ,
+                  'contractItemsNo'=> (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ,
+                  'paymentItemsNo'=>  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ,
 
                   //australia & London & europa & newyork
                   'contractAmount0'=> (isset($r['fields']['contractAmount0']) ) ? $r['fields']['contractAmount0'] : null ,
@@ -284,7 +284,7 @@ class indexSearch {
                    //diaygeia
                   'award0_2'=>' ',	
                   'award1_2'=>' ',
-              'award2_2'=> ' ',
+                  'award2_2'=> ' ',
                   'awardCnt0_2'=>' ',
                   'awardCnt1_2'=>' ',
                   'awardCnt2_2'=>' ',		  
@@ -297,15 +297,15 @@ class indexSearch {
 
                   //khmdhs
                   'contractAmountPrev_2'=> ' ',
-              'contractAmountCur_2'=>' ', 
+                 'contractAmountCur_2'=>' ', 
                   'paymentAmountPrev_2'=>' ',
-              'paymentAmountCur_2'=>' ',	  
-              'contractItemsNo_2'=>' ',
-              'paymentItemsNo_2'=>' ',   
+                  'paymentAmountCur_2'=>' ',	  
+                 'contractItemsNo_2'=>' ',
+                 'paymentItemsNo_2'=>' ',   
 
                   //bοth
                   'lastUpdate_2'=>' ',
-              'dk_flag'=>' ',
+                  'dk_flag'=>' ',
 
                //espa  	
                   'SubsContractsAmount'=> (isset($r['fields']['SubsContractsAmount']) ) ? $r['fields']['SubsContractsAmount'] : null ,
@@ -337,7 +337,7 @@ class indexSearch {
                            'linkEDS'=>' ',		  		
                            'award0EDS'=>' ',
                        'award1EDS'=> ' ',
-                   'award2EDS'=>' ' ,
+                      'award2EDS'=>' ' ,
                        'awardCnt0EDS'=>' ',
                        'awardCnt1EDS'=>' ' ,
                        'awardCnt2EDS'=>' ' ,	
@@ -367,12 +367,12 @@ class indexSearch {
                //diaugeia-hybrids sellers  
                   'awardSel0'=> (isset($r['fields']['awardAmountSel0']) ) ? $r['fields']['awardAmountSel0'] : null ,
                   'awardSel1'=> (isset($r['fields']['awardAmountSel1']) ) ? $r['fields']['awardAmountSel1'] : null ,
-              'awardSel2'=> (isset($r['fields']['awardAmountSel2']) ) ? $r['fields']['awardAmountSel2'] : null ,
+                  'awardSel2'=> (isset($r['fields']['awardAmountSel2']) ) ? $r['fields']['awardAmountSel2'] : null ,
                   'awardCntSel0'=> (isset($r['fields']['awardCounterSel0']) ) ? $r['fields']['awardCounterSel0'] : null ,
                   'awardCntSel1'=> (isset($r['fields']['awardCounterSel1']) ) ? $r['fields']['awardCounterSel1'] : null ,
                   'awardCntSel2'=> (isset($r['fields']['awardCounterSel2']) ) ? $r['fields']['awardCounterSel2'] : null ,	  
                   'spendSel0'=> (isset($r['fields']['spendAmountSel0']) ) ? $r['fields']['spendAmountSel0'] : null ,	
-              'spendSel1'=> (isset($r['fields']['spendAmountSel1']) ) ? $r['fields']['spendAmountSel1'] : null ,	
+                  'spendSel1'=> (isset($r['fields']['spendAmountSel1']) ) ? $r['fields']['spendAmountSel1'] : null ,	
                   'spendSel2'=> (isset($r['fields']['spendAmountSel2']) ) ? $r['fields']['spendAmountSel2'] : null ,	
                   'spendCntSel0'=> (isset($r['fields']['spendCounterSel0']) ) ? $r['fields']['spendCounterSel0'] : null ,	
                   'spendCntSel1'=> (isset($r['fields']['spendCounterSel1']) ) ? $r['fields']['spendCounterSel1'] : null ,	
@@ -387,7 +387,7 @@ class indexSearch {
                   'contractAmountCurHKS'=> ' ' ,	  
                   'paymentAmountPrevHKS'=> ' ' ,
                   'paymentAmountPrevHKB'=> ' ' ,
-              'paymentAmountCurHKS'=> ' ' ,
+                  'paymentAmountCurHKS'=> ' ' ,
                   'paymentAmountCurHKB'=> ' ' ,
                   'contractItemsNoHKS'=> ' ' ,
                   'contractItemsNoHKB'=> ' ' ,
@@ -402,11 +402,11 @@ class indexSearch {
                   //shops     
                   'countOfProducts'=>(isset($r['fields']['countOfProducts']) ) ? $r['fields']['countOfProducts'] : null ,
                   'countOfCategories'=>(isset($r['fields']['countOfCategories']) ) ? $r['fields']['countOfCategories'] : null ,             
-              'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement']) ) ? $r['fields']['unitOfMeasurement'] : null ,  
+                  'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement']) ) ? $r['fields']['unitOfMeasurement'] : null ,  
                   'unitOfMeasurementMin'=>(isset($r['fields']['unitOfMeasurementMin']) ) ? $r['fields']['unitOfMeasurementMin'] : null , 
                   'unitOfMeasurementMax'=>(isset($r['fields']['unitOfMeasurementMax']) ) ? $r['fields']['unitOfMeasurementMax'] : null , 
-              'minProdName'=>(isset($r['fields']['minProdName']) ) ? $r['fields']['minProdName'] : null ,  
-              'maxProdName'=>(isset($r['fields']['maxProdName']) ) ? $r['fields']['maxProdName'] : null ,              
+                  'minProdName'=>(isset($r['fields']['minProdName']) ) ? $r['fields']['minProdName'] : null ,  
+                  'maxProdName'=>(isset($r['fields']['maxProdName']) ) ? $r['fields']['maxProdName'] : null ,              
                //products	     
                   'average'=>(isset($r['fields']['average']) ) ? $r['fields']['average'] : null ,
                   'averagePreviousYear'=>(isset($r['fields']['averagePreviousYear']) ) ? $r['fields']['averagePreviousYear'] : null ,
@@ -417,7 +417,7 @@ class indexSearch {
                   'dominantPriceDetails'=>(isset($r['fields']['dominantPriceDetails']) ) ? $r['fields']['dominantPriceDetails'] : null ,	
                   'weekDominantPriceDetails'=>(isset($r['fields']['weekDominantPriceDetails']) ) ? $r['fields']['weekDominantPriceDetails'] : null ,		
                   'yearDominantPriceDetails'=>(isset($r['fields']['yearDominantPriceDetails']) ) ? $r['fields']['yearDominantPriceDetails'] : null ,		
-              'quantityDetails'=>(isset($r['fields']['quantityDetails']) ) ? $r['fields']['quantityDetails'] : null , 
+                  'quantityDetails'=>(isset($r['fields']['quantityDetails']) ) ? $r['fields']['quantityDetails'] : null , 
 
                    //fuelshops
                   'brand'=>(isset($r['fields']['brand']) ) ? $r['fields']['brand'] : null,  
@@ -432,9 +432,11 @@ class indexSearch {
              'relative3'=>0,	
              'relative4'=>0		 
             );	
+        }
+        
 
 
-            $arrayElements=count($Results);
+            $arrayElements = count($Results);
                 //echo $arrayElements;
                 if  ($arrayElements < 2000)
                 $Results[]=$newdata; 
