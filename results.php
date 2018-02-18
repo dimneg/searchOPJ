@@ -296,6 +296,152 @@ class results {
                              $row['lastUpdateEKB']=$last_item['lastUpdate'];	 
                         }
                     }
+                    if ((substr($last_item_2['id'],strpos($last_item_2['id'], "?=") )) == (substr($last_item['id'],strpos($last_item['id'], "?=") ))) {
+                        $row['relative2']=$last_item_2['score'];
+                        if ((strpos($last_item_2['link'],'/diaugeia/') !== false ) || (strpos($last_item_2['link'],'/diaugeiakhmdhs/') !== false ) || (strpos($last_item_2['link'],'hybrid') !== false )){
+                            $double[]=$last_item_2; //for hide
+                            if (strpos($last_item_2['link'],'seller')!== false){
+                                $row['linkEDS']=$last_item_2['link'];	
+                                $row['award0EDS']=$last_item_2['award0']; 
+                                $row['award1EDS']=$last_item_2['award1'];
+                                $row['award2EDS']=$last_item_2['award2'];
+                                $row['awardCnt0EDS']=$last_item_2['awardCnt0'];
+                                $row['awardCnt1EDS']=$last_item_2['awardCnt1'];
+                                $row['awardCnt2EDS']=$last_item_2['awardCnt2'];
+                                $row['spend0EDS']=$last_item_2['spend0'];	
+                                $row['spend1EDS']=$last_item_2['spend1'];
+                                $row['spend2EDS']=$last_item_2['spend2']; 	   
+                                $row['spendCnt0EDS']=$last_item_2['spendCnt0']; 
+                                $row['spendCnt1EDS']=$last_item_2['spendCnt1'];
+                                $row['spendCnt2EDS']=$last_item_2['spendCnt2'];
+                                $row['lastUpdateEDS']=$last_item_2['lastUpdate'];   			
+	   
+                            }
+                            else {
+                                $row['linkEDB']=$last_item_2['link'];	
+                                $row['award0EDB']=$last_item_2['award0']; 
+                                $row['award1EDB']=$last_item_2['award1'];
+                                $row['award2EDB']=$last_item_2['award2'];
+                                $row['awardCnt0EDB']=$last_item_2['awardCnt0'];
+                                $row['awardCnt1EDB']=$last_item_2['awardCnt1'];
+                                $row['awardCnt2EDB']=$last_item_2['awardCnt2'];
+                                $row['spend0EDB']=$last_item_2['spend0'];	
+                                $row['spend1EDB']=$last_item_2['spend1'];
+                                $row['spend2EDB']=$last_item_2['spend2']; 	   
+                                $row['spendCnt0EDB']=$last_item_2['spendCnt0']; 
+                                $row['spendCnt1EDB']=$last_item_2['spendCnt1'];
+                                $row['spendCnt2EDB']=$last_item_2['spendCnt2'];
+                                $row['lastUpdateEDB']=$last_item_2['lastUpdate'];
+                            }
+                        }
+                        if (strpos($last_item_2['link'],'/khmdhs/') !== false ) {
+                            $double[]=$last_item_2;
+                            if (strpos($last_item_2['link'],'seller')!== false){
+                                $row['linkEKS']=$last_item_2['link'];			
+                                $row['contractAmountPrevEKS']=$last_item_2['contractAmountPrev']; 
+                                $row['contractAmountCurEKS']=$last_item_2['contractAmountCur'];
+                                $row['paymentAmountPrevEKS']=$last_item_2['paymentAmountPrev'];
+                                $row['paymentAmountCurEKS']=$last_item_2['paymentAmountCur'];
+                                $row['contractItemsNoEKS']=$last_item_2['contractItemsNo'];
+                                $row['paymentItemsNoEKS']=$last_item_2['paymentItemsNo'];
+                                $row['lastUpdateEKS']=$last_item_2['lastUpdate'];
+                            }
+                            else {
+                                $row['linkEKB']=$last_item_2['link'];
+                                $row['contractAmountPrevEKB']=$last_item_2['contractAmountPrev']; 
+                                $row['contractAmountCurEKB']=$last_item_2['contractAmountCur'];
+                                $row['paymentAmountPrevEKB']=$last_item_2['paymentAmountPrev'];
+                                $row['paymentAmountCurEKB']=$last_item_2['paymentAmountCur'];
+                                $row['contractItemsNoEKB']=$last_item_2['contractItemsNo'];
+                                $row['paymentItemsNoEKB']=$last_item_2['paymentItemsNo'];	 
+                                $row['lastUpdateEKB']=$last_item_2['lastUpdate'];
+                            }
+                        }
+                        if ((substr($last_item_3['id'],strpos($last_item_3['id'], "?=") )) == (substr($last_item_2['id'],strpos($last_item_2['id'], "?=") ))) {
+                            $row['relative3']=$last_item_2['score'];
+                            if ((strpos($last_item_3['link'],'/diaugeia/') !== false ) || (strpos($last_item_3['link'],'/diaugeiakhmdhs/') !== false ) || (strpos($last_item_3['link'],'hybrid') !== false ) ){
+                                $double[]=$last_item_3;
+                                if (strpos($last_item_3['link'],'seller')!== false){
+                                    $row['linkEDS']=$last_item_3['link'];	
+			            $row['award0EDS']=$last_item_3['award0']; 
+				    $row['award1EDS']=$last_item_3['award1'];
+				    $row['award2EDS']=$last_item_3['award2'];
+				    $row['awardCnt0EDS']=$last_item_3['awardCnt0'];
+				    $row['awardCnt1EDS']=$last_item_3['awardCnt1'];
+				    $row['awardCnt2EDS']=$last_item_3['awardCnt2'];
+				    $row['spend0EDS']=$last_item_3['spend0'];	
+				    $row['spend1EDS']=$last_item_3['spend1'];
+				    $row['spend2EDS']=$last_item_3['spend2']; 	   
+				    $row['spendCnt0EDS']=$last_item_3['spendCnt0']; 
+				    $row['spendCnt1EDS']=$last_item_3['spendCnt1'];
+				    $row['spendCnt2EDS']=$last_item_3['spendCnt2'];
+				    $row['lastUpdateEDS']=$last_item_3['lastUpdate'];  			
+	   
+                                }
+                                else {
+                                    $row['linkEDB']=$last_item_3['link'];	
+				    $row['award0EDB']=$last_item_3['award0']; 
+                                    $row['award1EDB']=$last_item_3['award1'];
+                                    $row['award2EDB']=$last_item_3['award2'];
+                                    $row['awardCnt0EDB']=$last_item_3['awardCnt0'];
+                                    $row['awardCnt1EDB']=$last_item_3['awardCnt1'];
+                                    $row['awardCnt2EDB']=$last_item_3['awardCnt2'];
+                                    $row['spend0EDB']=$last_item_3['spend0'];	
+                                    $row['spend1EDB']=$last_item_3['spend1'];
+                                    $row['spend2EDB']=$last_item_3['spend2']; 	   
+                                    $row['spendCnt0EDB']=$last_item_3['spendCnt0']; 
+                                    $row['spendCnt1EDB']=$last_item_3['spendCnt1'];
+                                    $row['spendCnt2EDB']=$last_item_3['spendCnt2'];
+                                    $row['lastUpdateEDB']=$last_item_3['lastUpdate'];
+                                }
+                            }
+                            if (strpos($last_item_3['link'],'/khmdhs/') !== false ) {
+                                $double[]=$last_item_3;
+                                if (strpos($last_item_3['link'],'seller')!== false){
+                                    $row['linkEKS']=$last_item_3['link'];						
+				    $row['contractAmountPrevEKS']=$last_item_3['contractAmountPrev']; 
+				    $row['contractAmountCurEKS']=$last_item_3['contractAmountCur'];
+				    $row['paymentAmountPrevEKS']=$last_item_3['paymentAmountPrev'];
+				    $row['paymentAmountCurEKS']=$last_item_3['paymentAmountCur'];
+				    $row['contractItemsNoEKS']=$last_item_3['contractItemsNo'];
+				    $row['paymentItemsNoEKS']=$last_item_3['paymentItemsNo'];
+				    $row['lastUpdateEKS']=$last_item_3['lastUpdate'];	
+                                }
+                                else {
+                                    $row['linkEKB']=$last_item_3['link'];
+				    $row['contractAmountPrevEKB']=$last_item_3['contractAmountPrev']; 
+				    $row['contractAmountCurEKB']=$last_item_3['contractAmountCur'];
+				    $row['paymentAmountPrevEKB']=$last_item_3['paymentAmountPrev'];
+				    $row['paymentAmountCurEKB']=$last_item_3['paymentAmountCur'];
+				    $row['contractItemsNoEKB']=$last_item_3['contractItemsNo'];
+				    $row['paymentItemsNoEKB']=$last_item_3['paymentItemsNo'];	 
+				    $row['lastUpdateEKB']=$last_item_3['lastUpdate'];	
+                                }
+                            }
+                            if ((substr($last_item_4['id'],strpos($last_item_4['id'], "?=") )) == (substr($last_item_3['id'],strpos($last_item_3['id'], "?=") ))){
+                                $row['relative4']=$last_item_3['score'];
+                                if ((strpos($last_item_4['link'],'/diaugeia/') !== false ) || (strpos($last_item_4['link'],'/diaugeiakhmdhs/') !== false ) || (strpos($last_item_4['link'],'hybrid') !== false ) ){	
+                                    $double[]=$last_item_4;
+                                    if (strpos($last_item_4['link'],'seller')!== false){
+                                        $row['linkEDS']=$last_item_4['link'];	
+					$row['award0EDS']=$last_item_4['award0']; 
+					$row['award1EDS']=$last_item_4['award1'];
+					$row['award2EDS']=$last_item_4['award2'];
+					$row['awardCnt0EDS']=$last_item_4['awardCnt0'];
+					$row['awardCnt1EDS']=$last_item_4['awardCnt1'];
+					$row['awardCnt2EDS']=$last_item_4['awardCnt2'];
+					$row['spend0EDS']=$last_item_4['spend0'];	
+					$row['spend1EDS']=$last_item_4['spend1'];
+					$row['spend2EDS']=$last_item_4['spend2']; 	   
+					$row['spendCnt0EDS']=$last_item_4['spendCnt0']; 
+					$row['spendCnt1EDS']=$last_item_4['spendCnt1'];
+					$row['spendCnt2EDS']=$last_item_4['spendCnt2'];
+					$row['lastUpdateEDS']=$last_item_4['lastUpdate'];  
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
