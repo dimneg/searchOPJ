@@ -236,16 +236,16 @@
 <div class="row-fluid margin-bottom" align="center" >
 <form action="search" method="post" accept-charset="UTF-8"> 
 <p>			
-<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα ή Σημείο Πώλησης ή Προϊόν" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
+<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="search"  style="display: none;" >				
 </p>
 <div align="center" >
- <!--<li  class="ex1" id="dim" > Δημόσιες Προμήθειες </li><li  class="ex1">Επιδοτήσεις</li> <li  class="ex1">Προϋπολογισμοί</li> <li class="ex1"> Τιμές</li>  -->
+ <!--<li  class="ex1" id="dim" > Δημόσιες Προμήθειες </li><li  class="ex1">Επιδοτήσεις</li> <li  class="ex1">Προϋπολογισμοί</li> <li class="ex1"> Τιμές</li>  
 <a class="searchTabs" href="searchProcurement?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Δημόσιες Προμήθειες</a>
 <a class="searchTabs" href="searchCPV?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Κατηγορίες Δαπανών</a>
  <a class="searchTabs" href="searchEspa?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"    >Επιδοτήσεις</a>
  Προϋπολογισμοί
- <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Τιμές</a>
+ <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Τιμές</a> -->
   <!--style="color:#1C94C4" -->
 <!--<form method="post" action="searchKhmdhs.php">
     <input type="hidden" name="varKeyword=" value="varKeyword">
@@ -260,6 +260,7 @@
 
 include 'indexSearch.php'; 
 include 'keyWord.php';
+include 'results.php';
 
 $time_pre = microtime(true);
 $prefix = '' ;
@@ -292,97 +293,108 @@ if($_POST['formSubmit'] == "search") {
     else {
         $varKeyword = rtrim(ltrim($varKeyword));  
     }
-}
-
- $words = explode(' ', $varKeyword);  
+    $words = explode(' ', $varKeyword);  
 
  #read all data
- $search = new indexSearch();
- if (is_numeric($varKeyword)){ //probaby afm
-     if (strlen(utf8_decode($varKeyword)) <=6 ) {
-          $search->getAll('',$varKeyword,DbPath);	
-     }
-     else {
-         $search->getAllShort('*',$varKeyword,DbPath);	
-     }
- }
- else { #name
-     $varKeyword = $newKeyWord->tranlateAbbFull($varKeyword);
-     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){  #greek found
-        if (count($words) === 1){
-            if (strlen(utf8_decode($varKeyword)) <= 4 ){ # greek  like
-                 $search->getAllGreek('*',$varKeyword,DbPath); 
+    $search = new indexSearch();
+    if (is_numeric($varKeyword)){ //probaby afm
+        if (strlen(utf8_decode($varKeyword)) <=6 ) {
+             $search->getAll('',$varKeyword,DbPath);	
+        }
+        else {
+            $search->getAllShort('*',$varKeyword,DbPath);	
+        }
+    }
+    else { #name
+        $varKeyword = $newKeyWord->tranlateAbbFull($varKeyword);
+        if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){  #greek found
+           if (count($words) === 1){
+               if (strlen(utf8_decode($varKeyword)) <= 4 ){ # greek  like
+                    $search->getAllGreek('*',$varKeyword,DbPath); 
+               }
+               else { # exact, fuzzy and then like
+                   $search->getAllGreek('',$varKeyword,DbPath);  	
+                   $search->getAllGreek('~0.75', $varKeyword, DbPath);
+                   $search->getAllGreek('*',$varKeyword,DbPath);
+               }
+           }
+           else{
+               if (count($words) > 1) {
+                   $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
+                   $term1 = $termsArray[0];
+                   $term2 = $termsArray[1];
+                   $term12 = $termsArray[2];
+                   $varKeyword = $termsArray[3];
+                   $search->getAllGreek('',$varKeyword,DbPath);
+                   $search->getAllGreek('',$term12,DbPath);
+                   if (strlen(utf8_decode($term1)) <=4 ){	
+                        $search->getAllGreek('*',$term1,DbPath);
+                   }
+                   else {
+                        $search->getAllGreek('~0.75',$term1,DbPath);	
+                        $search->getAllGreek('*',$term1,DbPath);	
+                   }
+                   if (strlen(utf8_decode($term2)) <=4 ){	
+                       $search->getAllGreek('',$term2,DbPath);	
+                   }
+                   else {
+                       $search->getAllGreek('~0.75',$term2,DbPath);	
+                       $search->getAllGreek('*',$term2,DbPath);
+                   }
+               }
+           }
+        }
+        else { #english and greek
+            if (count($words) == 1){
+                if (strlen(utf8_decode($varKeyword)) <=4 ) {
+                    $search->getAll('*',$varKeyword,DbPath);	
+                }
+                else {  # latin, >4,1 word : exact-> fuzzy-> like
+                     $search->getAll('',$varKeyword,DbPath);
+                     $search->getAll('~0.75',$varKeyword,DbPath);	
+                     $search->getAll('*',$varKeyword,DbPath);		
+
+                }
             }
-            else { # exact, fuzzy and then like
-                $search->getAllGreek('',$varKeyword,DbPath);  	
-                $search->getAllGreek('~0.75', $varKeyword, DbPath);
-                $search->getAllGreek('*',$varKeyword,DbPath);
+            else {
+                if (count($words) >1) {
+                    $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
+                    $term1 = $termsArray[0];  
+                    $term2 = $termsArray[1];
+                    $term12 = $termsArray[2];
+                    $varKeyword = rtrim($termsArray[3]);
+                    $search->getAll('',$varKeyword,DbPath);
+                    $search->getAll('',$term12,DbPath);
+                    if (strlen(utf8_decode($term1)) <=4 ){
+                        $search->getAll('*',$term1,DbPath);	  
+                    }
+                    else {
+                        $search->getAll('~0.75',$term1,DbPath);
+                        $search->getAll('*',$term1,DbPath);
+                    }
+                    if (strlen(utf8_decode($term2)) <=4 ){
+                          $search->getAll('',$term2,DbPath);
+                    }
+                    else {
+                        $search->getAll('~0.75',$term2,DbPath);
+                        $search->getAll('*',$term2,DbPath);
+                    }
+
+                }
             }
         }
-        else{
-            if (count($words) > 1) {
-                $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
-                $term1 = $termsArray[0];
-                $term2 = $termsArray[1];
-                $term12 = $termsArray[2];
-                $varKeyword = $termsArray[3];
-                $search->getAllGreek('',$varKeyword,DbPath);
-                $search->getAllGreek('',$term12,DbPath);
-                if (strlen(utf8_decode($term1)) <=4 ){	
-                     $search->getAllGreek('*',$term1,DbPath);
-                }
-                else {
-                     $search->getAllGreek('~0.75',$term1,DbPath);	
-                     $search->getAllGreek('*',$term1,DbPath);	
-                }
-                if (strlen(utf8_decode($term2)) <=4 ){	
-                    $search->getAllGreek('',$term2,DbPath);	
-                }
-                else {
-                    $search->getAllGreek('~0.75',$term2,DbPath);	
-                    $search->getAllGreek('*',$term2,DbPath);
-                }
-            }
-        }
-     }
-     else { #english and greek
-         if (count($words) == 1){
-             if (strlen(utf8_decode($varKeyword)) <=4 ) {
-                 $search->getAll('*',$varKeyword,DbPath);	
-             }
-             else {  # latin, >4,1 word : exact-> fuzzy-> like
-                  $search->getAll('',$varKeyword,DbPath);
-                  $search->getAll('~0.75',$varKeyword,DbPath);	
-                  $search->getAll('*',$varKeyword,DbPath);		
-			 
-             }
-         }
-         else {
-             if (count($words) >1) {
-                 $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
-                 $term1 = $termsArray[0];  
-	         $term2 = $termsArray[1];
-		 $term12 = $termsArray[2];
-		 $varKeyword = rtrim($termsArray[3]);
-                 $search->getAll('',$varKeyword,DbPath);
-                 $search->getAll('',$term12,DbPath);
-                 if (strlen(utf8_decode($term1)) <=4 ){
-                     $search->getAll('*',$term1,DbPath);	  
-                 }
-                 else {
-                     $search->getAll('~0.75',$term1,DbPath);
-                     $search->getAll('*',$term1,DbPath);
-                 }
-                 if (strlen(utf8_decode($term2)) <=4 ){
-                       $search->getAll('',$term2,DbPath);
-                 }
-                 else {
-                     $search->getAll('~0.75',$term2,DbPath);
-                     $search->getAll('*',$term2,DbPath);
-                 }
-                 
-             }
-         }
-     }
-     
- }
+
+    }
+    $showResults = new results();
+    $showResults ->showResults();
+    
+    $time_post = microtime(true);
+    $exec_time = $time_post - $time_pre;
+    echo  "<div ALIGN='CENTER'>";
+    echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
+    echo "</div>";
+}
+
+
+
+ 
