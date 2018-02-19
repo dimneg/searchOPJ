@@ -599,12 +599,12 @@ class results {
                         echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
                         //echo '</B>';
                         echo  'Οριστικοποίηση Πληρωμών: ';
-                                $sumSpend=fromTextToNumber($uniqueResults[$i]['spend0']) + fromTextToNumber($uniqueResults[$i]['spend1']) + fromTextToNumber($uniqueResults[$i]['spend2'])  ;
-                        echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+                                $sumSpend=  $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2'])  ;
+                        echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
                         echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0']+$uniqueResults[$i]['spendCnt1']+$uniqueResults[$i]['spendCnt2']),0).'</B>) '; 
                         echo  'Κατακυρώσεις: ';
-                                $sumAward=fromTextToNumber($uniqueResults[$i]['award0']) + fromTextToNumber($uniqueResults[$i]['award1']) + fromTextToNumber($uniqueResults[$i]['award2'])  ;
-                        echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+                                $sumAward=$this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
+                        echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
                         echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
                         echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
                         echo "</td>";
@@ -638,12 +638,12 @@ class results {
                                 echo "<a href='".$link4."'target='_blank' style='font-size: 10px; color: #FFA500;'  <B>ΦΟΡΕΑΣ</B> </a> ";
                                 //echo ' <font color="#FFA500" size="1">Ανάδοχος</font> '; 
                                 echo  'Οριστικοποίηση Πληρωμών: ';               
-                                        $sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDB']) + fromTextToNumber($uniqueResults[$i]['spend1EDB']) + fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
+                                        $sumSpend=$this->fromTextToNumber($uniqueResults[$i]['spend0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
                                 echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
                                 echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDB']+$uniqueResults[$i]['spendCnt1EDB']+$uniqueResults[$i]['spendCnt2EDB']),0).'</B>) '; 
                                 echo  'Κατακυρώσεις: ';
-                                        $sumAward=fromTextToNumber($uniqueResults[$i]['award0EDB']) + fromTextToNumber($uniqueResults[$i]['award1EDB']) + fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
-                                echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+                                        $sumAward=$this->fromTextToNumber($uniqueResults[$i]['award0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
+                                echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
                                 echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDB']+$uniqueResults[$i]['awardCnt1EDB']+$uniqueResults[$i]['awardCnt2EDB']),0).'</B>) '; 
                                 echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDB'].']</br>';
                             }
@@ -1420,13 +1420,13 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	echo 'r3='.$uniqueResults[$i]['relative3'].'<br>';
 	echo 'r4='.$uniqueResults[$i]['relative4'].'<br>';*/
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
 	echo '</I>';
 	
 	if (($uniqueResults[$i]['pageKind']) =='sellerBoth'){ //eg 999243471 099360290
@@ -1687,13 +1687,13 @@ else if (strpos($link,'diaugeia/dia') !== false)   { //υβριδικος Δια
 	echo 'r3='.$uniqueResults[$i]['relative3'].'<br>';
 	echo 'r4='.$uniqueResults[$i]['relative4'].'<br>';	*/
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';	
-	echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
 	echo '</I>';
 	//echo  '<B>ΣΤΗ ΔΙΑΥΓΕΙΑ<sup><font size="1">ΦΟΡΕΑΣ</font></sup> :  </B>'; 
 	//echo  '<B>ΣΤΗ ΔΙΑΥΓΕΙΑ :  </B>';
@@ -1794,13 +1794,13 @@ else if (strpos($link,'diaugeiakhmdhs') !== false) { //και Διαυγεια �
 	//echo '<B>'.$name.'</B><br>';
 	//echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
 	echo '</I>';
 	//echo  '<B>'.(getSource($link,'d')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; //DIAVGEIA
 	
@@ -1877,17 +1877,17 @@ else if (strpos($link,'/australia/') !== false) { //australia
 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['locality']); 
+	echo $this->hide_not_avail($uniqueResults[$i]['locality']); 
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['countryName']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['countryName']); 
 	echo ' ';
-	echo 'ABN '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo 'ABN '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
 	echo '</I>';
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΑΥΣΤΡΑΛΙΑ</font></br> '; 
 	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
@@ -1903,14 +1903,14 @@ else if (strpos($link,'/london/') !== false) { //Λονδίνο
 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
 	echo "<a href='".$nameLink."'target='_blank' >$name</a> </br>";
     echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo 'V.A.T. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
-	echo  '<B>'.(getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
+	echo 'V.A.T. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo  '<B>'.($this->getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	if (strpos($link,'buyer')  !== false)
 	echo  'Συμβάσεις: ';
 	else 
@@ -1927,14 +1927,14 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
     //echo $name;
 	echo "<a href='".$nameLink."'target='_blank' >$name</a> </br>";
     echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo 'V.A.T. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
-	echo  '<B>'.(getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
+	echo 'V.A.T. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo  '<B>'.($this->getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	echo  'Συμβάσεις: ';	
 			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmount0']) + fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + fromTextToNumber($uniqueResults[$i]['contractAmount2'])   ;
 	echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
@@ -1954,7 +1954,7 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
 	echo 'V.A.T. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
-	echo  '<B>'.(getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
+	echo  '<B>'.($this->getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	echo  'Συμβάσεις: ';	
 			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmount0']) + fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + fromTextToNumber($uniqueResults[$i]['contractAmount2'])   ;
 	echo '<B>'.fromNumberToText($sumContracts,'$').'</B>';
@@ -1974,7 +1974,7 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
 	echo 'V.A.T. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
-	echo  '<B>'.(getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
+	echo  '<B>'.($this->getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	echo  'Συμβάσεις: ';	
 			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmount0']) + fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + fromTextToNumber($uniqueResults[$i]['contractAmount2'])   ;
 	echo '<B>'.fromNumberToText($sumContracts,'$').'</B>';
@@ -2383,7 +2383,159 @@ else { //κημδης και τα αλλα 023199666
 	}
 	
 	return $field;
+        
+        
+    }
+    function getSource($link,$dk){
+        if ($dk=='d')
+        $source="ΔΙΑΥΓΕΙΑ";
+        else
+         if ($dk=='k')
+        $source="ΚΗΜΔΗΣ";
+        else if ($dk=='all' ) {
+        if  ((strpos($link,'khmdhs') !== false) && (strpos($link,'diaugeiakhmdhs') == false))
+        {
+        $source="ΚΗΜΔΗΣ";
+        }
+        else
+        if  ((strpos($link,'diaugeia') !== false) && (strpos($link,'diaugeiakhmdhs') == false))
+        {
+        $source="ΔΙΑΥΓΕΙΑ";
+        }
+        else
+        if  ((strpos($link,'australia') !== false) &&  (strpos($link,'buyer') !== false)) 
+        {
+        $source="ΑΥΣΤΡΑΛΙΑ";
+        }
+        else
+        if  (strpos($link,'diaugeiakhmdhs') !== false) 
+        {
+        $source="ΔΙΑΥΓΕΙΑ / ΚΗΜΔΗΣ ";
+        }
+        else
+        if  (strpos($link,'australia') !== false)
+        {
+        $source="ΑΥΣΤΡΑΛΙΑ ";
+        }
+        else
+        if  ((strpos($link,'hybrid') !== false) ) 
+        {
+        $source="ΔΙΑΥΓΕΙΑ";
+        }
+        else
+        if  ((strpos($link,'newyork') !== false) &&  (strpos($link,'newyorkstate') == false)) 
+        {
+        $source="ΝΕΑ ΥΟΡΚΗ(Πόλη) ";
+        }
+        else
+        if  (strpos($link,'newyorkstate') !== false)  
+        {
+        $source="ΝΕΑ ΥΟΡΚΗ(Πολιτεία)";
+        }
+
+        if  (strpos($link,'london') !== false) 
+        {
+        $source="ΛΟΝΔΙΝΟ";
+        }
+        if  (strpos($link,'eu') !== false)  
+        {
+        $source="ΕΥΡΩΠΗ FTS ";
+        }
+        }
+        //echo  $source;
+        return $source;
+        }
+        
+        function fromTextToNumber($text) {
+        $numbered=0;
+        if ((strpos($text,'M') !== false) || (strpos($text,'Μ') !== false)) {
+        $numbered=str_replace("€", "",$text);
+        $numbered=str_replace("$", "",$numbered);
+        $numbered=str_replace("£", "",$numbered);
+        $numbered=str_replace("M", "",$numbered);
+        $numbered*=1000000;
+        }
+        else 
+        if ((strpos($text,'K') !== false) || (strpos($text,'Κ') !== false)) {
+        $numbered=str_replace("€", "",$text);
+        $numbered=str_replace("$", "",$numbered);
+        $numbered=str_replace("£", "",$numbered);
+        $numbered=str_replace("K", "",$numbered);
+        $numbered*=1000;
+        }
+        else 
+        if ((strpos($text,'B') !== false) || (strpos($text,'Β') !== false)) {
+        $numbered=str_replace("€", "",$text);
+        $numbered=str_replace("$", "",$text);
+        $numbered=str_replace("£", "",$numbered);
+        $numbered=str_replace("B", "",$numbered);
+        $numbered*=1000000000;
+        }
+        else {
+        $numbered*=1;
+        }
+
+        return $numbered;
+    }
+
+function fromNumberToText($number,$currency) {
+$texted=$currency.'0.0K'; //€0.0K
+$digits=strlen($number);
+	if (($digits == 1) || (($digits) == 2)){
+	$texted=$currency.'0.0K';
+	}
+	else
+	if ($digits == 3) { //e.g. 860=0.8K
+	$dividor=1000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
+	}
+	else
+	if ($digits == 4) { //e.g 8600->8.6K
+	$dividor=1000;
+	//$texted='€'.round($number/($dividor),1).'K';
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
+	}
+	else
+	if ($digits == 5) { //e.g 86000->86K
+	$dividor=1000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
+	}
+	else
+	if ($digits == 6) { //e.g 860000->0.8M (kanonika 0.9)
+	$dividor=1000000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'M';
+	}
+	else
+	if ($digits == 7) { //e.g 8.600.000->8.6K  
+	$dividor=1000000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'M';
+	}
+	else
+	if ($digits == 8) { //e.g 80.600.000->80.6M  
+	$dividor=1000000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'M';
+	}
+	else
+	if ($digits == 9) { //e.g 800.600.000->0.8B  //ok
+	$dividor=1000000000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'B';
+	}
+	else
+	if ($digits == 10) { //e.g 8.000.600.000->8B  //ok
+	$dividor=1000000000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'B';
+	}
+	else
+	if ($digits == 11) { //e.g 80.000.600.000->80B  //ok
+	$dividor=1000000000;
+	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'B';
+	}
+	else {
+	$texted=$currency.'0.0K'; //test only
+	}
+
+	return $texted;
 }
-    
+
     
 }
