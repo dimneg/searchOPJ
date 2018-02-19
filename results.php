@@ -1480,12 +1480,12 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	    echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
 		//echo '</B>';
 		echo  'Συμβάσεις: ';
-			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKS']) + fromTextToNumber($uniqueResults[$i]['contractAmountCurEKS'])  ;
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+			$sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKS']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCurEKS'])  ;
+		echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoEKS']),0).'</B>) ';
 		echo  'Πληρωμές: ';
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKS']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKS'])  ;
-		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
+			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKS']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKS'])  ;
+		echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoEKS']),0).'</B>) ';		
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEKS'].']</br>';	
 	    }
