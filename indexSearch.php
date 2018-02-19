@@ -77,7 +77,7 @@ class indexSearch {
    function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword,$couchUser,$couchPass) {
         global $AlreadyFound;
         $couchUserPwd = $couchUser.':'.$couchPass;
-        echo 'pass = '.$couchUserPwd.PHP_EOL;
+        #echo 'pass = '.$couchUserPwd.PHP_EOL;
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);

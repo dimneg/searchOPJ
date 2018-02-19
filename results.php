@@ -1312,7 +1312,7 @@ if  ( (isset($uniqueResults[$i]['link']))
 				&& 
 	(strpos($uniqueResults[$i]['link'],'person') == false) 
 			&&  
-	(hideDuplicate($double,$uniqueResults[$i]['link'])!= 1) 
+	($this->hideDuplicate($double,$uniqueResults[$i]['link'])!= 1) 
 	     //     &&  
 //((hideDuplicate($hidden,$uniqueResults[$i]['link'])!= 1) &&($toMerge>1) ) 
 	) { 
