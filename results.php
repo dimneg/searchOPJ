@@ -584,13 +584,13 @@ class results {
                         echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
                         //echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
                         echo '<I>';
-                        echo hide_not_avail($uniqueResults[$i]['address']);
+                        echo $this->hide_not_avail($uniqueResults[$i]['address']);
                         echo ' ';
-                        echo hide_not_avail($uniqueResults[$i]['pc']);
+                        echo $this->hide_not_avail($uniqueResults[$i]['pc']);
                         echo ' ';
-                        echo hide_not_avail_space($uniqueResults[$i]['city']); 
+                        echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
                         echo ' ';
-                        echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+                        echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
                         echo '</I>';
                         //echo  '<B>'.(getSource($link,'d')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
                         //echo "<a href='".$nameLink."'target='_blank'  > <B>Στη ΔΙΑΥΓΕΙΑ</B></a> </br>";
@@ -619,13 +619,13 @@ class results {
                         echo 'r3='.$uniqueResults[$i]['relative3'].'<br>';
                         echo 'r4='.$uniqueResults[$i]['relative4'].'<br>';*/
                         echo '<I>';
-                        echo hide_not_avail($uniqueResults[$i]['address']);
+                        echo $this->hide_not_avail($uniqueResults[$i]['address']);
                         echo ' ';
-                        echo hide_not_avail($uniqueResults[$i]['pc']);
+                        echo $this->hide_not_avail($uniqueResults[$i]['pc']);
                         echo ' ';
-                        echo hide_not_avail_space($uniqueResults[$i]['city']); 
+                        echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
                         echo ' ';
-                        echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+                        echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
                         echo '</I>';
                         
                         if (($uniqueResults[$i]['pageKind']) =='sellerBoth'){ //eg 999243471 099360290
@@ -1385,13 +1385,13 @@ if  	(strpos($link,'diaugeia/org') !== false)   { //διαυγεια 035970655
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
 	//echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
 	echo '</I>';
 	//echo  '<B>'.(getSource($link,'d')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	//echo "<a href='".$nameLink."'target='_blank'  > <B>Στη ΔΙΑΥΓΕΙΑ</B></a> </br>";
@@ -2368,6 +2368,22 @@ else { //κημδης και τα αλλα 023199666
         return $revDate;
 
     }
+    function hide_not_avail($field){
+	if (($field=='Μη Διαθέσιμο') || ($field=='Ο ΑΦΜ δεν έχει καταχωρηθεί') ||($field=='-')){
+	$field='';
+	}
+	return $field;
+}
+    function hide_not_avail_space($field){
+	if (($field=='Μη Διαθέσιμο') || ($field=='') || ($field=='Ο ΑΦΜ δεν έχει καταχωρηθεί') ||($field=='-')){
+	$field=' ';
+	}
+	else {
+	$field=($field.' &nbsp');
+	}
+	
+	return $field;
+}
     
     
 }
