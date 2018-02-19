@@ -300,10 +300,10 @@ if($_POST['formSubmit'] == "index.php") {
     $search = new indexSearch();
     if (is_numeric($varKeyword)){ //probaby afm
         if (strlen(utf8_decode($varKeyword)) <=6 ) {
-             $search->getAll('',$varKeyword,DbPath);	
+             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);	
         }
         else {
-            $search->getAllShort('*',$varKeyword,DbPath);	
+            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass);	
         }
     }
     else { #name
@@ -311,12 +311,12 @@ if($_POST['formSubmit'] == "index.php") {
         if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){  #greek found
            if (count($words) === 1){
                if (strlen(utf8_decode($varKeyword)) <= 4 ){ # greek  like
-                    $search->getAllGreek('*',$varKeyword,DbPath); 
+                    $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass); 
                }
                else { # exact, fuzzy and then like
-                   $search->getAllGreek('',$varKeyword,DbPath);  	
-                   $search->getAllGreek('~0.75', $varKeyword, DbPath);
-                   $search->getAllGreek('*',$varKeyword,DbPath);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass);  	
+                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass);
+                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass);
                }
            }
            else{
@@ -326,21 +326,21 @@ if($_POST['formSubmit'] == "index.php") {
                    $term2 = $termsArray[1];
                    $term12 = $termsArray[2];
                    $varKeyword = $termsArray[3];
-                   $search->getAllGreek('',$varKeyword,DbPath);
-                   $search->getAllGreek('',$term12,DbPath);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass);
+                   $search->getAllGreek('',$term12,DbPath,couchUser,couchPass);
                    if (strlen(utf8_decode($term1)) <=4 ){	
-                        $search->getAllGreek('*',$term1,DbPath);
+                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass);
                    }
                    else {
-                        $search->getAllGreek('~0.75',$term1,DbPath);	
-                        $search->getAllGreek('*',$term1,DbPath);	
+                        $search->getAllGreek('~0.75',$term1,DbPath,couchUser,couchPass);	
+                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass);	
                    }
                    if (strlen(utf8_decode($term2)) <=4 ){	
-                       $search->getAllGreek('',$term2,DbPath);	
+                       $search->getAllGreek('',$term2,DbPath,couchUser,couchPass);	
                    }
                    else {
-                       $search->getAllGreek('~0.75',$term2,DbPath);	
-                       $search->getAllGreek('*',$term2,DbPath);
+                       $search->getAllGreek('~0.75',$term2,DbPath,couchUser,couchPass);	
+                       $search->getAllGreek('*',$term2,DbPath,couchUser,couchPass);
                    }
                }
            }
@@ -348,12 +348,12 @@ if($_POST['formSubmit'] == "index.php") {
         else { #english and greek
             if (count($words) == 1){
                 if (strlen(utf8_decode($varKeyword)) <=4 ) {
-                    $search->getAll('*',$varKeyword,DbPath);	
+                    $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass);	
                 }
                 else {  # latin, >4,1 word : exact-> fuzzy-> like
-                     $search->getAll('',$varKeyword,DbPath);
-                     $search->getAll('~0.75',$varKeyword,DbPath);	
-                     $search->getAll('*',$varKeyword,DbPath);		
+                     $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);
+                     $search->getAll('~0.75',$varKeyword,DbPath,couchUser,couchPass);	
+                     $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass);		
 
                 }
             }
@@ -364,21 +364,21 @@ if($_POST['formSubmit'] == "index.php") {
                     $term2 = $termsArray[1];
                     $term12 = $termsArray[2];
                     $varKeyword = rtrim($termsArray[3]);
-                    $search->getAll('',$varKeyword,DbPath);
-                    $search->getAll('',$term12,DbPath);
+                    $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);
+                    $search->getAll('',$term12,DbPath,couchUser,couchPass);
                     if (strlen(utf8_decode($term1)) <=4 ){
-                        $search->getAll('*',$term1,DbPath);	  
+                        $search->getAll('*',$term1,DbPath,couchUser,couchPass);	  
                     }
                     else {
-                        $search->getAll('~0.75',$term1,DbPath);
-                        $search->getAll('*',$term1,DbPath);
+                        $search->getAll('~0.75',$term1,DbPath,couchUser,couchPass);
+                        $search->getAll('*',$term1,DbPath,couchUser,couchPass);
                     }
                     if (strlen(utf8_decode($term2)) <=4 ){
-                          $search->getAll('',$term2,DbPath);
+                          $search->getAll('',$term2,DbPath,couchUser,couchPass);
                     }
                     else {
-                        $search->getAll('~0.75',$term2,DbPath);
-                        $search->getAll('*',$term2,DbPath);
+                        $search->getAll('~0.75',$term2,DbPath,couchUser,couchPass);
+                        $search->getAll('*',$term2,DbPath,couchUser,couchPass);
                     }
 
                 }

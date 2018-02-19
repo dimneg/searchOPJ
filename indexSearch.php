@@ -11,77 +11,77 @@
  *
  * @author dimitris negkas
  */
-include 'config.php';
+#include 'config.php';
 class indexSearch {
-   function getAll($LuceneOperand,$varKeyword,$DbPath){
+   function getAll($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass){
        global $Limit;
-       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this-> prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
+       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this-> prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       $this-> prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
+       $this-> prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);       		  
 								 
-       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
 								
-       $this->prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword); 
-       $this->prepareResults($DbPath,"elod_fuel_prices_products","Product","by_fuelPrices_ProductName",$LuceneOperand,50,"score",$varKeyword);
+       #$this->prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       #$this->prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       #$this->prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass); 
+       #$this->prepareResults($DbPath,"elod_fuel_prices_products","Product","by_fuelPrices_ProductName",$LuceneOperand,50,"score",$varKeyword,$couchUser,$couchPass);
    }
    
-   function getAllGreek($LuceneOperand,$varKeyword,$DbPath){
+   function getAllGreek($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass){
        global $Limit;
 
-       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
+       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);       		  
 								 
-       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
 								
-       $this->prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword); 
-       $this->prepareResults($DbPath,"elod_fuel_prices_products","Product","by_fuelPrices_ProductName",$LuceneOperand,50,"score",$varKeyword);
+       #$this->prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       #$this->prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       #$this->prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass); 
+       #$this->prepareResults($DbPath,"elod_fuel_prices_products","Product","by_fuelPrices_ProductName",$LuceneOperand,50,"score",$varKeyword,$couchUser,$couchPass);
        #prepareResults($DbPath,"elod_fuel_prices_shops","Shop","by_fuelprices_ShopName",$LuceneOperand,25,"score",$varKeyword);			  
 			  
-       $this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword);
+       #$this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword,$couchUser,$couchPass);
 		  
 		
     }
     
-   function getAllShort($LuceneOperand,$varKeyword,$DbPath){
+   function getAllShort($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass){
        global $Limit;
 
-       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);				  
+       $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);       		  
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);       		  
 								 
-       $this-> prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
-       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword);
+       $this-> prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
 								
 			  
 			  
-       $this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword);
+       #$this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword,$couchUser,$couchPass);
 		  
-       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword); 
-       $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword);
+       #$this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass); 
+       #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass);
 	
     } 
     
-   function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword) {
+   function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword,$couchUser,$couchPass) {
         global $AlreadyFound;
-        $couchUserPwd = ".couchUser.':'.couchPass.";
-        
+        $couchUserPwd = $couchUser.':'.$couchPass;
+        echo 'pass = '.$couchUserPwd.PHP_EOL;
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);
-        echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
+        #echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );

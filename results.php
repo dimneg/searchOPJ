@@ -2354,4 +2354,20 @@ else { //κημδης και τα αλλα 023199666
             }
         return $remove;
     }
+    
+    function convertDate($date){
+        if (substr($date,0,3)== 201){
+             $revDate= date("d-m-Y", strtotime($date));
+        }
+        //$revDate='wrong'.$date;
+       
+        else {
+            $revDate=$date;
+        }
+            
+        return $revDate;
+
+    }
+    
+    
 }
