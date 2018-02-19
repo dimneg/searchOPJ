@@ -1400,12 +1400,12 @@ if  	(strpos($link,'diaugeia/org') !== false)   { //διαυγεια 035970655
 	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
 	//echo '</B>';
 	echo  'Οριστικοποίηση Πληρωμών: ';
-		$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0']) + fromTextToNumber($uniqueResults[$i]['spend1']) + fromTextToNumber($uniqueResults[$i]['spend2'])  ;
-	echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+		$sumSpend=$this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2'])  ;
+	echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
 	echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0']+$uniqueResults[$i]['spendCnt1']+$uniqueResults[$i]['spendCnt2']),0).'</B>) '; 
 	echo  'Κατακυρώσεις: ';
-		$sumAward=fromTextToNumber($uniqueResults[$i]['award0']) + fromTextToNumber($uniqueResults[$i]['award1']) + fromTextToNumber($uniqueResults[$i]['award2'])  ;
-	echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+		$sumAward=$this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
+	echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
 	echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
 	echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
 	echo "</td>";
