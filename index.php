@@ -29,7 +29,7 @@
                        },
                         "aoColumnDefs": [ 
                                                     //{  "bVisible": false, "aTargets": [ 3 ] },
-                                                    {  "bVisible": false, "aTargets": [ 1 ] },
+                                                    //{  "bVisible": false, "aTargets": [ 1 ] },
                                             //	{  "bVisible": false, "aTargets": [ 2 ] }
 
                                             ]

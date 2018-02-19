@@ -2247,13 +2247,13 @@ else { //κημδης και τα αλλα 023199666
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
     //echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
-	echo hide_not_avail($uniqueResults[$i]['pc']);
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
-	echo hide_not_avail_space($uniqueResults[$i]['city']); 
+	echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
 	echo ' ';
-	echo 'Α.Φ.Μ. '.hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
 	echo '</I>';
 	//echo "<a href='".$nameLink."'target='_blank'  > <B>Στo ΚΗΜΔΗΣ</B></a> </br>";
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font></br> '; 
@@ -2262,12 +2262,12 @@ else { //κημδης και τα αλλα 023199666
 	//echo '<B>';
 	//echo  '<B>'.(getSource($link,'all')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	echo  'Συμβάσεις: ';
-			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + fromTextToNumber($uniqueResults[$i]['contractAmountCur'])  ;
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+			$sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCur'])  ;
+		echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNo']),0).'</B>) ';
 		echo  'Πληρωμές: ';
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrev']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCur'])  ;
-		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
+			$sumPayments=$this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCur'])  ;
+		echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNo']),0).'</B>) ';
 		
 	echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
