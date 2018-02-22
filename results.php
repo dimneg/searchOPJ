@@ -1467,7 +1467,7 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	    echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDS']+$uniqueResults[$i]['spendCnt1EDS']+$uniqueResults[$i]['spendCnt2EDS']),0).'</B>) '; 
     	echo  'Κατακυρώσεις: ';
 			$sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
-	    echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+	    echo  '<B> '.  $this->fromNumberToText($sumAward,'€').'</B>';
 	    echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDS']+$uniqueResults[$i]['awardCnt1EDS']+$uniqueResults[$i]['awardCnt2EDS']),0).'</B>) '; 
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDS'].']</br>';			
         }		
