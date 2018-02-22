@@ -1462,16 +1462,16 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	    echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
 		//echo '</B>';
         echo  'Οριστικοποίηση Πληρωμών: ';
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDS']) + fromTextToNumber($uniqueResults[$i]['spend1EDS']) + fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
-	    echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+			$sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
+	    echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 	    echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDS']+$uniqueResults[$i]['spendCnt1EDS']+$uniqueResults[$i]['spendCnt2EDS']),0).'</B>) '; 
     	echo  'Κατακυρώσεις: ';
-			$sumAward=fromTextToNumber($uniqueResults[$i]['award0EDS']) + fromTextToNumber($uniqueResults[$i]['award1EDS']) + fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
+			$sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
 	    echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
 	    echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDS']+$uniqueResults[$i]['awardCnt1EDS']+$uniqueResults[$i]['awardCnt2EDS']),0).'</B>) '; 
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDS'].']</br>';			
         }		
-    $link3=$uniqueResults[$i]['linkEKS'];   
+    $link3 = $uniqueResults[$i]['linkEKS'];   
     if ((isset($link3)) && ($link3 !== ' ')) {	
 		//echo $link3."</br>";
 		//echo "<a href='".$nameLink."'target='_blank'  > <B>Στo ΚΗΜΔΗΣ</B></a> </br>";
@@ -1484,7 +1484,7 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoEKS']),0).'</B>) ';
 		echo  'Πληρωμές: ';
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKS']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKS'])  ;
+			$sumPayments =  $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKS']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKS'])  ;
 		echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoEKS']),0).'</B>) ';		
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEKS'].']</br>';	
@@ -1500,11 +1500,11 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
 		//echo '</B>';
 		echo  'Οριστικοποίηση Πληρωμών: ';               
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDB']) + fromTextToNumber($uniqueResults[$i]['spend1EDB']) + fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
+			$sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
 		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDB']+$uniqueResults[$i]['spendCnt1EDB']+$uniqueResults[$i]['spendCnt2EDB']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
-			$sumAward=fromTextToNumber($uniqueResults[$i]['award0EDB']) + fromTextToNumber($uniqueResults[$i]['award1EDB']) + fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
+			$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
 		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDB']+$uniqueResults[$i]['awardCnt1EDB']+$uniqueResults[$i]['awardCnt2EDB']),0).'</B>) '; 
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDB'].']</br>';
@@ -1516,11 +1516,11 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		echo "<a href='".$link4."'target='_blank' style='font-size: 10px; color: #FFA500;'  <B>ΑΝΑΔΟΧΟΣ</B> </a> ";
 		//echo ' <font color="#FFA500" size="1">Ανάδοχος</font> '; 
 		echo  'Οριστικοποίηση Πληρωμών: ';               
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDS']) + fromTextToNumber($uniqueResults[$i]['spend1EDS']) + fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
+			$sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
 		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDS']+$uniqueResults[$i]['spendCnt1EDS']+$uniqueResults[$i]['spendCnt2EDS']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
-			$sumAward=fromTextToNumber($uniqueResults[$i]['award0EDS']) + fromTextToNumber($uniqueResults[$i]['award1EDS']) + fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
+			$sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
 		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDS']+$uniqueResults[$i]['awardCnt1EDS']+$uniqueResults[$i]['awardCnt2EDS']),0).'</B>) '; 
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDS'].']</br>';
@@ -1535,11 +1535,11 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	    echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
 		//echo '</B>';
 		echo  'Συμβάσεις: ';                                  
-			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKB']) + fromTextToNumber($uniqueResults[$i]['contractAmountCurEKB'])  ;
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+			$sumContracts=  $this->fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKB']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCurEKB'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoEKB']),0).'</B>) ';
 		echo  'Πληρωμές: ';                           
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKB']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKB'])  ;
+			$sumPayments=  $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKB']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKB'])  ;
 		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoEKB']),0).'</B>) ';		
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEKB'].']</br>';	
@@ -1574,12 +1574,12 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
 		//echo '</B>';
 		echo  'Οριστικοποίηση Πληρωμών: ';               
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDB']) + fromTextToNumber($uniqueResults[$i]['spend1EDB']) + fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
-		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+			$sumSpend=  $this->fromTextToNumber($uniqueResults[$i]['spend0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
+		echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDB']+$uniqueResults[$i]['spendCnt1EDB']+$uniqueResults[$i]['spendCnt2EDB']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
-			$sumAward=fromTextToNumber($uniqueResults[$i]['award0EDB']) + fromTextToNumber($uniqueResults[$i]['award1EDB']) + fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
-		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+			$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
+		echo  '<B> '.  $this->fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDB']+$uniqueResults[$i]['awardCnt1EDB']+$uniqueResults[$i]['awardCnt2EDB']),0).'</B>) '; 
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDB'].']</br>';
 		
@@ -1590,12 +1590,12 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		echo "<a href='".$link2."'target='_blank' style='font-size: 10px; color: #FFA500;'  <B>ΑΝΑΔΟΧΟΣ</B> </a> ";
 		//echo ' <font color="#FFA500" size="1">Ανάδοχος</font> '; 
 		echo  'Οριστικοποίηση Πληρωμών: ';               
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDS']) + fromTextToNumber($uniqueResults[$i]['spend1EDS']) + fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
-		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+			$sumSpend=  $this->fromTextToNumber($uniqueResults[$i]['spend0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
+		echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDS']+$uniqueResults[$i]['spendCnt1EDS']+$uniqueResults[$i]['spendCnt2EDS']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
-			$sumAward=fromTextToNumber($uniqueResults[$i]['award0EDS']) + fromTextToNumber($uniqueResults[$i]['award1EDS']) + fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
-		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+			$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
+		echo  '<B> '.  $this->fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDS']+$uniqueResults[$i]['awardCnt1EDS']+$uniqueResults[$i]['awardCnt2EDS']),0).'</B>) '; 
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDS'].']</br>';
 	    }
@@ -1609,12 +1609,12 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	    echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
 		//echo '</B>';
 		echo  'Συμβάσεις: ';
-			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKS']) + fromTextToNumber($uniqueResults[$i]['contractAmountCurEKS'])  ;
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+			$sumContracts=  $this->fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKS']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCurEKS'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoEKS']),0).'</B>) ';
 		echo  'Πληρωμές: ';
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKS']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKS'])  ;
-		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
+			$sumPayments=  $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKS']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKS'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoEKS']),0).'</B>) ';		
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEKS'].']</br>';	
 	
@@ -1630,12 +1630,12 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
 		//echo '</B>';
 		echo  'Οριστικοποίηση Πληρωμών: ';               
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0EDB']) + fromTextToNumber($uniqueResults[$i]['spend1EDB']) + fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
+			$sumSpend=  $this->fromTextToNumber($uniqueResults[$i]['spend0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
 		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDB']+$uniqueResults[$i]['spendCnt1EDB']+$uniqueResults[$i]['spendCnt2EDB']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
-			$sumAward=fromTextToNumber($uniqueResults[$i]['award0EDB']) + fromTextToNumber($uniqueResults[$i]['award1EDB']) + fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
-		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+			$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
+		echo  '<B> '.  $this->fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDB']+$uniqueResults[$i]['awardCnt1EDB']+$uniqueResults[$i]['awardCnt2EDB']),0).'</B>) '; 
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDB'].']</br>';			
 		
@@ -1646,12 +1646,12 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 	    echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
 		//echo '<B>';
 		echo  'Συμβάσεις: ';                                  
-			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKB']) + fromTextToNumber($uniqueResults[$i]['contractAmountCurEKB'])  ;
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+			$sumContracts=  $this->fromTextToNumber($uniqueResults[$i]['contractAmountPrevEKB']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCurEKB'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoEKB']),0).'</B>) ';
 		echo  'Πληρωμές: ';                           
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKB']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKB'])  ;
-		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
+			$sumPayments=  $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrevEKB']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurEKB'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoEKB']),0).'</B>) ';		
 	    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEKB'].']</br>';	
 	}
@@ -1705,17 +1705,17 @@ else if (strpos($link,'diaugeia/dia') !== false)   { //υβριδικος Δια
     //	echo '</B> ';
 	echo  'Οριστικοποίηση Πληρωμών: ';
 		  $sumSpend=
-		  fromTextToNumber($uniqueResults[$i]['spend0'])
-		+ fromTextToNumber($uniqueResults[$i]['spend1'])
-		+ fromTextToNumber($uniqueResults[$i]['spend2']) ;
-	echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+                  $this->fromTextToNumber($uniqueResults[$i]['spend0'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['spend1'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['spend2']) ;
+	echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 	echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0']+$uniqueResults[$i]['spendCnt1']+$uniqueResults[$i]['spendCnt2']),0).'</B>) '; 
 	echo  'Κατακυρώσεις: ';
 		  $sumAward=
-		  fromTextToNumber($uniqueResults[$i]['award0'])
-		+ fromTextToNumber($uniqueResults[$i]['award1'])
-		+ fromTextToNumber($uniqueResults[$i]['award2'])  ;
-	echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+                  $this->fromTextToNumber($uniqueResults[$i]['award0'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['award1'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
+	echo  '<B> '.  $this->fromNumberToText($sumAward,'€').'</B>';
 	echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>)';
 	echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']<BR>';	
    // echo '<sup><font size="2">ΑΝΑΔΟΧΟΣ: </font></sup>';
@@ -1725,17 +1725,17 @@ else if (strpos($link,'diaugeia/dia') !== false)   { //υβριδικος Δια
 	//echo '</B> ';
 	echo  'Οριστικοποίηση Πληρωμών: ';
 		  $sumSpendSel=
-		  fromTextToNumber($uniqueResults[$i]['spendSel0'])
-		+ fromTextToNumber($uniqueResults[$i]['spendSel1'])
-		+ fromTextToNumber($uniqueResults[$i]['spendSel2']) ;
-	echo '<B> '.fromNumberToText($sumSpendSel,'€').'</B>';
+                  $this->fromTextToNumber($uniqueResults[$i]['spendSel0'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['spendSel1'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['spendSel2']) ;
+	echo '<B> '.  $this->fromNumberToText($sumSpendSel,'€').'</B>';
 	echo ' (<B>'.round(($uniqueResults[$i]['spendCntSel0']+$uniqueResults[$i]['spendCntSel1']+$uniqueResults[$i]['spendCntSel2']),0).'</B>) '; 
 	echo  'Κατακυρώσεις: ';
 		$sumAwardSel=
-		  fromTextToNumber($uniqueResults[$i]['awardSel0'])
-		+ fromTextToNumber($uniqueResults[$i]['awardSel1'])
-		+ fromTextToNumber($uniqueResults[$i]['awardSel2'])  ; 
-	echo  '<B> '.fromNumberToText($sumAwardSel,'€').'</B>';
+                $this->fromTextToNumber($uniqueResults[$i]['awardSel0'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['awardSel1'])
+		+ $this->fromTextToNumber($uniqueResults[$i]['awardSel2'])  ; 
+	echo  '<B> '.  $this->fromNumberToText($sumAwardSel,'€').'</B>';
 	echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 	
 	echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']<br>';	
 	
@@ -1752,12 +1752,12 @@ else if (strpos($link,'diaugeia/dia') !== false)   { //υβριδικος Δια
 	//echo ' <font color="#006621" size="1">ΦΟΡΕΑΣ&nbsp </font> '; 
 	//echo '</B> ';
 	echo  'Συμβάσεις: ';
-			$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrevHKB']) + fromTextToNumber($uniqueResults[$i]['contractAmountCurHKB'])  ;
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+			$sumContracts=  $this->fromTextToNumber($uniqueResults[$i]['contractAmountPrevHKB']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCurHKB'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoHKB']),0).'</B>) ';
 		echo  'Πληρωμές: ';
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevHKB']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCurHKB'])  ;
-		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
+			$sumPayments=  $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrevHKB']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurHKB'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoHKB']),0).'</B>) ';
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateHKB'].']<br>';	
 	}
@@ -1773,13 +1773,13 @@ else if (strpos($link,'diaugeia/dia') !== false)   { //υβριδικος Δια
 	//echo ' <font color="#006621" size="1">ΑΝΑΔΟΧΟΣ&nbsp </font> '; 
 	//echo '</B> ';
 	//echo  '<B>ΚΗΜΔΗΣ<sup><font size="1">ΑΝΑΔΟΧΟΣ</font></sup> :  </B>'; 
-	$sumContracts=fromTextToNumber($uniqueResults[$i]['contractAmountPrevHKS']) + fromTextToNumber($uniqueResults[$i]['contractAmountCurHKS'])  ;	
+	$sumContracts=  $this->fromTextToNumber($uniqueResults[$i]['contractAmountPrevHKS']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCurHKS'])  ;	
 	echo  'Συμβάσεις: ';
-		echo '<B>'.fromNumberToText($sumContracts,'€').'</B>';
+		echo '<B>'.  $this->fromNumberToText($sumContracts,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNoHKS']),0).'</B>) ';
 		echo  'Πληρωμές: ';
-			$sumPayments=fromTextToNumber($uniqueResults[$i]['paymentAmountPrevHKS']) + fromTextToNumber($uniqueResults[$i]['paymentAmountCurHKS'])  ;
-		echo '<B>'.fromNumberToText($sumPayments,'€').'</B>';
+			$sumPayments=  $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrevHKS']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCurHKS'])  ;
+		echo '<B>'.  $this->fromNumberToText($sumPayments,'€').'</B>';
 		echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNoHKS']),0).'</B>) ';
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateHKS'].']<br>';
 	}
@@ -1831,11 +1831,11 @@ else if (strpos($link,'diaugeiakhmdhs') !== false) { //και Διαυγεια �
 		echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
 		//echo '</B>';
 		echo  'Οριστικοποίηση Πληρωμών: ';
-			$sumSpend=fromTextToNumber($uniqueResults[$i]['spend0_2']) + fromTextToNumber($uniqueResults[$i]['spend1_2']) + fromTextToNumber($uniqueResults[$i]['spend2_2'])  ;
-		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+			$sumSpend=  $this->fromTextToNumber($uniqueResults[$i]['spend0_2']) + $this->fromTextToNumber($uniqueResults[$i]['spend1_2']) + $this->fromTextToNumber($uniqueResults[$i]['spend2_2'])  ;
+		echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0_2']+$uniqueResults[$i]['spendCnt1_2']+$uniqueResults[$i]['spendCnt2_2']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
-		$sumAward=fromTextToNumber($uniqueResults[$i]['award0_2']) + fromTextToNumber($uniqueResults[$i]['award1_2']) + fromTextToNumber($uniqueResults[$i]['award2_2'])  ;
+		$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0_2']) + $this->fromTextToNumber($uniqueResults[$i]['award1_2']) + $this->fromTextToNumber($uniqueResults[$i]['award2_2'])  ;
 		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0_2']+$uniqueResults[$i]['awardCnt1_2']+$uniqueResults[$i]['awardCnt2_2']),0).'</B>) '; 	
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate_2'].']<br>';
@@ -1967,7 +1967,7 @@ else if (strpos($link,'/newyorkstate/') !== false) { //Νέα Υόρκη-πόλ�
 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
 	echo "<a href='".$nameLink."'target='_blank' >$name</a> </br>";
     echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
-	echo hide_not_avail($uniqueResults[$i]['address']);
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
 	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
 	echo ' ';
@@ -2035,7 +2035,7 @@ else if ((strpos($link,'product') !== false) && (strpos($link,'kath') !== false)
 	//$psName=mb_strtoupper($psName, "UTF-8");
 	$psName=mb_convert_case($psName, MB_CASE_UPPER, "UTF-8");
 	$psName=str_replace("","",$psName); //function for accent
-	$psName=Unaccent($psName);
+	$psName=  $this->Unaccent($psName);
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$psName</a> </br>";	
 	//echo '<B>';
 	//echo "<a href='".$nameLink."'target='_blank' >Στην ΚΕΝΤΡΙΚΗ ΑΓΟΡΑ ΘΕΣ/ΝΙΚΗΣ</a> </br>";
@@ -2083,7 +2083,7 @@ else if ((strpos($link,'shop') !== false) && (strpos($link,'eprices')) !== false
 	//echo '<B>'.$psName.'</B><br>';
 	$psName=mb_convert_case($psName, MB_CASE_UPPER, "UTF-8");
 	$psName=str_replace("","",$psName); //function for accent
-	$psName=Unaccent($psName);
+	$psName=  $this->Unaccent($psName);
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$psName</a> </br>";	
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΠΑΡΑΤΗΡΗΤΗΡΙΟ ΤΙΜΩΝ-Σημείο Πώλησης</font></br> '; 
 	//echo '<B>';
@@ -2132,11 +2132,11 @@ else if (strpos($link,'cpv') !== false)   {
 	//echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
 	$name=mb_convert_case($name, MB_CASE_UPPER, "UTF-8");
 	$name=str_replace("","",$name); //function for accent
-	$name=Unaccent($name);
+	$name=  $this->Unaccent($name);
 	//$name=iconv("utf-8","ascii//TRANSLIT",$name);
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
 	echo '<I>';
-	echo hide_not_avail($uniqueResults[$i]['vat']."</br>");	
+	echo $this->hide_not_avail($uniqueResults[$i]['vat']."</br>");	
 	echo '</I>';
 	//echo  '<B>'.(getSource($link,'d')).'<sup><font size="1">'.$property.'</font></sup> :  </B>'; 
 	//echo "<a href='".$nameLink."'target='_blank'  > <B>Στη ΔΙΑΥΓΕΙΑ</B></a> </br>";
@@ -2184,7 +2184,7 @@ if  	((strpos($link,'product') !== false) && (strpos($link,'fuel') !== false)) {
 	//$name=mb_strtoupper($name, "UTF-8");
 	$name=mb_convert_case($name, MB_CASE_UPPER, "UTF-8");
 	$name=str_replace("","",$name); //function for accent
-	$name=Unaccent($name);
+	$name=  $this->Unaccent($name);
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
 	//echo "<a href='".$nameLink."'target='_blank' >Στο ΠΑΡΑΤΗΡΗΤΗΡΙΟ ΤΙΜΩΝ</a> </br>";
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.75em">ΠΑΡΑΤΗΡΗΤΗΡΙΟ ΤΙΜΩΝ ΥΓΡΩΝ ΚΑΥΣΙΜΩΝ-Προϊόν</font></br> '; 
