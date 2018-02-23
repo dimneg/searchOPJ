@@ -1501,7 +1501,7 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		//echo '</B>';
 		echo  'Οριστικοποίηση Πληρωμών: ';               
 			$sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
-		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+		echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDB']+$uniqueResults[$i]['spendCnt1EDB']+$uniqueResults[$i]['spendCnt2EDB']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
 			$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
@@ -1517,11 +1517,11 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		//echo ' <font color="#FFA500" size="1">Ανάδοχος</font> '; 
 		echo  'Οριστικοποίηση Πληρωμών: ';               
 			$sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDS'])  ;
-		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+		echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDS']+$uniqueResults[$i]['spendCnt1EDS']+$uniqueResults[$i]['spendCnt2EDS']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
 			$sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDS']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDS'])  ;
-		echo  '<B> '.fromNumberToText($sumAward,'€').'</B>';
+		echo  '<B> '.  $this->fromNumberToText($sumAward,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0EDS']+$uniqueResults[$i]['awardCnt1EDS']+$uniqueResults[$i]['awardCnt2EDS']),0).'</B>) '; 
 		echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdateEDS'].']</br>';
 	    }
