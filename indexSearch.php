@@ -84,7 +84,7 @@ class indexSearch {
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);
-        echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
+        #echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
@@ -98,15 +98,9 @@ class indexSearch {
         curl_close($ch);
         global $prefix ; 
         global $Results;
-        global $Lang;
-
-        //echo $Db; //ok
-
-        //echo $prefix; // ok
-
-
-
-        $json=json_decode($response,true);
+        global $Lang;   
+        
+        $json = json_decode($response,true);
         global $Actual_link; 
         global $Lang; 
         $Actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -120,14 +114,14 @@ class indexSearch {
         else $Lang='';
 
         if (strpos($Actual_link,'83.212.86.162') !== false){
-        $Domain="http://83.212.86.162/";
+            $Domain = "http://83.212.86.162/";
         }
         else
         if (strpos($Actual_link,'83.212.86.164:81') !== false){
-        $Domain="http://83.212.86.164:81/";
+            $Domain = "http://83.212.86.164:81/";
         }
         else
-        $Domain="http://linkedeconomy.org/"; 
+        $Domain = "http://linkedeconomy.org/"; 
 
         if(isset ($json['rows'])) 
         foreach($json['rows'] as $r)
@@ -237,7 +231,7 @@ class indexSearch {
                  /* 'smallimage' => (isset($product_option_value_description_query->row['smallimage'])) ?
                 $product_option_value_description_query->row['smallimage'] : null, */
 
-                 'vat' => $r['fields']['term'][0],
+                  'vat' => $r['fields']['term'][0],
                   'link' => $prefix.$r['id'],
                   'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,
                   'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
@@ -248,7 +242,7 @@ class indexSearch {
                   'id' => $r['id'],
                   'lastUpdate'=> $r['fields']['lastUpdate'],
                //ΔΙΑΥΓΕΙΑ
-                   'award0'=>(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null ,
+                  'award0'=>(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null ,
                   'award1'=> (isset($r['fields']['awardAmount1']) ) ? $r['fields']['awardAmount1'] : null ,
                   'award2'=> (isset($r['fields']['awardAmount2']) ) ? $r['fields']['awardAmount2'] : null ,
                   'awardCnt0'=> (isset($r['fields']['awardCounter0']) ) ? $r['fields']['awardCounter0'] : null ,
