@@ -685,7 +685,10 @@ $uniqueResults = $this->unique_multidim_array($Results,'link');
 ////////////////////////////////////////
 //////////////////////////////////////////
 foreach ($uniqueResults as $key => $row) {
-  $id[$key]  = $row['id']; 	  
+   # if (isset($row['id'])){
+         $id[$key]  = $row['id']; 
+    #}
+ 	  
 }
 //print_r($id);
 array_multisort($id, SORT_ASC, $uniqueResults );
@@ -2330,7 +2333,8 @@ else { //κημδης και τα αλλα 023199666
 
         foreach($array as $val){	
 
-            if 	(!in_array($val[$key],$key_array))   { 
+            #if 	(!in_array($val[$key],$key_array))   { 
+            if 	(isset($val[$key]) && !in_array($val[$key],$key_array))   { 
                 $key_array[$i] = $val[$key];
                 $temp_array[$i] = $val;
                 $i++;

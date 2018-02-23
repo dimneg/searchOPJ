@@ -204,47 +204,55 @@ return $translated;
     return $word;
     }
     
+
    function prepareExactKeyword($word){
-       $word = ltrim($word);
-       $words = explode(' ', $word);
-       $wordArray = [];
-       if (count($words) > 1) {
-           $t1 = ' ';
-           $t2 = ' ';
-           $t12 = ' ';
-           $word ='';
-           $i = 0;
-           $len = count($words);
-           foreach($words as $w) {	
-               if ($i == 0) {
-                   if (mb_strlen($w, 'utf-8') > 3) { 
-                       $t1 = $w;
-                   }	
-                   $w='"'.$w.'+';	
-               } 
-               else {
-                    if (($i > 0) && ($i < ($len-1))){
-                        if ($i == 1) {
-                             if	(mb_strlen($w, 'utf-8') >3 ){ 
-                                 $t2 = $w;	
-                             }
-                        }
-                        $w=$w.'+';	
-                    }
-                    else{
-                         if ($i == ($len - 1) ){
-                              if ($i == 1) {
-                                   $t2 = $w;	
-                              }
-                              $w = $w.'"';
-                         }
-                         $word .= $w; 	
-                         $i++;	
-                    }
-                    $t12= '"'.$t1."+".$t2.'"';
+        $word = ltrim($word);
+        $words = explode(' ', $word);
+        $wordArray = array();
+        if (count($words) >1) {
+            $t1=' ';
+            $t2=' ';
+            $t12=' ';
+            $word ='';
+            $i = 0;
+            $len=count($words);
+            foreach($words as $w) {		
+               if ($i == 0)  {	
+                   if	(mb_strlen($w, 'utf-8') >3) { 			   
+			$t1 = $w;
+		    }
+			$w='"'.$w.'+';			 
                }
-               return [$t1,$t2,$t12,$word];
-           }
-       }
-   } 
+	       else
+			   if (($i > 0) && ($i < ($len-1)))
+               { 	
+			       
+                   if ($i == 1) 	
+                   {
+				      if	(mb_strlen($w, 'utf-8') >3 ){ 
+				      $t2 = $w;	
+                      }					 
+				   }	
+                   $w=$w.'+';				   
+			  
+			   }		
+			   else
+               if ($i == ($len-1) )	
+			   {
+			       
+			       if ($i == 1) 
+				   {
+				    $t2 = $w;					
+				   }	
+                  $w=$w.'"';				   
+			       
+				}      			  			  
+			 	                  	  
+			  $word .=$w; 	
+	          $i++;			  
+		      }   
+$t12= '"'.$t1."+".$t2.'"';
+}
+return array($t1,$t2,$t12,$word);
+}
 }
