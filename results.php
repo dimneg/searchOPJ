@@ -1443,7 +1443,7 @@ else if ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== fal
 		//echo ' <font color="#FFA500" size="1">Ανάδοχος</font> '; 
 		echo  'Οριστικοποίηση Πληρωμών: ';               
 			$sumSpend= $this->fromTextToNumber($uniqueResults[$i]['spend0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['spend2EDB'])  ;
-		echo '<B> '.fromNumberToText($sumSpend,'€').'</B>';
+		echo '<B> '.  $this->fromNumberToText($sumSpend,'€').'</B>';
 		echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0EDB']+$uniqueResults[$i]['spendCnt1EDB']+$uniqueResults[$i]['spendCnt2EDB']),0).'</B>) '; 
 		echo  'Κατακυρώσεις: ';
 			$sumAward=  $this->fromTextToNumber($uniqueResults[$i]['award0EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award1EDB']) + $this->fromTextToNumber($uniqueResults[$i]['award2EDB'])  ;
