@@ -233,9 +233,9 @@
       <title>Search</title>
       
            
-               <a href="index.php?lang=en"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
-               <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
-          
+              <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
+               <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> -->
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
 </head>
 <body>
 
