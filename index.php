@@ -392,7 +392,7 @@ if($_POST['formSubmit'] == "index.php") {
 
     }
     $showResults = new results();
-    $showResults ->showResults($langBlgl);
+    $showResults ->showResults();
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;

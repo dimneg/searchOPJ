@@ -18,7 +18,7 @@ class results {
     #}
     
 
-    function showResults($langBlgl){
+    function showResults(){
         #include_once("languages/lang.php");
         global $Actual_link;
         global $Lang;
