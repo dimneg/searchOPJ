@@ -233,7 +233,7 @@
       <title>Search</title>
        <div>
            <ul>
-           <li  <a href="index.php?lang=en" <img src="languages/images/en.png" alt="english" align="right"> </a> </li>
+               <li  <a href="index.php?lang=en"> <img src="languages/images/en.png" alt="english" align="right"> </a> </li>
            <li <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> </li>>
            </ul>>
        </div>
