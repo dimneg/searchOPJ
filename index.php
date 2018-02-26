@@ -246,14 +246,15 @@
  <a class="searchTabs" href="searchEspa?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"    >Επιδοτήσεις</a>
  Προϋπολογισμοί
  <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Τιμές</a> -->
-  <!--style="color:#1C94C4" -->
+  <!--style="color:#1C94C4"
 <!--<form method="post" action="searchKhmdhs.php">
     <input type="hidden" name="varKeyword=" value="varKeyword">
     <input type="submit" style="display: none;">
 </form> -->
  <br>
 <hr align="center" width="80%">
-<li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>
+<!--<li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>  -->
+   <li class="ex1" ><?php include_once("languages/lang.php"); echo $langBlgl['results']; ?></li> 
 </div>
 </form>
 <?php
@@ -262,6 +263,10 @@ include 'indexSearch.php';
 include 'keyWord.php';
 include 'results.php';
 include 'config.php';
+#include_once("languages/lang.php");
+#require_once "languages/lang.php";
+#$languages = new PHPClass($langBlgl);
+#$languages = new PHPClass($langBlgl);
 
 $time_pre = microtime(true);
 $prefix = '' ;
@@ -358,7 +363,7 @@ if($_POST['formSubmit'] == "index.php") {
                 }
             }
             else {
-                if (count($words) >1) {
+                if (count($words) > 1) {
                     $termsArray = $newKeyWord->prepareExactKeyword($varKeyword);
                     $term1 = $termsArray[0];  
                     $term2 = $termsArray[1];
@@ -387,7 +392,7 @@ if($_POST['formSubmit'] == "index.php") {
 
     }
     $showResults = new results();
-    $showResults ->showResults();
+    $showResults ->showResults($langBlgl);
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;

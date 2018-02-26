@@ -3,6 +3,7 @@
 global $langBlgl;
  
 $langBlgl['results'] = 'Αποτελέσματα Αναζήτησης';
-$langBlgl['Public Procurement'] = 'Δημόσιες Προμήθειες';
-$langBlgl['aboutus'] = 'Chi Siamo';
-$langBlgl['contacts'] = 'Contatti';
+$langBlgl['public procurement'] = 'Δημόσιες Προμήθειες';
+$langBlgl['budgets'] = 'Προϋπολογισμοί';
+$langBlgl['prices'] = 'Τιμές';
+$langBlgl['seller'] = 'ΑΝΑΔΟΧΟΣ';

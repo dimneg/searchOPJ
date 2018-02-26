@@ -3,7 +3,8 @@
 global $langBlgl;
  
 $langBlgl['results'] = 'Search Results';
-$langBlgl['Public Procurement'] = 'Public Procurement';
-$langBlgl['aboutus'] = 'About Us';
-$langBlgl['contacts'] = 'Contacts';
+$langBlgl['public procurement'] = 'Public Procurement';
+$langBlgl['budgets'] = 'Βudgets';
+$langBlgl['prices'] = 'prices';
+$langBlgl['seller'] = 'SELLER';
 

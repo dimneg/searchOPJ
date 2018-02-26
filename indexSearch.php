@@ -16,7 +16,7 @@ class indexSearch {
    function getAll($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass){
        global $Limit;
        $this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
-       $this-> prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
+       $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
        $this-> prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);       		  
@@ -26,7 +26,9 @@ class indexSearch {
        
        $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);   
-								
+	
+       $this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_eprices_shops","Shop","by_eprices_ShopName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_eprices_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_kath_products","Product","by_eprices_ProductName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass); 
@@ -52,6 +54,8 @@ class indexSearch {
        #prepareResults($DbPath,"elod_fuel_prices_shops","Shop","by_fuelprices_ShopName",$LuceneOperand,25,"score",$varKeyword);			  
 			  
        #$this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+        $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
 		  
 		
     }
@@ -72,8 +76,8 @@ class indexSearch {
 			  
        #$this->prepareResults($DbPath,"elod_cpv","CPV","by_cpvName",$LuceneOperand,50,"score",$varKeyword,$couchUser,$couchPass);
 		  
-       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass); 
-       $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass);
+       #$this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass); 
+       #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass);
 	
     } 
     
@@ -192,10 +196,16 @@ class indexSearch {
                             break;
             case "elod_fuel_prices_shops":
                     $prefix=$Domain.$Lang."page/" ;
-                            break;			
+                            break;
+            case "elod_main_orgv4_all":
+                $prefix=$Domain.$Lang."page/" ;
+                break;
+            case "elod_main_orgv4_fr":
+                $prefix=$Domain.$Lang."page/" ;
+                break;
             }
             global $Boost;
-            $Boost=10;
+            $Boost = 10;
             switch ($Wc) { //boost step 1
             case "";
                     {	
@@ -240,7 +250,8 @@ class indexSearch {
                       'countryName'=>(isset($r['fields']['countryName']) ) ? $r['fields']['countryName'] : null ,
                       'score' =>  $r['score'],
                       'id' => $r['id'],
-                      'lastUpdate'=> $r['fields']['lastUpdate'],
+                      #'lastUpdate'=> $r['fields']['lastUpdate'],
+                      'lastUpdate'=> (isset($r['fields']['lastUpdate']) ) ? $r['fields']['lastUpdate'] : null ,
                    //ΔΙΑΥΓΕΙΑ
                       'award0'=>(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null ,
                       'award1'=> (isset($r['fields']['awardAmount1']) ) ? $r['fields']['awardAmount1'] : null ,
@@ -318,30 +329,30 @@ class indexSearch {
                        'paymentAmountPrevEKS'=>' ',
                        'paymentAmountCurEKS'=>' ',
                        'contractItemsNoEKS'=>' ',
-                                    'paymentItemsNoEKS'=>' ',
-                                    'lastUpdateEKS'=>' ',	
+                       'paymentItemsNoEKS'=>' ',
+                       'lastUpdateEKS'=>' ',	
 
-                                    'linkEKB'=>' ',
-                                    'contractAmountPrevEKB'=>' ',
-                                    'contractAmountCurEKB'=>' ',
-                                'paymentAmountPrevEKB'=>' ',
-                                'paymentAmountCurEKB'=>' ',
-                                    'contractItemsNoEKB'=>' ',
-                                    'paymentItemsNoEKB'=>' ',
-                                    'lastUpdateEKB'=>' ',	
+                       'linkEKB'=>' ',
+                       'contractAmountPrevEKB'=>' ',
+                       'contractAmountCurEKB'=>' ',
+                       'paymentAmountPrevEKB'=>' ',
+                       'paymentAmountCurEKB'=>' ',
+                       'contractItemsNoEKB'=>' ',
+                       'paymentItemsNoEKB'=>' ',
+                       'lastUpdateEKB'=>' ',	
 
                             //espa-diaugeia	
-                               'linkEDS'=>' ',		  		
-                               'award0EDS'=>' ',
-                           'award1EDS'=> ' ',
-                          'award2EDS'=>' ' ,
-                           'awardCnt0EDS'=>' ',
-                           'awardCnt1EDS'=>' ' ,
-                           'awardCnt2EDS'=>' ' ,	
-                           'spend0EDS'=>' ' ,
-                               'spend1EDS'=>' ' ,
-                           'spend2EDS'=>' ' ,
-                           'spendCnt0EDS'=>' '  ,
+                       'linkEDS'=>' ',		  		
+                       'award0EDS'=>' ',
+                       'award1EDS'=> ' ',
+                       'award2EDS'=>' ' ,
+                       'awardCnt0EDS'=>' ',
+                       'awardCnt1EDS'=>' ' ,
+                       'awardCnt2EDS'=>' ' ,	
+                       'spend0EDS'=>' ' ,
+                       'spend1EDS'=>' ' ,
+                       'spend2EDS'=>' ' ,
+                       'spendCnt0EDS'=>' '  ,
                            'spendCnt1EDS'=>' ',
                            'spendCnt2EDS'=>' ' ,
                            'lastUpdateEDS'=>' ',
