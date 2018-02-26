@@ -233,6 +233,8 @@
       <title>Search</title>
 </head>
 <body>
+    <a href="index.php?lang=en">
+    <a href="index.php?lang=gr">
 <div class="row-fluid margin-bottom" align="center" >
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
@@ -258,6 +260,7 @@
 </div>
 </form>
 <?php
+
 
 include 'indexSearch.php'; 
 include 'keyWord.php';
