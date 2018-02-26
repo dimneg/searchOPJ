@@ -710,32 +710,32 @@ $psName=$uniqueResults[$i]['psName'];
 
 
 if    ((strpos($link,'seller') !== false) && (strpos($link,'espa') == false)) {
-#$property ='ΑΝΑΔΟΧΟΣ'; 
+    $property ='ΑΝΑΔΟΧΟΣ'; 
   #$property = $this->langBlgl['seller'];
-    $property = $langBlgl['seller'];
+   # $property = $langBlgl['seller'];
 }
 else 
 if    ((strpos($link,'buyer') !== false)&& (strpos($link,'espa') == false)){
-$property = 'ΦΟΡΕΑΣ';
+    $property = 'ΦΟΡΕΑΣ';
 }
 else 
 if    (strpos($link,'hybrid') !== false){
-$property = 'ΥΒΡΙΔΙΚΟΣ';
+    $property = 'ΥΒΡΙΔΙΚΟΣ';
 }
 else 
 if    ((strpos($link,'espa') !== false) ||(strpos($link,'beneficiary') !== false)){
-$property='ΔΙΚΑΙΟΥΧΟΣ';
+    $property='ΔΙΚΑΙΟΥΧΟΣ';
 }
 else 
 if (strpos($link,'cpv') !== false) {
 	if ($uniqueResults[$i]['cpvLabel']=='sub')
-    $property='Υποκατηγορία';
+            $property = 'Υποκατηγορία';
 	else
-	$property='Κύρια Κατηγορία';
+            $property = 'Κύρια Κατηγορία';
 }
 
 else 
-$property=' ';
+    $property=' ';
 
 echo "<tr>";
 
@@ -1518,8 +1518,7 @@ else if (strpos($link,'cpv') !== false)   {
 	echo ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
 	echo "</td>";
 } 
-else
-if  	((strpos($link,'shop') !== false) && (strpos($link,'fuel')) !== false){	
+else if  ((strpos($link,'shop') !== false) && (strpos($link,'fuel')) !== false){	
 	echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";	
 	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";
     echo '<I>';
@@ -1538,8 +1537,7 @@ if  	((strpos($link,'shop') !== false) && (strpos($link,'fuel')) !== false){
 	echo  ']';
 	echo "</td>";
 }
-else
-if  	((strpos($link,'product') !== false) && (strpos($link,'fuel') !== false)) {
+else if  ((strpos($link,'product') !== false) && (strpos($link,'fuel') !== false)) {
 	echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
 	//echo '<B>'.$name.'</B><br>';
 	//$name=mb_strtoupper($name, "UTF-8");
@@ -1598,6 +1596,32 @@ if  	((strpos($link,'product') !== false) && (strpos($link,'fuel') !== false)) {
 	echo "</td>";
     
 	
+	echo "</td>";
+}
+else if (strpos($link,'businessregistry') !== false) { //ΓΕΜΗ
+echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
+	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
+	echo '<I>';
+	echo $this->hide_not_avail($uniqueResults[$i]['address']);
+	echo ' ';
+	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
+	echo ' ';
+	echo $this->hide_not_avail($uniqueResults[$i]['city']); 
+	echo ' ';
+	echo $this->hide_not_avail($uniqueResults[$i]['locality']); 
+	echo ' ';
+	echo $this->hide_not_avail_space($uniqueResults[$i]['countryName']); 
+	echo ' ';
+	echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
+	echo '</I>';
+	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">Γ.Ε.Μ.Η.</font></br> '; 
+	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
+	echo  'Συμβάσεις: ';
+	$sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
+	echo '<B>'.$this->fromNumberToText($sumContracts,'$').'</B>';
+	$counterContracts=$uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
+	echo  ' (<B>'.round($counterContracts,0).'</B>) ';		
+	echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']';	
 	echo "</td>";
 }
 else { // κημδης, γεμη
