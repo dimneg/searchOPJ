@@ -262,7 +262,7 @@
 <hr align="center" width="80%">
 <!--<li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>  -->
   <!-- <li class="ex1" ><?php include_once("languages/lang.php"); echo $langBlgl['results']; ?></li> -->
-<li class="ex1" >Αποτελέσματα αναζήτησης</li>
+<li class="ex1" >Αποτελέσματα Αναζήτησης</li>
 </div>
 </form>
 <?php
