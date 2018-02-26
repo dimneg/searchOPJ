@@ -231,10 +231,11 @@
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Search</title>
+       <a href="index.php?lang=en" <img src="languages/images/en.png" alt="english" align="right"> </a>
+       <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a>
 </head>
 <body>
- <a href="index.php?lang=en" <img src="languages/images/en.png" alt="english" > </a>
- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" > </a>
+
 <div class="row-fluid margin-bottom" align="center" >
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
