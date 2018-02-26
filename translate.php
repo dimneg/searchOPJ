@@ -1,6 +1,6 @@
 <?php
-$source='index.php';
-$destination='index_en.php';
+$source='results.php';
+$destination='results_en.php';
 
 $path_to_file = 'C:\Users\dimitris negkas\Documents\repos\searchOPJ/'.$source;
 #$file_contents = file_get_contents($path_to_file);

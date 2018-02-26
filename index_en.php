@@ -234,17 +234,17 @@
       
            
                <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
-               <!-- <a href="index_en.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> -->
-               <a href="index_en.php"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
+               <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> -->
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
           
 </head>
 <body>
 
 <div class="row-fluid margin-bottom" align="center" >
-<form action="index_en.php" method="post" accept-charset="UTF-8"> 
+<form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >				
+<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >				
 </p>
 <div align="center" >
  <!--<li  class="ex1" id="dim" > Public Procurement </li><li  class="ex1">Subsidies</li> <li  class="ex1">Βudgets</li> <li class="ex1"> Prices</li>  
@@ -268,7 +268,7 @@
 <?php
 
 
-include 'indexSearch.php'; 
+include 'indexSearch_en.php'; 
 include 'keyWord.php';
 include 'results_en.php';
 include 'config.php';
@@ -301,7 +301,7 @@ $term12 = '';
 
 $newKeyWord = new keyWord();
 
-if($_POST['formSubmit'] == "index_en.php") {   
+if($_POST['formSubmit'] == "index.php") {   
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
         $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
