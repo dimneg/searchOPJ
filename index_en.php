@@ -233,9 +233,8 @@
       <title>Search</title>
       
            
-               <a href="index_en.php?lang=en"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
-               <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> -->
-               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
+               <a href="index.php?lang=en"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
+               <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
           
 </head>
 <body>
@@ -243,16 +242,16 @@
 <div class="row-fluid margin-bottom" align="center" >
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
-<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
+<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >				
 </p>
 <div align="center" >
- <!--<li  class="ex1" id="dim" > Δημόσιες Προμήθειες </li><li  class="ex1">Επιδοτήσεις</li> <li  class="ex1">Προϋπολογισμοί</li> <li class="ex1"> Τιμές</li>  
-<a class="searchTabs" href="searchProcurement?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Δημόσιες Προμήθειες</a>
-<a class="searchTabs" href="searchCPV?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Κατηγορίες Δαπανών</a>
- <a class="searchTabs" href="searchEspa?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"    >Επιδοτήσεις</a>
- Προϋπολογισμοί
- <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Τιμές</a> -->
+ <!--<li  class="ex1" id="dim" > Public Procurement </li><li  class="ex1">Subsidies</li> <li  class="ex1">Βudgets</li> <li class="ex1"> Prices</li>  
+<a class="searchTabs" href="searchProcurement?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Public Procurement</a>
+<a class="searchTabs" href="searchCPV?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Categories Δαπανών</a>
+ <a class="searchTabs" href="searchEspa?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"    >Subsidies</a>
+ Βudgets
+ <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Prices</a> -->
   <!--style="color:#1C94C4"
 <!--<form method="post" action="searchKhmdhs.php">
     <input type="hidden" name="varKeyword=" value="varKeyword">
@@ -260,9 +259,8 @@
 </form> -->
  <br>
 <hr align="center" width="80%">
-<!--<li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>  -->
-  <!-- <li class="ex1" ><?php include_once("languages/lang.php"); echo $langBlgl['results']; ?></li> -->
-<li class="ex1" >Αποτελέσματα αναζήτησης</li>
+<!--<li class="ex1" >Search</li> <li class="ex1">Results</li>  -->
+   <li class="ex1" ><?php include_once("languages/lang.php"); echo $langBlgl['results']; ?></li> 
 </div>
 </form>
 <?php
@@ -406,7 +404,7 @@ if($_POST['formSubmit'] == "index.php") {
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
     echo  "<div ALIGN='CENTER'>";
-    echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
+    echo '(In '.number_format($exec_time,2).' seconds)' ;
     echo "</div>";
 }
 

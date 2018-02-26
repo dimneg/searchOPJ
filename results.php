@@ -66,15 +66,13 @@ $c = 0;
 foreach ($uniqueResults as $key => &$row) { //diaygeia + khmdhs (2 records) become  diaygeiakhmdhs (1 record) for buyer and one for seller if exist
 //echo $c.'for<br>';
 if   (strpos($row['link'],'diaugeia/organization-hybrid') !== false)
-$row['link']=str_replace('diaugeia/organization-hybrid','zdiaugeia/diaugeia-hybrids',$row['link']);
+    $row['link']=str_replace('diaugeia/organization-hybrid','zdiaugeia/diaugeia-hybrids',$row['link']);
 if   (strpos($row['link'],'organization-beneficiary') !== false)
-$row['link']=str_replace('organization-beneficiary','zorganization-beneficiary',$row['link']);
+    $row['link']=str_replace('organization-beneficiary','zorganization-beneficiary',$row['link']);
 //echo 'r='.$row['link'].'<br>';
 //echo 'l2='.$last_item_2['link'].'<br>';
 //echo substr($row['link'],strpos($row['link'], "?=") ); 
-		if ($last_item['id'] === $row['id'])   {
-		
-		
+if ($last_item['id'] === $row['id'])   {   	
 		
 					
 		$double[]=$last_item; //copy doubles to other table
@@ -357,9 +355,8 @@ foreach ($uniqueResults as $key => &$row){
 
 if    ((strpos($row['link'],'espa') !== false) ||(strpos($row['link'],'beneficiary') !== false)){
      
-	if	((substr($row['id'],strpos($row['id'], "?=") )) == (substr($last_item['id'],strpos($last_item['id'], "?=") )))
-	{
-	$row['relative1']=$last_item['score'];
+	if	((substr($row['id'],strpos($row['id'], "?=") )) == (substr($last_item['id'],strpos($last_item['id'], "?=") )))	{
+            $row['relative1']=$last_item['score'];
 	
 	// echo $row['score'].'<br>'; 
     // $row['score'] *=3;
@@ -372,38 +369,38 @@ if    ((strpos($row['link'],'espa') !== false) ||(strpos($row['link'],'beneficia
 	
 	
 	   if (strpos($last_item['link'],'seller')!== false){
-	   $row['linkEDS']=$last_item['link'];	
-	   $row['award0EDS']=$last_item['award0']; 
-	   $row['award1EDS']=$last_item['award1'];
-	   $row['award2EDS']=$last_item['award2'];
-	   $row['awardCnt0EDS']=$last_item['awardCnt0'];
-	   $row['awardCnt1EDS']=$last_item['awardCnt1'];
-	   $row['awardCnt2EDS']=$last_item['awardCnt2'];
-       $row['spend0EDS']=$last_item['spend0'];	
-	   $row['spend1EDS']=$last_item['spend1'];
-       $row['spend2EDS']=$last_item['spend2']; 	   
-	   $row['spendCnt0EDS']=$last_item['spendCnt0']; 
-	   $row['spendCnt1EDS']=$last_item['spendCnt1'];
-       $row['spendCnt2EDS']=$last_item['spendCnt2'];
-       $row['lastUpdateEDS']=$last_item['lastUpdate'];        	  
+                $row['linkEDS']=$last_item['link'];	
+                $row['award0EDS']=$last_item['award0']; 
+                $row['award1EDS']=$last_item['award1'];
+                $row['award2EDS']=$last_item['award2'];
+                $row['awardCnt0EDS']=$last_item['awardCnt0'];
+                $row['awardCnt1EDS']=$last_item['awardCnt1'];
+                $row['awardCnt2EDS']=$last_item['awardCnt2'];
+                $row['spend0EDS']=$last_item['spend0'];	
+                $row['spend1EDS']=$last_item['spend1'];
+                $row['spend2EDS']=$last_item['spend2']; 	   
+                $row['spendCnt0EDS']=$last_item['spendCnt0']; 
+                $row['spendCnt1EDS']=$last_item['spendCnt1'];
+                $row['spendCnt2EDS']=$last_item['spendCnt2'];
+                $row['lastUpdateEDS']=$last_item['lastUpdate'];        	  
 	       
 	      
 	   }
 	   else{
-	   $row['linkEDB']=$last_item['link'];	
-	   $row['award0EDB']=$last_item['award0']; 
-	   $row['award1EDB']=$last_item['award1'];
-	   $row['award2EDB']=$last_item['award2'];
-	   $row['awardCnt0EDB']=$last_item['awardCnt0'];
-	   $row['awardCnt1EDB']=$last_item['awardCnt1'];
-	   $row['awardCnt2EDB']=$last_item['awardCnt2'];
-       $row['spend0EDB']=$last_item['spend0'];	
-	   $row['spend1EDB']=$last_item['spend1'];
-       $row['spend2EDB']=$last_item['spend2']; 	   
-	   $row['spendCnt0EDB']=$last_item['spendCnt0']; 
-	   $row['spendCnt1EDB']=$last_item['spendCnt1'];
-       $row['spendCnt2EDB']=$last_item['spendCnt2'];
-	   $row['lastUpdateEDB']=$last_item['lastUpdate'];	
+                $row['linkEDB']=$last_item['link'];	
+                $row['award0EDB']=$last_item['award0']; 
+                $row['award1EDB']=$last_item['award1'];
+                $row['award2EDB']=$last_item['award2'];
+                $row['awardCnt0EDB']=$last_item['awardCnt0'];
+                $row['awardCnt1EDB']=$last_item['awardCnt1'];
+                $row['awardCnt2EDB']=$last_item['awardCnt2'];
+                $row['spend0EDB']=$last_item['spend0'];	
+                $row['spend1EDB']=$last_item['spend1'];
+                $row['spend2EDB']=$last_item['spend2']; 	   
+                $row['spendCnt0EDB']=$last_item['spendCnt0']; 
+                $row['spendCnt1EDB']=$last_item['spendCnt1'];
+                $row['spendCnt2EDB']=$last_item['spendCnt2'];
+                $row['lastUpdateEDB']=$last_item['lastUpdate'];	
 	   }
 	}
     if (strpos($last_item['link'],'/khmdhs/') !== false ) {
@@ -679,33 +676,35 @@ if  ( (isset($uniqueResults[$i]['link']))  && 	(strpos($uniqueResults[$i]['link'
 
     $link=($uniqueResults[$i]['link']);
 //fix hybrid link
-    if   (strpos($link,'zdiaugeia/diaugeia-hybrids') !== false)
-$link=str_replace('zdiaugeia/','diaugeia/',$link);
+    if   (strpos($link,'zdiaugeia/diaugeia-hybrids') !== false) {
+        $link=str_replace('zdiaugeia/','diaugeia/',$link);
+    }
+    
 
 //generate espa link http://83.212.86.158:5984/elod_espa_beneficiaries/_design/all/_view/all
 if (($uniqueResults[$i]['pageKind']) =='sellerBoth')
-$link= str_replace('zorganization-beneficiary','espa-both-organization-seller',$link); //diaugeiakhmdhs+diaugeiakhmdhs+espa
+    $link= str_replace('zorganization-beneficiary','espa-both-organization-seller',$link); //diaugeiakhmdhs+diaugeiakhmdhs+espa
 else
 if (($uniqueResults[$i]['pageKind']) =='buyerBoth')
-$link= str_replace('zorganization-beneficiary','espa-both-organization-buyer',$link); //diaugeiakhmdhs+diaugeiakhmdhs+espa
+    $link= str_replace('zorganization-beneficiary','espa-both-organization-buyer',$link); //diaugeiakhmdhs+diaugeiakhmdhs+espa
 else
 if (($uniqueResults[$i]['pageKind']) =='sellerDiavgeia')
-$link= str_replace('zorganization-beneficiary','espa-diavgeia-organization-seller',$link); //diaugeia+espa
+    $link= str_replace('zorganization-beneficiary','espa-diavgeia-organization-seller',$link); //diaugeia+espa
 else
 if (($uniqueResults[$i]['pageKind']) =='buyerDiavgeia')
-$link= str_replace('zorganization-beneficiary','espa-diavgeia-organization-buyer',$link); //diaugeia+espa
+    $link= str_replace('zorganization-beneficiary','espa-diavgeia-organization-buyer',$link); //diaugeia+espa
 else
 if (($uniqueResults[$i]['pageKind']) =='sellerKhmdhs')
-$link= str_replace('zorganization-beneficiary','espa-khmdhs-organization-seller',$link); //khmdhs+espa
+    $link= str_replace('zorganization-beneficiary','espa-khmdhs-organization-seller',$link); //khmdhs+espa
 else
 if (($uniqueResults[$i]['pageKind']) =='buyerKhmdhs')
-$link= str_replace('zorganization-beneficiary','espa-khmdhs-organization-buyer',$link); //khmdhs+espa
+    $link= str_replace('zorganization-beneficiary','espa-khmdhs-organization-buyer',$link); //khmdhs+espa
 else if  ((($uniqueResults[$i]['pageKind']) =='') || (($uniqueResults[$i]['pageKind']) =='general'))
-$link= str_replace('zorganization-beneficiary','organization-beneficiary',$link);
+    $link= str_replace('zorganization-beneficiary','organization-beneficiary',$link);
 
-$nameLink=$link;
-$name=$uniqueResults[$i]['name'];
-$psName=$uniqueResults[$i]['psName'];
+$nameLink = $link;
+$name = $uniqueResults[$i]['name'];
+$psName = $uniqueResults[$i]['psName'];
 
 
 
@@ -1618,7 +1617,7 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
 	echo  'Συμβάσεις: ';
 	$sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
-	echo '<B>'.$this->fromNumberToText($sumContracts,'$').'</B>';
+	echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
 	$counterContracts=$uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
 	echo  ' (<B>'.round($counterContracts,0).'</B>) ';		
 	echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']';	

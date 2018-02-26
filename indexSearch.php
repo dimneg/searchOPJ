@@ -200,11 +200,11 @@ class indexSearch {
                     $prefix=$Domain.$Lang."page/" ;
                             break;
             case "elod_main_orgv4_all":
-                $prefix='www.businessregistry.gr' ;
-                break;
+                $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
+                            break;
             case "elod_main_orgv4_fr":
-               $prefix='www.businessregistry.gr' ;
-                break;
+               $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
+                            break;
             }
             global $Boost;
             $Boost = 10;
