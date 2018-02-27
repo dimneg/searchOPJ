@@ -1604,6 +1604,7 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
         echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";
 	echo '<I>';
         echo 'Eμφανιζονται και ως: '.$this->hide_not_avail($uniqueResults[$i]['altNames']."</br>");
+        print_r( $uniqueResults[$i]['altNames']);
 	echo ' ';
 	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
