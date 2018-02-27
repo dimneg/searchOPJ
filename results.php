@@ -1928,9 +1928,5 @@ else { // κημδης, γεμη
 }
 
 
-    function fromArrayToText($array){
-        foreach ($array as $value) {
-            $text 
-        }
-    }    
+    
 }
