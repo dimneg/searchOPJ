@@ -240,8 +240,7 @@ class indexSearch {
                  $newdata =  array (
                  // 'name' => $r['fields']['term'][1],
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,
-                     /* 'smallimage' => (isset($product_option_value_description_query->row['smallimage'])) ?
-                    $product_option_value_description_query->row['smallimage'] : null, */
+                   
 
                       'vat' => $r['fields']['term'][0],
                       'link' => $prefix.$r['id'],
@@ -440,7 +439,10 @@ class indexSearch {
                  'relative1'=>0,	
                  'relative2'=>0,
                  'relative3'=>0,	
-                 'relative4'=>0		 
+                 'relative4'=>0,
+                     
+                     'AltNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null 
+                     
                 );	
             }
 
