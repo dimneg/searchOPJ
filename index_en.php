@@ -9,7 +9,7 @@
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-        <script> //090166291 090153025
+       <script> //090166291 090153025
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
@@ -245,7 +245,7 @@
 <form action="index_en.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >				
+<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >				
 </p>
 <div align="center" >
  <!--<li  class="ex1" id="dim" > Public Procurement </li><li  class="ex1">Subsidies</li> <li  class="ex1">Βudgets</li> <li class="ex1"> Prices</li>  

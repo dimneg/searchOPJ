@@ -1,0 +1,91 @@
+"echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;","echo '(In '.number_format($exec_time,2).' seconds)' ;"
+Αποτελέσματα Αναζήτησης,Search Results
+Δημόσιες Προμήθειες,Public Procurement
+Προϋπολογισμοί,Βudgets
+Τιμές,Prices
+ΑΝΑΔΟΧΟΣ,SELLER
+ΦΟΡΕΑΣ,BUYER
+ΔΙΑΥΓΕΙΑ,DIAVGEIA
+ΚΗΜΔΗΣ,E-PROCUREMENT
+Οριστικοποίηση Πληρωμών,Finalized
+Κατακυρώσεις,Awards
+έως,until
+Έως,until
+Α.Φ.Μ.,V.A.T.
+Συμβάσεις:,Contracts:
+Πληρωμές:,Payments:
+ΑΥΣΤΡΑΛΙΑ,AUSTRALIA
+ΝΕΑ ΥΟΡΚΗ(Πόλη),NEW YORK CITY
+ΝΕΑ ΥΟΡΚΗ(Πολιτεία),NEW YORK STATE
+ΛΟΝΔΙΝΟ,LONDON CITY
+ΕΥΡΩΠΗ FTS,EUROPE FTS
+$r['fields']['term'][1],$r['fields']['term'][2]
+ΑΦΜ ή Όνομα ή Σημείο Πώλησης ή Προϊόν,VAT or Name or Shop or Product
+ΑΦΜ ή Όνομα,VAT or Name
+$r['fields']['address'],$r['fields']['addressEng']
+$r['fields']['city'],$r['fields']['cityEng']
+$Field='address';,$Field='addressEng';
+Επιδοτήσεις ΕΣΠΑ,NSRF Subsidies
+Επιδοτήσεις,Subsidies
+ΔΙΚΑΙΟΥΧΟΣ,BENEFICIARY
+$Field='municipality';,$Field='municipalityEng';
+'munipality'=> (isset($r['fields']['munipality']) ) ? $r['fields']['munipality'] : null,'munipality'=> (isset($r['fields']['munipality']) ) ? $r['fields']['munipalityEng'] : null  
+Τελευταία ενημέρωση,Last update
+Μέση 2015,Average 2015
+Μέση 2016,Average 2016
+Μέση 2017,Average 2017
+Διαφορά Τιμής 2015,Price difference 2015
+Διαφορά Τιμής 2016,Price difference 2016
+Διαφορά Τιμής 2017,Price difference 2017
+Χαμηλότερη τιμή 2015,min 2015
+Χαμηλότερη τιμή 2016,min 2016
+Χαμηλότερη τιμή 2017,min 2017
+Υψηλότερη τιμή 2015,max 2015
+Υψηλότερη τιμή 2016,max 2016
+Υψηλότερη τιμή 2017,max 2017
+ΠΑΡΑΤΗΡΗΤΗΡΙΟ ΤΙΜΩΝ-Προϊόν,PRICES OBSERVATORY-Product
+(isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null,(isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : $r['fields']['term'][1]
+(isset($r['fields']['term'][0])) ? $r['fields']['term'][0],(isset($r['fields']['term'][1])) ? $r['fields']['term'][1]
+'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement']) ) ? $r['fields']['unitOfMeasurement'] : null,'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement_eng']) ) ? $r['fields']['unitOfMeasurement_eng'] : null  
+'locMax'=>(isset($r['fields']['locMax']) ) ? $r['fields']['locMax'] : null, 'locMax'=>(isset($r['fields']['locMax_eng']) ) ? $r['fields']['locMax_eng'] : null
+'locMin'=>(isset($r['fields']['locMin']) ) ? $r['fields']['locMin'] : null,'locMin'=>(isset($r['fields']['locMin_eng']) ) ? $r['fields']['locMin_eng'] : null
+Σημείο πώλησης ή Προϊόν,Shop or Product
+Προϊόντα,Products
+Κατηγορίες,Categories
+Υψηλότερη τιμή,Max price
+Χαμηλότερη τιμή,Min price
+ΠΑΡΑΤΗΡΗΤΗΡΙΟ ΤΙΜΩΝ-Σημείο Πώλησης,PRICES OBSERVATORY-Shop
+'minProdName'=>(isset($r['fields']['minProdName']) ) ? $r['fields']['minProdName'] : null,'minProdName'=>(isset($r['fields']['minProdName_eng']) ) ? $r['fields']['minProdName_eng'] : null 
+'maxProdName'=>(isset($r['fields']['maxProdName']) ) ? $r['fields']['maxProdName'] : null,'maxProdName'=>(isset($r['fields']['maxProdName_eng']) ) ? $r['fields']['maxProdName_eng'] : null
+'unitOfMeasurementMin'=>(isset($r['fields']['unitOfMeasurementMin']) ) ? $r['fields']['unitOfMeasurementMin'] : null,'unitOfMeasurementMin'=>(isset($r['fields']['unitOfMeasurementMin_eng']) ) ? $r['fields']['unitOfMeasurementMin_eng'] : null
+'unitOfMeasurementMax'=>(isset($r['fields']['unitOfMeasurementMax']) ) ? $r['fields']['unitOfMeasurementMax'] : null,'unitOfMeasurementMax'=>(isset($r['fields']['unitOfMeasurementMax_eng']) ) ? $r['fields']['unitOfMeasurementMax_eng'] : null
+ΚΕΝΤΡΙΚΗ ΑΓΟΡΑ ΘΕΣ/ΝΙΚΗΣ-Προϊόν,CENTRAL MARKET OF THESSALONIKI-Product
+Επικρατέστερη τιμή,Dominant price
+Επικρατέστερη εβδομάδας,Week dominant
+Επικρατέστερη έτους,Year dominant
+Ποσότητα προς διάθεση,Quantity
+Τελευταία ενημέρωση&nbsp,Last update&nbsp
+Κατηγορία Δαπάνης,Common Procurement Vocabulary
+Κατηγορία Δαπάνης,Common Procurement Vocabulary
+Δημόσιες Προμήθειες - Στοιχεία Κατηγοριών Δαπανών,Public Procurement - Common Procurement Vocabulary
+Συνολικά:,Overview:
+Υποκατηγορία,Sub Category
+Κύρια Κατηγορία,Main Category
+isset($r['fields']['term'][1])) ? $r['fields']['term'][1],isset($r['fields']['term'][2])) ? $r['fields']['term'][2]
+ΚΑΤΗΓΟΡΙΑ ΔΑΠΑΝΗΣ,COMMON PROCUREMENT VOCABULARY 
+"Επιστροφή στην Κεντρική Αναζήτηση","Back to Global Search"
+<li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>,<li class="ex1" >Search</li> <li class="ex1">Results</li>
+"search_dev.php","search_en.php"
+'<form action="index.php" method="post" accept-charset="UTF-8"> ','<form action="index_en.php" method="post" accept-charset="UTF-8">'
+"<input type='submit' name='formSubmit' value='index.php'  style='display: none;' >","<input type='submit' name='formSubmit' value='index.php'  style='display: none;' >"
+'results.php','results_en.php'
+'indexSearch.php','indexSearch_en.php'
+"searchAustralia.php","searchAustralia_en.php"
+Έκδοση,Version
+Αυστραλία,Australia
+'countryName'=>(isset($r['fields']['countryName']) ) ? $r['fields']['countryName'] : null,'countryName'=>(isset($r['fields']['countryNameEng']) ) ? $r['fields']['countryNameEng'] : null
+Γ.Ε.Μ.Η, Business Registry
+'Eμφανίζεται και ως:', 'also appears as:'
+Επιμελητήριο,Chamber
+Αρ. Γ.Ε.Μ.Η.:,Business Registry Number
+Ημ/νία:,Date:

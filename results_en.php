@@ -742,7 +742,8 @@ if  	(strpos($link,'diaugeia/org') !== false)   { //διαυγεια 035970655
 	echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
 	//echo "<a href='".$nameLink."'target='_blank' >$name</a> </br>";
 	//echo '<B>'.$name.'</B><br>';
-	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
+	#echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
+        echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
 	//echo "<FONT COLOR='#006621 '>$link</FONT></br>"; 
 	echo '<I>';
 	echo $this->hide_not_avail($uniqueResults[$i]['address']);
@@ -1599,8 +1600,12 @@ else if  ((strpos($link,'product') !== false) && (strpos($link,'fuel') !== false
 }
 else if (strpos($link,'businessregistry') !== false) { //ΓΕΜΗ
 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
-	echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
-	echo '<I>';
+	#echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
+        echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";
+        echo 'also appears as: '.$this->hide_not_avail(implode(',',$uniqueResults[$i]['altNames'])."</br>");
+        echo '<I>';
+       # print_r( $uniqueResults[$i]['altNames']);
+	echo ' ';
 	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
 	echo $this->hide_not_avail($uniqueResults[$i]['pc']);
@@ -1615,12 +1620,10 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo '</I>';
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em"> Business Registry.</font></br> '; 
 	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
-	echo  'Contracts: ';
-	$sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
-	echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
-	$counterContracts=$uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
-	echo  ' (<B>'.round($counterContracts,0).'</B>) ';		
-	echo  ' &nbsp [until '.$uniqueResults[$i]['lastUpdate'].']';	
+	echo ' Business Registry No.: '.$this->hide_not_avail($uniqueResults[$i]['id']);	
+        echo ' &nbsp Chamber: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);	
+	#echo  ' &nbsp [until '.$uniqueResults[$i]['lastUpdate'].']';	
+        echo  ' &nbsp [Date: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']';	
 	echo "</td>";
 }
 else { // κημδης, γεμη
@@ -1864,8 +1867,8 @@ else { // κημδης, γεμη
     }
 
     function fromNumberToText($number,$currency) {
-$texted=$currency.'0.0K'; //€0.0K
-$digits=strlen($number);
+        $texted=$currency.'0.0K'; //€0.0K
+        $digits=strlen($number);
 	if (($digits == 1) || (($digits) == 2)){
 	$texted=$currency.'0.0K';
 	}
@@ -1921,6 +1924,7 @@ $digits=strlen($number);
 
 	return $texted;
 }
+
 
     
 }
