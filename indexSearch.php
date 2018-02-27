@@ -236,7 +236,7 @@ class indexSearch {
             }
             //echo $Boost;
 
-            if(isset ($json['rows']) && strpos($r['id'], '_') == false) { //_links exluded for now
+            if(isset ($json['rows']) && strpos($r['id'], '_') == false && $this->checkAFM($r['fields']['term'][0]) ) { //_links and wrong vats exluded for now
                  $newdata =  array (
                  // 'name' => $r['fields']['term'][1],
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,
@@ -466,7 +466,21 @@ class indexSearch {
 
     } 
     
-   function clearId ($id){
-       
-   }
+  function checkAFM($afm) {
+   
+        if (!preg_match('/^(EL){0,1}[0-9]{9}$/i', $afm))
+            return false;
+        if (strlen($afm) > 9)
+            $afm = substr($afm, 2);
+
+        $remainder = 0;
+        $sum = 0;
+
+        for ($nn = 2, $k = 7, $sum = 0; $k >= 0; $k--, $nn += $nn)
+            $sum += $nn * ($afm[$k]);
+        $remainder = $sum % 11;
+
+        return ($remainder == 10) ? $afm[8] == '0'
+                                  : $afm[8] == $remainder;
+    }
 }
