@@ -1602,8 +1602,8 @@ else if (strpos($link,'businessregistry') !== false) { //ΓΕΜΗ
 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
 	#echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
         echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";
-	echo '<I>';
-        echo 'Eμφανιζονται και ως: '.$this->hide_not_avail(implode(',',$uniqueResults[$i]['altNames'])."</br>");
+        echo 'Eμφανίζεται και ως: '.$this->hide_not_avail(implode(',',$uniqueResults[$i]['altNames'])."</br>");
+        echo '<I>';
        # print_r( $uniqueResults[$i]['altNames']);
 	echo ' ';
 	echo $this->hide_not_avail($uniqueResults[$i]['address']);
@@ -1620,12 +1620,10 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo '</I>';
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">Γ.Ε.Μ.Η.</font></br> '; 
 	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
-	echo  'Συμβάσεις: ';
-	$sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
-	echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
-	$counterContracts=$uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
-	echo  ' (<B>'.round($counterContracts,0).'</B>) ';		
-	echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']';	
+	echo 'Αρ. Γ.Ε.Μ.Η. '.$this->hide_not_avail($uniqueResults[$i]['id']);	
+        echo ' &nbsp Επιμελητήριο:. '.$this->hide_not_avail($uniqueResults[$i]['Chamber']);	
+	#echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']';	
+        echo  ' &nbsp [Ημνία '.$uniqueResults[$i]['Gemhdate'].']';	
 	echo "</td>";
 }
 else { // κημδης, γεμη

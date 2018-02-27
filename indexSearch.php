@@ -406,34 +406,34 @@ class indexSearch {
                       'lastUpdateHKB'=> ' ', 
 
                       'psName' => (isset($r['fields']['term'][0])) ? $r['fields']['term'][0] : null ,     //product,shop name
-                      'minPrice'=>(isset($r['fields']['minPrice']) ) ? $r['fields']['minPrice'] : null , 
-                      'maxPrice'=>(isset($r['fields']['maxPrice']) ) ? $r['fields']['maxPrice'] : null ,    
+                     # 'minPrice'=>(isset($r['fields']['minPrice']) ) ? $r['fields']['minPrice'] : null , 
+                      #'maxPrice'=>(isset($r['fields']['maxPrice']) ) ? $r['fields']['maxPrice'] : null ,    
                       //shops     
-                      'countOfProducts'=>(isset($r['fields']['countOfProducts']) ) ? $r['fields']['countOfProducts'] : null ,
-                      'countOfCategories'=>(isset($r['fields']['countOfCategories']) ) ? $r['fields']['countOfCategories'] : null ,             
-                      'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement']) ) ? $r['fields']['unitOfMeasurement'] : null ,  
-                      'unitOfMeasurementMin'=>(isset($r['fields']['unitOfMeasurementMin']) ) ? $r['fields']['unitOfMeasurementMin'] : null , 
-                      'unitOfMeasurementMax'=>(isset($r['fields']['unitOfMeasurementMax']) ) ? $r['fields']['unitOfMeasurementMax'] : null , 
-                      'minProdName'=>(isset($r['fields']['minProdName']) ) ? $r['fields']['minProdName'] : null ,  
-                      'maxProdName'=>(isset($r['fields']['maxProdName']) ) ? $r['fields']['maxProdName'] : null ,              
+                      #'countOfProducts'=>(isset($r['fields']['countOfProducts']) ) ? $r['fields']['countOfProducts'] : null ,
+                      #'countOfCategories'=>(isset($r['fields']['countOfCategories']) ) ? $r['fields']['countOfCategories'] : null ,             
+                      #'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement']) ) ? $r['fields']['unitOfMeasurement'] : null ,  
+                      #'unitOfMeasurementMin'=>(isset($r['fields']['unitOfMeasurementMin']) ) ? $r['fields']['unitOfMeasurementMin'] : null , 
+                      #'unitOfMeasurementMax'=>(isset($r['fields']['unitOfMeasurementMax']) ) ? $r['fields']['unitOfMeasurementMax'] : null , 
+                      #'minProdName'=>(isset($r['fields']['minProdName']) ) ? $r['fields']['minProdName'] : null ,  
+                      #'maxProdName'=>(isset($r['fields']['maxProdName']) ) ? $r['fields']['maxProdName'] : null ,              
                    //products	     
-                      'average'=>(isset($r['fields']['average']) ) ? $r['fields']['average'] : null ,
-                      'averagePreviousYear'=>(isset($r['fields']['averagePreviousYear']) ) ? $r['fields']['averagePreviousYear'] : null ,
-                      'variationPrice'=>(isset($r['fields']['variationPrice']) ) ? $r['fields']['variationPrice'] : null, 
-                      'locMin'=>(isset($r['fields']['locMin']) ) ? $r['fields']['locMin'] : null, 
-                      'locMax'=>(isset($r['fields']['locMax']) ) ? $r['fields']['locMax'] : null,
+                      #'average'=>(isset($r['fields']['average']) ) ? $r['fields']['average'] : null ,
+                      #'averagePreviousYear'=>(isset($r['fields']['averagePreviousYear']) ) ? $r['fields']['averagePreviousYear'] : null ,
+                      #'variationPrice'=>(isset($r['fields']['variationPrice']) ) ? $r['fields']['variationPrice'] : null, 
+                      #'locMin'=>(isset($r['fields']['locMin']) ) ? $r['fields']['locMin'] : null, 
+                      #'locMax'=>(isset($r['fields']['locMax']) ) ? $r['fields']['locMax'] : null,
                       //kath only
-                      'dominantPriceDetails'=>(isset($r['fields']['dominantPriceDetails']) ) ? $r['fields']['dominantPriceDetails'] : null ,	
-                      'weekDominantPriceDetails'=>(isset($r['fields']['weekDominantPriceDetails']) ) ? $r['fields']['weekDominantPriceDetails'] : null ,		
-                      'yearDominantPriceDetails'=>(isset($r['fields']['yearDominantPriceDetails']) ) ? $r['fields']['yearDominantPriceDetails'] : null ,		
-                      'quantityDetails'=>(isset($r['fields']['quantityDetails']) ) ? $r['fields']['quantityDetails'] : null , 
+                      #'dominantPriceDetails'=>(isset($r['fields']['dominantPriceDetails']) ) ? $r['fields']['dominantPriceDetails'] : null ,	
+                      #'weekDominantPriceDetails'=>(isset($r['fields']['weekDominantPriceDetails']) ) ? $r['fields']['weekDominantPriceDetails'] : null ,		
+                      #'yearDominantPriceDetails'=>(isset($r['fields']['yearDominantPriceDetails']) ) ? $r['fields']['yearDominantPriceDetails'] : null ,		
+                      #'quantityDetails'=>(isset($r['fields']['quantityDetails']) ) ? $r['fields']['quantityDetails'] : null , 
 
                        //fuelshops
-                      'brand'=>(isset($r['fields']['brand']) ) ? $r['fields']['brand'] : null,  
+                     # 'brand'=>(isset($r['fields']['brand']) ) ? $r['fields']['brand'] : null,  
 
                  //cpv
-                     'cpvLabel'=> (isset($r['fields']['label']) ) ? $r['fields']['label'] : null, 
-                     'cpvSumofAmounts'=> (isset($r['fields']['cpvSumofAmounts']) ) ? $r['fields']['cpvSumofAmounts'] : null, 
+                     #'cpvLabel'=> (isset($r['fields']['label']) ) ? $r['fields']['label'] : null, 
+                     #'cpvSumofAmounts'=> (isset($r['fields']['cpvSumofAmounts']) ) ? $r['fields']['cpvSumofAmounts'] : null, 
 
                   //relativity for adding score
                  'relative1'=>0,	
@@ -441,7 +441,9 @@ class indexSearch {
                  'relative3'=>0,	
                  'relative4'=>0,
                      
-                     'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null 
+                     'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
+                     'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
+                     'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null 
                      
                 );	
             }
