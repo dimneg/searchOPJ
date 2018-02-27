@@ -441,7 +441,7 @@ class indexSearch {
                  'relative3'=>0,	
                  'relative4'=>0,
                      
-                     'AltNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null 
+                     'sltNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null 
                      
                 );	
             }
