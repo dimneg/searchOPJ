@@ -239,7 +239,7 @@ class indexSearch {
             if(isset ($json['rows']) && strpos($r['id'], '_') == false) { //_links exluded for now
                  $newdata =  array (
                  // 'name' => $r['fields']['term'][2],
-                      'name' => (isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : null ,
+                      'name' => (isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : $r['fields']['term'][1] ,
                      /* 'smallimage' => (isset($product_option_value_description_query->row['smallimage'])) ?
                     $product_option_value_description_query->row['smallimage'] : null, */
 
