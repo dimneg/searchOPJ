@@ -1600,7 +1600,8 @@ else if  ((strpos($link,'product') !== false) && (strpos($link,'fuel') !== false
 }
 else if (strpos($link,'businessregistry') !== false) { //ΓΕΜΗ
 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">";
-	echo "<a class='nameLink' href='#'target='_blank' >$name</a> </br>";	
+	#echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
+        echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";
 	echo '<I>';
 	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
