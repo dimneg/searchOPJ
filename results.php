@@ -1623,7 +1623,7 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo 'Αρ. Γ.Ε.Μ.Η.: '.$this->hide_not_avail($uniqueResults[$i]['id']);	
         echo ' &nbsp Επιμελητήριο: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);	
 	#echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']';	
-        echo  ' &nbsp [Ημ/νία: '.$uniqueResults[$i]['gemhDate'].']';	
+        echo  ' &nbsp [Ημ/νία: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']';	
 	echo "</td>";
 }
 else { // κημδης, γεμη
