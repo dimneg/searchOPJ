@@ -1603,8 +1603,8 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	#echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";	
         echo "<a class='nameLink' href='".$nameLink."'target='_blank' >$name</a> </br>";
 	echo '<I>';
-        echo 'Eμφανιζονται και ως: '.$this->hide_not_avail($uniqueResults[$i]['altNames']."</br>");
-        print_r( $uniqueResults[$i]['altNames']);
+        echo 'Eμφανιζονται και ως: '.$this->hide_not_avail(implode(',',$uniqueResults[$i]['altNames'])."</br>");
+       # print_r( $uniqueResults[$i]['altNames']);
 	echo ' ';
 	echo $this->hide_not_avail($uniqueResults[$i]['address']);
 	echo ' ';
@@ -1869,8 +1869,8 @@ else { // κημδης, γεμη
     }
 
     function fromNumberToText($number,$currency) {
-$texted=$currency.'0.0K'; //€0.0K
-$digits=strlen($number);
+        $texted=$currency.'0.0K'; //€0.0K
+        $digits=strlen($number);
 	if (($digits == 1) || (($digits) == 2)){
 	$texted=$currency.'0.0K';
 	}
@@ -1927,5 +1927,10 @@ $digits=strlen($number);
 	return $texted;
 }
 
-    
+
+    function fromArrayToText($array){
+        foreach ($array as $value) {
+            $text 
+        }
+    }    
 }
