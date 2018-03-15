@@ -17,7 +17,7 @@ $resultArray =[[]];
 
 foreach ($libraries as $libTable){
     $sql = "SELECT * FROM $libTable ".PHP_EOL;
-    echo  $sql;
+    #echo  $sql;
     $result = $connLib->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -42,9 +42,10 @@ foreach ($libraries as $libTable){
         }
     }
 }
-echo $cnt.PHP_EOL;
-print_r($resultArray);
-calculateAppearances($resultArray);
+#echo $cnt.PHP_EOL;
+print_r(calculateAppearances($resultArray));
+print_r(calculateDistribution(calculateAppearances($resultArray)));
+
 $time_post = microtime(true);
 $exec_time = $time_post - $time_pre;
 echo '(In '.number_format($exec_time/60,2).' mins)'.PHP_EOL ;
@@ -61,12 +62,36 @@ function searchForId($vatNumber, $array) {
 } 
 
 function calculateAppearances($array){
+    $appearencesArray = [[]];
+    $cnt = 0;
     foreach ($array as $key => $row) {
         if (isset($row['alternate_names'])){
              if (count($row['alternate_names']) > 1) {
-                echo $row['vat'].' '.count($row['alternate_names']).PHP_EOL;
+                  $appearencesArray[$cnt]['vat'] = $row['vat'];
+                  $appearencesArray[$cnt]['count'] = count($row['alternate_names']);
+                  $cnt++;
+                  #echo $row['vat'].' '.count($row['alternate_names']).PHP_EOL;
             }
         }
         
     }
+    return $appearencesArray;
+}
+
+function calculateDistribution($array){
+    $distributionArray = [[]];
+    $cnt = 0;
+    foreach ($array as $key => $val){
+     
+            $key = searchForId($val['count'], $distributionArray);
+            if ($key === NULL){
+                $distributionArray[$cnt]['value'] = $val['count'];
+                $distributionArray[$cnt]['distributionValue'] = 1;
+            }
+            else {
+                $distributionArray[$key]['distributionValue']++;
+            }
+         $cnt++;
+    }
+    return $distributionArray;
 }
