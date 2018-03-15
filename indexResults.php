@@ -22,7 +22,7 @@ foreach ($libraries as $libTable){
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             if (isset ($row['vat']) && $row['vat'] !==''){
-                $key = searchForId($row['vat'], $resultArray);
+                $key = searchForId($row['vat'], $resultArray,'vat');
                 if ($key === NULL){
                     $company = new entity();
                     $company->set_name($row['name']);
@@ -43,16 +43,16 @@ foreach ($libraries as $libTable){
     }
 }
 #echo $cnt.PHP_EOL;
-print_r(calculateAppearances($resultArray));
+#print_r(calculateAppearances($resultArray));
 print_r(calculateDistribution(calculateAppearances($resultArray)));
 
 $time_post = microtime(true);
 $exec_time = $time_post - $time_pre;
 echo '(In '.number_format($exec_time/60,2).' mins)'.PHP_EOL ;
 
-function searchForId($vatNumber, $array) { 
+function searchForId($id, $array,$index) { 
     foreach ($array as $key => $val) {       
-            if ( $val['vat'] === $vatNumber ) {
+            if ( $val[$index] === $id ) {
                 return $key;
                         
             }
@@ -68,7 +68,7 @@ function calculateAppearances($array){
         if (isset($row['alternate_names'])){
              if (count($row['alternate_names']) > 1) {
                   $appearencesArray[$cnt]['vat'] = $row['vat'];
-                  $appearencesArray[$cnt]['count'] = count($row['alternate_names']);
+                  $appearencesArray[$cnt]['countNames'] = count($row['alternate_names']);
                   $cnt++;
                   #echo $row['vat'].' '.count($row['alternate_names']).PHP_EOL;
             }
@@ -83,9 +83,9 @@ function calculateDistribution($array){
     $cnt = 0;
     foreach ($array as $key => $val){
      
-            $key = searchForId($val['count'], $distributionArray);
+            $key = searchForId($val['countNames'], $distributionArray,'value');
             if ($key === NULL){
-                $distributionArray[$cnt]['value'] = $val['count'];
+                $distributionArray[$cnt]['value'] = $val['countNames'];
                 $distributionArray[$cnt]['distributionValue'] = 1;
             }
             else {
