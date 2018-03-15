@@ -16,7 +16,7 @@ $libraries=['espa_sellers','ted_sellers','fek_companies','hellastat'];
 $resultArray =[[]];
 
 foreach ($libraries as $libTable){
-    $sql = "SELECT * FROM $libTable limit 10".PHP_EOL;
+    $sql = "SELECT * FROM $libTable ".PHP_EOL;
     echo  $sql;
     $result = $connLib->query($sql);
     if ($result->num_rows > 0) {
@@ -31,7 +31,7 @@ foreach ($libraries as $libTable){
                     $resultArray[$cnt]['vat'] = $company->vat;
                 }
                 else {
-                    echo $row['vat'].' '.$key.PHP_EOL;
+                    #echo $row['vat'].' '.$key.PHP_EOL;
                     $resultArray[$key]['alternate_names'][]=$row['name'];
                 }
             }
@@ -44,6 +44,7 @@ foreach ($libraries as $libTable){
 }
 echo $cnt.PHP_EOL;
 print_r($resultArray);
+calculateAppearances($resultArray);
 $time_post = microtime(true);
 $exec_time = $time_post - $time_pre;
 echo '(In '.number_format($exec_time/60,2).' mins)'.PHP_EOL ;
@@ -58,3 +59,14 @@ function searchForId($vatNumber, $array) {
      }
         return NULL;
 } 
+
+function calculateAppearances($array){
+    foreach ($array as $key => $row) {
+        if (isset($row['alternate_names'])){
+             if (count($row['alternate_names']) > 1) {
+                echo $row['vat'].' '.count($row['alternate_names']).PHP_EOL;
+            }
+        }
+        
+    }
+}
