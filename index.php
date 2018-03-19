@@ -270,7 +270,7 @@
 
 include 'collectData.php'; 
 include 'keyWord.php';
-include 'results.php';
+include 'showResults.php';
 include 'config.php';
 #include_once("languages/lang.php");
 #require_once "languages/lang.php";
@@ -400,8 +400,8 @@ if($_POST['formSubmit'] == "index.php") {
         }
 
     }
-    $showResults = new results();
-    $showResults ->showResults();
+    $showResults = new showResults();
+    $showResults -> showResults();
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;

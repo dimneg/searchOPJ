@@ -401,13 +401,13 @@ class collectData {
     
    function defineSource($db,$field){
        $match = 0;
-       if (($db == 'elod_buyers' || db == 'elod_sellers' ) && $field == 'dataKhmdhs' ){
+       if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs' ){
           $match = 1;
        }
-       if (($db == 'elod_diaugeia_buyers' || db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' ){
+       if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' ){
            $match =  1;
        }
-       if (($db == 'elod_espa_beneficiaries' || db == 'elod_australia_sellers' ) && $field == 'dataAustralia' ){
+       if (($db == 'elod_espa_beneficiaries' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia' ){
            $match =  1;
        }       
        if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' ){
@@ -419,7 +419,7 @@ class collectData {
        if ($db == 'elod_main'  && $field == 'dataTed' ){
            $match =  1;
        }
-       if (($db == 'elod_main_orgv4_all' || db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' ){
+       if (($db == 'elod_main_orgv4_all' || $db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' ){
            $match =  1;
        } 
        if ($db == 'solrMatched'  && $field == 'dataMatched' ){
