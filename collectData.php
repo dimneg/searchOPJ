@@ -76,6 +76,10 @@ class collectData {
 		
     } 
     
+   function match(){
+       
+   } 
+    
    function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword,$couchUser,$couchPass) {
         global $AlreadyFound;
         $couchUserPwd = $couchUser.':'.$couchPass;
@@ -123,102 +127,59 @@ class collectData {
         $Domain = "http://linkedeconomy.org/"; 
 
         if(isset ($json['rows'])) {
-             foreach($json['rows'] as $r)
-            {  
-            switch ($Db) {
-            case "elod_buyers":
-                    $prefix=$Domain.$Lang."khmdhs/" ;
-                            break;
-            case "elod_sellers":
-                    $prefix=$Domain.$Lang."khmdhs/" ;
-                            break;
-            case "elod_diaugeia_buyers":
-                    $prefix=$Domain.$Lang."diaugeia/" ;
-                            break;
-            case "elod_diaugeia_sellers":
-                    $prefix=$Domain.$Lang."diaugeia/" ;
-                            break;
-            case "elod_australia_buyers":
-                    $prefix=$Domain.$Lang."australia/" ;
-                            break;
-            case "elod_australia_sellers":
-                    $prefix=$Domain.$Lang."australia/" ;
-                            break;  
-            case "elod_diaugeia_hybrids":
-                    $prefix=$Domain.$Lang."diaugeia/" ;
-                            break;  
-            case "elod_new_york_buyers":
-                    $prefix=$Domain.$Lang."newyork/" ;
-                            break;  
-            case "elod_new_york_sellers":
-                    $prefix=$Domain.$Lang."newyork/" ;
-                            break;
-            case "elod_new_york_state_buyers":
-                    $prefix=$Domain.$Lang."newyorkstate/" ;
-                            break;  
-            case "elod_new_york_state_sellers":
-                    $prefix=$Domain.$Lang."newyorkstate/" ;
-                            break;
-            case "elod_london_city_buyers":
-                    $prefix=$Domain.$Lang."london/" ;
-                            break;  
-            case "elod_london_city_sellers":
-                    $prefix=$Domain.$Lang."london/" ;
-                            break; 
-            case "elod_europa_fts_buyers":
-                    $prefix=$Domain.$Lang."eu/" ;
-                            break;  
-            case "elod_europa_fts_sellers":
-                    $prefix=$Domain.$Lang."eu/" ;
-                            break;
-            case "elod_espa_beneficiaries":
-                    $prefix=$Domain.$Lang."" ;
-                            break;
-            case "elod_eprices_shops":
-                    $prefix=$Domain.$Lang."page/" ;
-                            break;  
-            case "elod_eprices_products":
-                    $prefix=$Domain.$Lang."page/" ;
-                            break;
-            case "elod_kath_products":
-                    $prefix=$Domain.$Lang."" ;
-                            break; 
-            case "elod_cpv":
-                    $prefix=$Domain.$Lang."page/" ;
-                            break; 	
-            case "elod_fuel_prices_products":
-                    $prefix=$Domain.$Lang."page/" ;
-                            break;
-            case "elod_fuel_prices_shops":
-                    $prefix=$Domain.$Lang."page/" ;
-                            break;
-            case "elod_main_orgv4_all":
-                $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
-                            break;
-            case "elod_main_orgv4_fr":
-               $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
-                            break;
-            }
-            global $Boost;
-            $Boost = 10;
-            switch ($Wc) { //boost step 1
-            case "";{	            
-               $r['score'] *=$Boost;
-               break; 
-            }
-            case "*"; {
-               $r['score'] *=1;
-                break; 
+             foreach($json['rows'] as $r){                   
+            
+                switch ($Db) {
+                case "elod_buyers":
+                        $prefix=$Domain.$Lang."khmdhs/" ;
+                                break;
+                case "elod_sellers":
+                        $prefix=$Domain.$Lang."khmdhs/" ;
+                                break;
+                case "elod_diaugeia_buyers":
+                        $prefix=$Domain.$Lang."diaugeia/" ;
+                                break;
+                case "elod_diaugeia_sellers":
+                        $prefix=$Domain.$Lang."diaugeia/" ;
+                                break;
+                case "elod_australia_buyers":
+                        $prefix=$Domain.$Lang."australia/" ;
+                                break;
+                case "elod_australia_sellers":
+                        $prefix=$Domain.$Lang."australia/" ;
+                                break;  
+                case "elod_diaugeia_hybrids":
+                        $prefix=$Domain.$Lang."diaugeia/" ;
+                                break;  
 
-            }
-            case "~0.75";
-                {
+                case "elod_espa_beneficiaries":
+                        $prefix=$Domain.$Lang."" ;
+                                break;
 
-                    $r['score'] *=1;
-
+                case "elod_main_orgv4_all":
+                    $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
+                                break;
+                case "elod_main_orgv4_fr":
+                   $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
+                                break;
+                }
+                global $Boost;
+                $Boost = 10;
+                switch ($Wc) { //boost step 1
+                case "";{	            
+                   $r['score'] *=$Boost;
+                   break; 
+                }
+                case "*"; {
+                   $r['score'] *=1;
                     break; 
-                    }
-            }
+
+                }
+                case "~0.75"; {
+                   $r['score'] *=1;
+                   break; 
+                }
+                }
             //echo $Boost;
 
             if(isset ($json['rows']) && strpos($r['id'], '_') == false && ($this->checkAFM($r['fields']['term'][0]) || strpos($Db, 'australia')== true) ) { //_links and wrong vats exluded for now
@@ -395,7 +356,16 @@ class collectData {
                      
                      'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
                      'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
-                     'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null 
+                     'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
+                     
+                     'dataDiaugeia'=>  $this->defineSource($db, 'dataDiaugeia'),
+                     'dataKhmdhs'=>'',
+                     'dataEspa'=>'',
+                     'dataTed'=>'',
+                     'dataGemh'=>'',
+                     'dataAustralia'=>'',
+                     'dataMatched'=>''
+                
                      
                 );	
             }
@@ -411,9 +381,32 @@ class collectData {
         }
        
 
-         if (!empty($newdata)) 
-                $AlreadyFound = 1 ;  
-         else 
-                $AlreadyFound = 0;
+         if (!empty($newdata)) {
+             $AlreadyFound = 1 ; 
+         }
+                 
+         else {
+             $AlreadyFound = 0;
+         }
+                
 
     }  
+    
+   function defineSource($db,$field){
+       $match = 0;
+       if (($db == 'elod_buyers' || db == 'elod_sellers' ) && $field == 'dataKhmdhs' ){
+          $match = 1;
+       }
+       if (($db == 'elod_diaugeia_buyers' || db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' ){
+           $match =  1;
+       }
+       if (($db == 'elod_espa_beneficiaries' || db == 'elod_australia_sellers' ) && $field == 'dataAustralia' ){
+           $match =  1;
+       }       
+       if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' ){
+           $match =  1;
+       }
+       return $match;
+       
+   } 
+}
