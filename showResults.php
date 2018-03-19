@@ -77,7 +77,7 @@ class showResults {
             $i++;
          }
             
-        }
+        
     }
     
     function fromTextToNumber($text) {
