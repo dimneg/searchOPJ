@@ -16,6 +16,7 @@ class showResults {
         global $Results;
         $source = ' ';
         $i = 0;
+        $uniqueResults = $Results; //let 's see if there is need to group
         $sumResults = count($uniqueResults);
         $sumSpend = 0;
         $sumAward = 0;
@@ -25,7 +26,7 @@ class showResults {
         $sumAwardSel = 0;
         $sumSpendSel = 0;
         
-        $uniqueResults = $Results; //let 's see if there is need to group
+       
         
         echo "<table id='searchResults' class='display'  ><thead><tr><th></th></th></th> </tr></thead>";  
 
