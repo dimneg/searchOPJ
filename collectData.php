@@ -359,12 +359,12 @@ class collectData {
                      'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
                      
                      'dataDiaugeia'=>  $this->defineSource($db, 'dataDiaugeia'),
-                     'dataKhmdhs'=>'',
-                     'dataEspa'=>'',
-                     'dataTed'=>'',
-                     'dataGemh'=>'',
-                     'dataAustralia'=>'',
-                     'dataMatched'=>''
+                     'dataKhmdhs'=>  $this->defineSource($db, 'dataKhmdhs'),
+                     'dataEspa'=> $this->defineSource($db, 'dataEspa'),
+                     'dataTed'=>  $this->defineSource($db, 'dataTed'),
+                     'dataGemh'=>  $this->defineSource($db, 'dataGemh'),
+                     'dataAustralia'=>$this->defineSource($db, 'dataAustralia'),
+                     'dataMatched'=>  $this->defineSource($db, 'dataMatched')
                 
                      
                 );	
@@ -373,7 +373,14 @@ class collectData {
             $arrayElements = count($Results);
                     //echo $arrayElements;
                 if  ($arrayElements < 2000 && isset($newdata)){
-                      $Results[]=$newdata;    
+                    $key = $this->searchForId($newdata['vat'], $Results,'vat');
+                    if ($key === NULL){
+                      $Results[] = $newdata;      
+                    }
+                    else {
+                        echo 'same vat found1'.PHP_EOL;
+                    }
+                      
                 }
                    
             }
@@ -406,7 +413,29 @@ class collectData {
        if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' ){
            $match =  1;
        }
+       if ($db == 'Ted'  && $field == 'dataTed' ){
+           $match =  1;
+       }
+       if ($db == 'elod_main'  && $field == 'dataTed' ){
+           $match =  1;
+       }
+       if (($db == 'elod_main_orgv4_all' || db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' ){
+           $match =  1;
+       } 
+       if ($db == 'solrMatched'  && $field == 'dataMatched' ){
+           $match =  1;
+       } 
        return $match;
-       
+      
    } 
+   function searchForId($id, $array,$index) { 
+    foreach ($array as $key => $val) {       
+            if ( $val[$index] === $id ) {
+                return $key;
+                        
+            }
+                //else echo 'not equal';
+     }
+        return NULL;
+} 
 }
