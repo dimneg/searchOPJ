@@ -268,7 +268,7 @@
 <?php
 
 
-include 'indexSearch.php'; 
+include 'collectData.php'; 
 include 'keyWord.php';
 include 'results.php';
 include 'config.php';
@@ -311,7 +311,7 @@ if($_POST['formSubmit'] == "index.php") {
     $words = explode(' ', $varKeyword);  
 
  #read all data
-    $search = new indexSearch();
+    $search = new collectData();
     if (is_numeric($varKeyword)){ //probaby afm
         if (strlen(utf8_decode($varKeyword)) <=6 ) {
              $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);	
