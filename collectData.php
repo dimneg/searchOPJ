@@ -437,5 +437,22 @@ class collectData {
                 //else echo 'not equal';
      }
         return NULL;
-} 
+  } 
+   function checkAFM($afm) {
+   
+        if (!preg_match('/^(EL){0,1}[0-9]{9}$/i', $afm))
+            return false;
+        if (strlen($afm) > 9)
+            $afm = substr($afm, 2);
+
+        $remainder = 0;
+        $sum = 0;
+
+        for ($nn = 2, $k = 7, $sum = 0; $k >= 0; $k--, $nn += $nn)
+            $sum += $nn * ($afm[$k]);
+        $remainder = $sum % 11;
+
+        return ($remainder == 10) ? $afm[8] == '0'
+                                  : $afm[8] == $remainder;
+    }
 }
