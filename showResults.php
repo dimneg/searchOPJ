@@ -41,6 +41,9 @@ class showResults {
             if  (!is_numeric($uniqueResults[$i]['vat'])) { //boost step 2
                 $uniqueResults[$i]['score'] = bcmul(0.75,$uniqueResults[$i]['score'] ,4) ;
             }
+            if  (isset($uniqueResults[$i]['vat'])) {
+                
+            
             echo "<tr>";
                 
                 //show diaugeia
@@ -95,7 +98,7 @@ class showResults {
             #echo "</td>";
             
             echo "</tr>"; 
-            
+        }
             $i++;
          }
          
