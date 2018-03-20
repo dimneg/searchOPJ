@@ -78,7 +78,7 @@ class showResults {
 
 
                    }
-                  /*   else { //no source - default
+                    else { //no source - default
                        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                         echo '<I>';
@@ -92,7 +92,7 @@ class showResults {
                         echo '</I>';
 
                         echo "</td>"; 
-                    } */
+                    } 
                     echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
                     echo $uniqueResults[$i]['score']; //hidden
                     echo "</td>";
