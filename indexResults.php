@@ -29,6 +29,7 @@ foreach ($libraries as $libTable){
                     $company->set_vat($row['vat']);
                     $resultArray[$cnt]['name'] = $company->name;
                     $resultArray[$cnt]['vat'] = $company->vat;
+                    $resultArray[$cnt]['alternate_names'] = [];
                 }
                 else {
                     #echo $row['vat'].' '.$key.PHP_EOL;
@@ -50,8 +51,11 @@ foreach ($libraries as $libTable){
 #print_r(calculateDistribution(calculateAppearances($resultArray)));
 #print_r($resultArray);
 
-saveCsvCloud($resultArray, 'file.csv');
-indexSolr($resultArray);
+#saveCsvCloud($resultArray, 'entities.csv');
+#saveCsvCloud(calculateAppearances($resultArray), 'appearences.csv');
+#saveCsvCloud(calculateDistribution(calculateAppearances($resultArray), 'distribution.csv'));
+print_r(calculateDistribution(calculateAppearances($resultArray)));
+#indexSolr($resultArray);
 $time_post = microtime(true);
 $exec_time = $time_post - $time_pre;
 echo '(In '.number_format($exec_time/60,2).' mins)'.PHP_EOL ;
@@ -110,7 +114,7 @@ function indexSolr($resultArray){
                     "doc" => array(
                          "id"   =>$value['vat'],
                           "name"=>$value['name'],
-                          "alt_names"=>$value['alt_names']
+                          "alt_names"=>$value['alternate_names']
                         ),
                    "commitWithin" => 1000,
                     ),
