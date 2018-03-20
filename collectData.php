@@ -1,16 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of collectData
- *
- * @author dimitris negkas
- */
 class collectData {
    function getAll($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass){
        global $Limit;
@@ -72,10 +62,7 @@ class collectData {
 		
     } 
     
-   function match(){
-       
-   } 
-    
+   
    function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword,$couchUser,$couchPass) {
         global $AlreadyFound;
         $couchUserPwd = $couchUser.':'.$couchPass;

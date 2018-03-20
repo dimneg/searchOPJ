@@ -32,7 +32,10 @@ foreach ($libraries as $libTable){
                 }
                 else {
                     #echo $row['vat'].' '.$key.PHP_EOL;
-                    $resultArray[$key]['alternate_names'][]=$row['name'];
+                    if (!in_array($row['name'], $resultArray[$key]['alternate_names'])){ //for distinct names orelse remove
+                         $resultArray[$key]['alternate_names'][]= $row['name'];
+                    }
+                   
                 }
             }
             
@@ -44,8 +47,11 @@ foreach ($libraries as $libTable){
 }
 #echo $cnt.PHP_EOL;
 #print_r(calculateAppearances($resultArray));
-print_r(calculateDistribution(calculateAppearances($resultArray)));
+#print_r(calculateDistribution(calculateAppearances($resultArray)));
+#print_r($resultArray);
 
+saveCsvCloud($resultArray, 'file.csv');
+indexSolr($resultArray);
 $time_post = microtime(true);
 $exec_time = $time_post - $time_pre;
 echo '(In '.number_format($exec_time/60,2).' mins)'.PHP_EOL ;
@@ -95,3 +101,41 @@ function calculateDistribution($array){
     }
     return $distributionArray;
 }
+
+function indexSolr($resultArray){
+    $ch = curl_init("http://83.212.86.164:8983/solr/alt_names/update?wt=json");
+    foreach ($resultArray as $key => $value) {
+          $data = array(
+               "add" => array( 
+                    "doc" => array(
+                         "id"   =>$value['vat'],
+                          "name"=>$value['name'],
+                          "alt_names"=>$value['alt_names']
+                        ),
+                   "commitWithin" => 1000,
+                    ),
+               );
+            $data_string = json_encode($data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_POST, TRUE);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+
+    $response = curl_exec($ch);
+    print_r($response); 
+    }
+    
+    
+    curl_close($ch);
+    
+}
+
+function saveCsvCloud($tableName,$fileName){
+	$fp = fopen($fileName, 'w');
+
+	foreach ($tableName as $fields) {
+            fputcsv($fp, $fields,"~");		
+	}
+
+	fclose($fp);	
+    }
