@@ -272,10 +272,6 @@ include 'collectData.php';
 include 'keyWord.php';
 include 'showResults.php';
 include 'config.php';
-#include_once("languages/lang.php");
-#require_once "languages/lang.php";
-#$languages = new PHPClass($langBlgl);
-#$languages = new PHPClass($langBlgl);
 
 $time_pre = microtime(true);
 $prefix = '' ;
@@ -405,10 +401,11 @@ if($_POST['formSubmit'] == "index.php") {
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
-    echo  "<div ALIGN='CENTER'>";
-    echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
-    echo "</div>";
+   
 }
+ echo  "<div ALIGN='CENTER'>";
+ echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
+ echo "</div>";
 
 
 
