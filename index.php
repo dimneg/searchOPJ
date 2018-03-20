@@ -247,21 +247,10 @@
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >				
 </p>
 <div align="center" >
- <!--<li  class="ex1" id="dim" > Δημόσιες Προμήθειες </li><li  class="ex1">Επιδοτήσεις</li> <li  class="ex1">Προϋπολογισμοί</li> <li class="ex1"> Τιμές</li>  
-<a class="searchTabs" href="searchProcurement?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Δημόσιες Προμήθειες</a>
-<a class="searchTabs" href="searchCPV?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Κατηγορίες Δαπανών</a>
- <a class="searchTabs" href="searchEspa?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"    >Επιδοτήσεις</a>
- Προϋπολογισμοί
- <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Τιμές</a> -->
-  <!--style="color:#1C94C4"
-<!--<form method="post" action="searchKhmdhs.php">
-    <input type="hidden" name="varKeyword=" value="varKeyword">
-    <input type="submit" style="display: none;">
-</form> -->
+ 
  <br>
 <hr align="center" width="80%">
-<!--<li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>  -->
-  <!-- <li class="ex1" ><?php include_once("languages/lang.php"); echo $langBlgl['results']; ?></li> -->
+
 <li class="ex1" >Αποτελέσματα Αναζήτησης</li>
 </div>
 </form>
@@ -401,11 +390,10 @@ if($_POST['formSubmit'] == "index.php") {
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
-   
+    echo  "<div ALIGN='CENTER'>";
+    echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
+    echo "</div>";
 }
- echo  "<div ALIGN='CENTER'>";
- echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
- echo "</div>";
 
 
 
