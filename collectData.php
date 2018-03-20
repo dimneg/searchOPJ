@@ -337,7 +337,8 @@ class collectData {
                      'relative3'=>0,	
                      'relative4'=>0,
                      
-                     'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
+                   #  'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
+                     'altNames'=>  $this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),
                      'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
                      'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
                      
@@ -442,9 +443,9 @@ class collectData {
                                   : $afm[8] == $remainder;
     }
     
-   function getAltNamesSolr($vat){
+   function getAltNamesSolr($solrPath,$solrCore,$vat){
        $ch = curl_init();
-       $url = $solrPath.$solrCore."/select?indent=on&q=id:".$varKeyword."&wt=json";
+       $url = $solrPath.$solrCore."/select?indent=on&q=id:".$vat."&wt=json";
        $url = str_replace(' ','%20',$url);				
        curl_setopt($ch, CURLOPT_URL, $url);
        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
@@ -459,6 +460,9 @@ class collectData {
                 
        $json = json_decode($response,true);
        curl_close($ch);	
+       if (isset ($json['response']['alt_names']) ){
+            return implode(', ', $json['response']['alt_names']);
+       }
        return $json;
        
    } 
