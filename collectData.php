@@ -358,7 +358,8 @@ class collectData {
                      'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
                      'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
                      
-                     'dataDiaugeia'=>  $this->defineSource($Db, 'dataDiaugeia'),
+                     'dataDiaugeiaBuyers'=>  $this->defineSource($Db, 'dataDiaugeiaBuyers'),
+                     'dataDiaugeiaSellers'=>  $this->defineSource($Db, 'dataDiaugeiaSellers'),
                      'dataKhmdhs'=>  $this->defineSource($Db, 'dataKhmdhs'),
                      'dataEspa'=> $this->defineSource($Db, 'dataEspa'),
                      'dataTed'=>  $this->defineSource($Db, 'dataTed'),
