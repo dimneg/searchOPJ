@@ -379,7 +379,7 @@ class collectData {
                       $Results[] = $newdata;      
                     }
                     else {
-                        echo 'same vat found1'.PHP_EOL;
+                       # echo 'same vat found1'.PHP_EOL;
                     }
                       
                 }
@@ -389,11 +389,11 @@ class collectData {
         }
        
 
-         if (!empty($newdata)) {
+        if (!empty($newdata)) {
              $AlreadyFound = 1 ; 
          }
                  
-         else {
+        else {
              $AlreadyFound = 0;
          }
                 
