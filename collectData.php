@@ -371,6 +371,7 @@ class collectData {
                      
                 );	
             }
+            echo $Db.' '. $this->defineSource($Db, 'dataDiaugeia').PHP_EOL;
 
             $arrayElements = count($Results);
                     //echo $arrayElements;
