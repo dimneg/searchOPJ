@@ -38,10 +38,11 @@ class showResults {
             
             $name = $uniqueResults[$i]['name'];
             
-            if  (!is_numeric($uniqueResults[$i]['vat'])) { //boost step 2
-                $uniqueResults[$i]['score'] = bcmul(0.75,$uniqueResults[$i]['score'] ,4) ;
-            }
-            if  (isset($uniqueResults[$i]['vat'])) {                
+            
+            if  (isset($uniqueResults[$i]['vat'])) {        
+                if  (!is_numeric($uniqueResults[$i]['vat'])) { //boost step 2
+                    $uniqueResults[$i]['score'] = bcmul(0.75,$uniqueResults[$i]['score'] ,4) ;
+                }
             
                     echo "<tr>";
 
@@ -51,7 +52,7 @@ class showResults {
                         echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         #echo 'diaugeia division '.$i.PHP_EOL;
                         echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
-                       /* echo '<I>';
+                        echo '<I>';
                         echo $this->hide_not_avail($uniqueResults[$i]['address']);
                         echo ' ';
                         echo $this->hide_not_avail($uniqueResults[$i]['pc']);
@@ -70,7 +71,7 @@ class showResults {
                         $sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
                         echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
                         echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
-                        echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	*/
+                        echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
                         echo "</td>";
                         # $uniqueResults[$i]['score'] gets boosted by sources
 
@@ -78,7 +79,7 @@ class showResults {
 
                     }
                     else { //no source - default
-                        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+                       /* echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                         echo '<I>';
                         echo $this->hide_not_avail($uniqueResults[$i]['address']);
@@ -90,7 +91,7 @@ class showResults {
                         echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
                         echo '</I>';
 
-                        echo "</td>";
+                        echo "</td>"; */
                     }
                     echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
                     echo $uniqueResults[$i]['score']; //hidden
