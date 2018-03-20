@@ -47,15 +47,18 @@ class showResults {
                     echo "<tr>";
 
                         //show diaugeia
+                   echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+                      
+                   echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                    if (!empty($uniqueResults[$i]['altNames'])) {
                        echo 'Eμφανίζεται και ως: '.$this->hide_not_avail(implode(',',$uniqueResults[$i]['altNames'])."</br>");
                        echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
                    }
                    if ($uniqueResults[$i]['dataDiaugeia'] == 1){
 
-                        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                        #echo 'diaugeia division '.$i.PHP_EOL;
-                        echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
+                       # echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+                      
+                        #echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                         echo '<I>';
                         echo $this->hide_not_avail($uniqueResults[$i]['address']);
                         echo ' ';
