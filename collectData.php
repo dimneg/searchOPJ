@@ -372,13 +372,13 @@ class collectData {
             $arrayElements = count($Results);
                     //echo $arrayElements;
                 if  ($arrayElements < 2000 && isset($newdata)){
-                    #$key = $this->searchForId($newdata['vat'], $Results,'vat');
-                 #   if ($key === NULL){
+                    $key = $this->searchForId($newdata['vat'], $Results,'vat');
+                    if ($key === NULL){
                       $Results[] = $newdata;      
-                  #  }
-                   # else {
-                       # echo 'same vat found1'.PHP_EOL;
-                    #}
+                    }
+                    else {
+                        echo 'same vat found1'.PHP_EOL;
+                    }
                       
                 }
                    

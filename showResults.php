@@ -34,7 +34,7 @@ class showResults {
 
         echo "<tbody>";
         
-        while ($i<$sumResults) { 
+        while ($i < $sumResults) { 
             
             $name = $uniqueResults[$i]['name'];
             
@@ -96,8 +96,9 @@ class showResults {
             
             echo "</tr>"; 
             
-            $i++;
+           
          }
+          $i++;
          
         echo "</tbody>";
         echo "</table>";
