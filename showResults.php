@@ -100,8 +100,12 @@ class showResults {
             echo $uniqueResults[$i]['score']; //hidden
             echo "</td>";
             
+            echo "</tr>"; 
+            
             $i++;
          }
+          echo "</tbody>";
+          echo"</table>";
             
         
     }
