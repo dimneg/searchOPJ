@@ -462,9 +462,10 @@ class collectData {
        $json = json_decode($response,true);
        curl_close($ch);	
        if (isset ($json['response']['alt_names']) ){
+           # return implode(', ', $json['response']['alt_names']);
             return implode(', ', $json['response']['alt_names']);
        }
-       return $json;
+       #return $json;
        
    } 
 }
