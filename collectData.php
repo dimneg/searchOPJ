@@ -463,8 +463,8 @@ class collectData {
        curl_close($ch);	
        if (isset ($json['response']['docs'][0]['alt_names']) ){
            # return implode(', ', $json['response']['alt_names']);
-           echo implode(', ', $json['response']['alt_names']);
-           print_r($json['response']['docs'][0]['alt_names']);
+           #echo implode(', ', $json['response']['alt_names']);
+          # print_r($json['response']['docs'][0]['alt_names']);
             return implode(', ', $json['response']['docs'][0]['alt_names']);
        }
        #return $json;
