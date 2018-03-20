@@ -96,9 +96,8 @@ class showResults {
             
             echo "</tr>"; 
             
-           
+            $i++;
          }
-          $i++;
          
         echo "</tbody>";
         echo "</table>";
