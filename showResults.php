@@ -14,6 +14,7 @@
 class showResults {
     function showResults(){
         global $Results;
+        $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
         $source = ' ';
         $i = 0;
@@ -210,4 +211,14 @@ class showResults {
         
         
     } 
+    
+    function saveCsvCloud($tableName,$fileName){
+	$fp = fopen($fileName, 'w');
+
+	foreach ($tableName as $fields) {
+            fputcsv($fp, $fields,"~");		
+	}
+
+	fclose($fp);	
+}
 }
