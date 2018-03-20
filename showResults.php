@@ -47,7 +47,7 @@ class showResults {
                     echo "<tr>";
 
                         //show diaugeia
-                    if ($uniqueResults[$i]['dataDiaugeia'] == 1){
+                   # if ($uniqueResults[$i]['dataDiaugeia'] == 1){
 
                         echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         #echo 'diaugeia division '.$i.PHP_EOL;
@@ -77,7 +77,7 @@ class showResults {
 
 
 
-                    }
+                  #  }
                   /*   else { //no source - default
                        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
