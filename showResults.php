@@ -47,6 +47,9 @@ class showResults {
                     echo "<tr>";
 
                         //show diaugeia
+                   if (!empty($uniqueResults[$i]['altNames'])) {
+                       echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
+                   }
                    if ($uniqueResults[$i]['dataDiaugeia'] == 1){
 
                         echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
@@ -226,5 +229,5 @@ class showResults {
 	}
 
 	fclose($fp);	
-}
+    }
 }
