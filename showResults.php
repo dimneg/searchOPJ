@@ -51,8 +51,7 @@ class showResults {
                       
                    echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                    if (!empty($uniqueResults[$i]['altNames'])) {
-                       echo 'Eμφανίζεται και ως: '.$this->hide_not_avail(implode(',',$uniqueResults[$i]['altNames'])."</br>");
-                       echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
+                      echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
                    }
                    if ($uniqueResults[$i]['dataDiaugeia'] == 1){
 
