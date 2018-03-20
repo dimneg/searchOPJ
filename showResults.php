@@ -51,7 +51,7 @@ class showResults {
                         echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         #echo 'diaugeia division '.$i.PHP_EOL;
                         echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
-                        echo '<I>';
+                       /* echo '<I>';
                         echo $this->hide_not_avail($uniqueResults[$i]['address']);
                         echo ' ';
                         echo $this->hide_not_avail($uniqueResults[$i]['pc']);
@@ -70,7 +70,7 @@ class showResults {
                         $sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
                         echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
                         echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
-                        echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
+                        echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	*/
                         echo "</td>";
                         # $uniqueResults[$i]['score'] gets boosted by sources
 

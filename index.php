@@ -256,10 +256,10 @@
 </form>
 <?php
 
-include 'results.php';
+#include 'results.php';
 include 'collectData.php'; 
 include 'keyWord.php';
-#include 'showResults.php';
+include 'showResults.php';
 include 'config.php';
 
 $time_pre = microtime(true);
@@ -385,8 +385,8 @@ if($_POST['formSubmit'] == "index.php") {
         }
 
     }
-    #$showResults = new showResults();
-    $showResults = new results();
+    $showResults = new showResults();
+    
     $showResults -> showResults();
     
     $time_post = microtime(true);
