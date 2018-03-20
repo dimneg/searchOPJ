@@ -90,13 +90,13 @@ class showResults {
                
                 echo "</td>";
             }
-            echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
-            echo $uniqueResults[$i]['score']; //hidden
-            echo "</td>";
+           # echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
+            #echo $uniqueResults[$i]['score']; //hidden
+            #echo "</td>";
             
             echo "</tr>"; 
             
-            ++$i;
+            $i++;
          }
          
         echo "</tbody>";
