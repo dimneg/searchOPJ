@@ -47,7 +47,7 @@ class showResults {
             if ($uniqueResults[$i]['dataDiaugeia'] == 1){
                 
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                echo 'diaugeia division '.$i.PHP_EOL;
+                #echo 'diaugeia division '.$i.PHP_EOL;
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 echo '<I>';
                 echo $this->hide_not_avail($uniqueResults[$i]['address']);
@@ -98,8 +98,9 @@ class showResults {
             
             $i++;
          }
-          echo "</tbody>";
-          echo"</table>";
+         
+        echo "</tbody>";
+        echo "</table>";
             
         
     }
