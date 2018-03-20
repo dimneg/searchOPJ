@@ -14,7 +14,7 @@
 class showResults {
     function showResults(){
         global $Results;
-        print_r($Results);
+        #print_r($Results);
         $source = ' ';
         $i = 0;
         $uniqueResults = $Results; //let 's see if there is need to group
