@@ -84,17 +84,7 @@ class showResults {
                 echo ' ';
                 echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
                 echo '</I>';
-                echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font></br> ';
-	        echo ' <font color="#FFA500" size="1">property</font> '; 
-                echo  'Οριστικοποίηση Πληρωμών: ';
-                $sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2'])  ;
-                echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
-                echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0']+$uniqueResults[$i]['spendCnt1']+$uniqueResults[$i]['spendCnt2']),0).'</B>) '; 
-	        echo  'Κατακυρώσεις: ';
-                $sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
-                echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
-                echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
-                echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
+               
                 echo "</td>";
             }
             echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
