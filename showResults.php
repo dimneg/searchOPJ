@@ -78,8 +78,8 @@ class showResults {
 
 
                     }
-                    else { //no source - default
-                       /* echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+                  /*   else { //no source - default
+                       echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                         echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                         echo '<I>';
                         echo $this->hide_not_avail($uniqueResults[$i]['address']);
@@ -91,8 +91,8 @@ class showResults {
                         echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
                         echo '</I>';
 
-                        echo "</td>"; */
-                    }
+                        echo "</td>"; 
+                    } */
                     echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
                     echo $uniqueResults[$i]['score']; //hidden
                     echo "</td>";
