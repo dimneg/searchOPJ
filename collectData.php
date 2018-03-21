@@ -7,10 +7,10 @@ class collectData {
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       #$this-> prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this-> prepareResults($DbPath,"elod_buyersV2","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);       		  
 								 
-       #$this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
        
        #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
@@ -25,10 +25,10 @@ class collectData {
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       #$this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);       		  
 								 
-       #$this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
        #$this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
@@ -47,10 +47,10 @@ class collectData {
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       #$this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_buyersV2","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_buyersV2","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);       		  
 								 
-       #$this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
 								
      	  
@@ -292,7 +292,21 @@ class collectData {
                                  $Results[$key]['spendCnt2'] = (isset($r['fields']['spendCounter2']) ) ? $r['fields']['spendCounter2'] : null ;
                                  $Results[$key]['lastUpdate'] = (isset($r['fields']['lastUpdate']) ) ? $r['fields']['lastUpdate'] : null ;
                                   break;
-                              
+                              case "elod_diaugeia_buyers":
+                                 $Results[$key]['db_award0'] =(isset($r['fields']['db_awardAmount0']) ) ? $r['fields']['db_awardAmount0'] : null;
+                                 $Results[$key]['db_award1'] = (isset($r['fields']['db_awardAmount1']) ) ? $r['fields']['db_awardAmount1'] : null ;
+                                 $Results[$key]['db_award2'] = (isset($r['fields']['db_awardAmount2']) ) ? $r['fields']['db_awardAmount2'] : null ;
+                                 $Results[$key]['db_awardCnt0'] = (isset($r['fields']['db_awardCounter0']) ) ? $r['fields']['db_awardCounter0'] : null ;
+                                 $Results[$key]['db_awardCnt1'] = (isset($r['fields']['db_awardCounter1']) ) ? $r['fields']['db_awardCounter1'] : null ;
+                                 $Results[$key]['db_awardCnt2'] = (isset($r['fields']['db_awardCounter2']) ) ? $r['fields']['db_awardCounter2'] : null ;                   
+                                 $Results[$key]['db_spend0'] = (isset($r['fields']['db_spendAmount0']) ) ? $r['fields']['db_spendAmount0'] : null ;
+                                 $Results[$key]['db_spend1'] = (isset($r['fields']['db_spendAmount1']) ) ? $r['fields']['db_spendAmount1'] : null ;
+                                 $Results[$key]['db_spend2'] = (isset($r['fields']['db_spendAmount2']) ) ? $r['fields']['db_spendAmount2'] : null ;
+                                 $Results[$key]['db_spendCnt0'] =  (isset($r['fields']['db_spendCounter0']) ) ? $r['fields']['db_spendCounter0'] : null ;
+                                 $Results[$key]['db_spendCnt1'] =  (isset($r['fields']['db_spendCounter1']) ) ? $r['fields']['db_spendCounter1'] : null ;
+                                 $Results[$key]['db_spendCnt2'] = (isset($r['fields']['db_spendCounter2']) ) ? $r['fields']['db_spendCounter2'] : null ;
+                                 $Results[$key]['db_lastUpdate'] = (isset($r['fields']['db_lastUpdate']) ) ? $r['fields']['db_lastUpdate'] : null ;
+                                  break;
                               
                           }
                          
