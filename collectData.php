@@ -257,7 +257,7 @@ class collectData {
                       $Results[] = $newdata;      
                     }
                     else {
-                        #echo 'same vat found1'.PHP_EOL;
+                        echo 'same vat found '.$newdata['vat'].$Db.PHP_EOL;
                     }
                       
                 }
