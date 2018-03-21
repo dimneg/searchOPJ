@@ -12,9 +12,9 @@
  * @author dimitris negkas
  */
 class showResults {
-    function presentResults(){
+    function presentResults(){ //test 090166291
         global $Results;
-        $this->saveCsvCloud($Results, '/var/log/results.csv');
+       # $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
         $source = ' ';
         $i = 0;
