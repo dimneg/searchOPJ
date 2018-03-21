@@ -347,7 +347,7 @@ class collectData {
        $matchDb = $status;
        
        if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs'  &&  $matchDb == 0){
-          $matchDb = 1;    
+          $matchDb = 1;    echo 'khmdhs matched';
           return  $matchDb;
        }
        if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' &&  $matchDb == 0 ){
