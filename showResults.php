@@ -72,19 +72,30 @@ class showResults {
                     echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font></br> ';
                     if ($uniqueResults[$i]['dataDiaugeiaBuyer'] == 1){
                          echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
+                         $sumSpend = $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2'])  ;
+                         echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
+                         echo ' (<B>'.round(($uniqueResults[$i]['db_spendCnt0']+$uniqueResults[$i]['db_spendCnt1']+$uniqueResults[$i]['db_spendCnt2']),0).'</B>) '; 
+                         echo  'Κατακυρώσεις: ';
+                         $sumAward = $this->fromTextToNumber($uniqueResults[$i]['db_award0']) + $this->fromTextToNumber($uniqueResults[$i]['db_award1']) + $this->fromTextToNumber($uniqueResults[$i]['db_award2'])  ;
+                         echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
+                         echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
+                         echo  ' &nbsp [έως '.$uniqueResults[$i]['db_lastUpdate'].']</br>';	
+                         
+                         
                     }
                    # echo ' <font color="#FFA500" size="1">property</font> '; 
-                    echo  'Οριστικοποίηση Πληρωμών: ';
-                    $sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2'])  ;
-                    echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
-                    echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0']+$uniqueResults[$i]['spendCnt1']+$uniqueResults[$i]['spendCnt2']),0).'</B>) '; 
-                    echo  'Κατακυρώσεις: ';
-                    $sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
-                    echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
-                    echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
-                    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']</br>';	
+                    
                     if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
+                         echo  'Οριστικοποίηση Πληρωμών: ';
+                         $sumSpend = $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2'])  ;
+                         echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
+                         echo ' (<B>'.round(($uniqueResults[$i]['spendCnt0']+$uniqueResults[$i]['db_spendCnt1']+$uniqueResults[$i]['spendCnt2']),0).'</B>) '; 
+                         echo  'Κατακυρώσεις: ';
+                         $sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
+                         echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
+                         echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
+                         echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']</br>';	
                     }
                     
                     echo "</td>";
