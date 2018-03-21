@@ -352,24 +352,20 @@ class collectData {
            $matchDb =  1;
        }
        
-       if (($db == 'elod_espa_beneficiaries' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia'  &&  $matchDb == 0){
+       if (($db == 'elod_australia_buyers' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia'  &&  $matchDb == 0){
             $matchDb =  1;
        }       
-       if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' &&  $matchDb == 0 ){
+       if ($db == 'elod_espa_beneficiaries'  && $field == 'dataEspa' &&  $matchDb == 0 ){
             $matchDb =  1;
        }
        if ($db == 'Ted'  && $field == 'dataTed' &&  $matchDb == 0){
            $matchDb =  1;
        }
-       if ($db == 'elod_main'  && $field == 'dataTed' &&  $matchDb == 0 ){
-           $matchDb =  1;
-       }
+       
        if (($db == 'elod_main_orgv4_all' || $db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' &&  $matchDb == 0){
             $matchDb =  1;
        } 
-       if ($db == 'solrMatched'  && $field == 'dataMatched' &&  $matchDb == 0){
-            $matchDb =  1;
-       } 
+      
        return  $matchDb;
       
    } 
