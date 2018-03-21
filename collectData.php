@@ -202,8 +202,7 @@ class collectData {
                       'award2'=> (isset($r['fields']['awardAmount2']) ) ? $r['fields']['awardAmount2'] : null ,
                       'awardCnt0'=> (isset($r['fields']['awardCounter0']) ) ? $r['fields']['awardCounter0'] : null ,
                       'awardCnt1'=> (isset($r['fields']['awardCounter1']) ) ? $r['fields']['awardCounter1'] : null ,
-                      'awardCnt2'=> (isset($r['fields']['awardCounter2']) ) ? $r['fields']['awardCounter2'] : null ,
-                     // 'awardItemsNo'=> $r['fields']['awardItemsNo'], //Not in use
+                      'awardCnt2'=> (isset($r['fields']['awardCounter2']) ) ? $r['fields']['awardCounter2'] : null ,                    
                       'spend0'=> (isset($r['fields']['spendAmount0']) ) ? $r['fields']['spendAmount0'] : null ,
                       'spend1'=> (isset($r['fields']['spendAmount1']) ) ? $r['fields']['spendAmount1'] : null ,
                       'spend2'=> (isset($r['fields']['spendAmount2']) ) ? $r['fields']['spendAmount2'] : null ,
@@ -277,6 +276,26 @@ class collectData {
                          $Results[$key]['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia',$Results[$key]['dataDiaugeia']);
                          $Results[$key]['dataDiaugeiaBuyer'] = $this->defineProperty($Db, 'buyer',$Results[$key]['dataDiaugeiaBuyer']);
                          $Results[$key]['dataDiaugeiaSeller'] = $this->defineProperty($Db, 'seller',$Results[$key]['dataDiaugeiaSeller']);
+                         switch ($Db){
+                             case "elod_diaugeia_sellers":
+                                 $Results[$key]['award0'] =(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null;
+                                 $Results[$key]['award1'] = (isset($r['fields']['awardAmount1']) ) ? $r['fields']['awardAmount1'] : null ;
+                                 $Results[$key]['award2'] = (isset($r['fields']['awardAmount2']) ) ? $r['fields']['awardAmount2'] : null ;
+                                 $Results[$key]['awardCnt0'] = (isset($r['fields']['awardCounter0']) ) ? $r['fields']['awardCounter0'] : null ;
+                                 $Results[$key]['awardCnt1'] = (isset($r['fields']['awardCounter1']) ) ? $r['fields']['awardCounter1'] : null ;
+                                 $Results[$key]['awardCnt2'] = (isset($r['fields']['awardCounter2']) ) ? $r['fields']['awardCounter2'] : null ;                   
+                                 $Results[$key]['spend0'] = (isset($r['fields']['spendAmount0']) ) ? $r['fields']['spendAmount0'] : null ;
+                                 $Results[$key]['spend1'] = (isset($r['fields']['spendAmount1']) ) ? $r['fields']['spendAmount1'] : null ;
+                                 $Results[$key]['spend2'] = (isset($r['fields']['spendAmount2']) ) ? $r['fields']['spendAmount2'] : null ;
+                                 $Results[$key]['spendCnt0'] =  (isset($r['fields']['spendCounter0']) ) ? $r['fields']['spendCounter0'] : null ;
+                                 $Results[$key]['spendCnt1'] =  (isset($r['fields']['spendCounter1']) ) ? $r['fields']['spendCounter1'] : null ;
+                                 $Results[$key]['spendCnt2'] = (isset($r['fields']['spendCounter2']) ) ? $r['fields']['spendCounter2'] : null ;
+                                 $Results[$key]['lastUpdate'] = (isset($r['fields']['lastUpdate']) ) ? $r['fields']['lastUpdate'] : null ;
+                                  break;
+                              
+                              
+                          }
+                         
                         
                          
                     }

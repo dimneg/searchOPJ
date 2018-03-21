@@ -72,6 +72,7 @@ class showResults {
                     echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font></br> ';
                     if ($uniqueResults[$i]['dataDiaugeiaBuyer'] == 1){
                          echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
+                         echo  'Οριστικοποίηση Πληρωμών: ';
                          $sumSpend = $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2'])  ;
                          echo '<B> '.$this->fromNumberToText($sumSpend,'€').'</B>';
                          echo ' (<B>'.round(($uniqueResults[$i]['db_spendCnt0']+$uniqueResults[$i]['db_spendCnt1']+$uniqueResults[$i]['db_spendCnt2']),0).'</B>) '; 
