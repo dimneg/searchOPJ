@@ -2,16 +2,16 @@
 
 
 class collectData {
-   function getAll($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore){
+   function getAll($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer){
        global $Limit;
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
       
-       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);       		  
-       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);			 
-       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
-       $this-> prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);       		  
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);			 
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
        
        
        #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
@@ -20,18 +20,18 @@ class collectData {
        #$this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
  }
-   function getAllShort($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore){
+   function getAllShort($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer){
        global $Limit;
 
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
        
-       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);    
-       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);         
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);    
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);         
 								 
-       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
-       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
       
        #$this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
@@ -44,19 +44,19 @@ class collectData {
        #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass);
 	
     } 
-   function getAllGreek($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore){
+   function getAllGreek($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer){
        global $Limit;
 
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
        #$this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);				  
 							
-       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);    
-       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
-       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);		  
+       $this->prepareResults($DbPath,"elod_diaugeia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);    
+       $this->prepareResults($DbPath,"elod_diaugeia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
+       $this->prepareResults($DbPath,"elod_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);		  
 								 
       
        
-       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore);
+       $this->prepareResults($DbPath,"elod_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer,$sparqlServer);
 								
      	  
 			  
@@ -68,7 +68,7 @@ class collectData {
     } 
     
    
-   function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword,$couchUser,$couchPass, $solrPath,$solrCore) {
+   function prepareResults($DbPath,$Db,$DesignDoc,$Index,$Wc,$Limit,$Sort,$varKeyword,$couchUser,$couchPass, $solrPath,$solrCore,$sparqlServer) {
         global $AlreadyFound;
         $couchUserPwd = $couchUser.':'.$couchPass;
         #echo 'pass = '.$couchUserPwd.PHP_EOL;
@@ -272,6 +272,8 @@ class collectData {
                      'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller',0),
                      'dataKhmdhsBuyer' => $this->defineProperty($Db,'buyer',0),
                      'dataKhmdhsSeller' => $this->defineProperty($Db,'seller',0),
+                     
+                     'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
                 
                      
                 );	
@@ -471,7 +473,30 @@ class collectData {
        
    } 
    
-   function getTedDataRDF(){
-       $bluebox = curl_init();
+   function getTedDataRDF($vat,$sparqlServer){
+       $ch = curl_init();
+       $url = $sparqlServer."/?default-graph-uri=http%3A%2F%2Fyourdatastories.eu%2Fvirtual&query=SELECT+%28sum%28xsd%3Adecimal%28%3FcurrencyValue%29%29+as+%3FsumOfAmounts%29%0D%0AFROM+<http%3A%2F%2Fyourdatastories.eu%2FTEDGreece>%0D%0AWHERE+%7B%0D%0A%3Fcontract+elod%3Abuyer+<http%3A%2F%2Flinkedeconomy.org%2Fresource%2FOrganization%2F090025586>+%3B%0D%0Apc%3AagreedPrice+%3FagreedPrice+.%0D%0A%3FagreedPrice+gr%3AhasCurrencyValue+%3FcurrencyValue+.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
+       echo $url.PHP_EOL;
+       curl_setopt_array($ch, array(
+           CURLOPT_PORT => "8890",
+           CURLOPT_URL => $url ,
+           CURLOPT_RETURNTRANSFER => true,
+           CURLOPT_ENCODING => "",
+           CURLOPT_MAXREDIRS => 10,
+           CURLOPT_TIMEOUT => 600,
+           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+           CURLOPT_CUSTOMREQUEST => "GET",
+           CURLOPT_HTTPHEADER => array(
+	    "cache-control: no-cache",
+	    "postman-token: b79e291a-0eef-efe9-3d63-e067a3535154"
+	  ),
+          ));
+       $response = curl_exec($ch);
+       $err = curl_error($ch);
+       $json = json_decode($response,true);
+       curl_close($ch);
+       if (isset ($json['results']['bindings'][0]['sumOfAmounts']) ){
+            return $json['results']['bindings'][0] ['sumOfAmounts'];
+       }
    }
 }
