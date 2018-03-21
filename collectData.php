@@ -489,7 +489,9 @@ class collectData {
            CURLOPT_CUSTOMREQUEST => "GET",
            CURLOPT_HTTPHEADER => array(
 	    "cache-control: no-cache",
-	    "postman-token: b79e291a-0eef-efe9-3d63-e067a3535154"
+	    "postman-token: b79e291a-0eef-efe9-3d63-e067a3535154",
+            'Content-type: application/json; charset=utf-8',
+	    'Accept: */*'
 	  ),
           ));
        $response = curl_exec($ch);
