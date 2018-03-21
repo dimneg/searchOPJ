@@ -350,7 +350,10 @@ class collectData {
                      'dataTed'=>  $this->defineSource($Db, 'dataTed'),
                      'dataGemh'=>  $this->defineSource($Db, 'dataGemh'),
                      'dataAustralia'=>$this->defineSource($Db, 'dataAustralia'),
-                     'dataMatched'=>  $this->defineSource($Db, 'dataMatched')
+                     'dataMatched'=>  $this->defineSource($Db, 'dataMatched'),     
+                     
+                     'dataDiaugeiaBuyer' => $this->defineProperty($Db,'buyer'),
+                     'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller')
                 
                      
                 );	
@@ -387,34 +390,53 @@ class collectData {
     }  
     
    function defineSource($db,$field){
-       $match = 0;
+      
+       $matchDb = 0;
+       
        if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs' ){
-          $match = 1;
+          $matchDb = 1;          
        }
        if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' ){
-           $match =  1;
+           $matchDb =  1;
        }
+       
        if (($db == 'elod_espa_beneficiaries' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia' ){
-           $match =  1;
+            $matchDb =  1;
        }       
        if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' ){
-           $match =  1;
+            $matchDb =  1;
        }
        if ($db == 'Ted'  && $field == 'dataTed' ){
-           $match =  1;
+           $matchDb =  1;
        }
        if ($db == 'elod_main'  && $field == 'dataTed' ){
-           $match =  1;
+           $matchDb =  1;
        }
        if (($db == 'elod_main_orgv4_all' || $db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' ){
-           $match =  1;
+            $matchDb =  1;
        } 
        if ($db == 'solrMatched'  && $field == 'dataMatched' ){
-           $match =  1;
+            $matchDb =  1;
        } 
-       return $match;
+       return  $matchDb;
       
    } 
+   
+   function defineProperty($db,$field){
+       # $propertiesArray = ['ΦΟΡΕΑΣ','ΑΝΑΔΟΧΟΣ','ΔΙΚΑΙΟΥΧΟΣ'];
+       $matchProperty = 0;
+       if ($db == 'elod_diaugeia_buyers' ){
+          if ($field == 'buyer'){
+               $matchProperty = 1;
+          }
+       }
+       if ($db == 'elod_diaugeia_sellers' ){
+           if ($field == 'seller'){
+               $matchProperty = 1;
+           }
+       }
+      return $matchProperty;
+   }
    function searchForId($id, $array, $index) { 
     foreach ($array as $key => $val) {       
             if ( $val[$index] === $id ) {
