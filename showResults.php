@@ -82,7 +82,7 @@ class showResults {
                     $sumAward = $this->fromTextToNumber($uniqueResults[$i]['award0']) + $this->fromTextToNumber($uniqueResults[$i]['award1']) + $this->fromTextToNumber($uniqueResults[$i]['award2'])  ;
                     echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
                     echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
-                    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
+                    echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']</br>';	
                     if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
                     }
