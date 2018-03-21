@@ -261,7 +261,7 @@ class collectData {
                      'dataTed'=>  $this->defineSource($Db, 'dataTed',0),
                      'dataGemh'=>  $this->defineSource($Db, 'dataGemh',0),
                      'dataAustralia'=>$this->defineSource($Db, 'dataAustralia',0),
-                     'dataMatched'=>  $this->defineSource($Db, 'dataMatched',0),     
+                    # 'dataMatched'=>  $this->defineSource($Db, 'dataMatched',0),     
                      
                      'dataDiaugeiaBuyer' => $this->defineProperty($Db,'buyer',0),
                      'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller',0),
@@ -346,24 +346,30 @@ class collectData {
        $matchDb = $status;
        
        if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs'  &&  $matchDb == 0){
-          $matchDb = 1;          
+          $matchDb = 1;    
+          return  $matchDb;
        }
        if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' &&  $matchDb == 0 ){
            $matchDb =  1;
+           return  $matchDb;
        }
        
        if (($db == 'elod_australia_buyers' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia'  &&  $matchDb == 0){
             $matchDb =  1;
+            return  $matchDb;
        }       
        if ($db == 'elod_espa_beneficiaries'  && $field == 'dataEspa' &&  $matchDb == 0 ){
             $matchDb =  1;
+            return  $matchDb;
        }
        if ($db == 'Ted'  && $field == 'dataTed' &&  $matchDb == 0){
            $matchDb =  1;
+           return  $matchDb;
        }
        
        if (($db == 'elod_main_orgv4_all' || $db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' &&  $matchDb == 0){
             $matchDb =  1;
+            return  $matchDb;
        } 
       
        return  $matchDb;
@@ -376,21 +382,25 @@ class collectData {
        if ($db == 'elod_diaugeia_buyers' && $matchProperty == 0){
           if ($field == 'buyer'){
                $matchProperty = 1;
+               return $matchProperty;
           }
        }
        if ($db == 'elod_buyers' && $matchProperty == 0){
           if ($field == 'buyer'){
                $matchProperty = 1;
+               return $matchProperty;
           }
        }
        if ($db == 'elod_diaugeia_sellers' ){
            if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
+               return $matchProperty;
            }
        }
        if ($db == 'elod_sellers' ){
            if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
+               return $matchProperty;
            }
        }
       return $matchProperty;
