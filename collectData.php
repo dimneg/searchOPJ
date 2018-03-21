@@ -233,16 +233,16 @@ class collectData {
                      
                      #'dataDiaugeiaBuyers'=>  $this->defineSource($Db, 'dataDiaugeiaBuyers'),
                      #'dataDiaugeiaSellers'=>  $this->defineSource($Db, 'dataDiaugeiaSellers'),
-                     'dataDiaugeia'=>  $this->defineSource($Db, 'dataDiaugeia'),
-                     'dataKhmdhs'=>  $this->defineSource($Db, 'dataKhmdhs'),
-                     'dataEspa'=> $this->defineSource($Db, 'dataEspa'),
-                     'dataTed'=>  $this->defineSource($Db, 'dataTed'),
-                     'dataGemh'=>  $this->defineSource($Db, 'dataGemh'),
-                     'dataAustralia'=>$this->defineSource($Db, 'dataAustralia'),
-                     'dataMatched'=>  $this->defineSource($Db, 'dataMatched'),     
+                     'dataDiaugeia'=>  $this->defineSource($Db, 'dataDiaugeia',0),
+                     'dataKhmdhs'=>  $this->defineSource($Db, 'dataKhmdhs',0),
+                     'dataEspa'=> $this->defineSource($Db, 'dataEspa',0),
+                     'dataTed'=>  $this->defineSource($Db, 'dataTed',0),
+                     'dataGemh'=>  $this->defineSource($Db, 'dataGemh',0),
+                     'dataAustralia'=>$this->defineSource($Db, 'dataAustralia',0),
+                     'dataMatched'=>  $this->defineSource($Db, 'dataMatched',0),     
                      
-                     'dataDiaugeiaBuyer' => $this->defineProperty($Db,'buyer'),
-                     'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller')
+                     'dataDiaugeiaBuyer' => $this->defineProperty($Db,'buyer',0),
+                     'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller',0)
                 
                      
                 );	
@@ -257,7 +257,10 @@ class collectData {
                       $Results[] = $newdata;      
                     }
                     else {
-                        echo 'same vat found '.$newdata['vat'].$Db.PHP_EOL;
+                         echo 'same vat found '.$newdata['vat'].$Db.PHP_EOL;
+                         $Results['$key']['dataDiaugeiaBuyer'] = $this->defineSource($Db, 'buyer');
+                         $Results['$key']['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia');
+                         
                     }
                       
                 }
@@ -278,49 +281,49 @@ class collectData {
 
     }  
     
-   function defineSource($db,$field){
+   function defineSource($db,$field, $status){
       
-       $matchDb = 0;
+       $matchDb = $status;
        
-       if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs' ){
+       if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs'  &&  $matchDb == 0){
           $matchDb = 1;          
        }
-       if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' ){
+       if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' &&  $matchDb == 0 ){
            $matchDb =  1;
        }
        
-       if (($db == 'elod_espa_beneficiaries' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia' ){
+       if (($db == 'elod_espa_beneficiaries' || $db == 'elod_australia_sellers' ) && $field == 'dataAustralia'  &&  $matchDb == 0){
             $matchDb =  1;
        }       
-       if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' ){
+       if ($db == 'elod_australia_buyers'  && $field == 'dataEspa' &&  $matchDb == 0 ){
             $matchDb =  1;
        }
-       if ($db == 'Ted'  && $field == 'dataTed' ){
+       if ($db == 'Ted'  && $field == 'dataTed' &&  $matchDb == 0){
            $matchDb =  1;
        }
-       if ($db == 'elod_main'  && $field == 'dataTed' ){
+       if ($db == 'elod_main'  && $field == 'dataTed' &&  $matchDb == 0 ){
            $matchDb =  1;
        }
-       if (($db == 'elod_main_orgv4_all' || $db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' ){
+       if (($db == 'elod_main_orgv4_all' || $db == 'elod_main_orgv4_fr' ) && $field == 'dataGemh' &&  $matchDb == 0){
             $matchDb =  1;
        } 
-       if ($db == 'solrMatched'  && $field == 'dataMatched' ){
+       if ($db == 'solrMatched'  && $field == 'dataMatched' &&  $matchDb == 0){
             $matchDb =  1;
        } 
        return  $matchDb;
       
    } 
    
-   function defineProperty($db,$field){
+   function defineProperty($db,$field, $status){
        # $propertiesArray = ['ΦΟΡΕΑΣ','ΑΝΑΔΟΧΟΣ','ΔΙΚΑΙΟΥΧΟΣ'];
-       $matchProperty = 0;
-       if ($db == 'elod_diaugeia_buyers' ){
+       $matchProperty = $status;
+       if ($db == 'elod_diaugeia_buyers' && $matchProperty == 0){
           if ($field == 'buyer'){
                $matchProperty = 1;
           }
        }
        if ($db == 'elod_diaugeia_sellers' ){
-           if ($field == 'seller'){
+           if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
            }
        }
