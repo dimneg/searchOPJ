@@ -470,4 +470,8 @@ class collectData {
        #return $json;
        
    } 
+   
+   function getTedDataRDF(){
+       $bluebox = curl_init();
+   }
 }

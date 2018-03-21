@@ -52,21 +52,17 @@ class showResults {
                    echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                    if (!empty($uniqueResults[$i]['altNames'])) {
                       echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
+                      echo '<I>';
+                      echo $this->hide_not_avail($uniqueResults[$i]['address']);
+                      echo ' ';
+                      echo $this->hide_not_avail($uniqueResults[$i]['pc']);
+                      echo ' ';
+                      echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
+                      echo ' ';
+                      echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
+                      echo '</I>';
                    }
-                   if ($uniqueResults[$i]['dataDiaugeia'] == 1){
-
-                       # echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                      
-                        #echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
-                        echo '<I>';
-                        echo $this->hide_not_avail($uniqueResults[$i]['address']);
-                        echo ' ';
-                        echo $this->hide_not_avail($uniqueResults[$i]['pc']);
-                        echo ' ';
-                        echo $this->hide_not_avail_space($uniqueResults[$i]['city']); 
-                        echo ' ';
-                        echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
-                        echo '</I>';
+                   if ($uniqueResults[$i]['dataDiaugeia'] == 1){                      
                         echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font></br> ';
                         echo ' <font color="#FFA500" size="1">property</font> '; 
                         echo  'Οριστικοποίηση Πληρωμών: ';
