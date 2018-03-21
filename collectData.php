@@ -180,6 +180,7 @@ class collectData {
                       'id' => $r['id'],
                       #'lastUpdate'=> $r['fields']['lastUpdate'],
                       'lastUpdate'=> (isset($r['fields']['lastUpdate']) ) ? $r['fields']['lastUpdate'] : null ,
+                     
                    //ΔΙΑΥΓΕΙΑ
                       'award0'=>(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null ,
                       'award1'=> (isset($r['fields']['awardAmount1']) ) ? $r['fields']['awardAmount1'] : null ,
@@ -215,33 +216,7 @@ class collectData {
                       'contractCounter2'=> (isset($r['fields']['contractCounter2']) ) ? $r['fields']['contractCounter2'] : null ,
                       'contractCounter3'=> (isset($r['fields']['contractCounter3']) ) ? $r['fields']['contractCounter3'] : null , //london only
 
-                      // for last item
-
-                       //diaygeia
-                      'award0_2'=>' ',	
-                      'award1_2'=>' ',
-                      'award2_2'=> ' ',
-                      'awardCnt0_2'=>' ',
-                      'awardCnt1_2'=>' ',
-                      'awardCnt2_2'=>' ',		  
-                      'spend0_2'=>' ',
-                      'spend1_2'=>' ',	 
-                      'spend2_2'=>' ',	
-                      'spendCnt0_2'=>' ',
-                      'spendCnt1_2'=>' ',
-                      'spendCnt2_2'=>' ',
-
-                      //khmdhs
-                      'contractAmountPrev_2'=> ' ',
-                      'contractAmountCur_2'=>' ', 
-                      'paymentAmountPrev_2'=>' ',
-                      'paymentAmountCur_2'=>' ',	  
-                      'contractItemsNo_2'=>' ',
-                      'paymentItemsNo_2'=>' ',   
-
-                      //bοth
-                      'lastUpdate_2'=>' ',
-                      'dk_flag'=>' ',
+                     
 
                    //espa  	
                       'SubsContractsAmount'=> (isset($r['fields']['SubsContractsAmount']) ) ? $r['fields']['SubsContractsAmount'] : null ,
@@ -249,93 +224,7 @@ class collectData {
                       'SubsContractsCounter'=>(isset($r['fields']['SubsContractsCounter']) ) ? $r['fields']['SubsContractsCounter'] : null ,
                       'SubsPaymentsCounter'=> (isset($r['fields']['SubsPaymentsCounter']) ) ? $r['fields']['SubsPaymentsCounter'] : null,  
                       'pageKind'=> (isset($r['fields']['pageKind']) ) ? $r['fields']['pageKind'] : null,  
-                       //espa extra
-                         //espa-khmdhs
-                       'linkEKS'=>' ',
-                       'contractAmountPrevEKS'=>' ',
-                       'contractAmountCurEKS'=>' ',
-                       'paymentAmountPrevEKS'=>' ',
-                       'paymentAmountCurEKS'=>' ',
-                       'contractItemsNoEKS'=>' ',
-                       'paymentItemsNoEKS'=>' ',
-                       'lastUpdateEKS'=>' ',	
-
-                       'linkEKB'=>' ',
-                       'contractAmountPrevEKB'=>' ',
-                       'contractAmountCurEKB'=>' ',
-                       'paymentAmountPrevEKB'=>' ',
-                       'paymentAmountCurEKB'=>' ',
-                       'contractItemsNoEKB'=>' ',
-                       'paymentItemsNoEKB'=>' ',
-                       'lastUpdateEKB'=>' ',	
-
-                            //espa-diaugeia	
-                       'linkEDS'=>' ',		  		
-                       'award0EDS'=>' ',
-                       'award1EDS'=> ' ',
-                       'award2EDS'=>' ' ,
-                       'awardCnt0EDS'=>' ',
-                       'awardCnt1EDS'=>' ' ,
-                       'awardCnt2EDS'=>' ' ,	
-                       'spend0EDS'=>' ' ,
-                       'spend1EDS'=>' ' ,
-                       'spend2EDS'=>' ' ,
-                       'spendCnt0EDS'=>' '  ,
-                       'spendCnt1EDS'=>' ',
-                       'spendCnt2EDS'=>' ' ,
-                       'lastUpdateEDS'=>' ',
-                       'linkEDB'=>' ',
-                       'award0EDB'=>' ',
-                       'award1EDB'=> ' ',
-                       'award2EDB'=>' ' ,
-                       'awardCnt0EDB'=>' ',
-                       'awardCnt1EDB'=>' ' ,
-                       'awardCnt2EDB'=>' ' ,	
-                       'spend0EDB'=>' ' ,
-                       'spend1EDB'=>' ' ,
-                       'spend2EDB'=>' ' ,
-                       'spendCnt0EDB'=>' '  ,
-                       'spendCnt1EDB'=>' ',
-                       'spendCnt2EDB'=>' ' ,
-                       'lastUpdateEDB'=>' ',
-
-                   //diaugeia-hybrids sellers  
-                      'awardSel0'=> (isset($r['fields']['awardAmountSel0']) ) ? $r['fields']['awardAmountSel0'] : null ,
-                      'awardSel1'=> (isset($r['fields']['awardAmountSel1']) ) ? $r['fields']['awardAmountSel1'] : null ,
-                      'awardSel2'=> (isset($r['fields']['awardAmountSel2']) ) ? $r['fields']['awardAmountSel2'] : null ,
-                      'awardCntSel0'=> (isset($r['fields']['awardCounterSel0']) ) ? $r['fields']['awardCounterSel0'] : null ,
-                      'awardCntSel1'=> (isset($r['fields']['awardCounterSel1']) ) ? $r['fields']['awardCounterSel1'] : null ,
-                      'awardCntSel2'=> (isset($r['fields']['awardCounterSel2']) ) ? $r['fields']['awardCounterSel2'] : null ,	  
-                      'spendSel0'=> (isset($r['fields']['spendAmountSel0']) ) ? $r['fields']['spendAmountSel0'] : null ,	
-                      'spendSel1'=> (isset($r['fields']['spendAmountSel1']) ) ? $r['fields']['spendAmountSel1'] : null ,	
-                      'spendSel2'=> (isset($r['fields']['spendAmountSel2']) ) ? $r['fields']['spendAmountSel2'] : null ,	
-                      'spendCntSel0'=> (isset($r['fields']['spendCounterSel0']) ) ? $r['fields']['spendCounterSel0'] : null ,	
-                      'spendCntSel1'=> (isset($r['fields']['spendCounterSel1']) ) ? $r['fields']['spendCounterSel1'] : null ,	
-                      'spendCntSel2'=> (isset($r['fields']['spendCounterSel2']) ) ? $r['fields']['spendCounterSel2'] : null ,	
-
-                      //diaugeia-hybrids ->khmdhs
-                      'linkHKS'=>' ',
-                      'linkHKB'=>' ',
-                      'contractAmountPrevHKS'=> ' ' ,
-                      'contractAmountPrevHKB'=> ' ' ,
-                      'contractAmountCurHKS'=> ' ' ,
-                      'contractAmountCurHKS'=> ' ' ,	  
-                      'paymentAmountPrevHKS'=> ' ' ,
-                      'paymentAmountPrevHKB'=> ' ' ,
-                      'paymentAmountCurHKS'=> ' ' ,
-                      'paymentAmountCurHKB'=> ' ' ,
-                      'contractItemsNoHKS'=> ' ' ,
-                      'contractItemsNoHKB'=> ' ' ,
-                      'paymentItemsNoHKS'=> ' ' ,
-                      'paymentItemsNoHKB'=> ' ',
-                      'lastUpdateHKS'=> ' ',	  
-                      'lastUpdateHKB'=> ' ', 
-
-                     
-                     'relative1'=>0,	
-                     'relative2'=>0,
-                     'relative3'=>0,	
-                     'relative4'=>0,
+                      
                      
                    #  'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
                      'altNames'=>  $this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),
