@@ -210,14 +210,21 @@ class collectData {
                       'spendCnt1'=>  (isset($r['fields']['spendCounter1']) ) ? $r['fields']['spendCounter1'] : null ,
                       'spendCnt2'=> (isset($r['fields']['spendCounter2']) ) ? $r['fields']['spendCounter2'] : null ,
                       'lastUpdate'=> (isset($r['fields']['lastUpdate']) ) ? $r['fields']['lastUpdate'] : null ,
-                  //'spendingItemsNo'=> $r['fields']['spendingItemsNo'], //Not in use	 	   
-                      //ΚΗΜΔΗΣ
+                 	   
+                     
+                      //ΚΗΜΔΗΣ buyers
+                      'kb_contractAmountPrev'=> (isset($r['fields']['kb_contractsAmount0']) ) ? $r['fields']['kb_contractsAmount0'] : null ,
+                      'kb_contractAmountCur'=> (isset($r['fields']['kb_contractsAmount1']) ) ? $r['fields']['kb_contractsAmount1'] : null ,                     
+                      'kb_paymentAmountPrev'=> (isset($r['fields']['kb_paymentsAmount0']) ) ? $r['fields']['kb_paymentsAmount0'] : null ,
+                      'kb_paymentAmountCur'=> (isset($r['fields']['kb_paymentsAmount1']) ) ? $r['fields']['kb_paymentsAmount1'] : null ,                      	  
+                      'kb_contractItemsNo'=> (isset($r['fields']['kb_contractItemsNo']) ) ? $r['fields']['kb_contractItemsNo'] : null ,
+                      'kb_paymentItemsNo'=>  (isset($r['fields']['kb_paymentItemsNo']) ) ? $r['fields']['kb_paymentItemsNo'] : null ,
+                      
+                      //ΚΗΜΔΗΣ sellers
                       'contractAmountPrev'=> (isset($r['fields']['contractsAmount0']) ) ? $r['fields']['contractsAmount0'] : null ,
-                      'contractAmountCur'=> (isset($r['fields']['contractsAmount1']) ) ? $r['fields']['contractsAmount1'] : null ,
-                       // 'contract2'=> $r['fields']['contractsAmount2'],
+                      'contractAmountCur'=> (isset($r['fields']['contractsAmount1']) ) ? $r['fields']['contractsAmount1'] : null ,                     
                       'paymentAmountPrev'=> (isset($r['fields']['paymentsAmount0']) ) ? $r['fields']['paymentsAmount0'] : null ,
-                      'paymentAmountCur'=> (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ,
-                       // 'payment2'=> $r['fields']['paymentsAmount2'], 	  
+                      'paymentAmountCur'=> (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ,                      	  
                       'contractItemsNo'=> (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ,
                       'paymentItemsNo'=>  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ,
 
@@ -257,7 +264,9 @@ class collectData {
                      'dataMatched'=>  $this->defineSource($Db, 'dataMatched',0),     
                      
                      'dataDiaugeiaBuyer' => $this->defineProperty($Db,'buyer',0),
-                     'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller',0)
+                     'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller',0),
+                     'dataKhmdhsBuyer' => $this->defineProperty($Db,'buyer',0),
+                     'dataKhmdhsSeller' => $this->defineProperty($Db,'seller',0),
                 
                      
                 );	
@@ -373,7 +382,17 @@ class collectData {
                $matchProperty = 1;
           }
        }
+       if ($db == 'elod_buyers' && $matchProperty == 0){
+          if ($field == 'buyer'){
+               $matchProperty = 1;
+          }
+       }
        if ($db == 'elod_diaugeia_sellers' ){
+           if ($field == 'seller' && $matchProperty == 0){
+               $matchProperty = 1;
+           }
+       }
+       if ($db == 'elod_sellers' ){
            if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
            }

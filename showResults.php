@@ -99,6 +99,8 @@ class showResults {
                          echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']</br>';	
                     }
                     
+                   
+                    
                     echo "</td>";
                         # $uniqueResults[$i]['score'] gets boosted by sources
 
