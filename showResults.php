@@ -14,7 +14,7 @@
 class showResults {
     function presentResults(){ //test 090166291
         global $Results;
-        # $this->saveCsvCloud($Results, '/var/log/results.csv');
+         $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
         $source = ' ';
         $i = 0;
@@ -83,6 +83,10 @@ class showResults {
                     echo  '<B> '.$this->fromNumberToText($sumAward,'€').'</B>';
                     echo ' (<B>'.round(($uniqueResults[$i]['awardCnt0']+$uniqueResults[$i]['awardCnt1']+$uniqueResults[$i]['awardCnt2']),0).'</B>) '; 
                     echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
+                    if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
+                         echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
+                    }
+                    
                     echo "</td>";
                         # $uniqueResults[$i]['score'] gets boosted by sources
 
