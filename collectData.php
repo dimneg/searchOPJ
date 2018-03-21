@@ -257,9 +257,11 @@ class collectData {
                       $Results[] = $newdata;      
                     }
                     else {
-                         echo 'same vat found '.$newdata['vat'].$Db.PHP_EOL;
-                         $Results['$key']['dataDiaugeiaBuyer'] = $this->defineSource($Db, 'buyer');
-                         $Results['$key']['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia');
+                         echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
+                         $Results['$key']['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia',$Results['$key']['dataDiaugeia']);
+                         $Results['$key']['dataDiaugeiaBuyer'] = $this->defineProperty($Db, 'buyer',$Results['$key']['dataDiaugeiaBuyer']);
+                         $Results['$key']['dataDiaugeiaSeller'] = $this->defineProperty($Db, 'seller',$Results['$key']['dataDiaugeiaSeller']);
+                        
                          
                     }
                       
@@ -282,7 +284,7 @@ class collectData {
     }  
     
    function defineSource($db,$field, $status){
-      
+      # 0-> clean 1-> ok 2-> do nothing
        $matchDb = $status;
        
        if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs'  &&  $matchDb == 0){
