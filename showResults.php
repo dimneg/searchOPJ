@@ -145,7 +145,7 @@ class showResults {
                 }
                 if ($uniqueResults[$i]['dataGemh'] == 1){
                      echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">Γ.Ε.Μ.Η.</font></br> '; 
-                     echo 'Αρ. Γ.Ε.Μ.Η.: '.$this->hide_not_avail($uniqueResults[$i]['id']);	
+                     echo 'Αρ. Γ.Ε.Μ.Η.: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
                      echo ' &nbsp Επιμελητήριο: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);
                      echo  ' &nbsp [Ημ/νία: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']</br>';	
                 }
