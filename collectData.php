@@ -360,6 +360,7 @@ class collectData {
                                 $Results[$key]['SubsPaymentsAmount'] = (isset($r['fields']['SubsPaymentsAmount']) ) ? $r['fields']['SubsPaymentsAmount'] : null ;	
                                 $Results[$key]['SubsContractsCounter'] =(isset($r['fields']['SubsContractsCounter']) ) ? $r['fields']['SubsContractsCounter'] : null ;
                                 $Results[$key]['SubsPaymentsCounter'] = (isset($r['fields']['SubsPaymentsCounter']) ) ? $r['fields']['SubsPaymentsCounter'] : null;
+                                break;
                                  
                           
                           
