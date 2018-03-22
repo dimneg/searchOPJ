@@ -233,6 +233,7 @@ class collectData {
                       'paymentAmountCur'=> (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ,                      	  
                       'contractItemsNo'=> (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ,
                       'paymentItemsNo'=>  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ,
+                      'ks_lastUpdate'=> (isset($r['fields']['ks_lastUpdate']) ) ? $r['fields']['ks_lastUpdate'] : null ,
 
                       //australia & London & europa & newyork
                       'contractAmount0'=> (isset($r['fields']['contractAmount0']) ) ? $r['fields']['contractAmount0'] : null ,
@@ -334,7 +335,8 @@ class collectData {
                                 $Results[$key]['paymentAmountPrev'] = (isset($r['fields']['paymentsAmount0']) ) ? $r['fields']['paymentsAmount0'] : null ;
                                 $Results[$key]['paymentAmountCur' ]= (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ;                      	  
                                 $Results[$key]['contractItemsNo'] = (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ;
-                                $Results[$key]['paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ;                                 
+                                $Results[$key]['paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ;  
+                                $Results[$key]['ks_lastUpdate'] = (isset($r['fields']['ks_lastUpdate']) ) ? $r['fields']['ks_lastUpdate'] : null ;
                                 break;
                              case "elod_buyers":
                                 $Results[$key]['kb_contractAmountPrev'] = (isset($r['fields']['kb_contractsAmount0']) ) ? $r['fields']['kb_contractsAmount0'] : null ;

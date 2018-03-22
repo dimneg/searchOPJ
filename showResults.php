@@ -129,7 +129,7 @@ class showResults {
                         $sumPayments = $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCur'])  ;
                         echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
                         echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNo']),0).'</B>) ';
-                        echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
+                        echo  ' &nbsp [έως '.$uniqueResults[$i]['ks_lastUpdate'].']';	
                     }
                 }
                 echo "</td>";
