@@ -354,7 +354,15 @@ class collectData {
                                 $Results[$key]['kb_paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['kb_paymentItemsNo'] : null ; 
                                 $Results[$key]['kb_lastUpdate'] = (isset($r['fields']['kb_lastUpdate']) ) ? $r['fields']['kb_lastUpdate'] : null ;
                                 $Results[$key]['score'] *= 2;
-                              break;
+                                break;
+                             case "elod_espa_beneficiaries":
+                                $Results[$key]['SubsContractsAmount'] = (isset($r['fields']['SubsContractsAmount']) ) ? $r['fields']['SubsContractsAmount'] : null ;
+                                $Results[$key]['SubsPaymentsAmount'] = (isset($r['fields']['SubsPaymentsAmount']) ) ? $r['fields']['SubsPaymentsAmount'] : null ;	
+                                $Results[$key]['SubsContractsCounter'] =(isset($r['fields']['SubsContractsCounter']) ) ? $r['fields']['SubsContractsCounter'] : null ;
+                                $Results[$key]['SubsPaymentsCounter'] = (isset($r['fields']['SubsPaymentsCounter']) ) ? $r['fields']['SubsPaymentsCounter'] : null;
+                                 
+                          
+                          
                           }
                          
                         
