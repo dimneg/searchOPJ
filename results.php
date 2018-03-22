@@ -1620,7 +1620,7 @@ echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px;
 	echo '</I>';
 	echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">Γ.Ε.Μ.Η.</font></br> '; 
 	echo ' <font color="#FFA500" size="1">'.$property.'</font> '; 
-	echo 'Αρ. Γ.Ε.Μ.Η.: '.$this->hide_not_avail($uniqueResults[$i]['id']);	
+	echo 'Αρ. Γ.Ε.Μ.Η.: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
         echo ' &nbsp Επιμελητήριο: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);	
 	#echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']';	
         echo  ' &nbsp [Ημ/νία: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']';	

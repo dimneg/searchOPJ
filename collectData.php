@@ -266,6 +266,7 @@ class collectData {
                      'altNames'=>  $this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),
                      'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
                      'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
+                     'gemhNumber'=>(isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null,
                      
                      #'dataDiaugeiaBuyers'=>  $this->defineSource($Db, 'dataDiaugeiaBuyers'),
                      #'dataDiaugeiaSellers'=>  $this->defineSource($Db, 'dataDiaugeiaSellers'),
@@ -373,10 +374,12 @@ class collectData {
                              case "elod_main_orgv4_all":
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
                                 $Results[$key]['chamber'] =(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null;
+                                $Results[$key]['gemhNumber'] = (isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null;
                                 break;
                              case "elod_main_orgv4_fr":
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
                                 $Results[$key]['chamber'] =(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null;
+                                $Results[$key]['gemhNumber'] = (isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null;
                                 break;
                                  
                           
