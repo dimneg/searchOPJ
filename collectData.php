@@ -20,6 +20,8 @@ class collectData {
        $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);   
        $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
        
+       $this->prepareResults($DbPath,"yds_big_sellers","basic","basic",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
+       
 	
        #
        #
@@ -40,14 +42,15 @@ class collectData {
        $this->prepareResults($DbPath,"elod_espa_beneficiaries","VatIdOrName","by_beneficiaryDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);				  
       
        $this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
-       $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
-								
+       $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);								
 			  
 			  
       
 		  
        $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer); 
        $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
+       
+       $this->prepareResults($DbPath,"yds_big_sellers","basic","basic",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
 	
     } 
    function getAllGreek($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer){
@@ -71,7 +74,7 @@ class collectData {
        $this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
        $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
 		  
-		
+        $this->prepareResults($DbPath,"yds_big_sellers","basic","basic",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);         
     } 
     
    
@@ -82,7 +85,7 @@ class collectData {
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);
-        #echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
+        echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );

@@ -11,3 +11,5 @@ file.csv
 distribution.txt
 entities.csv
 appearences.csv
+bigSellersImport.php
+*.tsv
