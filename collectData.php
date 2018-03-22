@@ -17,8 +17,8 @@ class collectData {
        $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
        
        
-       #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
-       #$this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);   
+       $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
+       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);   
 	
        #
        #
@@ -45,8 +45,8 @@ class collectData {
 			  
       
 		  
-       #$this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass); 
-       #$this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass);
+       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer); 
+       $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
 	
     } 
    function getAllGreek($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer){
@@ -142,9 +142,7 @@ class collectData {
                 case "elod_australia_sellers":
                         $prefix=$Domain.$Lang."australia/" ;
                                 break;  
-                case "elod_diaugeia_hybrids":
-                        $prefix=$Domain.$Lang."diaugeia/" ;
-                                break;  
+                
 
                 case "elod_espa_beneficiaries":
                         $prefix=$Domain.$Lang."" ;
@@ -282,6 +280,8 @@ class collectData {
                      'dataDiaugeiaSeller' => $this->defineProperty($Db,'seller',0),
                      'dataKhmdhsBuyer' => $this->defineProperty($Db,'buyer',0),
                      'dataKhmdhsSeller' => $this->defineProperty($Db,'seller',0),
+                     'dataAustraliaBuyer' => $this->defineProperty($Db,'buyer',0),
+                     'dataAustraliaSeller' => $this->defineProperty($Db,'buyer',0),
                      
                      'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
                 
@@ -414,7 +414,7 @@ class collectData {
        $matchDb = $status;
        
        if (($db == 'elod_buyers' || $db == 'elod_sellers' ) && $field == 'dataKhmdhs'  &&  $matchDb == 0){
-          $matchDb = 1;    echo 'khmdhs matched';
+          $matchDb = 1;   # echo 'khmdhs matched';
           return  $matchDb;
        }
        if (($db == 'elod_diaugeia_buyers' || $db == 'elod_diaugeia_sellers' ) && $field == 'dataDiaugeia' &&  $matchDb == 0 ){
@@ -459,6 +459,12 @@ class collectData {
                return $matchProperty;
           }
        }
+       if ($db == 'elod_australia_buyers' && $matchProperty == 0){
+          if ($field == 'buyer'){
+               $matchProperty = 1;
+               return $matchProperty;
+          }
+       }
        if ($db == 'elod_diaugeia_sellers' ){
            if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
@@ -466,6 +472,12 @@ class collectData {
            }
        }
        if ($db == 'elod_sellers' ){
+           if ($field == 'seller' && $matchProperty == 0){
+               $matchProperty = 1;
+               return $matchProperty;
+           }
+       }
+       if ($db == 'elod_australia_sellers' ){
            if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
                return $matchProperty;
