@@ -129,9 +129,14 @@ class showResults {
                         $sumPayments = $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCur'])  ;
                         echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
                         echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNo']),0).'</B>) ';
-                        echo  ' &nbsp [έως '.$uniqueResults[$i]['ks_lastUpdate'].']';	
+                        echo  ' &nbsp [έως '.$uniqueResults[$i]['ks_lastUpdate'].']</br>';	
                     }
                 }
+                if ($uniqueResults[$i]['dataEspa'] == 1){
+                     echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">Επιδοτήσεις ΕΣΠΑ</font></br> ';
+                }
+                
+                
                 echo "</td>";
                    
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
