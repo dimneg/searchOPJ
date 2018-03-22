@@ -317,6 +317,7 @@ class collectData {
                     }
                     else {
                          #echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
+                        //check for new data
                          $Results[$key]['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia',$Results[$key]['dataDiaugeia']);
                          $Results[$key]['dataDiaugeiaBuyer'] = $this->defineProperty($Db, 'buyer',$Results[$key]['dataDiaugeiaBuyer']);                        
                          $Results[$key]['dataDiaugeiaSeller'] = $this->defineProperty($Db, 'seller',$Results[$key]['dataDiaugeiaSeller']);
@@ -328,6 +329,7 @@ class collectData {
                          
                          $Results[$key]['dataEspa'] = $this->defineSource($Db, 'dataEspa',$Results[$key]['dataEspa']);
                          $Results[$key]['dataGemh'] =  $this->defineSource($Db, 'dataGemh',$Results[$key]['dataGemh']);
+                         $Results[$key]['dataTed'] =  $this->defineSource($Db, 'dataTed',$Results[$key]['dataTed']);
                          switch ($Db){
                              case "elod_diaugeia_sellers":
                                  $Results[$key]['award0'] =(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null;
