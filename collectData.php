@@ -299,9 +299,12 @@ class collectData {
                          $Results[$key]['dataDiaugeiaBuyer'] = $this->defineProperty($Db, 'buyer',$Results[$key]['dataDiaugeiaBuyer']);                        
                          $Results[$key]['dataDiaugeiaSeller'] = $this->defineProperty($Db, 'seller',$Results[$key]['dataDiaugeiaSeller']);
                          
+                         
                          $Results[$key]['dataKhmdhs'] = $this->defineSource($Db, 'dataKhmdhs',$Results[$key]['dataKhmdhs']);
                          $Results[$key]['dataKhmdhsBuyer'] = $this->defineProperty($Db, 'buyer',$Results[$key]['dataKhmdhsBuyer']);
                          $Results[$key]['dataKhmdhsSeller'] = $this->defineProperty($Db, 'seller',$Results[$key]['dataKhmdhsSeller']);
+                         
+                         $Results[$key]['dataEspa'] = $this->defineSource($Db, 'dataEspa',$Results[$key]['dataEspa']);
                          switch ($Db){
                              case "elod_diaugeia_sellers":
                                  $Results[$key]['award0'] =(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null;
@@ -360,6 +363,7 @@ class collectData {
                                 $Results[$key]['SubsPaymentsAmount'] = (isset($r['fields']['SubsPaymentsAmount']) ) ? $r['fields']['SubsPaymentsAmount'] : null ;	
                                 $Results[$key]['SubsContractsCounter'] =(isset($r['fields']['SubsContractsCounter']) ) ? $r['fields']['SubsContractsCounter'] : null ;
                                 $Results[$key]['SubsPaymentsCounter'] = (isset($r['fields']['SubsPaymentsCounter']) ) ? $r['fields']['SubsPaymentsCounter'] : null;
+                                $Results[$key]['score'] *= 2;
                                 break;
                                  
                           
