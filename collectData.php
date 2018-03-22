@@ -298,7 +298,7 @@ class collectData {
                       $Results[] = $newdata;      
                     }
                     else {
-                         echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
+                         #echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
                          $Results[$key]['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia',$Results[$key]['dataDiaugeia']);
                          $Results[$key]['dataDiaugeiaBuyer'] = $this->defineProperty($Db, 'buyer',$Results[$key]['dataDiaugeiaBuyer']);                        
                          $Results[$key]['dataDiaugeiaSeller'] = $this->defineProperty($Db, 'seller',$Results[$key]['dataDiaugeiaSeller']);
