@@ -159,11 +159,11 @@ class showResults {
                      if ($uniqueResults[$i]['dataAustraliaBuyer'] == 1){
                          echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
                          echo  'Συμβάσεις: ';
-			 $sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
+			 $sumContracts=$this->fromTextToNumber($uniqueResults[$i]['ab_contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['ab_contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['ab_contractAmount2'])    ;
                          echo '<B>'.$this->fromNumberToText($sumContracts,'$').'</B>';
-                         $counterContracts=$uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
+                         $counterContracts=$uniqueResults[$i]['ab_contractCounter0'] + $uniqueResults[$i]['ab_contractCounter1'] + $uniqueResults[$i]['ab_contractCounter2'] ;
                          echo  ' (<B>'.round($counterContracts,0).'</B>) ';		
-                         echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']</br>';
+                         echo  ' &nbsp [Έως '.$uniqueResults[$i]['ab_lastUpdate'].']</br>';
                          
                      }
                      if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){

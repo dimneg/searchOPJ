@@ -17,8 +17,9 @@ class collectData {
        $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
        
        
+       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);   
        $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
-       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);   
+       
 	
        #
        #
@@ -45,7 +46,7 @@ class collectData {
 			  
       
 		  
-       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer); 
+       $this->prepareResults($DbPath,"elod_australia_buyers","buyerVatIdOrNameV2","by_buyerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer); 
        $this->prepareResults($DbPath,"elod_australia_sellers","sellerVatIdOrName","by_sellerDtls_VatIdOrName",$LuceneOperand,$Limit,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer);
 	
     } 
@@ -240,14 +241,21 @@ class collectData {
                       'ks_lastUpdate'=> (isset($r['fields']['ks_lastUpdate']) ) ? $r['fields']['ks_lastUpdate'] : null ,
 
                       //australia & London & europa & newyork
+                     // australia sellers
                       'contractAmount0'=> (isset($r['fields']['contractAmount0']) ) ? $r['fields']['contractAmount0'] : null ,
                       'contractAmount1'=> (isset($r['fields']['contractAmount1']) ) ? $r['fields']['contractAmount1'] : null ,
                       'contractAmount2'=> (isset($r['fields']['contractAmount2']) ) ? $r['fields']['contractAmount2'] : null ,
-                      'contractAmount3'=> (isset($r['fields']['contractAmount3']) ) ? $r['fields']['contractAmount3'] : null , //london only
+                      #'contractAmount3'=> (isset($r['fields']['contractAmount3']) ) ? $r['fields']['contractAmount3'] : null , //london only
                       'contractCounter0'=>(isset($r['fields']['contractCounter0']) ) ? $r['fields']['contractCounter0'] : null ,
                       'contractCounter1'=> (isset($r['fields']['contractCounter1']) ) ? $r['fields']['contractCounter1'] : null ,
                       'contractCounter2'=> (isset($r['fields']['contractCounter2']) ) ? $r['fields']['contractCounter2'] : null ,
-                      'contractCounter3'=> (isset($r['fields']['contractCounter3']) ) ? $r['fields']['contractCounter3'] : null , //london only
+                      #'contractCounter3'=> (isset($r['fields']['contractCounter3']) ) ? $r['fields']['contractCounter3'] : null , //london only
+                     // australia buyers
+                      'ab_contractAmount0'=> (isset($r['fields']['ab_contractAmount0']) ) ? $r['fields']['ab_contractAmount0'] : null ,
+                      'ab_contractAmount1'=> (isset($r['fields']['ab_contractAmount1']) ) ? $r['fields']['ab_contractAmount1'] : null ,
+                      'ab_contractAmount2'=> (isset($r['fields']['ab_contractAmount2']) ) ? $r['fields']['ab_contractAmount2'] : null ,
+                      'ab_lastUpdate'=> (isset($r['fields']['ab_lastUpdate']) ) ? $r['fields']['ab_lastUpdate'] : null ,
+                     
 
                      
 
