@@ -134,6 +134,13 @@ class showResults {
                 }
                 if ($uniqueResults[$i]['dataEspa'] == 1){
                      echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">Επιδοτήσεις ΕΣΠΑ</font></br> ';
+                     echo ' <font color="#FFA500" size="1">ΔΙΚΑΙΟΥΧΟΣ</font> '; 
+                     echo  'Συμβάσεις: ';
+                     echo '<B>'.$uniqueResults[$i]['SubsContractsAmount'].'</B>';
+                     echo  ' (<B>'.round(($uniqueResults[$i]['SubsContractsCounter']),0).'</B>) ';
+                     echo  'Πληρωμές: ';
+                     echo '<B>'.$uniqueResults[$i]['SubsPaymentsAmount'].'</B>';
+                     echo  ' &nbsp [έως '.$this->convertDate($uniqueResults[$i]['lastUpdate']).']</br>';
                 }
                 
                 
@@ -272,5 +279,18 @@ class showResults {
 	}
 
 	fclose($fp);	
+    }
+    function convertDate($date){
+        if (substr($date,0,3)== 201){
+             $revDate= date("d-m-Y", strtotime($date));
+        }
+        //$revDate='wrong'.$date;
+       
+        else {
+            $revDate=$date;
+        }
+            
+        return $revDate;
+
     }
 }
