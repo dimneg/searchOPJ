@@ -325,7 +325,7 @@ class collectData {
                                  $Results[$key]['spendCnt1'] =  (isset($r['fields']['spendCounter1']) ) ? $r['fields']['spendCounter1'] : null ;
                                  $Results[$key]['spendCnt2'] = (isset($r['fields']['spendCounter2']) ) ? $r['fields']['spendCounter2'] : null ;
                                  $Results[$key]['lastUpdate'] = (isset($r['fields']['lastUpdate']) ) ? $r['fields']['lastUpdate'] : null ;
-                                 $Results[$key]['score'] *= 2;
+                                 $Results[$key]['score'] *= 1.2;
                                   break;
                               case "elod_diaugeia_buyers":
                                  $Results[$key]['db_award0'] =(isset($r['fields']['db_awardAmount0']) ) ? $r['fields']['db_awardAmount0'] : null;
@@ -341,7 +341,7 @@ class collectData {
                                  $Results[$key]['db_spendCnt1'] =  (isset($r['fields']['db_spendCounter1']) ) ? $r['fields']['db_spendCounter1'] : null ;
                                  $Results[$key]['db_spendCnt2'] = (isset($r['fields']['db_spendCounter2']) ) ? $r['fields']['db_spendCounter2'] : null ;
                                  $Results[$key]['db_lastUpdate'] = (isset($r['fields']['db_lastUpdate']) ) ? $r['fields']['db_lastUpdate'] : null ;
-                                 $Results[$key]['score'] *= 2;
+                                 $Results[$key]['score']*= 1.2;
                                  break;
                              case "elod_sellers":
                                 $Results[$key]['contractAmountPrev'] = (isset($r['fields']['contractsAmount0']) ) ? $r['fields']['contractsAmount0'] : null ;
@@ -351,7 +351,7 @@ class collectData {
                                 $Results[$key]['contractItemsNo'] = (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ;
                                 $Results[$key]['paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ;  
                                 $Results[$key]['ks_lastUpdate'] = (isset($r['fields']['ks_lastUpdate']) ) ? $r['fields']['ks_lastUpdate'] : null ;
-                                $Results[$key]['score'] *= 2;
+                                $Results[$key]['score'] *= 1.2;
                                 break;
                              case "elod_buyers":
                                 $Results[$key]['kb_contractAmountPrev'] = (isset($r['fields']['kb_contractsAmount0']) ) ? $r['fields']['kb_contractsAmount0'] : null ;
@@ -361,7 +361,7 @@ class collectData {
                                 $Results[$key]['kb_contractItemsNo'] = (isset($r['fields']['kb_contractItemsNo']) ) ? $r['fields']['kb_contractItemsNo'] : null ;
                                 $Results[$key]['kb_paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['kb_paymentItemsNo'] : null ; 
                                 $Results[$key]['kb_lastUpdate'] = (isset($r['fields']['kb_lastUpdate']) ) ? $r['fields']['kb_lastUpdate'] : null ;
-                                $Results[$key]['score'] *= 2;
+                                $Results[$key]['score'] *= 1.2;
                                 break;
                              case "elod_espa_beneficiaries":
                                 $Results[$key]['SubsContractsAmount'] = (isset($r['fields']['SubsContractsAmount']) ) ? $r['fields']['SubsContractsAmount'] : null ;
@@ -369,7 +369,7 @@ class collectData {
                                 $Results[$key]['SubsContractsCounter'] =(isset($r['fields']['SubsContractsCounter']) ) ? $r['fields']['SubsContractsCounter'] : null ;
                                 $Results[$key]['SubsPaymentsCounter'] = (isset($r['fields']['SubsPaymentsCounter']) ) ? $r['fields']['SubsPaymentsCounter'] : null;
                                 $Results[$key]['espa_lastUpdate'] = (isset($r['fields']['espa_lastUpdate']) ) ? $r['fields']['espa_lastUpdate'] : null ;
-                                $Results[$key]['score'] *= 2;
+                                $Results[$key]['score'] *= 1.2;
                                 break;
                              case "elod_main_orgv4_all":
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
