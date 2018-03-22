@@ -224,6 +224,7 @@ class collectData {
                       'kb_paymentAmountCur'=> (isset($r['fields']['kb_paymentsAmount1']) ) ? $r['fields']['kb_paymentsAmount1'] : null ,                      	  
                       'kb_contractItemsNo'=> (isset($r['fields']['kb_contractItemsNo']) ) ? $r['fields']['kb_contractItemsNo'] : null ,
                       'kb_paymentItemsNo'=>  (isset($r['fields']['kb_paymentItemsNo']) ) ? $r['fields']['kb_paymentItemsNo'] : null ,
+                      'kb_lastUpdate'=> (isset($r['fields']['kb_lastUpdate']) ) ? $r['fields']['kb_lastUpdate'] : null ,
                       
                       //ΚΗΜΔΗΣ sellers
                       'contractAmountPrev'=> (isset($r['fields']['contractsAmount0']) ) ? $r['fields']['contractsAmount0'] : null ,
@@ -326,8 +327,24 @@ class collectData {
                                  $Results[$key]['db_spendCnt1'] =  (isset($r['fields']['db_spendCounter1']) ) ? $r['fields']['db_spendCounter1'] : null ;
                                  $Results[$key]['db_spendCnt2'] = (isset($r['fields']['db_spendCounter2']) ) ? $r['fields']['db_spendCounter2'] : null ;
                                  $Results[$key]['db_lastUpdate'] = (isset($r['fields']['db_lastUpdate']) ) ? $r['fields']['db_lastUpdate'] : null ;
-                                  break;
-                              
+                                 break;
+                             case "elod_sellers":
+                                $Results[$key]['contractAmountPrev'] = (isset($r['fields']['contractsAmount0']) ) ? $r['fields']['contractsAmount0'] : null ;
+                                $Results[$key]['contractAmountCur'] = (isset($r['fields']['contractsAmount1']) ) ? $r['fields']['contractsAmount1'] : null ;                    
+                                $Results[$key]['paymentAmountPrev'] = (isset($r['fields']['paymentsAmount0']) ) ? $r['fields']['paymentsAmount0'] : null ;
+                                $Results[$key]['paymentAmountCur' ]= (isset($r['fields']['paymentsAmount1']) ) ? $r['fields']['paymentsAmount1'] : null ;                      	  
+                                $Results[$key]['contractItemsNo'] = (isset($r['fields']['contractItemsNo']) ) ? $r['fields']['contractItemsNo'] : null ;
+                                $Results[$key]['paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['paymentItemsNo'] : null ;                                 
+                                break;
+                             case "elod_buyers":
+                                $Results[$key]['kb_contractAmountPrev'] = (isset($r['fields']['kb_contractsAmount0']) ) ? $r['fields']['kb_contractsAmount0'] : null ;
+                                $Results[$key]['kb_contractAmountCur'] = (isset($r['fields']['kb_contractsAmount1']) ) ? $r['fields']['kb_contractsAmount1'] : null ;                    
+                                $Results[$key]['kb_paymentAmountPrev'] = (isset($r['fields']['kb_paymentsAmount0']) ) ? $r['fields']['kb_paymentsAmount0'] : null ;
+                                $Results[$key]['kb_paymentAmountCur' ]= (isset($r['fields']['kb_paymentsAmount1']) ) ? $r['fields']['kb_paymentsAmount1'] : null ;                      	  
+                                $Results[$key]['kb_contractItemsNo'] = (isset($r['fields']['kb_contractItemsNo']) ) ? $r['fields']['kb_contractItemsNo'] : null ;
+                                $Results[$key]['kb_paymentItemsNo'] =  (isset($r['fields']['paymentItemsNo']) ) ? $r['fields']['kb_paymentItemsNo'] : null ; 
+                                $Results[$key]['kb_lastUpdate'] = (isset($r['fields']['kb_lastUpdate']) ) ? $r['fields']['kb_lastUpdate'] : null ;
+                              break;
                           }
                          
                         
@@ -476,8 +493,8 @@ class collectData {
    function getTedDataRDF($vat,$sparqlServer){
       
        $ch = curl_init();
-       $url = $sparqlServer."/?default-graph-uri=http%3A%2F%2Fyourdatastories.eu%2Fvirtual&query=SELECT+%28sum%28xsd%3Adecimal%28%3FcurrencyValue%29%29+as+%3FsumOfAmounts%29%0D%0AFROM+<http%3A%2F%2Fyourdatastories.eu%2FTEDGreece>%0D%0AWHERE+%7B%0D%0A%3Fcontract+elod%3Abuyer+<http%3A%2F%2Flinkedeconomy.org%2Fresource%2FOrganization%2F090025586>+%3B%0D%0Apc%3AagreedPrice+%3FagreedPrice+.%0D%0A%3FagreedPrice+gr%3AhasCurrencyValue+%3FcurrencyValue+.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
-       echo $url.PHP_EOL;
+       $url = $sparqlServer."/sparql/?default-graph-uri=http%3A%2F%2Fyourdatastories.eu%2Fvirtual&query=SELECT+%28sum%28xsd%3Adecimal%28%3FcurrencyValue%29%29+as+%3FsumOfAmounts%29%0D%0AFROM+<http%3A%2F%2Fyourdatastories.eu%2FTEDGreece>%0D%0AWHERE+%7B%0D%0A%3Fcontract+elod%3Abuyer+<http%3A%2F%2Flinkedeconomy.org%2Fresource%2FOrganization%2F090025586>+%3B%0D%0Apc%3AagreedPrice+%3FagreedPrice+.%0D%0A%3FagreedPrice+gr%3AhasCurrencyValue+%3FcurrencyValue+.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
+       #echo $url.PHP_EOL;
        curl_setopt_array($ch, array(
            CURLOPT_PORT => "8890",
            CURLOPT_URL => $url ,

@@ -100,17 +100,37 @@ class showResults {
                     }
                     
                    
-                    
-                   
-                        # $uniqueResults[$i]['score'] gets boosted by sources
-
-
-
                 }
                    
                    
                 if ($uniqueResults[$i]['dataKhmdhs'] == 1){
                     echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font></br> '; 
+                    if ($uniqueResults[$i]['dataKhmdhsBuyer'] == 1){
+                         echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
+                         echo  'Συμβάσεις: ';
+                         $sumContracts = $this->fromTextToNumber($uniqueResults[$i]['kb_contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['kb_contractAmountCur'])  ;
+                         echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
+                         echo  ' (<B>'.round(($uniqueResults[$i]['kb_contractItemsNo']),0).'</B>) ';
+                         echo  'Πληρωμές: ';
+                         $sumPayments = $this->fromTextToNumber($uniqueResults[$i]['kb_paymentAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['kb_paymentAmountCur'])  ;
+                         echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
+                         echo  ' (<B>'.round(($uniqueResults[$i]['kb_paymentItemsNo']),0).'</B>) ';
+                         echo  ' &nbsp [έως '.$uniqueResults[$i]['kb_lastUpdate'].']';	
+                        
+                        
+                    }
+                    if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1){
+                        echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
+                        echo  'Συμβάσεις: ';
+                        $sumContracts = $this->fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCur'])  ;
+                        echo '<B>'.$this->fromNumberToText($sumContracts,'€').'</B>';
+                        echo  ' (<B>'.round(($uniqueResults[$i]['contractItemsNo']),0).'</B>) ';
+                        echo  'Πληρωμές: ';
+                        $sumPayments = $this->fromTextToNumber($uniqueResults[$i]['paymentAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['paymentAmountCur'])  ;
+                        echo '<B>'.$this->fromNumberToText($sumPayments,'€').'</B>';
+                        echo  ' (<B>'.round(($uniqueResults[$i]['paymentItemsNo']),0).'</B>) ';
+                        echo  ' &nbsp [έως '.$uniqueResults[$i]['lastUpdate'].']';	
+                    }
                 }
                 echo "</td>";
                    
