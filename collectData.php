@@ -178,7 +178,7 @@ class collectData {
                 }
             //echo $Boost;
 
-            if(isset ($json['rows']) && strpos($r['id'], '_') == false && ($this->checkAFM($r['fields']['term'][0]) || strpos($Db, 'australia')== true) ) { //_links and wrong vats exluded for now
+            if(isset ($json['rows']) && strpos($r['id'], '_') == false && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
                  $newdata =  array (
                  // 'name' => $r['fields']['term'][1],
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,            
@@ -273,6 +273,9 @@ class collectData {
                       #'pageKind'=> (isset($r['fields']['pageKind']) ) ? $r['fields']['pageKind'] : null,  
                       'espa_lastUpdate'=> (isset($r['fields']['espa_lastUpdate']) ) ? $r['fields']['espa_lastUpdate'] : null ,
                       
+                     //ted
+                     'tedSumofAmounts' => (isset($r['fields']['total_amount']) ) ? $r['fields']['total_amount'] : null ,
+                     'tedContracts' => (isset($r['fields']['contracts']) ) ? $r['fields']['contracts'] : null ,
                      
                    #  'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
                      'altNames'=>  $this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),
@@ -298,7 +301,7 @@ class collectData {
                      'dataAustraliaSeller' => $this->defineProperty($Db,'buyer',0),
                      
                      #'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
-                     'tedSumofAmounts' => ''
+                     
                 
                      
                 );	
@@ -396,7 +399,10 @@ class collectData {
                                 $Results[$key]['chamber'] =(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null;
                                 $Results[$key]['gemhNumber'] = (isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null;
                                 break;
-                                 
+                            case "yds_big_sellers":
+                                $Results[$key]['tedSumofAmounts'] = (isset($r['fields']['tedSumofAmounts']) ) ? $r['fields']['tedSumofAmounts'] : null;
+                                $Results[$key]['tedContracts'] = (isset($r['fields']['tedContracts']) ) ? $r['fields']['tedContracts'] : null;
+                                break;
                           
                           
                           }
@@ -445,7 +451,7 @@ class collectData {
             $matchDb =  1;
             return  $matchDb;
        }
-       if ($db == 'Ted'  && $field == 'dataTed' &&  $matchDb == 0){
+       if ($db == 'yds_big_sellers'  && $field == 'dataTed' &&  $matchDb == 0){
            $matchDb =  1;
            return  $matchDb;
        }
@@ -493,6 +499,12 @@ class collectData {
            }
        }
        if ($db == 'elod_australia_sellers' ){
+           if ($field == 'seller' && $matchProperty == 0){
+               $matchProperty = 1;
+               return $matchProperty;
+           }
+       }
+       if ($db == 'yds_big_sellers' ){
            if ($field == 'seller' && $matchProperty == 0){
                $matchProperty = 1;
                return $matchProperty;

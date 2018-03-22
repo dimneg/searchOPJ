@@ -178,6 +178,9 @@ class showResults {
                      }
                     
                 }
+                if ($uniqueResults[$i]['dataTed'] == 1){
+                    echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">T.E.D.</font></br> '; 
+                }
                 echo $uniqueResults[$i]['score']; 
                 
                 
