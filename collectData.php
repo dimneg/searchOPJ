@@ -254,6 +254,9 @@ class collectData {
                       'ab_contractAmount0'=> (isset($r['fields']['ab_contractAmount0']) ) ? $r['fields']['ab_contractAmount0'] : null ,
                       'ab_contractAmount1'=> (isset($r['fields']['ab_contractAmount1']) ) ? $r['fields']['ab_contractAmount1'] : null ,
                       'ab_contractAmount2'=> (isset($r['fields']['ab_contractAmount2']) ) ? $r['fields']['ab_contractAmount2'] : null ,
+                      'ab_contractCounter0'=>(isset($r['fields']['ab_contractCounter0']) ) ? $r['fields']['ab_contractCounter0'] : null ,
+                      'ab_contractCounter1'=> (isset($r['fields']['ab_contractCounter1']) ) ? $r['fields']['ab_contractCounter1'] : null ,
+                      'ab_contractCounter2'=> (isset($r['fields']['ab_contractCounter2']) ) ? $r['fields']['ab_contractCounter2'] : null ,
                       'ab_lastUpdate'=> (isset($r['fields']['ab_lastUpdate']) ) ? $r['fields']['ab_lastUpdate'] : null ,
                      
 
