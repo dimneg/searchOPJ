@@ -283,7 +283,8 @@ class collectData {
                      'dataAustraliaBuyer' => $this->defineProperty($Db,'buyer',0),
                      'dataAustraliaSeller' => $this->defineProperty($Db,'buyer',0),
                      
-                     'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
+                     #'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
+                     'tedSumofAmounts' => ''
                 
                      
                 );	
@@ -292,7 +293,7 @@ class collectData {
 
             $arrayElements = count($Results);
                     //echo $arrayElements;
-                if  ($arrayElements < 2000 && isset($newdata)){
+                if  ($arrayElements <= 1000 && isset($newdata)){
                     $key = $this->searchForId($newdata['vat'], $Results,'vat');
                     if ($key === NULL){
                       $Results[] = $newdata;      
