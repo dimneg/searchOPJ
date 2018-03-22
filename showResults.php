@@ -140,7 +140,8 @@ class showResults {
                      echo  ' (<B>'.round(($uniqueResults[$i]['SubsContractsCounter']),0).'</B>) ';
                      echo  'Πληρωμές: ';
                      echo '<B>'.$uniqueResults[$i]['SubsPaymentsAmount'].'</B>';
-                     echo  ' &nbsp [έως '.$this->convertDate($uniqueResults[$i]['lastUpdate']).']</br>';
+                     echo  ' (<B>'.round(($uniqueResults[$i]['SubsPaymentsCounter']),0).'</B>) ';
+                     echo  ' &nbsp [έως '.$this->convertDate($uniqueResults[$i]['espa_lastUpdate']).']</br>';
                 }
                 
                 
