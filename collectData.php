@@ -299,6 +299,7 @@ class collectData {
                      'dataKhmdhsSeller' => $this->defineProperty($Db,'seller',0),
                      'dataAustraliaBuyer' => $this->defineProperty($Db,'buyer',0),
                      'dataAustraliaSeller' => $this->defineProperty($Db,'buyer',0),
+                     'dataTedSeller'=>  $this->defineSource($Db, 'seller',0),
                      
                      #'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
                      
@@ -330,6 +331,7 @@ class collectData {
                          $Results[$key]['dataEspa'] = $this->defineSource($Db, 'dataEspa',$Results[$key]['dataEspa']);
                          $Results[$key]['dataGemh'] =  $this->defineSource($Db, 'dataGemh',$Results[$key]['dataGemh']);
                          $Results[$key]['dataTed'] =  $this->defineSource($Db, 'dataTed',$Results[$key]['dataTed']);
+                         $Results[$key]['dataTedSeller'] =  $this->defineProperty($Db, 'dataTedSeller',$Results[$key]['dataTedSeller']);
                          switch ($Db){
                              case "elod_diaugeia_sellers":
                                  $Results[$key]['award0'] =(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null;
