@@ -1,10 +1,16 @@
 <?php
 
 $array = [
-    ['id' => 1, 'db_id'=>'TEDS_2963979','db'=>'yds_big_sellers','name' =>'Oracle Belgium BVBA', 'core'=> 1, 'coreName'=>'Oracle'],
-    ['id' => 2, 'db_id'=>'TEDS_3352852','db'=>'yds_big_sellers','name' =>'Oracle Corporation UK Limited', 'core'=> 1, 'coreName'=>'Oracle'],
-    ['id' => 3, 'db_id'=>'TEDS_2259837','db'=>'yds_big_sellers','name' =>'Oracle Danmark APS', 'core'=> 1, 'coreName'=>'Oracle'],
-    ['id' => 4, 'db_id'=>'TEDS_3019308','db'=>'yds_big_sellers','name' =>'Oracle Hungary Kft.', 'core'=> 1, 'coreName'=>'Oracle'] 
+    ['id' => 1, 'db_id'=>'TEDS_2963979','source'=>'dataTed','name' =>'Oracle Belgium BVBA', 'core'=> 1, 'coreName'=>'Oracle'],
+    ['id' => 2, 'db_id'=>'TEDS_3352852','source'=>'dataTed','name' =>'Oracle Corporation UK Limited', 'core'=> 1, 'coreName'=>'Oracle'],
+    ['id' => 3, 'db_id'=>'TEDS_2259837','source'=>'dataTed','name' =>'Oracle Danmark APS', 'core'=> 1, 'coreName'=>'Oracle'],
+    ['id' => 4, 'db_id'=>'TEDS_3019308','source'=>'dataTed','name' =>'Oracle Hungary Kft.', 'core'=> 1, 'coreName'=>'Oracle'], 
+    ['id' => 5, 'db_id'=>'800420948','source'=>'dataDiaugeia','name' =>'ORACLE ΕΛΛΑΣ ΕΜΠΟΡΙΑ ΛΟΓΙΣΜΙΚΟΥ ΚΑΙ ΣΥΣΤΗΜΑΤΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΜΟΝΟΠΡΟΣΩΠΗ ΕΤΑΙΡΕΙΑ ΠΕΡΙΟΡΙΣΜΕΝΗΣ ΕΥΘΥΝΗΣ ||ORACLE ΕΛΛΑΣ Μ Ε Π Ε ', 'core'=> 1, 'coreName'=>'Oracle'],
+    ['id' => 6, 'db_id'=>'094253457','source'=>'dataDiaugeia','name' =>'ORACLE ΕΛΛΑΣ ΑΝΩΝΥΜΗ ΕΜΠΟΡΙΚΗ ΕΤΑΙΡΕΙΑ', 'core'=> 1, 'coreName'=>'Oracle'], 
+    ['id' => 7, 'db_id'=>'16957131926','source'=>'dataAustralia','name' =>'ORACLE CORPARTION', 'core'=> 1, 'coreName'=>'Oracle'], 
+    ['id' => 8, 'db_id'=>'80003074468','source'=>'dataAustralia','name' =>'ORACLE UNIVERSITY', 'core'=> 1, 'coreName'=>'Oracle'], 
+    ['id' => 9, 'db_id'=>'998476613','source'=>'dataGemh','name' =>'Oracle ανώνυμη εταιρεία λογισμικού χρηματοοικονομικών υπηρεσιών ', 'core'=> 1, 'coreName'=>'Oracle'], 
+   
    
 ];
 indexSolr($array);
