@@ -589,7 +589,7 @@ class collectData {
          ));
        $response = curl_exec($ch);                 
        $json = json_decode($response,true);
-       echo $json['response']['docs'][0]['core'][0].PHP_EOL;
+       #echo $json['response']['docs'][0]['core'][0].PHP_EOL;
        if (isset ($json['response']['docs'][0]['core']) ){
            if ($json['response']['docs'][0]['core'][0] == 1){
                return 'Oracle Corporation';
