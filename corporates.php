@@ -33,6 +33,40 @@ $array = [
     ['id' => 'nv7', 'db_id'=>'TEDS_2336288','source'=>'dataTed','name' =>'Novartis Norge AS', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     ['id' => 'nv8', 'db_id'=>'TEDS_2336289','source'=>'dataTed','name' =>'Novartis Norge OTC', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     ['id' => 'nv9', 'db_id'=>'TEDS_2419020','source'=>'dataTed','name' =>'Novartis Sverige', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    
+    ['id' => 'at1', 'db_id'=>'TEDS_3971587','source'=>'dataTed','name' =>'Atos', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at2', 'db_id'=>'TEDS_3319151','source'=>'dataTed','name' =>'Atos Belgium SA', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at3', 'db_id'=>'TEDS_3291645','source'=>'dataTed','name' =>'Atos Consulting Limited', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at4', 'db_id'=>'TEDS_3462616','source'=>'dataTed','name' =>'Atos Consulting Ltd', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at5', 'db_id'=>'TEDS_2846372','source'=>'dataTed','name' =>'ATOS Consulting Ltd', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at6', 'db_id'=>'TEDS_3226509','source'=>'dataTed','name' =>'Atos Integration', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at7', 'db_id'=>'TEDS_3413429','source'=>'dataTed','name' =>'ATOS integration', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at8', 'db_id'=>'TEDS_3488979','source'=>'dataTed','name' =>'Atos IT Services UK Limited', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at9', 'db_id'=>'TEDS_3832868','source'=>'dataTed','name' =>'ATOS IT Services UK Limited', 'core'=> 4, 'coreName'=>'ATOS'],   
+    ['id' => 'at11', 'db_id'=>'TEDS_3309258','source'=>'dataTed','name' =>'Atos IT Services UK Ltd', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at12', 'db_id'=>'TEDS_3289138','source'=>'dataTed','name' =>'Atos IT Solutions and Services GmbH', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at13', 'db_id'=>'TEDS_3211595','source'=>'dataTed','name' =>'Atos IT Solutions and Services SA', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at14', 'db_id'=>'TEDS_2465788','source'=>'dataTed','name' =>'Atos Origin', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at15', 'db_id'=>'TEDS_3137195','source'=>'dataTed','name' =>'Atos Origin IT Services Limited', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at16', 'db_id'=>'TEDS_2247344','source'=>'dataTed','name' =>'Atos Origin IT Services UK Limited', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at17', 'db_id'=>'TEDS_2351033','source'=>'dataTed','name' =>'Atos Origin IT Services UK Ltd', 'core'=> 4, 'coreName'=>'ATOS'],
+    ['id' => 'at18', 'db_id'=>'TEDS_2180247','source'=>'dataTed','name' =>'Atos Worldline', 'core'=> 4, 'coreName'=>'ATOS'],
+    
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
    
    
 ];
