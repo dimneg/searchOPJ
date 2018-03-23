@@ -26,7 +26,13 @@ $array = [
     
     ['id' => 'nv1', 'db_id'=>'TEDS_3699892','source'=>'dataTed','name' =>'NOVARTIS FARMACEUTICA,S.A.', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     ['id' => 'nv2', 'db_id'=>'TEDS_3711765','source'=>'dataTed','name' =>'Novartis Finland Oy', 'core'=> 3, 'coreName'=>'NOVARTIS'],
-    ['id' => 'nv3', 'db_id'=>'TEDS_3469033','source'=>'dataTed','name' =>'Novartis Healthcare A/S', 'core'=> 3, 'coreName'=>'NOVARTIS']
+    ['id' => 'nv3', 'db_id'=>'TEDS_3469033','source'=>'dataTed','name' =>'Novartis Healthcare A/S', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv4', 'db_id'=>'TEDS_2190042','source'=>'dataTed','name' =>'Novartis Healthcare A/S', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv5', 'db_id'=>'TEDS_4030048','source'=>'dataTed','name' =>'Novartis Healthcare A/S', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv6', 'db_id'=>'TEDS_2180217','source'=>'dataTed','name' =>'Novartis Healthcare A/S Pharma', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv7', 'db_id'=>'TEDS_2336288','source'=>'dataTed','name' =>'Novartis Norge AS', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv8', 'db_id'=>'TEDS_2336289','source'=>'dataTed','name' =>'Novartis Norge OTC', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv9', 'db_id'=>'TEDS_2419020','source'=>'dataTed','name' =>'Novartis Sverige', 'core'=> 3, 'coreName'=>'NOVARTIS'],
    
    
 ];
