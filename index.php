@@ -299,10 +299,10 @@ if($_POST['formSubmit'] == "index.php") {
     $search = new collectData();
     if (is_numeric($varKeyword)){ //probaby afm
         if (strlen(utf8_decode($varKeyword)) <=6 ) {
-             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer );	
+             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );	
         }
         else {
-            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
+            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
         }
     }
     else { #name
@@ -310,12 +310,12 @@ if($_POST['formSubmit'] == "index.php") {
         if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){  #greek found
            if (count($words) === 1){
                if (strlen(utf8_decode($varKeyword)) <= 4 ){ # greek  like
-                    $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer); 
+                    $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore); 
                }
                else { # exact, fuzzy and then like
-                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);  	
-                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
-                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);  	
+                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                }
            }
            else{
@@ -325,21 +325,21 @@ if($_POST['formSubmit'] == "index.php") {
                    $term2 = $termsArray[1];
                    $term12 = $termsArray[2];
                    $varKeyword = $termsArray[3];
-                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
-                   $search->getAllGreek('',$term12,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                   $search->getAllGreek('',$term12,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                    if (strlen(utf8_decode($term1)) <=4 ){	
-                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                    }
                    else {
-                        $search->getAllGreek('~0.75',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
-                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
+                        $search->getAllGreek('~0.75',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
                    }
                    if (strlen(utf8_decode($term2)) <=4 ){	
-                       $search->getAllGreek('',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
+                       $search->getAllGreek('',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
                    }
                    else {
-                       $search->getAllGreek('~0.75',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
-                       $search->getAllGreek('*',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                       $search->getAllGreek('~0.75',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+                       $search->getAllGreek('*',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                    }
                }
            }
@@ -347,12 +347,12 @@ if($_POST['formSubmit'] == "index.php") {
         else { #english and greek
             if (count($words) == 1){
                 if (strlen(utf8_decode($varKeyword)) <=4 ) {
-                    $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
+                    $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
                 }
                 else {  # latin, >4,1 word : exact-> fuzzy-> like
-                     $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
-                     $search->getAll('~0.75',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	
-                     $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);		
+                     $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                     $search->getAll('~0.75',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+                     $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);		
 
                 }
             }
@@ -363,21 +363,21 @@ if($_POST['formSubmit'] == "index.php") {
                     $term2 = $termsArray[1];
                     $term12 = $termsArray[2];
                     $varKeyword = rtrim($termsArray[3]);
-                    $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
-                    $search->getAll('',$term12,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                    $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                    $search->getAll('',$term12,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     if (strlen(utf8_decode($term1)) <=4 ){
-                        $search->getAll('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);	  
+                        $search->getAll('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	  
                     }
                     else {
-                        $search->getAll('~0.75',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
-                        $search->getAll('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                        $search->getAll('~0.75',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                        $search->getAll('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     }
                     if (strlen(utf8_decode($term2)) <=4 ){
-                          $search->getAll('',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                          $search->getAll('',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     }
                     else {
-                        $search->getAll('~0.75',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
-                        $search->getAll('*',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer);
+                        $search->getAll('~0.75',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                        $search->getAll('*',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     }
 
                 }
