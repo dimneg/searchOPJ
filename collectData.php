@@ -590,7 +590,13 @@ class collectData {
        $response = curl_exec($ch);                 
        $json = json_decode($response,true);
        if (isset ($json['response']['docs'][0]['core']) ){
-            return $json['response']['docs'][0]['core'][0];
+           if ($json['response']['docs'][0]['core'][0] == 1){
+               return 'Oracle Corporation';
+           }
+           else {
+               return '';
+           }
+               
        }
        curl_close($ch);	
    }

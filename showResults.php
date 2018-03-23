@@ -37,6 +37,7 @@ class showResults {
         while ($i < $sumResults) { 
             
             $name = $uniqueResults[$i]['name'];
+            $corporation = $uniqueResults[$i]['corporate_id'];
             
             
             if  (isset($uniqueResults[$i]['vat'])) {        
@@ -52,9 +53,9 @@ class showResults {
                       
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 //....alt names...\\
-                if ($uniqueResults[$i]['corporate_id'] !==''){
-                    echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
-                }
+                #if ($uniqueResults[$i]['corporate_id'] !==''){
+                    echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">.$corporation. </font></br> ';
+                #}
                 if (!empty($uniqueResults[$i]['altNames'])) {
                      echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
                      
