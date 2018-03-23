@@ -194,7 +194,7 @@ class showResults {
                          
                      }
                 }
-                echo $uniqueResults[$i]['score']; 
+                echo 'score :'.$uniqueResults[$i]['score']; 
                 
                 
                 echo "</td>";
