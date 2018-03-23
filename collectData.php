@@ -576,9 +576,9 @@ class collectData {
    } 
    function getCorporationSolr($solrPath,$solrCore,$vat){
        $ch = curl_init();
-       $url = $solrPath.$solrCore."/select?indent=on&q=id:".$vat."&wt=json";
+       $url = $solrPath.$solrCore."/select?indent=on&q=db_id:".$vat."&wt=json";
        $url = str_replace(' ','%20',$url);
-       echo $url.PHP_EOL;
+       #echo $url.PHP_EOL;
        curl_setopt($ch, CURLOPT_URL, $url);
        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -589,6 +589,9 @@ class collectData {
          ));
        $response = curl_exec($ch);                 
        $json = json_decode($response,true);
+       if (isset ($json['response']['docs'][0]['core']) ){
+            return $json['response']['docs'][0]['core'];
+       }
        curl_close($ch);	
    }
    
