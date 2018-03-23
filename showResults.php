@@ -183,7 +183,9 @@ class showResults {
                      if ($uniqueResults[$i]['dataTedSeller'] == 1){
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
                          echo  'Συμβάσεις: ';
-                         echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedContracts']).'</B>';
+                         echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'$').'</B>';
+                         echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
+                        #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedContracts']).'</B>';
                          echo '</br>';
                          
                      }
