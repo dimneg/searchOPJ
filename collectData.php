@@ -314,7 +314,7 @@ class collectData {
                 if  ($arrayElements <= 1000 && isset($newdata)){
                     $key = $this->searchForId($newdata['vat'], $Results,'vat');
                     if ($key === NULL){
-                      $Results[] = $newdata;      
+                      $Results[] = $newdata;      //insert whole record
                     }
                     else {
                          #echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
@@ -333,7 +333,7 @@ class collectData {
                          $Results[$key]['dataGemh'] =  $this->defineSource($Db, 'dataGemh',$Results[$key]['dataGemh']);
                          
                          $Results[$key]['dataTed'] =  $this->defineSource($Db, 'dataTed',$Results[$key]['dataTed']);
-                         $Results[$key]['dataTedSeller'] =  $this->defineProperty($Db, 'dataTedSeller',$Results[$key]['dataTedSeller']);
+                         $Results[$key]['dataTedSeller'] =  $this->defineProperty($Db, 'seller',$Results[$key]['dataTedSeller']);
                          switch ($Db){
                              case "elod_diaugeia_sellers":
                                  $Results[$key]['award0'] =(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null;
