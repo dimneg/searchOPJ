@@ -169,9 +169,9 @@ class showResults {
                      if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
                          echo  'Συμβάσεις: ';
-			 $sumContracts=$this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
+			 $sumContracts = $this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ;
                          echo '<B>'.$this->fromNumberToText($sumContracts,'$').'</B>';
-                         $counterContracts=$uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
+                         $counterContracts = $uniqueResults[$i]['contractCounter0'] + $uniqueResults[$i]['contractCounter1'] + $uniqueResults[$i]['contractCounter2'] ;
                          echo  ' (<B>'.round($counterContracts,0).'</B>) ';		
                          echo  ' &nbsp [Έως '.$uniqueResults[$i]['lastUpdate'].']</br>';
                          
@@ -183,9 +183,13 @@ class showResults {
                      if ($uniqueResults[$i]['dataTedSeller'] == 1){
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
                          echo  'Συμβάσεις: ';
-                         echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'$').'</B>';
-                         echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
-                        #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedContracts']).'</B>';
+                         $sumAmount = $uniqueResults[$i]['tedSumofAmounts'];
+                         echo '<B>'.$sumAmount .'</B>';
+                         $counterContracts = $uniqueResults[$i]['tedSumofAmounts'];
+                         echo '<B>'.$counterContracts .'</B>';
+                         #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'€').'</B>';
+                         #echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
+                       
                          echo '</br>';
                          
                      }
