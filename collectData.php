@@ -329,7 +329,9 @@ class collectData {
                          $Results[$key]['dataKhmdhsSeller'] = $this->defineProperty($Db, 'seller',$Results[$key]['dataKhmdhsSeller']);
                          
                          $Results[$key]['dataEspa'] = $this->defineSource($Db, 'dataEspa',$Results[$key]['dataEspa']);
+                         
                          $Results[$key]['dataGemh'] =  $this->defineSource($Db, 'dataGemh',$Results[$key]['dataGemh']);
+                         
                          $Results[$key]['dataTed'] =  $this->defineSource($Db, 'dataTed',$Results[$key]['dataTed']);
                          $Results[$key]['dataTedSeller'] =  $this->defineProperty($Db, 'dataTedSeller',$Results[$key]['dataTedSeller']);
                          switch ($Db){

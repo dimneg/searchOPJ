@@ -185,7 +185,7 @@ class showResults {
                          echo  'Συμβάσεις: ';
                          $sumAmount = $uniqueResults[$i]['tedSumofAmounts'];
                          echo '<B>'.$sumAmount .'</B>';
-                         $counterContracts = $uniqueResults[$i]['tedSumofAmounts'];
+                         $counterContracts = $uniqueResults[$i]['tedContracts'];
                          echo '<B>'.$counterContracts .'</B>';
                          #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'€').'</B>';
                          #echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
