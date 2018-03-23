@@ -334,6 +334,7 @@ class collectData {
                          
                          $Results[$key]['dataTed'] =  $this->defineSource($Db, 'dataTed',$Results[$key]['dataTed']);
                          $Results[$key]['dataTedSeller'] =  $this->defineProperty($Db, 'seller',$Results[$key]['dataTedSeller']);
+                         $Results[$key]['dataTedBuyer'] =  $this->defineProperty($Db, 'buyer',$Results[$key]['dataTedBuyer']);
                          switch ($Db){
                              case "elod_diaugeia_sellers":
                                  $Results[$key]['award0'] =(isset($r['fields']['awardAmount0']) ) ? $r['fields']['awardAmount0'] : null;
