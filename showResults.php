@@ -180,11 +180,11 @@ class showResults {
                 }
                 if ($uniqueResults[$i]['dataTed'] == 1){
                     echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">T.E.D.</font></br> '; 
-                    if ($uniqueResults[$i]['dataTedSeller'] == 1){
+                    if ($uniqueResults[$i]['dataTedBuyer'] == 1){
                          echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
                          echo  'Συμβάσεις: ';
                     }
-                     if ($uniqueResults[$i]['dataTedSeller'] == 1){
+                    if ($uniqueResults[$i]['dataTedSeller'] == 1){
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
                          echo  'Συμβάσεις: ';
                          $sumAmount = $uniqueResults[$i]['tedSumofAmounts'];
