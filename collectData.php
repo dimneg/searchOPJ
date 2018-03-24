@@ -620,9 +620,19 @@ class collectData {
        ));
        $response = curl_exec($ch);                 
        $json = json_decode($response,true);
+       $response = [];
        curl_close($ch);
        if (isset ($json['response']['docs'][0])){
-           return $json['response']['docs'][0]['coreName'][0];
+           foreach ($json['response']['docs'] as $key => $value) {
+               $response[] = $value['db_id'][0];
+               $response[] = $value['name'][0];
+               $response[] = $value['country'][0];
+               
+               
+           }
+           #return $json['response']['docs'][0]['coreName'][0];
+           return [$json['response']['docs']['coreName'][0],implode(', ', $response)];
+          
        }
                
    }

@@ -42,9 +42,11 @@ class showResults {
              foreach ($this->corpOccur($uniqueResults)as $key => $value) {
                 echo "<tr>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                $name = $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
+                $corpData = $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
+                $name = $corpData[0];
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
-                echo ' <font class="dataset" color="#FFD700" style="font-size: 0.77em">COMPANY CORPORATION</font></br> ';
+                echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">COMPANY CORPORATION</font></br> ';
+                echo 'Εταιρίες:΄'.$corpData[1]
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
                 echo "</td>";
