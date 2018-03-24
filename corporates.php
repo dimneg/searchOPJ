@@ -1,7 +1,7 @@
 <?php
 
 $array = [
-    ['id' => 'or1', 'db_id'=>'TEDS_2963979','source'=>'dataTed','name' =>'Oracle Belgium BVBA', 'core'=> 1, 'coreName'=>'ORACLE'],
+    ['id' =>'or1', 'db_id'=>'TEDS_2963979','source'=>'dataTed','name' =>'Oracle Belgium BVBA', 'core'=> 1, 'coreName'=>'ORACLE'],
     ['id' =>'or2', 'db_id'=>'TEDS_3352852','source'=>'dataTed','name' =>'Oracle Corporation UK Limited', 'core'=> 1, 'coreName'=>'ORACLE'],
     ['id' =>'or3', 'db_id'=>'TEDS_2259837','source'=>'dataTed','name' =>'Oracle Danmark APS', 'core'=> 1, 'coreName'=>'ORACLE'],
     ['id' =>'or4', 'db_id'=>'TEDS_3019308','source'=>'dataTed','name' =>'Oracle Hungary Kft.', 'core'=> 1, 'coreName'=>'ORACLE'], 
