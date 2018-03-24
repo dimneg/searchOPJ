@@ -379,7 +379,7 @@ class showResults {
         $totalCorporatesArray = [[]];
         foreach ($uniqueResults as $key => $value) {
             if  ($value['corporate_id']!= 0){
-                $key = searchForId($value['corporate_id'] , $totalCorporatesArray,'id');
+                $key = $this->searchForId($value['corporate_id'] , $totalCorporatesArray,'id');
                 if ($key === NULL){
                     $totalCorporatesArray[$corpCnt]['id'] = $value['corporate_id'];
                     $totalCorporatesArray[$corpCnt]['cnt'] =  1;
