@@ -26,7 +26,7 @@ class collectData {
        #
        #
  }
-   function getAllShort($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer){
+   function getAllShort($LuceneOperand,$varKeyword,$DbPath,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer,$corpSolrCore){
        global $Limit;
 
        #$this->prepareResults($DbPath,"elod_diaugeia_hybrids","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass);
@@ -578,7 +578,7 @@ class collectData {
        $ch = curl_init();
        $url = $solrPath.$solrCore."/select?indent=on&q=db_id:".$vat."&wt=json";
        $url = str_replace(' ','%20',$url);
-       #echo $url.PHP_EOL;
+       echo $url.PHP_EOL;
        curl_setopt($ch, CURLOPT_URL, $url);
        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
