@@ -365,7 +365,7 @@ class showResults {
     function corpOccur($uniqueResults){
         $corporates = 0;
         foreach ($uniqueResults as $key => $value) {
-            if  ($value['corporate_id']!==''){
+            if  ($value['corporate_id']!= 0){
                 $corporates++;
             }
         }

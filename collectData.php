@@ -575,6 +575,7 @@ class collectData {
        
    } 
    function getCorporationSolr($solrPath,$solrCore,$vat){
+       $return = 0;
        $ch = curl_init();
        $url = $solrPath.$solrCore."/select?indent=on&q=db_id:".$vat."&wt=json";
        $url = str_replace(' ','%20',$url);
@@ -597,10 +598,12 @@ class collectData {
            else {
                return '';
            }*/
-           return $json['response']['docs'][0]['core'][0];
+           $return = $json['response']['docs'][0]['core'][0];
+           
                
        } 
        curl_close($ch);	
+       return $return;
    }
    
    function getTedDataRDF($vat,$sparqlServer){
