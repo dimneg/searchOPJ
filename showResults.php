@@ -12,7 +12,7 @@
  * @author dimitris negkas
  */
 class showResults {
-    function presentResults(){ //test 090166291
+    function presentResults($solrPath, $corpSolrCore){ //test 090166291
         require_once 'collectData.php';
         global $Results;
         $this->saveCsvCloud($Results, '/var/log/results.csv');
@@ -42,7 +42,8 @@ class showResults {
              foreach ($this->corpOccur($uniqueResults)as $key => $value) {
                 echo "<tr>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                echo $value['id']; $solrDetails ->getCorporationSolr($solrPath, $solrCore, $vat);
+                echo $solrDetails -> getCorporationSolr($solrPath, $corpSolrCore, $value['id']);
+                #echo $value['id']; 
                 echo "</td>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                 echo 100000;

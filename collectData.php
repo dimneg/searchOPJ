@@ -605,6 +605,27 @@ class collectData {
        curl_close($ch);	
        return $return;
    }
+   function getCorporationDetailsSolr($solrPath,$solrCore,$corpId){
+       $ch = curl_init();
+       $url = $solrPath.$solrCore."/select?indent=on&q=core:".$corpId."&wt=json";
+       $url = str_replace(' ','%20',$url);
+       #echo $url.PHP_EOL;
+       curl_setopt($ch, CURLOPT_URL, $url);
+       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       curl_setopt($ch, CURLOPT_USERPWD, 'dimneg:dim1978');			
+       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-type: application/json; charset=utf-8',
+	'Accept: */*'
+       ));
+       $response = curl_exec($ch);                 
+       $json = json_decode($response,true);
+       curl_close($ch);
+       if (isset ($json['response']['docs'][0])){
+           return $json['response']['docs'][0]['coreName'][0];
+       }
+               
+   }
    
    function getTedDataRDF($vat,$sparqlServer){
       
