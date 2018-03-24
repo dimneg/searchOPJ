@@ -40,7 +40,7 @@ class showResults {
         echo $this->corpOccur($uniqueResults);
         echo "</td>";
         echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-        echo '10';
+        echo '100';
         echo "</td>";
         echo "</tr>";
         
