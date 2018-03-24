@@ -160,7 +160,7 @@ class collectData {
                                 break;
                 }
                 global $Boost;
-                $Boost = 10;
+                $Boost = 1.2;
                 switch ($Wc) { //boost step 1
                 case "";{	            
                    $r['score'] *=$Boost;
