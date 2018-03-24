@@ -13,7 +13,7 @@
  */
 class showResults {
     function presentResults(){ //test 090166291
-        require_once 'collectdata.php';
+        require_once 'collectData.php';
         global $Results;
         $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
