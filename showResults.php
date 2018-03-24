@@ -36,17 +36,18 @@ class showResults {
         echo "<tbody>";
         
         //corporation
-        $corporatesCount = count($this->corpOccur($uniqueResults));
+        $corporateResultGroupping = $this->corpOccur($uniqueResults);
+        $corporatesCount = count( $corporateResultGroupping [0]);
         if ($corporatesCount > 0){
              $solrDetails = new collectData();
-             foreach ($this->corpOccur($uniqueResults)as $key => $value) {
+             foreach ( $corporateResultGroupping[1] as $key => $value) {
                 echo "<tr>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                 $corpData = $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 $name = $corpData[0];
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">COMPANY CORPORATION</font></br> ';
-                echo 'Εταιρίες:΄'.$corpData[1];
+                echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
                 echo "</td>";
@@ -402,7 +403,7 @@ class showResults {
             }
         }
         #return $totalCorporatesOccs;
-        return $totalCorporatesArray;
+        return [$totalCorporatesOccs,$totalCorporatesArray];
         
     }
     function searchForId($id, $array,$index) { 
