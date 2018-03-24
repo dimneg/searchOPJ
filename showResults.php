@@ -32,15 +32,18 @@ class showResults {
         
         echo "<table id='searchResults' class='display'  ><thead><tr><th></th></th></th> </tr></thead>";  
 
-      
+        echo "<tbody>";
         
         //corporation
         echo "<tr>";
         echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
         echo $this->corpOccur($uniqueResults);
         echo "</td>";
+        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+        echo '10';
+        echo "</td>";
         echo "</tr>";
-          echo "<tbody>";
+        
         while ($i < $sumResults) { 
             
             $name = $uniqueResults[$i]['name'];
@@ -363,13 +366,13 @@ class showResults {
     }
     
     function corpOccur($uniqueResults){
-        $corporates = 0;
+        $totalCorporatesOccs = 0;
         foreach ($uniqueResults as $key => $value) {
             if  ($value['corporate_id']!= 0){
-                $corporates++;
+                $totalCorporatesOccs++;
             }
         }
-        return $corporates;
+        return $totalCorporatesOccs;
         
     }
 }
