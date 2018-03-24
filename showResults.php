@@ -34,6 +34,13 @@ class showResults {
 
         echo "<tbody>";
         
+        //corporation
+        echo "<tr>";
+        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+        echo $this->corpOccur($uniqueResults);
+        echo "</td>";
+        echo "</tr>";
+        
         while ($i < $sumResults) { 
             
             $name = $uniqueResults[$i]['name'];
@@ -353,5 +360,16 @@ class showResults {
             
         return $revDate;
 
+    }
+    
+    function corpOccur($uniqueResults){
+        $corporates = 0;
+        foreach ($uniqueResults as $key => $value) {
+            if  ($value['corporate_id']!==''){
+                $corporates++;
+            }
+        }
+        return $corporates;
+        
     }
 }

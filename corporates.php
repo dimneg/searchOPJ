@@ -29,7 +29,10 @@ $array = [
     ['id' => 'pr13', 'db_id'=>'094399907','source'=>'dataDiaugeia','name' =>'ΠΡΑΙΣΓΟΥΩΤΕΡΧΑΟΥΣΚΟΥΠΕΡΣ ΑΝΩΝΥΜΗ ΕΛΕΚΤΙΚΗ ΕΤΑΙΡΕΙΑ ||PRICEWATERHOUSECOOPERS AE', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
     ['id' => 'pr14', 'db_id'=>'998428720','source'=>'dataDiaugeia','name' =>'ΚΟΙΝΟΠΡΑΞΙΑ PRICEWATERHOUSECOOPERS BUSINESS SOLUTIONS AE KAI PRICEWATERHOUSECOOPERS BUSINESS ADVISORS AE', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
     ['id' => 'pr15', 'db_id'=>'86104681290','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS PROFESSIONAL SERVICES', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
-    ['id' => 'pr16', 'db_id'=>'20607773295','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS CONSULTING AUSTRALIA PTY LIMITED ', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
+    ['id' => 'pr16', 'db_id'=>'20607773295','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS CONSULTING AUSTRALIA PTY LIMITED', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
+    ['id' => 'pr17', 'db_id'=>'29003562696','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS ACTUARIAL PTY LIMITED', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
+    ['id' => 'pr18', 'db_id'=>'52864604756','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
+    ['id' => 'pr19', 'db_id'=>'57097040009','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS'],
     
     ['id' => 'nv1', 'db_id'=>'TEDS_3699892','source'=>'dataTed','name' =>'NOVARTIS FARMACEUTICA,S.A.', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     ['id' => 'nv2', 'db_id'=>'TEDS_3711765','source'=>'dataTed','name' =>'Novartis Finland Oy', 'core'=> 3, 'coreName'=>'NOVARTIS'],
@@ -40,6 +43,9 @@ $array = [
     ['id' => 'nv7', 'db_id'=>'TEDS_2336288','source'=>'dataTed','name' =>'Novartis Norge AS', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     ['id' => 'nv8', 'db_id'=>'TEDS_2336289','source'=>'dataTed','name' =>'Novartis Norge OTC', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     ['id' => 'nv9', 'db_id'=>'TEDS_2419020','source'=>'dataTed','name' =>'Novartis Sverige', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv10', 'db_id'=>'094021290','source'=>'dataDiaugeia','name' =>'NOVARTIS HELLAS AEBE', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv11', 'db_id'=>'60089509544','source'=>'dataAustralia','name' =>'NOVARTIS VACCINES AND', 'core'=> 3, 'coreName'=>'NOVARTIS'],
+    ['id' => 'nv12', 'db_id'=>'18004244160','source'=>'dataAustralia','name' =>'NOVARTIS PHARMACEUTICALS AUSTRALIA', 'core'=> 3, 'coreName'=>'NOVARTIS'],
     
     ['id' => 'at1', 'db_id'=>'TEDS_3971587','source'=>'dataTed','name' =>'Atos', 'core'=> 4, 'coreName'=>'ATOS'],
     ['id' => 'at2', 'db_id'=>'TEDS_3319151','source'=>'dataTed','name' =>'Atos Belgium SA', 'core'=> 4, 'coreName'=>'ATOS'],
