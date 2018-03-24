@@ -35,14 +35,22 @@ class showResults {
         echo "<tbody>";
         
         //corporation
-        echo "<tr>";
-        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-        echo $this->corpOccur($uniqueResults);
-        echo "</td>";
-        echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-        echo '100';
-        echo "</td>";
-        echo "</tr>";
+        $corporatesCount = count($this->corpOccur($uniqueResults));
+        if ($corporatesCount > 0){
+             foreach ($this->corpOccur($uniqueResults)as $key => $value) {
+                echo "<tr>";
+                echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+                echo $value['id'];
+                echo "</td>";
+                echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
+                echo 100;
+                echo "</td>";
+                echo "</tr>";
+
+            }
+        }
+       
+        
         
         while ($i < $sumResults) { 
             
@@ -367,12 +375,36 @@ class showResults {
     
     function corpOccur($uniqueResults){
         $totalCorporatesOccs = 0;
+        $corpCnt = 0;
+        $totalCorporatesArray = [[]];
         foreach ($uniqueResults as $key => $value) {
             if  ($value['corporate_id']!= 0){
+                $key = searchForId($value['corporate_id'] , $totalCorporatesArray,'id');
+                if ($key === NULL){
+                    $totalCorporatesArray[$corpCnt]['id'] = $value['corporate_id'];
+                    $totalCorporatesArray[$corpCnt]['cnt'] =  1;
+                    $corpCnt++;
+                }
+                else {
+                    $totalCorporatesArray[$key]['cnt']++;
+                }
                 $totalCorporatesOccs++;
+                
+                
             }
         }
-        return $totalCorporatesOccs;
+        #return $totalCorporatesOccs;
+        return $totalCorporatesArray;
         
     }
+    function searchForId($id, $array,$index) { 
+        foreach ($array as $key => $val) {       
+                if ( $val[$index] === $id ) {
+                    return $key;
+
+                }
+                    //else echo 'not equal';
+         }
+            return NULL;
+    } 
 }
