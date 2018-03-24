@@ -13,6 +13,7 @@
  */
 class showResults {
     function presentResults(){ //test 090166291
+        require_once 'collectdata.php';
         global $Results;
         $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
@@ -37,13 +38,14 @@ class showResults {
         //corporation
         $corporatesCount = count($this->corpOccur($uniqueResults));
         if ($corporatesCount > 0){
+             $solrDetails = new collectData();
              foreach ($this->corpOccur($uniqueResults)as $key => $value) {
                 echo "<tr>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                echo $value['id'];
+                echo $value['id']; $solrDetails ->getCorporationSolr($solrPath, $solrCore, $vat);
                 echo "</td>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                echo 100;
+                echo 100000;
                 echo "</td>";
                 echo "</tr>";
 
@@ -55,7 +57,7 @@ class showResults {
         while ($i < $sumResults) { 
             
             $name = $uniqueResults[$i]['name'];
-            $corporation = $uniqueResults[$i]['corporate_id'];
+            # $corporation = $uniqueResults[$i]['corporate_id'];
             
             
             if  (isset($uniqueResults[$i]['vat'])) {        
@@ -72,7 +74,7 @@ class showResults {
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 //....alt names...\\
                 #if ($uniqueResults[$i]['corporate_id'] !==''){
-                    echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$corporation</font></br> ";
+                  #  echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$corporation</font></br> ";
                 #}
                 if (!empty($uniqueResults[$i]['altNames'])) {
                      echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
