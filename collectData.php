@@ -631,7 +631,7 @@ class collectData {
                
            }
            #return $json['response']['docs'][0]['coreName'][0];
-           return [$json['response']['docs']['coreName'][0],implode(', ', $response)];
+           return [$json['response']['docs'][0]['coreName'][0],implode(', ', $response)];
           
        }
                
