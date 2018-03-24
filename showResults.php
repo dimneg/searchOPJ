@@ -32,7 +32,7 @@ class showResults {
         
         echo "<table id='searchResults' class='display'  ><thead><tr><th></th></th></th> </tr></thead>";  
 
-        echo "<tbody>";
+      
         
         //corporation
         echo "<tr>";
@@ -40,7 +40,7 @@ class showResults {
         echo $this->corpOccur($uniqueResults);
         echo "</td>";
         echo "</tr>";
-        
+          echo "<tbody>";
         while ($i < $sumResults) { 
             
             $name = $uniqueResults[$i]['name'];
