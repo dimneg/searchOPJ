@@ -37,7 +37,7 @@ class showResults {
         
         //corporation
         $corporateResultGroupping = $this->corpOccur($uniqueResults);
-        $corporatesCount = count( $corporateResultGroupping [0]);
+        $corporatesCount =  $corporateResultGroupping [0];
         if ($corporatesCount > 0){
              $solrDetails = new collectData();
              foreach ( $corporateResultGroupping[1] as $key => $value) {
