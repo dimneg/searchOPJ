@@ -591,14 +591,15 @@ class collectData {
        $json = json_decode($response,true);
        #echo $json['response']['docs'][0]['core'][0].PHP_EOL;
        if (isset ($json['response']['docs'][0]['core']) ){
-           if ($json['response']['docs'][0]['core'][0] == 1){
+           /*if ($json['response']['docs'][0]['core'][0] == 1){
                return 'Oracle Corporation';
            }
            else {
                return '';
-           }
+           }*/
+           return $json['response']['docs'][0]['core'][0];
                
-       }
+       } 
        curl_close($ch);	
    }
    
