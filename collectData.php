@@ -624,9 +624,11 @@ class collectData {
        curl_close($ch);
        if (isset ($json['response']['docs'][0])){
            foreach ($json['response']['docs'] as $key => $value) {
-               $response[] = $value['db_id'][0];
+               
+               $response[] = '['.$value['db_id'][0];
                $response[] = $value['name'][0];
-               $response[] = $value['country'][0];
+               $response[] = $value['country'][0].']';
+            
                
                
            }
