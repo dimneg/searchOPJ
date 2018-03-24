@@ -42,7 +42,7 @@ class showResults {
              foreach ($this->corpOccur($uniqueResults)as $key => $value) {
                 echo "<tr>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
-                echo $solrDetails -> getCorporationSolr($solrPath, $corpSolrCore, $value['id']);
+                echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
                 echo "</td>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
