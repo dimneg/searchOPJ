@@ -259,9 +259,9 @@
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >	
-<div class="search-box">
-				<label class="search-label">With Any One of the Words:</label>
+<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+
+			
 				<div>
 					<input type="text" name="search[with_any_one_of]" class="demoInputBox" value="<?php echo $with_any_one_of; ?>"	/>
 					<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advance Search</span>
@@ -292,7 +292,7 @@
 				<div>
 					<input type="submit" name="go" class="btnSearch" value="Search">
 				</div>
-			</div>
+
 </p>
 <div align="center" >
  
