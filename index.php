@@ -230,7 +230,7 @@
 
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>Search</title>
+      <title>Search OpJ</title>
       
            
                <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
