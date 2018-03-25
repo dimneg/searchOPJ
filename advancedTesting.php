@@ -26,6 +26,7 @@ What is your Gender?
     <option value="Russia">Russia</option>
     <option value="Japan">Japan</option>
 </select>
+<<<<<<< HEAD
 
 <form action="checkbox-form.php" method="post">
     Do you need wheelchair access?
@@ -69,6 +70,7 @@ What is your Gender?
 		</div>
 	</div>
 </form>
+
 <?php
 
 if(isset($_POST['formSubmit']) )
