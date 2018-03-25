@@ -241,6 +241,42 @@
             a.nameLink{
             font-weight: bold;
             }
+            
+            body{
+			width: 600px;
+			font-family: "Segoe UI",Optima,Helvetica,Arial,sans-serif;
+			line-height: 25px;
+		}
+		.search-box {
+			padding: 30px;
+			background-color:#C8EEFD;
+		}
+		.search-label{
+			margin:2px;
+		}
+		.demoInputBox {    
+			padding: 10px;
+			border: 0;
+			border-radius: 4px;
+			margin: 0px 5px 15px;
+			width: 250px;
+		}
+		.btnSearch{    
+			padding: 10px;
+			background: #84D2A7;
+			border: 0;
+			border-radius: 4px;
+			margin: 0px 5px;
+			color: #FFF;
+			width: 150px;
+		}
+		#advance_search_link {
+			color: #001FFF;
+			cursor: pointer;
+		}
+		.result-description{
+			margin: 5px 0px 15px;
+		}
 
 
     </style>
@@ -261,6 +297,7 @@
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
+
 
 			
 							
