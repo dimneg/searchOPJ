@@ -264,7 +264,7 @@
 			
 				<div>
 					<input type="text" name="search[with_any_one_of]" class="demoInputBox" value="<?php echo $with_any_one_of; ?>"	/>
-					<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advance Search</span>
+					<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
 				</div>				
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">With the Exact String:</label>
