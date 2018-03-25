@@ -260,12 +260,10 @@
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
 
 			
-				<div>
-					<input type="text" name="search[with_any_one_of]" class="demoInputBox" value="<?php echo $with_any_one_of; ?>"	/>
-					<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
-				</div>				
+							
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">With the Exact String:</label>
 					<div>
