@@ -260,7 +260,7 @@
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
-<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
+<span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 
 			
 							
@@ -277,12 +277,12 @@
 					<div>
 						<input type="text" name="search[starts_with]" id="starts_with" class="demoInputBox" value="<?php echo $starts_with; ?>"	/>
 					</div>
-					<label class="search-label">Search Keywords in:</label>
+					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
 						<select name="search[search_in]" id="search_in" class="demoInputBox">
 							<option value="">Select Column</option>
-							<option value="title" <?php if($search_in=="title") { echo "selected"; } ?>>Title</option>
-							<option value="description" <?php if($search_in=="description") { echo "selected"; } ?>>Description</option>
+							<option value="title" <?php if($search_in=="Ελλάδα") { echo "selected"; } ?>>Title</option>
+							<option value="description" <?php if($search_in=="Εξωτερικό") { echo "selected"; } ?>>Description</option>
 						</select>
 					</div>
 				</div>
