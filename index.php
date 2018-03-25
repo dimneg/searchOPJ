@@ -243,7 +243,7 @@
             }
             
             body{
-			width: 900px;
+			 <!--width: 900px;-->
 			font-family: "Segoe UI",Optima,Helvetica,Arial,sans-serif;
 			line-height: 25px;
 		}
