@@ -41,6 +41,21 @@
 
             } ); 
        </script>
+       <script>
+		function showHideAdvanceSearch() {
+			if(document.getElementById("advanced-search-box").style.display=="none") {
+				document.getElementById("advanced-search-box").style.display = "block";
+				document.getElementById("advance_search_submit").value= "1";
+			} else {
+				document.getElementById("advanced-search-box").style.display = "none";
+				document.getElementById("with_the_exact_of").value= "";
+				document.getElementById("without").value= "";
+				document.getElementById("starts_with").value= "";
+				document.getElementById("search_in").value= "";
+				document.getElementById("advance_search_submit").value= "";
+			}
+		}
+	</script>
        <style>
 
 
@@ -230,7 +245,7 @@
 
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>Search OpJ</title>
+      <title>Search OPJ</title>
       
            
                <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
@@ -244,7 +259,40 @@
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >				
+<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >	
+<div class="search-box">
+				<label class="search-label">With Any One of the Words:</label>
+				<div>
+					<input type="text" name="search[with_any_one_of]" class="demoInputBox" value="<?php echo $with_any_one_of; ?>"	/>
+					<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advance Search</span>
+				</div>				
+				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
+					<label class="search-label">With the Exact String:</label>
+					<div>
+						<input type="text" name="search[with_the_exact_of]" id="with_the_exact_of" class="demoInputBox" value="<?php echo $with_the_exact_of; ?>"	/>
+					</div>
+					<label class="search-label">Without:</label>
+					<div>
+						<input type="text" name="search[without]" id="without" class="demoInputBox" value="<?php echo $without; ?>"	/>
+					</div>
+					<label class="search-label">Starts With:</label>
+					<div>
+						<input type="text" name="search[starts_with]" id="starts_with" class="demoInputBox" value="<?php echo $starts_with; ?>"	/>
+					</div>
+					<label class="search-label">Search Keywords in:</label>
+					<div>
+						<select name="search[search_in]" id="search_in" class="demoInputBox">
+							<option value="">Select Column</option>
+							<option value="title" <?php if($search_in=="title") { echo "selected"; } ?>>Title</option>
+							<option value="description" <?php if($search_in=="description") { echo "selected"; } ?>>Description</option>
+						</select>
+					</div>
+				</div>
+				
+				<div>
+					<input type="submit" name="go" class="btnSearch" value="Search">
+				</div>
+			</div>
 </p>
 <div align="center" >
  
