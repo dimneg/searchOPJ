@@ -48,9 +48,9 @@
 				document.getElementById("advance_search_submit").value= "1";
 			} else {
 				document.getElementById("advanced-search-box").style.display = "none";
-				document.getElementById("with_the_exact_of").value= "";
-				document.getElementById("without").value= "";
-				document.getElementById("starts_with").value= "";
+				document.getElementById("crf1").value= "".style.display = "table"; 
+				document.getElementById("crf2").value= "".style.display = "table-row";
+				document.getElementById("crf3").value= "".style.display = "compact";
 				document.getElementById("search_in").value= "";
 				document.getElementById("advance_search_submit").value= "";
 			}
@@ -300,21 +300,19 @@
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 
-
-			
-							
+									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
 					<div>
-						<input type="text" name="search[with_the_exact_of]" id="with_the_exact_of" class="demoInputBox" value="<?php echo $with_the_exact_of; ?>"	/>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" value="<?php echo $crf1; ?>"	/>
 					</div>
 					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
-						<input type="text" name="search[without]" id="without" class="demoInputBox" value="<?php echo $without; ?>"	/>
+						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
 					</div>
 					<label class="search-label">Αναζήτηση με όνομα μονο:</label>
 					<div>
-						<input type="text" name="search[starts_with]" id="starts_with" class="demoInputBox" value="<?php echo $starts_with; ?>"	/>
+						<input type="text" name="crf3" id="crf3" class="demoInputBox" value="<?php echo $crf3; ?>"	/>
 					</div>
 					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
@@ -338,7 +336,7 @@
  <br>
 <hr align="center" width="80%">
 
-<li class="ex1" >Αποτελέσματα Αναζήτησης</li>
+<li class="ex1" >Αποτελέσματα</li>
 </div>
 </form>
 <?php
