@@ -99,7 +99,7 @@ class showResults {
                 echo ' ';
                 echo $this->hide_not_avail_space($uniqueResults[$i]['countryName']); 
                 echo ' ';
-                echo 'Α.Φ.Μ. '.$this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
+                echo $this->getVatLabel($uniqueResults[$i]['vat']). $this->hide_not_avail($uniqueResults[$i]['vat']."</br>");
                 echo '</I>';
                 //....show diaugeia...\\
                 if ($uniqueResults[$i]['dataDiaugeia'] == 1){
@@ -416,4 +416,17 @@ class showResults {
          }
             return NULL;
     } 
+    function getVatLabel($vat){
+         $vatLabel ='Α.Φ.Μ.';
+         if strlen($vat)> 10{          
+            $vatLabel = 'A.B.N.';          
+                
+                        
+         }
+         return $vatLabel;
+               
+                       
+                                
+        
+    }
 }
