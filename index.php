@@ -248,8 +248,8 @@
 			line-height: 25px;
 		}
 		.search-box {
-			padding: 50px;
-			background-color:#C8EEFD;
+			padding: 30px;
+			/*background-color:#C8EEFD;*/
 		}
 		.search-label{
 			margin:2px;
