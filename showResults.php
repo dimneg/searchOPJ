@@ -77,7 +77,7 @@ class showResults {
                 #echo  'Συμβάσεις: </br>';
                 echo '<img src="languages/images/eu.png" alt="Ευρώπη"  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'Ευρώπη <br>' ;
+                echo 'Ευρώπη </br>' ;
                 if ($name == 'ORACLE CORPORATION'){
                     echo  'Συμβάσεις: <B>  €0.5Β (21) </B><br>';
                 }
@@ -87,7 +87,7 @@ class showResults {
                 
                 echo '<img src="languages/images/au.png" alt="Αυστραλία"  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'Αυστραλία <br> ' ;
+                echo 'Αυστραλία </br> ' ;
                 if ($name == 'ORACLE CORPORATION'){
                     echo  'Συμβάσεις:  <B>$1.1Β (209)</B>';
                 }
