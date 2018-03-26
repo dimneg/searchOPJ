@@ -241,7 +241,7 @@
             a.nameLink{
             font-weight: bold;
             }
-            
+       <!-- advanced search       -->     
             body{
 			 <!--width: 900px;-->
 			font-family: "Segoe UI",Optima,Helvetica,Arial,sans-serif;
