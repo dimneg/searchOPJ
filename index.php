@@ -48,9 +48,9 @@
 				document.getElementById("advance_search_submit").value= "1";
 			} else {
 				document.getElementById("advanced-search-box").style.display = "none";
-				document.getElementById("crf1").value= "123" 
-				document.getElementById("crf2").value= "123";
-				document.getElementById("crf3").value= "1";
+				document.getElementById("crf1").value= "" 
+				document.getElementById("crf2").value= "";
+				document.getElementById("crf3").value= "";
 				document.getElementById("search_in").value= "";
 				document.getElementById("advance_search_submit").value= "";
 			}
@@ -299,12 +299,11 @@
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
-
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
 					<div>
-						<input type="text" name="crf1" id="crf1" class="demoInputBox" value="<?php echo $crf1; ?>"	/>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php" value="<?php echo $_POST['formKeyword']; ?>"	/>
 					</div>
 					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
