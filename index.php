@@ -327,7 +327,7 @@
 				</div>
 				
 				<div>
-					<input type="submit" name="go" class="btnSearch" value="Search">
+					<input type="submit" name="go" class="btnSearch" value="Search" action="index.php" method="post" accept-charset="UTF-8">
 				</div>
 
 </p>
