@@ -327,7 +327,7 @@
 				</div>
 				
 				<div>
-					<input type="submit" name="go" class="btnSearch" value="Search">
+					<input type="submit" name="go" class="btnSearch" value="index.php" >
 				</div>
 
 </p>
