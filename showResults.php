@@ -53,8 +53,10 @@ class showResults {
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
                 echo 'Περιέχει:</br>';
                 foreach ($corpData[1]  as $key => $value) {
-                    echo mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8").' ['.$value['country'].']'; echo '<BR>';                    
+                    echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
                 }
+                echo 'Δημόσιες προμήθειες <br>' ;
+                echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font></br> ';
                 #echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
@@ -293,18 +295,18 @@ class showResults {
         $texted=$currency.'0.0K'; //€0.0K
         $digits=strlen($number);
 	if (($digits == 1) || (($digits) == 2)){
-	$texted=$currency.'0.0K';
+            $texted = $currency.'0.0K';
 	}
 	else
 	if ($digits == 3) { //e.g. 860=0.8K
-	$dividor=1000;
-	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
+            $dividor = 1000;
+            $texted = $currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
 	}
 	else
 	if ($digits == 4) { //e.g 8600->8.6K
-	$dividor=1000;
+	$dividor = 1000;
 	//$texted='€'.round($number/($dividor),1).'K';
-	$texted=$currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
+	$texted = $currency.number_format(round($number/($dividor),1), 1, '.', '').'K';
 	}
 	else
 	if ($digits == 5) { //e.g 86000->86K
@@ -437,4 +439,14 @@ class showResults {
                                 
         
     }
+    function unaccent($string) {    
+        $string =  str_replace('Ά','Α',$string);
+        $string =  str_replace('Έ','Ε',$string);
+        $string =  str_replace('Ί','Ι',$string);
+        $string =  str_replace('Ή','Η',$string);
+        $string =  str_replace('Ύ','Υ',$string);
+        $string =  str_replace('Ό','Ο',$string);
+        $string =  str_replace('Ώ','Ω',$string);
+        return $string;
+   }
 }
