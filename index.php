@@ -249,7 +249,7 @@
 		}
 		.search-box {
 			padding: 30px;
-			/*background-color:#C8EEFD;*/
+			background-color:#C8EEFD;
 		}
 		.search-label{
 			margin:2px;
@@ -263,6 +263,7 @@
 		}
 		.btnSearch{    
 			padding: 10px;
+                        left: 30px;
 			background: #84D2A7;
 			border: 0;
 			border-radius: 4px;
