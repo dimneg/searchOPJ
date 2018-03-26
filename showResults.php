@@ -49,7 +49,11 @@ class showResults {
                 echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">[Corporate Group]</font></br> ';
                # echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
-                echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
+                echo 'Περιέχει:</br>';
+                foreach ($corpData[1]  as $key => $value) {
+                    echo $value['name']; echo $value['country']; echo '<BR>';                    
+                }
+                #echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
                 echo "</td>";

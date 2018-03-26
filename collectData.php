@@ -606,6 +606,7 @@ class collectData {
        return $return;
    }
    function getCorporationDetailsSolr($solrPath,$solrCore,$corpId){
+       $cnt = 0;
        $ch = curl_init();
        $url = $solrPath.$solrCore."/select?indent=on&q=core:".$corpId."&wt=json";
        $url = str_replace(' ','%20',$url);
@@ -621,19 +622,26 @@ class collectData {
        $response = curl_exec($ch);                 
        $json = json_decode($response,true);
        $response = [];
+       $responseArray = [
+           [
+               
+           ]];
        curl_close($ch);
        if (isset ($json['response']['docs'][0])){
            foreach ($json['response']['docs'] as $key => $value) {
-               
-               $response[] = '['.$value['db_id'][0];
-               $response[] = $value['name'][0];
-               $response[] = $value['country'][0].']';
-            
+               $responseArray[$cnt]['db_id'] = $value['db_id'][0];
+               $responseArray[$cnt]['name'] = $value['name'][0];
+               $responseArray[$cnt]['country'] = $value['country'][0];
+               #$response[] = '['.$value['db_id'][0];
+               #$response[] = $value['name'][0];
+               #$response[] = $value['country'][0].']';
+            $cnt++;
                
                
            }
-           #return $json['response']['docs'][0]['coreName'][0];
-           return [$json['response']['docs'][0]['coreName'][0],implode(', ', $response)];
+           return  [$json['response']['docs'][0]['coreName'][0],$responseArray];
+           
+           #return [$json['response']['docs'][0]['coreName'][0],implode(', ', $response)];
           
        }
                
