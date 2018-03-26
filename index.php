@@ -304,15 +304,15 @@
 			
 							
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
-					<label class="search-label">With the Exact String:</label>
+					<label class="search-label">Αναζήτηση με:</label>
 					<div>
 						<input type="text" name="search[with_the_exact_of]" id="with_the_exact_of" class="demoInputBox" value="<?php echo $with_the_exact_of; ?>"	/>
 					</div>
-					<label class="search-label">Without:</label>
+					<label class="search-label">Αναζήτηση με:</label>
 					<div>
 						<input type="text" name="search[without]" id="without" class="demoInputBox" value="<?php echo $without; ?>"	/>
 					</div>
-					<label class="search-label">Starts With:</label>
+					<label class="search-label">Αναζήτηση με:</label>
 					<div>
 						<input type="text" name="search[starts_with]" id="starts_with" class="demoInputBox" value="<?php echo $starts_with; ?>"	/>
 					</div>
