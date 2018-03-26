@@ -320,10 +320,10 @@
 					<div>
 						<select name="search[search_in]" id="search_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="Ελλάδα" <?php if($search_in=="Ελλάδα") { echo "selected"; } ?>>Title</option>
-							<option value="Εξωτερικό" <?php if($search_in=="Εξωτερικό") { echo "selected"; } ?>>Description</option>
-                                                        <option value="Διάυγεια" <?php if($search_in=="Διάυγεια") { echo "selected"; } ?>>Title</option>
-                                                        <option value="Δημόσιες Προμήθειες" <?php if($search_in=="Δημόσιες Προμήθειες") { echo "selected"; } ?>>Title</option>
+							<option value="Gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
+							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>ΕΚΤΟΣ ΕΛΛΑΔΑΣ</option>
+                                                        <option value="di" <?php if($search_in=="di") { echo "selected"; } ?>>ΔΙΑΥΓΕΙΑ</option>
+                                                        <option value="pp" <?php if($search_in=="pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
 						</select>
 					</div>
 				</div>
