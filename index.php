@@ -319,9 +319,9 @@
 					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
 						<select name="search[search_in]" id="search_in" class="demoInputBox">
-							<option value="">Select Column</option>
-							<option value="title" <?php if($search_in=="Ελλάδα") { echo "selected"; } ?>>Title</option>
-							<option value="description" <?php if($search_in=="Εξωτερικό") { echo "selected"; } ?>>Description</option>
+							<option value="">Επιλογή:</option>
+							<option value="Ελλάδα" <?php if($search_in=="Ελλάδα") { echo "selected"; } ?>>Title</option>
+							<option value="Εξωτερικό" <?php if($search_in=="Εξωτερικό") { echo "selected"; } ?>>Description</option>
 						</select>
 					</div>
 				</div>
