@@ -56,10 +56,13 @@ class showResults {
                     echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
                 }
                 echo 'Δημόσιες προμήθειες <br>' ;
-                echo '<img src="languages/images/gr.png" alt="Ελλάδα"  width="12" height="12" >';
+                echo '<img src="languages/images/gr.png" alt="Ελλάδα"  width="15" height="12" >';
                 echo '&nbsp';
                 echo 'Ελλάδα <br>' ;
                 echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font></br> ';
+                echo '<img src="languages/images/gr.png" alt="Ευρώπη"  width="15" height="12" >';
+                echo '&nbsp';
+                echo 'Ευρώπη <br>' ;
                 #echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
