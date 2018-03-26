@@ -41,6 +41,21 @@
 
             } ); 
        </script>
+       <script>
+		function showHideAdvanceSearch() {
+			if(document.getElementById("advanced-search-box").style.display=="none") {
+				document.getElementById("advanced-search-box").style.display = "block";
+				document.getElementById("advance_search_submit").value= "1";
+			} else {
+				document.getElementById("advanced-search-box").style.display = "none";
+				document.getElementById("crf1").value= "" 
+				document.getElementById("crf2").value= "";
+				document.getElementById("crf3").value= "";
+				document.getElementById("search_in").value= "";
+				document.getElementById("advance_search_submit").value= "";
+			}
+		}
+	</script>
        <style>
 
 
@@ -226,11 +241,49 @@
             a.nameLink{
             font-weight: bold;
             }
+       <!-- advanced search       -->     
+            body{
+			 <!--width: 900px;-->
+			font-family: "Segoe UI",Optima,Helvetica,Arial,sans-serif;
+			line-height: 25px;
+		}
+		.search-box {
+			padding: 30px;
+			background-color:#C8EEFD;
+		}
+		.search-label{
+			margin:2px;
+		}
+		.demoInputBox {    
+			padding: 10px;
+			border: 0;
+			border-radius: 4px;
+			margin: 0px 5px 15px;
+			width: 250px;
+		}
+		.btnSearch{    
+			padding: 8px;
+                        position: relative;
+                        /*left: -80px; */
+			background: #84D2A7;
+			border: 0;
+			border-radius: 4px;
+			margin: 0px 5px;
+			color: #FFF;
+			width: 150px;
+		}
+		#advance_search_link {
+			color: #001FFF;
+			cursor: pointer;
+		}
+		.result-description{
+			margin: 5px 0px 15px;
+		}
 
 
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>Search</title>
+      <title>Search OPJ</title>
       
            
                <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
@@ -244,14 +297,45 @@
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >				
+<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+<span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
+									
+				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
+					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
+					<div>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  ?>"	/>
+					</div>
+					<label class="search-label">Αναζήτηση με ΤΚ:</label>
+					<div>
+						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
+					</div>
+					<label class="search-label">Αναζήτηση με όνομα μονο:</label>
+					<div>
+						<input type="text" name="crf3" id="crf3" class="demoInputBox" value="<?php echo $crf3; ?>"	/>
+					</div>
+					<label class="search-label">Αναζήτηση σε:</label>
+					<div>
+						<select name="search[search_in]" id="search_in" class="demoInputBox">
+							<option value="">Επιλογή:</option>
+							<option value="Gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
+							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>ΕΚΤΟΣ ΕΛΛΑΔΑΣ</option>
+                                                        <option value="di" <?php if($search_in=="di") { echo "selected"; } ?>>ΔΙΑΥΓΕΙΑ</option>
+                                                        <option value="pp" <?php if($search_in=="pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
+						</select>
+					</div>
+				</div>
+				
+				<div>
+					<input type="submit" name="go" class="btnSearch" value="Search" action="index.php" method="post" accept-charset="UTF-8">
+				</div>
+
 </p>
 <div align="center" >
  
  <br>
 <hr align="center" width="80%">
 
-<li class="ex1" >Αποτελέσματα Αναζήτησης</li>
+<li class="ex1" >Αποτελέσματα</li>
 </div>
 </form>
 <?php
