@@ -323,7 +323,7 @@
 							<option value="Ελλάδα" <?php if($search_in=="Ελλάδα") { echo "selected"; } ?>>Title</option>
 							<option value="Εξωτερικό" <?php if($search_in=="Εξωτερικό") { echo "selected"; } ?>>Description</option>
                                                         <option value="Διάυγεια" <?php if($search_in=="Διάυγεια") { echo "selected"; } ?>>Title</option>
-                                                        <option value="Δημόσιες Προμήθειες" <?php if($search_in=="Δημόσιες Προμήθειες") { echo "Δημόσιες Προμήθειες; } ?>>Title</option>
+                                                        <option value="Δημόσιες Προμήθειες" <?php if($search_in=="Δημόσιες Προμήθειες") { echo "selected"; } ?>>Title</option>
 						</select>
 					</div>
 				</div>
