@@ -51,7 +51,7 @@ class showResults {
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
                 echo 'Περιέχει:</br>';
                 foreach ($corpData[1]  as $key => $value) {
-                    echo $value['name']; echo $value['country']; echo '<BR>';                    
+                    echo $value['name'].' ['.$value['country'].']'; echo '<BR>';                    
                 }
                 #echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
