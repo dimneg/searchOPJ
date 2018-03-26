@@ -45,8 +45,10 @@ class showResults {
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                 $corpData = $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 $name = $corpData[0];
-                echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
-                echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
+                echo "<a class='nameLink' href='#' target='_blank' >$name</a> ";
+                echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">[Corporate Group]</font></br> ';
+               # echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
+                #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
                 echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
@@ -417,9 +419,9 @@ class showResults {
             return NULL;
     } 
     function getVatLabel($vat){
-         $vatLabel ='Α.Φ.Μ.';
+         $vatLabel ='Α.Φ.Μ. ';
          if (strlen($vat)>= 10){          
-            $vatLabel = 'A.B.N.';          
+            $vatLabel = 'A.B.N. ';          
                 
                         
          }
