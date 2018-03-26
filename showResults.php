@@ -418,7 +418,7 @@ class showResults {
     } 
     function getVatLabel($vat){
          $vatLabel ='Α.Φ.Μ.';
-         if strlen($vat)> 10{          
+         if (strlen($vat)>= 10){          
             $vatLabel = 'A.B.N.';          
                 
                         
