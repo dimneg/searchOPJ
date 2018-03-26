@@ -608,7 +608,7 @@ class collectData {
    function getCorporationDetailsSolr($solrPath,$solrCore,$corpId){
        $cnt = 0;
        $ch = curl_init();
-       $url = $solrPath.$solrCore."/select?indent=on&q=core:".$corpId."&wt=json";
+       $url = $solrPath.$solrCore."/select?indent=on&q=core:".$corpId."&rows=20&wt=json";
        $url = str_replace(' ','%20',$url);
        #echo $url.PHP_EOL;
        curl_setopt($ch, CURLOPT_URL, $url);

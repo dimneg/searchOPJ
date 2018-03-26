@@ -13,7 +13,7 @@ $array = [
     ['id' => 'or10', 'db_id'=>'71474078909','source'=>'dataAustralia','name' =>'ORACLE USER GROUP', 'core'=> 1, 'country' =>'AU','coreName'=>'ORACLE CORPORATION'], 
     ['id' => 'or11', 'db_id'=>'19063655774','source'=>'dataAustralia','name' =>'ORACLE PTY LIMITED', 'country' =>'AU', 'core'=> 1, 'coreName'=>'ORACLE CORPORATION'], 
     ['id' => 'or12', 'db_id'=>'86768265615','source'=>'dataAustralia','name' =>'ORACLE CORPORATION AUSTRALIA PTY LTD', 'country' =>'AU', 'core'=> 1, 'coreName'=>'ORACLE CORPORATION'],
-    
+    #φερνει τα δεκα πρωτα μονο
     ['id' => 'pr1', 'db_id'=>'TEDS_3291647','source'=>'dataTed','name' =>'Pricewaterhousecoopers', 'country' =>'UK', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'] ,
     ['id' => 'pr2', 'db_id'=>'TEDS_2086900','source'=>'dataTed','name' =>'PriceWaterhouseCoopers', 'country' =>'UK', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'], 
     ['id' => 'pr3', 'db_id'=>'TEDS_3182742','source'=>'dataTed','name' =>'Pricewaterhousecoopers','country' =>'NO',  'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'], 
@@ -33,7 +33,7 @@ $array = [
     ['id' => 'pr17', 'db_id'=>'29003562696','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS ACTUARIAL PTY LIMITED','country' =>'AU', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'],
     ['id' => 'pr18', 'db_id'=>'52864604756','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS', 'country' =>'AU','core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'],
     ['id' => 'pr19', 'db_id'=>'57097040009','source'=>'dataAustralia','name' =>'PRICEWATERHOUSECOOPERS','country' =>'AU', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'],
-    
+    # φερνει τα δεκα πρωτα μονο
     ['id' => 'nv1', 'db_id'=>'TEDS_3699892','source'=>'dataTed','name' =>'NOVARTIS FARMACEUTICA,S.A.','country' =>'ES', 'core'=> 3, 'coreName'=>'NOVARTIS CORPORATION'],
     ['id' => 'nv2', 'db_id'=>'TEDS_3711765','source'=>'dataTed','name' =>'Novartis Finland Oy', 'core'=> 3, 'country' =>'FI','coreName'=>'NOVARTIS CORPORATION'],
     ['id' => 'nv3', 'db_id'=>'TEDS_3469033','source'=>'dataTed','name' =>'Novartis Healthcare A/S', 'country' =>'DK', 'core'=> 3, 'coreName'=>'NOVARTIS CORPORATION'],
