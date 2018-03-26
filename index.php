@@ -264,7 +264,7 @@
 		.btnSearch{    
 			padding: 8px;
                         position: relative;
-                        left: 1px;
+                        left: -10px;
 			background: #84D2A7;
 			border: 0;
 			border-radius: 4px;
