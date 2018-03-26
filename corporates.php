@@ -46,7 +46,7 @@ $array = [
     ['id' => 'nv10', 'db_id'=>'094021290','source'=>'dataDiaugeia','name' =>'NOVARTIS HELLAS AEBE', 'country' =>'GR','core'=> 3, 'coreName'=>'NOVARTIS CORPORATION'],
     ['id' => 'nv11', 'db_id'=>'60089509544','source'=>'dataAustralia','name' =>'NOVARTIS VACCINES AND', 'country' =>'AU','core'=> 3, 'coreName'=>'NOVARTIS CORPORATION'],
     ['id' => 'nv12', 'db_id'=>'18004244160','source'=>'dataAustralia','name' =>'NOVARTIS PHARMACEUTICALS AUSTRALIA','country' =>'AU', 'core'=> 3, 'coreName'=>'NOVARTIS CORPORATION'],
-    
+    # φερνει τα δεκα πρωτα μονο
     ['id' => 'at1', 'db_id'=>'TEDS_3971587','source'=>'dataTed','name' =>'Atos', 'country' =>'UK','core'=> 4,'coreName'=>'ATOS CORPORATION'],
     ['id' => 'at2', 'db_id'=>'TEDS_3319151','source'=>'dataTed','name' =>'Atos Belgium SA', 'country' =>'BE','core'=> 4,'coreName'=>'ATOS CORPORATION'],
     ['id' => 'at3', 'db_id'=>'TEDS_3291645','source'=>'dataTed','name' =>'Atos Consulting Limited','country' =>'UK', 'core'=> 4,'coreName'=>'ATOS CORPORATION'],
@@ -64,7 +64,7 @@ $array = [
     ['id' => 'at16', 'db_id'=>'TEDS_2247344','source'=>'dataTed','name' =>'Atos Origin IT Services UK Limited','country' =>'UK', 'core'=> 4,'coreName'=>'ATOS CORPORATION'],
     ['id' => 'at17', 'db_id'=>'TEDS_2351033','source'=>'dataTed','name' =>'Atos Origin IT Services UK Ltd', 'country' =>'UK','core'=> 4,'coreName'=>'ATOS CORPORATION'],
     ['id' => 'at18', 'db_id'=>'TEDS_2180247','source'=>'dataTed','name' =>'Atos Worldline', 'country' =>'FR','core'=> 4,'coreName'=>'ATOS CORPORATION'],
-    ['id' => 'at19', 'db_id'=>'094035050','source'=>'dataGemh','name' =>'ATOS IT SERVICES YΠΗΡΕΣΙΕΣ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ ΑΝΩΝΥΜΗ ΕΤΑΙΡΕΙΑ ','country' =>'Gr', 'core'=> 4,'coreName'=>'ATOS CORPORATION'],
+    ['id' => 'at19', 'db_id'=>'094035050','source'=>'dataGemh','name' =>'ATOS IT SERVICES YΠΗΡΕΣΙΕΣ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ ΑΝΩΝΥΜΗ ΕΤΑΙΡΕΙΑ ','country' =>'GR', 'core'=> 4,'coreName'=>'ATOS CORPORATION'],
     ['id' => 'at20', 'db_id'=>'800336879','source'=>'dataGemh','name' =>'(ΥΠΟ ΕΚΚΑΘΑΡΙΣΗ)ATOS Accounting and Tax Outsourcing Ανώνυμη Εταιρία Συμβουλευτικών Υπηρεσιών ','country' =>'GR', 'core'=> 4,'coreName'=>'ATOS CORPORATION'],
     ['id' => 'at21', 'db_id'=>'83401687977','source'=>'dataAustralia','name' =>'ATOS AUSTRALIA PTY LTD','country' =>'AU', 'core'=> 4,'coreName'=>'ATOS CORPORATION'],
     

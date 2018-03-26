@@ -46,7 +46,9 @@ class showResults {
                 $corpData = $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 $name = $corpData[0];
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> ";
-                echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">[Corporate Group]</font></br> ';
+                echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">[Corporate Group]</font>';
+                echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">High confidence</font>';
+                echo '</br>'; 
                # echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
                 echo 'Περιέχει:</br>';
