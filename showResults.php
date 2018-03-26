@@ -62,7 +62,13 @@ class showResults {
                 echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font> '; 
                 echo '&nbsp';
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
-                echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
+                if ($name == 'ORACLE CORPORATION'){
+                     echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
+                }
+                else {
+                    echo 'Συμβάσεις: <B>  €0.0Β (0) </B><br>';
+                }
+                #echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
                # echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font>'; 
                 #echo '&nbsp';
                 #echo  'Συμβάσεις: </br> ';
@@ -71,12 +77,24 @@ class showResults {
                 #echo  'Συμβάσεις: </br>';
                 echo '<img src="languages/images/eu.png" alt="Ευρώπη"  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'Ευρώπη' ;
-                echo  'Συμβάσεις: <B>  €0.5Β (21) </B><br>';
+                echo 'Ευρώπη <br>' ;
+                if ($name == 'ORACLE CORPORATION'){
+                    echo  'Συμβάσεις: <B>  €0.5Β (21) </B><br>';
+                }
+                else{
+                    echo 'Συμβάσεις: <B>  €0.0Β (0) </B><br>';
+                }
+                
                 echo '<img src="languages/images/au.png" alt="Αυστραλία"  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'Αυστραλία ' ;
-                echo  'Συμβάσεις:  <B>$1.1Β (209)</B>';
+                echo 'Αυστραλία <br> ' ;
+                if ($name == 'ORACLE CORPORATION'){
+                    echo  'Συμβάσεις:  <B>$1.1Β (209)</B>';
+                }
+                else {
+                     echo  'Συμβάσεις:  <B>$0.0Β (0)</B>';
+                }
+               
                 #echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
                 #echo $value['id']; 
