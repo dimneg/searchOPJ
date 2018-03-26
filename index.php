@@ -303,7 +303,7 @@
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
 					<div>
-						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  ?>"	/>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
 					</div>
 					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
