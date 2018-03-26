@@ -248,7 +248,7 @@
 			line-height: 25px;
 		}
 		.search-box {
-			padding: 30px;
+			padding: 50px;
 			background-color:#C8EEFD;
 		}
 		.search-label{
