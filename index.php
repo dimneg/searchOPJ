@@ -304,15 +304,15 @@
 			
 							
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
-					<label class="search-label">Αναζήτηση με:</label>
+					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
 					<div>
 						<input type="text" name="search[with_the_exact_of]" id="with_the_exact_of" class="demoInputBox" value="<?php echo $with_the_exact_of; ?>"	/>
 					</div>
-					<label class="search-label">Αναζήτηση με:</label>
+					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
 						<input type="text" name="search[without]" id="without" class="demoInputBox" value="<?php echo $without; ?>"	/>
 					</div>
-					<label class="search-label">Αναζήτηση με:</label>
+					<label class="search-label">Αναζήτηση με όνομα μονο:</label>
 					<div>
 						<input type="text" name="search[starts_with]" id="starts_with" class="demoInputBox" value="<?php echo $starts_with; ?>"	/>
 					</div>
@@ -322,6 +322,8 @@
 							<option value="">Επιλογή:</option>
 							<option value="Ελλάδα" <?php if($search_in=="Ελλάδα") { echo "selected"; } ?>>Title</option>
 							<option value="Εξωτερικό" <?php if($search_in=="Εξωτερικό") { echo "selected"; } ?>>Description</option>
+                                                        <option value="Διάυγεια" <?php if($search_in=="Διάυγεια") { echo "selected"; } ?>>Title</option>
+                                                        <option value="Δημόσιες Προμήθειες" <?php if($search_in=="Δημόσιες Προμήθειες") { echo "Δημόσιες Προμήθειες; } ?>>Title</option>
 						</select>
 					</div>
 				</div>
