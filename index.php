@@ -48,9 +48,9 @@
 				document.getElementById("advance_search_submit").value= "1";
 			} else {
 				document.getElementById("advanced-search-box").style.display = "none";
-				document.getElementById("crf1").value= "".style.display = "table"; 
-				document.getElementById("crf2").value= "".style.display = "table-row";
-				document.getElementById("crf3").value= "".style.display = "compact";
+				document.getElementById("crf1").value= "123" 
+				document.getElementById("crf2").value= "123";
+				document.getElementById("crf3").value= "1";
 				document.getElementById("search_in").value= "";
 				document.getElementById("advance_search_submit").value= "";
 			}
