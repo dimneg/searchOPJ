@@ -72,7 +72,7 @@ class showResults {
                        echo  'Συμβάσεις: <B> €2.3M (2) </B> </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       echo  'Συμβάσεις: <B>  €3.8M (226)  </B> </br>';
                        break;
                    case 'ATOS CORPORATION':
                        echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
@@ -102,10 +102,10 @@ class showResults {
                        echo  'Συμβάσεις: <B> €2.0B (87) </B> </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> €2.6B (99)  </B> </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> €2.5B (48) </B> </br>';
                        break;
 
                    default:
@@ -122,17 +122,17 @@ class showResults {
                        echo  'Συμβάσεις: <B> $1.1Β (209) </B> </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Συμβάσεις: <B> 3.8B (41) </B> </br>';
+                       echo  'Συμβάσεις: <B> $3.8B (41) </B> </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> $4.1M (2) </B> </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> $0.2M (2) </B> </br>';
                        break;
 
                    default:
-                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> $0.0B (0) </B> </br>';
                        break;
                }
                
