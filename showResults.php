@@ -286,9 +286,9 @@ class showResults {
                 #echo 'score :'.$uniqueResults[$i]['score']; 
                 $scorePresentation = $this->presentConfidence($sumResults,$uniqueResults[$i]['score']);
              
-                echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">$scorePresentation</font>';
+                echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$scorePresentation</font>";
                 
-                
+                 
                 echo "</td>";
                    
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:80px;\">";
