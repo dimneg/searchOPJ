@@ -268,7 +268,9 @@ class showResults {
                          echo  'Συμβάσεις: ';
                          $sumAmount = $uniqueResults[$i]['tedSumofAmounts'];
                          #echo '<B>'.$sumAmount .'</B>';
-                         echo '<B>'.$this->fromNumberToText($sumAmount,'€').'</B>';
+                         #echo '<B>'.$this->fromNumberToText($sumAmount,'€').'</B>'; 
+                         echo '<B>'.$this->fromNumberToText(preg_replace('/\D/', '', $sumAmount),'€').'</B>'; 
+                         #echo '<B>'.preg_replace('/\D/', '', $this->fromNumberToText($sumAmount,'€')).'</B>';
                          $counterContracts = $uniqueResults[$i]['tedContracts'];
                          echo  ' (<B>'.round($counterContracts,0).'</B>) ';	
                          #echo '<B>'.$counterContracts .'</B>';
@@ -332,8 +334,8 @@ class showResults {
     }
 
     function fromNumberToText($number,$currency) {
-        $texted=$currency.'0.0K'; //€0.0K
-        $digits=strlen($number);
+        $texted = $currency.'0.0K'; //€0.0K
+        $digits = strlen($number);
 	if (($digits == 1) || (($digits) == 2)){
             $texted = $currency.'0.0K';
 	}

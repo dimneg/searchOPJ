@@ -13,7 +13,7 @@ $array = [
     ['id' => 'or10', 'db_id'=>'71474078909','source'=>'dataAustralia','name' =>'ORACLE USER GROUP', 'core'=> 1, 'country' =>'AU','coreName'=>'ORACLE CORPORATION'], 
     ['id' => 'or11', 'db_id'=>'19063655774','source'=>'dataAustralia','name' =>'ORACLE PTY LIMITED', 'country' =>'AU', 'core'=> 1, 'coreName'=>'ORACLE CORPORATION'], 
     ['id' => 'or12', 'db_id'=>'86768265615','source'=>'dataAustralia','name' =>'ORACLE CORPORATION AUSTRALIA PTY LTD', 'country' =>'AU', 'core'=> 1, 'coreName'=>'ORACLE CORPORATION'],
-    #φερνει τα δεκα πρωτα μονο
+    
     ['id' => 'pr1', 'db_id'=>'TEDS_3291647','source'=>'dataTed','name' =>'Pricewaterhousecoopers', 'country' =>'UK', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'] ,
     ['id' => 'pr2', 'db_id'=>'TEDS_2086900','source'=>'dataTed','name' =>'PriceWaterhouseCoopers', 'country' =>'UK', 'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'], 
     ['id' => 'pr3', 'db_id'=>'TEDS_3182742','source'=>'dataTed','name' =>'Pricewaterhousecoopers','country' =>'NO',  'core'=> 2, 'coreName'=>'PRICEWATERHOUSECOOPERS CORPORATION'], 
