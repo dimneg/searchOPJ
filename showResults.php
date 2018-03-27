@@ -18,7 +18,7 @@ class showResults {
         $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
         $source = ' ';
-        $i = 0;
+        $i = 1;
         $uniqueResults = $Results; //let 's see if there is need to group
         $sumResults = count($uniqueResults);
         $sumSpend = 0;
