@@ -52,7 +52,9 @@ class showResults {
                # echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
                 echo 'Περιέχει:</br>';
-                foreach ($corpData[1]  as $key => $value) {
+                $grouppedCorpData = $this->_group_by($corpData[1], 'name');
+                foreach ( $grouppedCorpData   as $key => $value) {
+                   
                     echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
                 }
                 echo 'Δημόσιες προμήθειες <br>' ;
@@ -493,5 +495,12 @@ class showResults {
         $string =  str_replace('Ό','Ο',$string);
         $string =  str_replace('Ώ','Ω',$string);
         return $string;
+   }
+   function _group_by($array, $key) {
+        $return = array();
+        foreach($array as $val) {
+            $return[$val[$key]][] = $val;
+        }
+        return $return;
    }
 }
