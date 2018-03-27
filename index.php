@@ -328,7 +328,7 @@
 				<div>
 					<input type="submit" name="formSubmit" class="btnSearch" value="Search" action="index.php" method="post" accept-charset="UTF-8">
                                         <input value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>" /> 	
-                                        <a class="btnSearch" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >/a>
+                                        <a class="btnSearch" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   ></a>
 				</div>
 
 </p>
