@@ -466,6 +466,9 @@ class showResults {
     } 
     function getVatLabel($vat){
          $vatLabel ='Α.Φ.Μ. ';
+         if (strlen($vat)== 6){
+             $vatLabel ='ΚΩΔ: ';
+         }
          if (strlen($vat)>= 10){          
             $vatLabel = 'A.B.N. ';          
                 
