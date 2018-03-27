@@ -53,8 +53,8 @@ class showResults {
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
                 echo 'Περιέχει:</br>';
                 #$grouppedCorpData = $this->_group_by(corpData[1], $name);
-                foreach ( $corpData[1]  as $key => $value) {
-                   
+                $uniqueCompanies = $this->unique_multidim_array($corpData[1] , 'uniqueShow');
+                foreach (  $uniqueCompanies   as $key => $value) {                   
                     echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
                 }
                 echo 'Δημόσιες προμήθειες <br>' ;
@@ -503,4 +503,27 @@ class showResults {
         }
         return $return;
    }
+   function unique_multidim_array($array, $key){
+        $temp_array = [[]]; //empty array
+        $i = 0;
+        $key_array = [[]]; //empty array           
+
+        foreach($array as $val){	
+
+            #if 	(!in_array($val[$key],$key_array))   { 
+            if 	(isset($val[$key]) && !in_array($val[$key],$key_array))   { 
+                $key_array[$i] = $val[$key];
+                $temp_array[$i] = $val;
+                $i++;
+            }
+                    
+            else { 
+                
+            }
+                    
+
+        }
+        return $temp_array;
+
+    }
 }
