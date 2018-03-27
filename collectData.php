@@ -74,7 +74,7 @@ class collectData {
        $this->prepareResults($DbPath,"elod_main_orgv4_all","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer,$corpSolrCore);
        $this->prepareResults($DbPath,"elod_main_orgv4_fr","buyerVatIdOrName","by_buyerDtls_VatIdOrName",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer,$corpSolrCore);
 		  
-        $this->prepareResults($DbPath,"yds_big_sellers","basic","basic",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer,$corpSolrCore);         
+       $this->prepareResults($DbPath,"yds_big_sellers","basic","basic",$LuceneOperand,25,"score",$varKeyword,$couchUser,$couchPass,$solrPath,$solrCore,$sparqlServer,$corpSolrCore);         
     } 
     
    
@@ -633,6 +633,7 @@ class collectData {
                $responseArray[$cnt]['db_id'] = $value['db_id'][0];
                $responseArray[$cnt]['name'] = $value['name'][0];
                $responseArray[$cnt]['country'] = $value['country'][0];
+               $responseArray[$cnt]['uniqueShow'] = $value['name'][0].$value['country'];
                #$response[] = '['.$value['db_id'][0];
                #$response[] = $value['name'][0];
                #$response[] = $value['country'][0].']';
