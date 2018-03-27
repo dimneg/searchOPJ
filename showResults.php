@@ -93,22 +93,48 @@ class showResults {
                 echo '<img src="languages/images/eu.png" alt="Ευρώπη"  width="15" height="12" >';
                 echo '&nbsp';
                 echo 'Ευρώπη </br>' ;
-                if ($name == 'ORACLE CORPORATION'){
-                    echo  'Συμβάσεις: <B>  €0.5Β (21) </B><br>';
-                }
-                else{
-                    echo 'Συμβάσεις: <B>  €0.0Β (0) </B><br>';
-                }
+              
+                switch ($name) {
+                   case 'ORACLE CORPORATION':
+                       echo  'Συμβάσεις: <B> €0.5Β (21) </B> </br>';
+                       break;
+                   case 'PRICEWATERHOUSECOOPERS CORPORATION':
+                       echo  'Συμβάσεις: <B> €2.0B (87) </B> </br>';
+                       break;
+                   case 'NOVARTIS CORPORATION ':
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       break;
+                   case 'ATOS CORPORATION':
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       break;
+
+                   default:
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       break;
+               }
                 
                 echo '<img src="languages/images/au.png" alt="Αυστραλία"  width="15" height="12" >';
                 echo '&nbsp';
                 echo 'Αυστραλία </br> ' ;
-                if ($name == 'ORACLE CORPORATION'){
-                    echo  'Συμβάσεις:  <B>$1.1Β (209)</B>';
-                }
-                else {
-                     echo  'Συμβάσεις:  <B>$0.0Β (0)</B>';
-                }
+                
+                switch ($name) {
+                   case 'ORACLE CORPORATION':
+                       echo  'Συμβάσεις: <B> $1.1Β (209) </B> </br>';
+                       break;
+                   case 'PRICEWATERHOUSECOOPERS CORPORATION':
+                       echo  'Συμβάσεις: <B> 3.8B (41) </B> </br>';
+                       break;
+                   case 'NOVARTIS CORPORATION ':
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       break;
+                   case 'ATOS CORPORATION':
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       break;
+
+                   default:
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       break;
+               }
                
                 #echo 'Εταιρίες: '.$corpData[1]. ' και άλλες';
                 #echo $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
