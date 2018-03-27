@@ -111,7 +111,7 @@ class showResults {
         
         while ($i < $sumResults) { 
             
-            $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name']));
+            $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
             
             
