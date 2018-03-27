@@ -283,7 +283,10 @@ class showResults {
                          
                      }
                 }
-                echo 'score :'.$uniqueResults[$i]['score']; 
+                #echo 'score :'.$uniqueResults[$i]['score']; 
+                $scorePresentation = $this->presentConfidence($sumResults,$uniqueResults[$i]['score']);
+             
+                echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">$scorePresentation</font>';
                 
                 
                 echo "</td>";
@@ -525,5 +528,29 @@ class showResults {
         }
         return $temp_array;
 
+    }
+    
+    function presentConfidence ($countResults, $score){
+        if ($score > 5){
+            return 'High confidence';
+        }
+        else {
+            if ($score > 1){
+               return 'Medium confidence'; 
+            }
+            else {
+                if ($countResults == 1 && $score == 1 ){
+                    return 'High confidence';
+                }
+                else {
+                     if ($score == 1){
+                         return 'Low confidence';
+                     }
+                     else {
+                         return 'No confidence';
+                     }
+                }
+            }
+        }
     }
 }
