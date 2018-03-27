@@ -64,12 +64,25 @@ class showResults {
                 echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΔΙΑΥΓΕΙΑ</font> '; 
                 echo '&nbsp';
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
-                if ($name == 'ORACLE CORPORATION'){
-                     echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
-                }
-                else {
-                    echo 'Συμβάσεις: <B>  €0.0Β (0) </B><br>';
-                }
+               switch ($name) {
+                   case 'ORACLE CORPORATION':
+                       echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
+                       break;
+                   case 'PRICEWATERHOUSECOOPERS CORPORATION':
+                       echo  'Συμβάσεις: <B> €2.3M (2) </B> </br>';
+                       break;
+                   case 'NOVARTIS CORPORATION ':
+                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       break;
+                   case 'ATOS CORPORATION':
+                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       break;
+
+                   default:
+                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       break;
+               }
+                
                 #echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
                # echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font>'; 
                 #echo '&nbsp';
