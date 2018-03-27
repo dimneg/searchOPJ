@@ -111,7 +111,7 @@ class showResults {
         
         while ($i < $sumResults) { 
             
-            $name = $uniqueResults[$i]['name'];
+            $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name']));
             # $corporation = $uniqueResults[$i]['corporate_id'];
             
             
