@@ -85,7 +85,7 @@ class collectData {
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);
-        echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
+        #echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
@@ -178,7 +178,7 @@ class collectData {
                 }
             //echo $Boost;
 
-            if(isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') == true ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
+            if(isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
                  $newdata =  array (
                  // 'name' => $r['fields']['term'][1],
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,            
