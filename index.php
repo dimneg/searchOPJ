@@ -327,6 +327,7 @@
 				
 				<div>
 					<input type="submit" name="go" class="btnSearch" value="Search" action="index.php" method="post" accept-charset="UTF-8">
+                                        <input value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>" /> 	
 				</div>
 
 </p>
