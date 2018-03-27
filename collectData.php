@@ -275,8 +275,8 @@ class collectData {
                       'espa_lastUpdate'=> (isset($r['fields']['espa_lastUpdate']) ) ? $r['fields']['espa_lastUpdate'] : null ,
                       
                      //ted
-                     'tedSumofAmounts' => (isset($r['fields']['total_amount']) ) ? $r['fields']['total_amount'] : null ,
-                     'tedContracts' => (isset($r['fields']['contracts']) ) ? $r['fields']['contracts'] : null ,
+                     'tedSumofAmounts' => (isset($r['fields']['total_amount']) ) ? $r['fields']['total_amount'] : 0 ,
+                     'tedContracts' => (isset($r['fields']['contracts']) ) ? $r['fields']['contracts'] : 0,
                      
                    #  'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
                      'altNames'=>  $this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),

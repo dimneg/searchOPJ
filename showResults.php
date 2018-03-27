@@ -267,9 +267,11 @@ class showResults {
                          echo ' <font color="#FFA500" size="1">ΑΝΑΔΟΧΟΣ</font> '; 
                          echo  'Συμβάσεις: ';
                          $sumAmount = $uniqueResults[$i]['tedSumofAmounts'];
-                         echo '<B>'.$sumAmount .'</B>';
+                         #echo '<B>'.$sumAmount .'</B>';
+                         echo '<B>'.$this->fromNumberToText($sumAmount,'€').'</B>';
                          $counterContracts = $uniqueResults[$i]['tedContracts'];
-                         echo '<B>'.$counterContracts .'</B>';
+                         echo  ' (<B>'.round($counterContracts,0).'</B>) ';	
+                         #echo '<B>'.$counterContracts .'</B>';
                          #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'€').'</B>';
                          #echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
                        
@@ -466,7 +468,7 @@ class showResults {
     } 
     function getVatLabel($vat){
          $vatLabel ='Α.Φ.Μ. ';
-         if (strlen($vat)== 6){
+         if (strlen($vat)== 7){
              $vatLabel ='ΚΩΔ: ';
          }
          if (strlen($vat)>= 10){          
