@@ -57,7 +57,7 @@ class showResults {
                 foreach (  $uniqueCompanies   as $key => $value) {                   
                     echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
                 }
-               echo ' <font color="#FFA500" size="1">Δημόσιες Προμήθειες</font> <br> '; 
+               echo ' <font color="#FFA500" size="2">Δημόσιες Προμήθειες</font> <br> '; 
                 echo '<img src="languages/images/gr.png" alt="Ελλάδα"  width="15" height="12" >';
                 echo '&nbsp';
                 echo 'Ελλάδα <br>' ;
