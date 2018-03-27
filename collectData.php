@@ -178,8 +178,8 @@ class collectData {
                 }
             //echo $Boost;
 
-           # if(isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
-             if(isset ($json['rows']) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { 
+           if(isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
+            # if(isset ($json['rows']) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { 
                 $newdata =  array (
                  // 'name' => $r['fields']['term'][1],
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,            
