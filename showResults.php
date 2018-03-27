@@ -539,7 +539,7 @@ class showResults {
                return 'Medium confidence'; 
             }
             else {
-                if ($countResults == 1 && $score == 1 ){
+                if ($countResults <= 2 && $score == 1 ){
                     return 'High confidence';
                 }
                 else {
