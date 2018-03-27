@@ -633,7 +633,7 @@ class collectData {
                $responseArray[$cnt]['db_id'] = $value['db_id'][0];
                $responseArray[$cnt]['name'] = $value['name'][0];
                $responseArray[$cnt]['country'] = $value['country'][0];
-               $responseArray[$cnt]['uniqueShow'] = $value['name'][0].$value['country'][0];
+               $responseArray[$cnt]['uniqueShow'] = mb_convert_case($value['name'][0].$value['country'][0], MB_CASE_UPPER, "UTF-8");
                #$response[] = '['.$value['db_id'][0];
                #$response[] = $value['name'][0];
                #$response[] = $value['country'][0].']';
