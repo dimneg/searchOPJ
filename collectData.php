@@ -146,7 +146,7 @@ class collectData {
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,            
                       'vat' => $r['fields']['term'][0],
                      # 'link' => $prefix.$r['id'],
-                      'link' => $Actual_link.$r['id'],
+                      'link' => $Actual_link.'/'.$r['id'],
                       'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,
                       'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
                       'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,
@@ -279,7 +279,7 @@ class collectData {
                     if ($key === NULL){
                       $Results[] = $newdata;      //insert whole record
                     }
-                    else {
+                   /* else {
                          #echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
                         //check for new data
                          $Results[$key]['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia',$Results[$key]['dataDiaugeia']);
@@ -363,15 +363,18 @@ class collectData {
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
                                 $Results[$key]['chamber'] =(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null;
                                 $Results[$key]['gemhNumber'] = (isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null;
+                                 $Results[$key]['score'] *= 1.1;
                                 break;
                              case "elod_main_orgv4_fr":
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
                                 $Results[$key]['chamber'] =(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null;
                                 $Results[$key]['gemhNumber'] = (isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null;
+                                 $Results[$key]['score'] *= 1.1;
                                 break;
                             case "yds_big_sellers":
                                 $Results[$key]['tedSumofAmounts'] = (isset($r['fields']['tedSumofAmounts']) ) ? $r['fields']['tedSumofAmounts'] : null;
                                 $Results[$key]['tedContracts'] = (isset($r['fields']['tedContracts']) ) ? $r['fields']['tedContracts'] : null;
+                                $Results[$key]['score'] *= 1.2;
                                 break;
                           
                           
@@ -379,7 +382,7 @@ class collectData {
                          
                         
                          
-                    }
+                    } */
                       
                 }
                    
