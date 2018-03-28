@@ -348,7 +348,7 @@ class showResults {
                          
                      }
                 }
-                #echo 'score :'.$uniqueResults[$i]['score']; 
+                echo 'score :'.$uniqueResults[$i]['score']; 
                 
                 
                  
