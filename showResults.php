@@ -343,7 +343,7 @@ class showResults {
                          #echo '<B>'.$counterContracts .'</B>';
                          #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'€').'</B>';
                          #echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
-                       
+                         echo  ' &nbsp [Έως 2015]</br>';
                          echo '</br>';
                          
                      }
