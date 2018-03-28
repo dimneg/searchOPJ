@@ -649,6 +649,9 @@ class collectData {
                
    }
    
+   function getCorporationSumsSolr($solrPath,$solrCore,$corpId){
+       
+   }
    function getTedDataRDF($vat,$sparqlServer){
       
        $ch = curl_init();

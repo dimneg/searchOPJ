@@ -66,16 +66,16 @@ class showResults {
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
                switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών: <B> €0.4M (5) </B> Κατακυρώσεις: <B> €0.0K (0) </B>  [από 6/2014 έως]  </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B> €0.4M (5) </B> Κατακυρώσεις: <B> €0.0K (0) </B>  [από 6/2014 έως 7/2016]  </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> Κατακυρώσεις: <B> €8.8M (4) </B> [από 6/2014 έως] </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> Κατακυρώσεις: <B> €8.8M (4) </B> [από 6/2014 έως 7/2016]  </br>';
                        break;
                    case 'NOVARTIS CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)</B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από 6/2014 έως] </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)</B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από 6/2014 έως 7/2016]  </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από 6/2014 έως]  </br>';
+                       echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από 6/2014 έως 7/2016]   </br>';
                        break;
 
                    default:
