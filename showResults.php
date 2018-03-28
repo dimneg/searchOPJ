@@ -71,7 +71,7 @@ class showResults {
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
                        echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> Κατακυρώσεις: <B> €8.8M (4) </B> [από έως] </br>';
                        break;
-                   case 'NOVARTIS CORPORATION ':
+                   case 'NOVARTIS CORPORATION':
                        echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)</B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από έως] </br>';
                        break;
                    case 'ATOS CORPORATION':
@@ -91,7 +91,7 @@ class showResults {
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
                        echo  'Συμβάσεις: <B> €0.0K (0) </B> Πληρωμές: <B> €0.0K (1) </B> [από έως] </br>';
                        break;
-                   case 'NOVARTIS CORPORATION ':
+                   case 'NOVARTIS CORPORATION':
                        echo  'Συμβάσεις: <B>  €56.6K (2) </B> Πληρωμές: <B> €0.2M (4)  </B> [από έως] </br>';
                        break;
                    case 'ATOS CORPORATION':
@@ -121,7 +121,7 @@ class showResults {
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
                        echo  'Συμβάσεις: <B> €2.0B (87) </B> [από έως] </br>';
                        break;
-                   case 'NOVARTIS CORPORATION ':
+                   case 'NOVARTIS CORPORATION':
                        echo  'Συμβάσεις: <B> €2.6B (99)  </B>  [από έως]</br>';
                        break;
                    case 'ATOS CORPORATION':
@@ -144,7 +144,7 @@ class showResults {
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
                        echo  'Συμβάσεις: <B> $3.8B (41) </B>  [από έως]</br>';
                        break;
-                   case 'NOVARTIS CORPORATION ':
+                   case 'NOVARTIS CORPORATION':
                        echo  'Συμβάσεις: <B> $4.1M (2) </B>   [από έως]</br>';
                        break;
                    case 'ATOS CORPORATION':
