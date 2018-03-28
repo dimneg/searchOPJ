@@ -279,7 +279,7 @@ class collectData {
                     if ($key === NULL){
                       $Results[] = $newdata;      //insert whole record
                     }
-                   /* else {
+                    else {
                          #echo 'same vat found '.$newdata['vat'].' '.$Db.PHP_EOL;
                         //check for new data
                          $Results[$key]['dataDiaugeia'] = $this->defineSource($Db, 'dataDiaugeia',$Results[$key]['dataDiaugeia']);
@@ -382,7 +382,7 @@ class collectData {
                          
                         
                          
-                    } */
+                    } 
                       
                 }
                    
