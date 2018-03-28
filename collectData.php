@@ -275,6 +275,7 @@ class collectData {
             $arrayElements = count($Results);
                     //echo $arrayElements;
                 if  ($arrayElements <= 1000 && isset($newdata)){
+                    
                     $key = $this->searchForId($newdata['vat'], $Results,'vat');
                     if ($key === NULL){
                       $Results[] = $newdata;      //insert whole record

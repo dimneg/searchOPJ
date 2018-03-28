@@ -21,9 +21,9 @@ class showResults {
         #$source = ' ';
         $i = 1;
         $uniqueResults = array_filter($Results); //let 's see if there is need to group
-        print_r($uniqueResults);
+        #print_r($uniqueResults);
         $sumResults = count($uniqueResults);
-        echo "results number:".$sumResults.PHP_EOL; 
+        #echo "results number:".$sumResults.PHP_EOL; 
         $sumSpend = 0;
         $sumAward = 0;
         $sumContracts = 0;
