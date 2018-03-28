@@ -15,12 +15,14 @@ class showResults {
     function presentResults($solrPath, $corpSolrCore){ //test 090166291
         require_once 'collectData.php';
         global $Results;
+        echo "results number:".
         $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
         $source = ' ';
         $i = 1;
         $uniqueResults = $Results; //let 's see if there is need to group
         $sumResults = count($uniqueResults);
+        echo "results number:".$sumResults.PHP_EOL; 
         $sumSpend = 0;
         $sumAward = 0;
         $sumContracts = 0;

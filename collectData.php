@@ -114,15 +114,7 @@ class collectData {
         }
         else $Lang='';
 
-        if (strpos($Actual_link,'83.212.86.162') !== false){
-            $Domain = "http://83.212.86.162/";
-        }
-        else
-        if (strpos($Actual_link,'83.212.86.164:81') !== false){
-            $Domain = "http://83.212.86.164:81/";
-        }
-        else
-        $Domain = "http://linkedeconomy.org/"; 
+        
 
         if(isset ($json['rows'])) {
              foreach($json['rows'] as $r){                   
