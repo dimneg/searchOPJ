@@ -570,7 +570,7 @@ class showResults {
         }
         else {
             if ($score > 1){
-               return ['Medium confidence','#90EE90']; 
+               return ['Medium confidence','#ADFF2F']; 
             }
             else {
                 if ($countResults <= 2 && $score == 1 ){
