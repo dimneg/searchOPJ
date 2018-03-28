@@ -373,8 +373,8 @@ class collectData {
                                  $Results[$key]['score'] *= 1.1;
                                 break;
                             case "yds_big_sellers":
-                                $Results[$key]['tedSumofAmounts'] = (isset($r['fields']['tedSumofAmounts']) ) ? $r['fields']['tedSumofAmounts'] : null;
-                                $Results[$key]['tedContracts'] = (isset($r['fields']['tedContracts']) ) ? $r['fields']['tedContracts'] : null;
+                                $Results[$key]['tedSumofAmounts'] = (isset($r['fields']['tedSumofAmounts']) ) ? $r['fields']['tedSumofAmounts'] : 0;
+                                $Results[$key]['tedContracts'] = (isset($r['fields']['tedContracts']) ) ? $r['fields']['tedContracts'] : 0;
                                 $Results[$key]['score'] *= 1.2;
                                 break;
                           

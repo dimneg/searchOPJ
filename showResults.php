@@ -17,7 +17,7 @@ class showResults {
         global $Results;
        
         $this->saveCsvCloud($Results, '/var/log/results.csv');
-        #print_r($Results);
+       
         #$source = ' ';
         $i = 1;
         $uniqueResults = array_filter($Results); //let 's see if there is need to group
@@ -596,7 +596,7 @@ class showResults {
                return ['Medium confidence','#7CFC00']; 
             }
             else {
-                if ($countResults <= 2 && $score == 1 ){
+                if ($countResults == 1 && $score == 1 ){
                     return  ['High confidence','#006621'];
                 }
                 else {
