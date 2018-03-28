@@ -471,9 +471,9 @@ if($_POST['formSubmit'] == "index.php") {
         }
 
     }
-    $showResults = new showResults();
+    $resultsPresentation = new showResults();
     
-    $showResults -> presentResults(solrPath, corpSolrCore);
+   $resultsPresentation -> presentResults(solrPath, corpSolrCore);
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
