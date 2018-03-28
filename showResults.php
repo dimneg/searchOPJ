@@ -66,40 +66,40 @@ class showResults {
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
                switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών: <B> €0.4M (5) </B> Κατακυρώσεις: <B> €0.0K (0) </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B> €0.4M (5) </B> Κατακυρώσεις: <B> €0.0K (0) </B>  [από έως]  </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> Κατακυρώσεις: <B> €8.8M (4) </B> [από έως] </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)  </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)</B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από έως] </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>   </br>';
+                       echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>  Κατακυρώσεις: <B> €0.0K (0) </B>   [από έως]  </br>';
                        break;
 
                    default:
-                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> €0.0K (0) </B> Κατακυρώσεις: <B> €0.0K (0) </B> </br>';
                        break;
                }
                echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font> '; 
                echo '&nbsp';
                switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Συμβάσεις: <B> €61.7K (4) </B> Πληρωμές: <B> €72.5K (11) </B> </br>';
+                       echo  'Συμβάσεις: <B> €61.7K (4) </B> Πληρωμές: <B> €72.5K (11)  </B>  [από έως]</br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       #echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> </br>';
+                       echo  'Συμβάσεις: <B> €0.0K (0) </B> Πληρωμές: <B> €0.0K (1) </B> [από έως] </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       #echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)  </B> </br>';
+                       echo  'Συμβάσεις: <B>  €56.6K (2) </B> Πληρωμές: <B> €0.2M (4)  </B> [από έως] </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       #echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>   </br>';
+                       echo  'Συμβάσεις: <B> €0.0K (0) </B>Πληρωμές: <B> €0.0K (0)  </B> [από έως] </br>';
                        break;
 
                    default:
-                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> €0.0K (0) </B>Πληρωμές: <B> €0.0K (0)  </B> [από έως] </br>';
                        break;
                }
                
@@ -116,20 +116,20 @@ class showResults {
               
                 switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Συμβάσεις: <B> €0.5Β (21) </B> </br>';
+                       echo  'Συμβάσεις: <B> €0.5Β (21) </B>  [από έως] </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Συμβάσεις: <B> €2.0B (87) </B> </br>';
+                       echo  'Συμβάσεις: <B> €2.0B (87) </B> [από έως] </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Συμβάσεις: <B> €2.6B (99)  </B> </br>';
+                       echo  'Συμβάσεις: <B> €2.6B (99)  </B>  [από έως]</br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Συμβάσεις: <B> €2.5B (48) </B> </br>';
+                       echo  'Συμβάσεις: <B> €2.5B (48) </B> [από έως] </br>';
                        break;
 
                    default:
-                       echo  'Συμβάσεις: <B> €0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> €0.0B (0) </B>  [από έως] </br>';
                        break;
                }
                 
@@ -139,20 +139,20 @@ class showResults {
                 
                 switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Συμβάσεις: <B> $1.1Β (209) </B> </br>';
+                       echo  'Συμβάσεις: <B> $1.1Β (209) </B>  [από έως] </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Συμβάσεις: <B> $3.8B (41) </B> </br>';
+                       echo  'Συμβάσεις: <B> $3.8B (41) </B>  [από έως]</br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Συμβάσεις: <B> $4.1M (2) </B> </br>';
+                       echo  'Συμβάσεις: <B> $4.1M (2) </B>   [από έως]</br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Συμβάσεις: <B> $0.2M (2) </B> </br>';
+                       echo  'Συμβάσεις: <B> $0.2M (2) </B> [από έως] </br>';
                        break;
 
                    default:
-                       echo  'Συμβάσεις: <B> $0.0B (0) </B> </br>';
+                       echo  'Συμβάσεις: <B> $0.0B (0) </B> [από έως] </br>';
                        break;
                }
                
