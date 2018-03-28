@@ -167,7 +167,10 @@ class showResults {
                 //....basic view 1...\\
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                       
-                echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
+                echo "<a class='nameLink' href='#' target='_blank' >$name</a> ";	
+                echo ' ';
+                $scorePresentation = $this->presentConfidence($sumResults,$uniqueResults[$i]['score']);             
+                echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$scorePresentation</font></br>";
                 //....alt names...\\
                 #if ($uniqueResults[$i]['corporate_id'] !==''){
                   #  echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$corporation</font></br> ";
@@ -323,9 +326,7 @@ class showResults {
                      }
                 }
                 #echo 'score :'.$uniqueResults[$i]['score']; 
-                $scorePresentation = $this->presentConfidence($sumResults,$uniqueResults[$i]['score']);
-             
-                echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$scorePresentation</font>";
+                
                 
                  
                 echo "</td>";
