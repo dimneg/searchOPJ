@@ -146,7 +146,7 @@ class collectData {
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,            
                       'vat' => $r['fields']['term'][0],
                      # 'link' => $prefix.$r['id'],
-                      'link' => $Actual_link.'/'.$r['id'],
+                      'link' => $Actual_link.'/'.$r['fields']['term'][0],
                       'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,
                       'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
                       'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,

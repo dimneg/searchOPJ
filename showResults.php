@@ -21,6 +21,7 @@ class showResults {
         #$source = ' ';
         $i = 0;
         $uniqueResults = array_filter($Results); //let 's see if there is need to group
+        print_r($uniqueResults);
         $sumResults = count($uniqueResults);
         echo "results number:".$sumResults.PHP_EOL; 
         $sumSpend = 0;
