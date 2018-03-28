@@ -20,7 +20,7 @@ class showResults {
         #print_r($Results);
         #$source = ' ';
         $i = 0;
-        $uniqueResults = $Results; //let 's see if there is need to group
+        $uniqueResults = array_filter($Results); //let 's see if there is need to group
         $sumResults = count($uniqueResults);
         echo "results number:".$sumResults.PHP_EOL; 
         $sumSpend = 0;
@@ -172,7 +172,7 @@ class showResults {
        
         
         
-        while ($i < $sumResults) { 
+        while ($i <= $sumResults) { 
             
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
