@@ -19,7 +19,7 @@ class showResults {
         $this->saveCsvCloud($Results, '/var/log/results.csv');
         #print_r($Results);
         #$source = ' ';
-        $i = 0;
+        $i = 1;
         $uniqueResults = array_filter($Results); //let 's see if there is need to group
         print_r($uniqueResults);
         $sumResults = count($uniqueResults);
