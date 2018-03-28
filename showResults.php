@@ -170,7 +170,7 @@ class showResults {
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> ";	
                 echo ' ';
                 $scorePresentation = $this->presentConfidence($sumResults,$uniqueResults[$i]['score']);             
-                echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$scorePresentation</font></br>";
+                echo " <font class='dataset' color=$scorePresentation[1] style='font-size: 0.77em'>$scorePresentation[0]</font></br>";
                 //....alt names...\\
                 #if ($uniqueResults[$i]['corporate_id'] !==''){
                   #  echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$corporation</font></br> ";
@@ -539,13 +539,7 @@ class showResults {
         $string =  str_replace('Ώ','Ω',$string);
         return $string;
    }
-   function _group_by($array, $key) {
-        $return = array();
-        foreach($array as $val) {
-            $return[$val[$key]][] = $val;
-        }
-        return $return;
-   }
+   
    function unique_multidim_array($array, $key){
         $temp_array = [[]]; //empty array
         $i = 0;
@@ -572,25 +566,34 @@ class showResults {
     
     function presentConfidence ($countResults, $score){
         if ($score > 5){
-            return 'High confidence';
+            return ['High confidence','#006621'];
         }
         else {
             if ($score > 1){
-               return 'Medium confidence'; 
+               return ['Medium confidence','#90EE90']; 
             }
             else {
                 if ($countResults <= 2 && $score == 1 ){
-                    return 'High confidence';
+                    return  ['High confidence','#006621'];
                 }
                 else {
                      if ($score == 1){
-                         return 'Low confidence';
+                         return ['Low confidence','#FFA500'];
                      }
                      else {
-                         return 'No confidence';
+                         return ['No confidence','#FF0000'];
                      }
                 }
             }
         }
+    }
+    
+    function getProperColor($number){
+        if ($var > 0 && $var <= 5)
+            return '#00FF00';
+        else if ($var >= 6 && $var <= 10)
+            return = '#FF8000';
+        else if ($var >= 11)
+            return = '#FF0000';
     }
 }
