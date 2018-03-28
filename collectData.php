@@ -299,7 +299,7 @@ class collectData {
                      'dataKhmdhsBuyer' => $this->defineProperty($Db,'buyer',0),
                      'dataKhmdhsSeller' => $this->defineProperty($Db,'seller',0),
                      'dataAustraliaBuyer' => $this->defineProperty($Db,'buyer',0),
-                     'dataAustraliaSeller' => $this->defineProperty($Db,'buyer',0),
+                     'dataAustraliaSeller' => $this->defineProperty($Db,'seller',0),
                      'dataTedSeller'=>  $this->defineProperty($Db, 'seller',0),
                      
                      #'tedSumofAmounts' => $this->getTedDataRDF($r['fields']['term'][0], $sparqlServer)
