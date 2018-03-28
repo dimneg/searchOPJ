@@ -66,23 +66,43 @@ class showResults {
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
                switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B> €0.4M (5) </B> Κατακυρώσεις: <B> €0.0K (0) </B> </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Συμβάσεις: <B> €2.3M (2) </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> </br>';
                        break;
                    case 'NOVARTIS CORPORATION ':
-                       echo  'Συμβάσεις: <B>  €3.8M (226)  </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)  </B> </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>   </br>';
                        break;
 
                    default:
                        echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
                        break;
                }
-                
+               echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font> '; 
+               echo '&nbsp';
+               switch ($name) {
+                   case 'ORACLE CORPORATION':
+                       echo  'Συμβάσεις: <B> €61.7K (4) </B> Πληρωμές: <B> €72.5K (11) </B> </br>';
+                       break;
+                   case 'PRICEWATERHOUSECOOPERS CORPORATION':
+                       #echo  'Οριστικοποίηση Πληρωμών: <B> €2.3M (2) </B> </br>';
+                       break;
+                   case 'NOVARTIS CORPORATION ':
+                       #echo  'Οριστικοποίηση Πληρωμών: <B>  €3.8M (226)  </B> </br>';
+                       break;
+                   case 'ATOS CORPORATION':
+                       #echo  'Οριστικοποίηση Πληρωμών:<B> €0.0K (0) </B>   </br>';
+                       break;
+
+                   default:
+                       echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
+                       break;
+               }
+                €61.7K (4) Πληρωμές: €72.5K (11),
                 #echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
                # echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font>'; 
                 #echo '&nbsp';
@@ -570,7 +590,7 @@ class showResults {
         }
         else {
             if ($score > 1){
-               return ['Medium confidence','#ADFF2F']; 
+               return ['Medium confidence','#7CFC00']; 
             }
             else {
                 if ($countResults <= 2 && $score == 1 ){
