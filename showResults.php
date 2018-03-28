@@ -326,7 +326,7 @@ class showResults {
                 }
                 if ($uniqueResults[$i]['dataTed'] == 1){
                     echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">T.E.D.</font></br> '; 
-                    if ($uniqueResults[$i]['dataTedBuyer'] == 1){
+                    if (isset($uniqueResults[$i]['dataTedBuyer']) && $uniqueResults[$i]['dataTedBuyer'] == 1){
                          echo ' <font color="#FFA500" size="1">ΦΟΡΕΑΣ</font> '; 
                          echo  'Συμβάσεις: ';
                     }
@@ -348,7 +348,7 @@ class showResults {
                          
                      }
                 }
-                echo 'score :'.$uniqueResults[$i]['score']; 
+                #echo 'score :'.$uniqueResults[$i]['score']; 
                 
                 
                  
@@ -588,6 +588,9 @@ class showResults {
     }
     
     function presentConfidence ($countResults, $score){
+        if ($countResults ==1){
+            return  ['High confidence','#006621'];
+        }
         if ($score > 5){
             return ['High confidence','#006621'];
         }
