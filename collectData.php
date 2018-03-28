@@ -85,7 +85,7 @@ class collectData {
         //$GLOBALS['newdata'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort);
-        echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
+        #echo $DbPath.$Db."/_design/".$DesignDoc."/".$Index."?q=term:".$varKeyword.$Wc."&limit:".$Limit."&sort:".$Sort."<br>";
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERPWD, $couchUserPwd );
@@ -127,38 +127,7 @@ class collectData {
         if(isset ($json['rows'])) {
              foreach($json['rows'] as $r){                   
             
-                switch ($Db) {
-                case "elod_buyers":
-                        $prefix=$Domain.$Lang."khmdhs/" ;
-                                break;
-                case "elod_sellers":
-                        $prefix=$Domain.$Lang."khmdhs/" ;
-                                break;
-                case "elod_diaugeia_buyers":
-                        $prefix=$Domain.$Lang."diaugeia/" ;
-                                break;
-                case "elod_diaugeia_sellers":
-                        $prefix=$Domain.$Lang."diaugeia/" ;
-                                break;
-                case "elod_australia_buyers":
-                        $prefix=$Domain.$Lang."australia/" ;
-                                break;
-                case "elod_australia_sellers":
-                        $prefix=$Domain.$Lang."australia/" ;
-                                break;  
                 
-
-                case "elod_espa_beneficiaries":
-                        $prefix=$Domain.$Lang."" ;
-                                break;
-
-                case "elod_main_orgv4_all":
-                    $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
-                                break;
-                case "elod_main_orgv4_fr":
-                   $prefix = 'https://www.businessregistry.gr/publicity/show/' ;
-                                break;
-                }
                 global $Boost;
                 $Boost = 1.2;
                 switch ($Wc) { //boost step 1
@@ -184,7 +153,8 @@ class collectData {
                  // 'name' => $r['fields']['term'][1],
                       'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,            
                       'vat' => $r['fields']['term'][0],
-                      'link' => $prefix.$r['id'],
+                     # 'link' => $prefix.$r['id'],
+                      'link' => $Actual_link.$r['id'],
                       'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,
                       'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
                       'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,
