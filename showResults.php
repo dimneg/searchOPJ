@@ -102,7 +102,7 @@ class showResults {
                        echo  'Συμβάσεις: <B> €0.0M (0) </B> </br>';
                        break;
                }
-                €61.7K (4) Πληρωμές: €72.5K (11),
+               
                 #echo  'Συμβάσεις: <B> €0.4M (5) </B> </br>';
                # echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">ΚΗΜΔΗΣ</font>'; 
                 #echo '&nbsp';
