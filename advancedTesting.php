@@ -84,6 +84,7 @@
 							<option value="">Select Column</option>
 							<option value="title" <?php if($search_in=="title") { echo "selected"; } ?>>Title</option>
 							<option value="description" <?php if($search_in=="description") { echo "selected"; } ?>>Description</option>
+                                                        
 						</select>
 					</div>
 				</div>
