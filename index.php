@@ -315,10 +315,7 @@ $crf3 = '';
 					<div>
 						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
 					</div>
-					<label class="search-label">Αναζήτηση με όνομα μονο:</label>
-					<div>
-						<input type="text" name="crf3" id="crf3" class="demoInputBox" value="<?php echo $crf3; ?>"	/>
-					</div>
+					
 					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
 						<select name="search[search_in]" id="search_in" class="demoInputBox">
@@ -330,7 +327,7 @@ $crf3 = '';
                                                         <option value="pp" <?php if($search_in=="pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
 						</select>
 					</div>
-                                        label class="amount-label">Αναζήτηση σε:</label>
+                                        <label class="amount-label">Με αξιά:</label>
 					<div>
 						<select name="search[search_in]" id="amount_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
