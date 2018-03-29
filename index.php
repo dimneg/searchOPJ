@@ -1,7 +1,7 @@
 <?php
 //https://phppot.com/php/advanced-search-using-php/
 $search_in = '';
-$amountLimit = '';
+$search_in_amount = '';
 $crf1 = '';
 $crf2 = '';
 $crf3 = '';
@@ -331,12 +331,12 @@ $crf3 = '';
 					</div>
                                         <label class="amount-label">Με αξιά:</label>
 					<div>
-						<select name="advSearch[amountLimit]" id="amount_in" class="demoInputBox">
+						<select name="advSearch[search_in_amount]" id="amount_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="1" <?php if($search_in=="1") { echo "selected"; } ?>> <2K </option>
-							<option value="2" <?php if($search_in=="2") { echo "selected"; } ?>> >2Κ<2M </option>
-                                                        <option value="3" <?php if($search_in=="3") { echo "selected"; } ?>> >2M<2B </option>
-                                                        <option value="3" <?php if($search_in=="3") { echo "selected"; } ?>> >2B </option>
+							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
+							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ<2M </option>
+                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M<2B </option>
+                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2B </option>
                                                         
 						</select>
 					</div>
@@ -358,7 +358,10 @@ $crf3 = '';
 <?php
 
 #print_r($_POST['formKeyword']);
-print_r($_POST['advSearch']);
+#print_r($_POST['advSearch']);
+$advChoiceArea = $_POST['advSearch']['searchIn'];
+$advChoiceAmount = $_POST['advSearch']['search_in_amount'];
+echo $advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
 #adv search variables
 #$search_in = "";
