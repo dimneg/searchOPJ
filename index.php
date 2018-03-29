@@ -1,3 +1,6 @@
+<?php
+$search_in = '';
+?>
 <html> 
     <head>
         <!-- DataTables CSS -->
