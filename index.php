@@ -344,7 +344,7 @@ $crf3 = '';
 				
 				<div>
 					<input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
-                                         <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >Τιμές</a> 
+                                         <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> 
 				</div>
 
 </p>
@@ -500,6 +500,8 @@ if($_POST['formSubmit'] == "index.php") {
     
     $resultsPresentation -> presentResults(solrPath, corpSolrCore);
     
+    $varKeyword =  str_replace('+',' ',$varKeyword);
+    $varKeyword =  str_replace('"',' ',$varKeyword);
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
     echo  "<div ALIGN='CENTER'>";
