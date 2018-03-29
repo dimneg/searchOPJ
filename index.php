@@ -330,7 +330,7 @@ $crf3 = '';
 					</div>
                                         <label class="amount-label">Με αξιά:</label>
 					<div>
-						<select name="search[search_in]" id="amount_in" class="demoInputBox">
+						<select name="advSearch[search_in]" id="amount_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
 							<option value="gr" <?php if($search_in=="Gr") { echo "selected"; } ?>> <2K </option>
 							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>> >2Κ<2M </option>
@@ -355,8 +355,8 @@ $crf3 = '';
 </form>
 <?php
 
-print_r($_POST['formKeyword']);
-print_r($_POST['search']);
+#print_r($_POST['formKeyword']);
+print_r($_POST['advSearch']);
 
 #adv search variables
 #$search_in = "";
