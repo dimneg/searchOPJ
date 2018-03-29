@@ -1,4 +1,5 @@
 <?php
+//https://phppot.com/php/advanced-search-using-php/
 $search_in = '';
 $crf1 = '';
 $crf2 = '';
@@ -331,17 +332,16 @@ $crf3 = '';
 					<div>
 						<select name="search[search_in]" id="amount_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>>2K</option>
+							<option value="gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>2K</option>
 							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>>2M</option>
+                                                        <option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>>2Β</option>
                                                         
 						</select>
 					</div>
 				</div>
 				
 				<div>
-					<a href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  input type="submit" name="formSubmit"  method="post" class="btnSearch" value="Search" action="index.php" method="post" accept-charset="UTF-8"> </a>
-                                  
-                                       <a input type="submit" name="formSubmit" method="post" accept-charset="UTF-8" class="btnSearch" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   ></a>
+					<input type="submit" name="go" class="btnSearch" value="Search">
 				</div>
 
 </p>
