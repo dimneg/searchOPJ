@@ -399,7 +399,7 @@ $term12 = '';
 
 $newKeyWord = new keyWord();
 
-if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {   
+if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {   
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
         $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
