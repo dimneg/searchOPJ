@@ -19,10 +19,12 @@
 ΝΕΑ ΥΟΡΚΗ(Πολιτεία),NEW YORK STATE
 ΛΟΝΔΙΝΟ,LONDON CITY
 ΕΥΡΩΠΗ FTS,EUROPE FTS
+Ευρώπη,Europe 
 ΑΦΜ ή Όνομα ή Σημείο Πώλησης ή Προϊόν,VAT or Name or Shop or Product
 ΑΦΜ ή Όνομα,VAT or Name
 "'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,","'address'=>(isset($r['fields']['addressEng']) ) ? $r['fields']['addressEng'] :  $this->transliterate($r['fields']['address']),"  
-"'country'=>(isset($r['fields']['country']) ) ? $r['fields']['country'] : null ,","'address'=>(isset($r['fields']['countryEng']) ) ? $r['fields']['countryEng'] :  $this->transliterate($r['fields']['country']),"  
+"'country'=>(isset($r['fields']['country']) ) ? $r['fields']['country'] : null ,","'country'=>(isset($r['fields']['countryEng']) ) ? $r['fields']['countryEng'] :  $this->transliterate($r['fields']['country'])," 
+"'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,","'city'=>(isset($r['fields']['cityEng']) ) ? $r['fields']['cityEng'] :  $this->transliterate($r['fields']['city']),"   
 $Field='address';,$Field='addressEng';
 Επιδοτήσεις ΕΣΠΑ,NSRF Subsidies
 Επιδοτήσεις,Subsidies
@@ -80,13 +82,14 @@ $Field='municipality';,$Field='municipalityEng';
 "searchAustralia.php","searchAustralia_en.php"
 Έκδοση,Version
 Αυστραλία,Australia
-'countryName'=>(isset($r['fields']['countryName']) ) ? $r['fields']['countryName'] : null,'countryName'=>(isset($r['fields']['countryNameEng']) ) ? $r['fields']['countryNameEng'] : null
+"Αρ. Γ.Ε.Μ.Η.:","Business Registry Number:"
+"'countryName'=>(isset($r['fields']['countryName']) ) ? $r['fields']['countryName'] : null ,","'address'=>(isset($r['fields']['countryNameEng']) ) ? $r['fields']['countryNameEng'] :  $this->transliterate($r['fields']['countryName']),"  
 Γ.Ε.Μ.Η, Business Registry
 'Eμφανίζεται και ως:', 'also appears as:'
 Επιμελητήριο,Chamber
-Αρ. Γ.Ε.Μ.Η.:,Business Registry Number:
 Ημ/νία:,Date:
 ΕΛΛΑΔΑ,GREECE
+Ελλάδα,GREECE 
 ΕΛΒΕΤΙΑ,SWITZERLAND
 "Σύνθετη Αναζήτηση","Advanced Search"
 "Αναζήτηση με Διεύθυνση","Search with Address"

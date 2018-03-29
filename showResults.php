@@ -539,7 +539,7 @@ class showResults {
     function getVatLabel($vat){
          $vatLabel ='Α.Φ.Μ. ';
          if (strlen($vat)== 7){
-             $vatLabel ='ΚΩΔ: ';
+             $vatLabel ='ID';
          }
          if (strlen($vat)>= 10){          
             $vatLabel = 'A.B.N. ';          

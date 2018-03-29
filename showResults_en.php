@@ -47,7 +47,7 @@ class showResults {
                 echo "<tr>";
                 echo "<td style=\" text-align:left; border-left: 0px solid #ccc; font-size:15px; padding-right:0px;  width:400px;\">"; 
                 $corpData = $solrDetails -> getCorporationDetailsSolr($solrPath, $corpSolrCore, $value['id']);
-                $name = $corpData[0];
+                $name = $solrDetails->transliterate($corpData[0]);
                 echo "<a class='nameLink' href='#' target='_blank' >$name</a> ";
                 echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">[Corporate Group]</font>';
                 echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">High confidence</font>';
