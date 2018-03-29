@@ -58,13 +58,12 @@ class showResults {
                 #$grouppedCorpData = $this->_group_by(corpData[1], $name);
                 $uniqueCompanies = $this->unique_multidim_array($corpData[1] , 'uniqueShow');
                 foreach (  $uniqueCompanies   as $key => $value) {                   
-                    echo $solrDetails->transliterate($this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8"))).' ['.$value['country'].']';
-                    echo '<BR>';                    
+                    echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
                 }
                echo ' <font color="#FFA500" size="2">Public Procurement</font> <br> '; 
-                echo '<img src="languages/images/gr.png" alt="Ελλάδα"  width="15" height="12" >';
+                echo '<img src="languages/images/gr.png" alt="GREECE "  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'Ελλάδα <br>' ;
+                echo 'GREECE  <br>' ;
                 echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">DIAVGEIA</font> '; 
                 echo '&nbsp';
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
@@ -114,9 +113,9 @@ class showResults {
                 #echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">NSRF Subsidies</font> ';     
                  #echo '&nbsp';
                 #echo  'Contracts: </br>';
-                echo '<img src="languages/images/eu.png" alt="Ευρώπη"  width="15" height="12" >';
+                echo '<img src="languages/images/eu.png" alt="Europe "  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'Ευρώπη </br>' ;
+                echo 'Europe  </br>' ;
               
                 switch ($name) {
                    case 'ORACLE CORPORATION':
@@ -296,7 +295,7 @@ class showResults {
                 }
                 if ($uniqueResults[$i]['dataGemh'] == 1){
                      echo ' <font class="dataset" color="#800080" style="font-size: 0.77em"> Business Registry.</font></br> '; 
-                     echo 'Αρ.  Business Registry.: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
+                     echo 'Business Registry Number: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
                      echo ' &nbsp Chamber: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);
                      echo  ' &nbsp [Date: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']</br>';	
                 }
@@ -540,7 +539,7 @@ class showResults {
     function getVatLabel($vat){
          $vatLabel ='V.A.T. ';
          if (strlen($vat)== 7){
-             $vatLabel ='ΚΩΔ: ';
+             $vatLabel ='ID';
          }
          if (strlen($vat)>= 10){          
             $vatLabel = 'A.B.N. ';          

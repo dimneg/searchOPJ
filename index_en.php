@@ -17,7 +17,7 @@ $crf3 = '';
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-        <script> 
+       <script> 
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
@@ -312,7 +312,7 @@ $crf3 = '';
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Search with Address:</label>
 					<div>
-						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index_en.php"  	/>
 					</div>
 					<label class="search-label">Search with Postal Code:</label>
 					<div>
@@ -364,7 +364,7 @@ $crf3 = '';
 #print_r($_POST['advSearch']);
 $advChoiceArea = $_POST['advSearch']['search_in_area'];
 $advChoiceAmount = $_POST['advSearch']['search_in_amount'];
-echo $advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
+#echo $advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
 #adv search variables
 #$search_in = "";
