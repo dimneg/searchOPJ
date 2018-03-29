@@ -647,7 +647,7 @@ class collectData {
    }
    
    function transliterate($word){
-       $word = mb_convert_case($word, MB_CASE_UPPER, "UTF-8")).
+       $word = mb_convert_case($word, MB_CASE_UPPER, "UTF-8");
        $word = $this->cleanSpecialChar($word);
        
        $word = str_replace("Α", "A",$word);

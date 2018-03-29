@@ -17,7 +17,7 @@ $crf3 = '';
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-       <script> 
+        <script> 
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
