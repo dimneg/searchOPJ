@@ -87,5 +87,8 @@ isset($r['fields']['term'][1])) ? $r['fields']['term'][1],isset($r['fields']['te
 Γ.Ε.Μ.Η, Business Registry
 'Eμφανίζεται και ως:', 'also appears as:'
 Επιμελητήριο,Chamber
-Αρ. Γ.Ε.Μ.Η.:,Business Registry Number
+Αρ. Γ.Ε.Μ.Η.:,Business Registry Number:
 Ημ/νία:,Date:
+ΕΛΛΑΔΑ, GREECE
+ΕΛΒΕΤΙΑ, SWITZERLAND
+Σύνθετη Αναζήτηση, Advanced Search
