@@ -1,5 +1,8 @@
 <?php
 $search_in = '';
+$crf1 = '';
+$crf2 = '';
+$crf3 = '';
 ?>
 <html> 
     <head>
@@ -325,6 +328,15 @@ $search_in = '';
                                                         <option value="di" <?php if($search_in=="di") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
                                                          <option value="sw" <?php if($search_in=="di") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
                                                         <option value="pp" <?php if($search_in=="pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
+						</select>
+					</div>
+                                        label class="amount-label">Αναζήτηση σε:</label>
+					<div>
+						<select name="search[search_in]" id="amount_in" class="demoInputBox">
+							<option value="">Επιλογή:</option>
+							<option value="gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>>2K</option>
+							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>>2M</option>
+                                                        
 						</select>
 					</div>
 				</div>
