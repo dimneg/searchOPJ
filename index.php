@@ -343,7 +343,7 @@ $crf3 = '';
 				</div>
 				
 				<div>
-					<input type="submit" name="formKeyword" class="btnSearch" value="Search">
+					<input type="submit" name="formKeyword" class="btnSearch" value="Search" action="index.php">
 				</div>
 
 </p>
