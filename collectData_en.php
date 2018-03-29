@@ -142,14 +142,14 @@ class collectData {
            #if(isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
              if (isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false  ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')!== false || strpos($Db, 'yds_big')!== false)) ){
                 $newdata =  array (
-                 // 'name' => $r['fields']['term'][2],
-                      'name' => (isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : null ,            
+                 // 'name' => $r['fields']['term'][1],
+                      'name' => (isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : $this->transliterate($r['fields']['term'][1]),            
                       'vat' => $r['fields']['term'][0],
                      # 'link' => $prefix.$r['id'],
                       'link' => $Actual_link.'/'.$r['fields']['term'][0],
-                      'address'=>(isset($r['fields']['addressEng']) ) ? $r['fields']['addressEng'] : null ,
+                      'address'=>(isset($r['fields']['addressEng']) ) ? $r['fields']['addressEng'] :  $this->transliterate($r['fields']['address']),  
                       'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
-                      'city'=>(isset($r['fields']['cityEng']) ) ? $r['fields']['cityEng'] : null ,
+                      'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,
                       'locality'=>(isset($r['fields']['locality']) ) ? $r['fields']['locality'] : null ,
                       'countryName'=>(isset($r['fields']['countryNameEng']) ) ? $r['fields']['countryNameEng'] : null ,
                       'score' =>  $r['score'],
@@ -615,9 +615,7 @@ class collectData {
                
    }
    
-   function getCorporationSumsSolr($solrPath,$solrCore,$corpId){
-       
-   }
+ 
    function getTedDataRDF($vat,$sparqlServer){
       
        $ch = curl_init();
@@ -646,5 +644,55 @@ class collectData {
        if (isset ($json['results']['bindings'][0]['sumOfAmounts']) ){
             return $json['results']['bindings'][0] ['sumOfAmounts'];
        }
+   }
+   
+   function transliterate($word){
+       $word = mb_convert_case($word, MB_CASE_UPPER, "UTF-8")).
+       $word = $this->cleanSpecialChar($word);
+       
+       $word = str_replace("Α", "A",$word);
+       $word = str_replace("Β", "B",$word);
+       $word = str_replace("Γ", "G",$word);
+       $word = str_replace("Δ", "D",$word);
+       $word = str_replace("Ε", "E",$word);
+       $word = str_replace("Ζ", "Z",$word);
+       $word = str_replace("Η", "I",$word);
+       
+       $word = str_replace("Θ", "TH",$word);
+       $word = str_replace("Ι", "I",$word);
+       $word = str_replace("Κ", "K",$word);
+       $word = str_replace("Λ", "L",$word);
+       $word = str_replace("Μ", "M",$word);
+       
+       $word = str_replace("Ν", "N",$word);
+       $word = str_replace("Ξ", "X",$word);
+       $word = str_replace("Ο", "O",$word);
+       $word = str_replace("Π", "P",$word);
+       $word = str_replace("Ρ", "R",$word);
+       
+       $word = str_replace("Σ", "S",$word);
+       $word = str_replace("Τ", "T",$word);
+       $word = str_replace("Υ", "Y",$word);
+       $word = str_replace("Φ", "F",$word);
+       
+       $word = str_replace("Χ", "X",$word);
+       $word = str_replace("Ψ", "PS",$word);
+       $word = str_replace("Ω", "O",$word);
+       
+       return $word;
+   }
+   
+   function cleanSpecialChar($word){
+       $word = str_replace("Ά", "Α",$word);
+       $word = str_replace("Έ", "Ε",$word);
+       $word = str_replace("Ή", "Η",$word);
+       $word = str_replace("Ί", "Ι",$word);
+       
+       $word = str_replace("Ύ", "Υ",$word);
+       $word = str_replace("Ό", "Ο",$word);
+       $word = str_replace("Ώ", "Ω",$word);
+       $word = str_replace("Ϋ", "Υ",$word);
+       $word = str_replace("Ϊ", "Ι",$word);
+       return $word;
    }
 }

@@ -647,7 +647,8 @@ class collectData {
    }
    
    function transliterate($word){
-        $word = $this-
+       $word = mb_convert_case($word, MB_CASE_UPPER, "UTF-8")).
+       $word = $this->cleanSpecialChar($word);
        
        $word = str_replace("Α", "A",$word);
        $word = str_replace("Β", "B",$word);
@@ -685,7 +686,13 @@ class collectData {
        $word = str_replace("Ά", "Α",$word);
        $word = str_replace("Έ", "Ε",$word);
        $word = str_replace("Ή", "Η",$word);
-       $word = str_replace("Ή", "Η",$word);
+       $word = str_replace("Ί", "Ι",$word);
+       
+       $word = str_replace("Ύ", "Υ",$word);
+       $word = str_replace("Ό", "Ο",$word);
+       $word = str_replace("Ώ", "Ω",$word);
+       $word = str_replace("Ϋ", "Υ",$word);
+       $word = str_replace("Ϊ", "Ι",$word);
        return $word;
    }
 }

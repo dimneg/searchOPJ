@@ -19,11 +19,10 @@
 ΝΕΑ ΥΟΡΚΗ(Πολιτεία),NEW YORK STATE
 ΛΟΝΔΙΝΟ,LONDON CITY
 ΕΥΡΩΠΗ FTS,EUROPE FTS
-$r['fields']['term'][1],$r['fields']['term'][2]
 ΑΦΜ ή Όνομα ή Σημείο Πώλησης ή Προϊόν,VAT or Name or Shop or Product
 ΑΦΜ ή Όνομα,VAT or Name
-$r['fields']['address'],$r['fields']['addressEng']
-$r['fields']['city'],$r['fields']['cityEng']
+"'address'=>(isset($r['fields']['address']) ) ? $r['fields']['address'] : null ,","'address'=>(isset($r['fields']['addressEng']) ) ? $r['fields']['addressEng'] :  $this->transliterate($r['fields']['address']),"  
+"'country'=>(isset($r['fields']['country']) ) ? $r['fields']['country'] : null ,","'address'=>(isset($r['fields']['countryEng']) ) ? $r['fields']['countryEng'] :  $this->transliterate($r['fields']['country']),"  
 $Field='address';,$Field='addressEng';
 Επιδοτήσεις ΕΣΠΑ,NSRF Subsidies
 Επιδοτήσεις,Subsidies
@@ -44,8 +43,6 @@ $Field='municipality';,$Field='municipalityEng';
 Υψηλότερη τιμή 2016,max 2016
 Υψηλότερη τιμή 2017,max 2017
 ΠΑΡΑΤΗΡΗΤΗΡΙΟ ΤΙΜΩΝ-Προϊόν,PRICES OBSERVATORY-Product
-(isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null,(isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : $r['fields']['term'][1]
-(isset($r['fields']['term'][0])) ? $r['fields']['term'][0],(isset($r['fields']['term'][1])) ? $r['fields']['term'][1]
 'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement']) ) ? $r['fields']['unitOfMeasurement'] : null,'unitOfMeasurement'=>(isset($r['fields']['unitOfMeasurement_eng']) ) ? $r['fields']['unitOfMeasurement_eng'] : null  
 'locMax'=>(isset($r['fields']['locMax']) ) ? $r['fields']['locMax'] : null, 'locMax'=>(isset($r['fields']['locMax_eng']) ) ? $r['fields']['locMax_eng'] : null
 'locMin'=>(isset($r['fields']['locMin']) ) ? $r['fields']['locMin'] : null,'locMin'=>(isset($r['fields']['locMin_eng']) ) ? $r['fields']['locMin_eng'] : null
@@ -71,7 +68,7 @@ $Field='municipality';,$Field='municipalityEng';
 Συνολικά:,Overview:
 Υποκατηγορία,Sub Category
 Κύρια Κατηγορία,Main Category
-isset($r['fields']['term'][1])) ? $r['fields']['term'][1],isset($r['fields']['term'][2])) ? $r['fields']['term'][2]
+"'name' => (isset($r['fields']['term'][1])) ? $r['fields']['term'][1] : null ,  ","'name' => (isset($r['fields']['term'][2])) ? $r['fields']['term'][2] : $this->transliterate($r['fields']['term'][1]),  "
 ΚΑΤΗΓΟΡΙΑ ΔΑΠΑΝΗΣ,COMMON PROCUREMENT VOCABULARY 
 "Επιστροφή στην Κεντρική Αναζήτηση","Back to Global Search"
 <li class="ex1" >Αποτελέσματα</li> <li class="ex1">Αναζήτησης</li>,<li class="ex1" >Search</li> <li class="ex1">Results</li>
@@ -103,3 +100,7 @@ isset($r['fields']['term'][1])) ? $r['fields']['term'][1],isset($r['fields']['te
 Περιέχει,Includes
 από,from
 Αποτελέσματα,Results
+"Αναζήτηση σε:","Search in:"
+"Επιλογή:","Select:"
+'value="index.php"','value="index_en.php"'
+'action="index.php"','action="index_en.php"'

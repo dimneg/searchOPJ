@@ -1,5 +1,5 @@
 <?php
-//https://phppot.com/php/advanced-search-using-php/
+
 $search_in_area = '';
 $search_in_amount = '';
 $crf1 = '';
@@ -17,7 +17,7 @@ $crf3 = '';
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-        <script> //090166291 090153025
+       <script> 
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
@@ -303,10 +303,10 @@ $crf3 = '';
 <body>
 
 <div class="row-fluid margin-bottom" align="center" >
-<form action="index.php" method="post" accept-charset="UTF-8"> 
+<form action="index_en.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
@@ -319,10 +319,10 @@ $crf3 = '';
 						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
 					</div>
 					
-					<label class="search-label">Αναζήτηση σε:</label>
+					<label class="search-label">Search in:</label>
 					<div>
 						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
-							<option value="">Επιλογή:</option>
+							<option value="">Select:</option>
 							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>>GREECE</option>
 							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>EUROPE</option>
                                                         <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>AUSTRALIA</option>
@@ -333,7 +333,7 @@ $crf3 = '';
                                         <label class="amount-label">Amount:</label>
 					<div>
 						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
-							<option value="">Επιλογή:</option>
+							<option value="">Select:</option>
 							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ<2M </option>
                                                         <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M<2B </option>
@@ -344,9 +344,9 @@ $crf3 = '';
 				</div>
 				
 				<div>
-					<input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
-                                         <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> 
-                                         <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> 
+					<input type="submit" name="Go" class="btnSearch" value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
+                                       <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
+                                        <!--   <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> -->
 				</div>
 
 </p>
