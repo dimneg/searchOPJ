@@ -1,6 +1,7 @@
 <?php
 //https://phppot.com/php/advanced-search-using-php/
 $search_in = '';
+$amountLimit = '';
 $crf1 = '';
 $crf2 = '';
 $crf3 = '';
@@ -319,7 +320,7 @@ $crf3 = '';
 					
 					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
-						<select name="search[search_in]" id="search_in" class="demoInputBox">
+						<select name="advSearch[search_in]" id="search_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
 							<option value="Gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
 							<option value="Eu" <?php if($search_in=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
@@ -330,7 +331,7 @@ $crf3 = '';
 					</div>
                                         <label class="amount-label">Με αξιά:</label>
 					<div>
-						<select name="advSearch[search_in]" id="amount_in" class="demoInputBox">
+						<select name="advSearch[amountLimit]" id="amount_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
 							<option value="1" <?php if($search_in=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in=="2") { echo "selected"; } ?>> >2Κ<2M </option>
