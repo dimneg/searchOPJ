@@ -336,6 +336,7 @@ $crf3 = '';
 							<option value="1" <?php if($search_in=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in=="2") { echo "selected"; } ?>> >2Κ<2M </option>
                                                         <option value="3" <?php if($search_in=="3") { echo "selected"; } ?>> >2M<2B </option>
+                                                        <option value="3" <?php if($search_in=="3") { echo "selected"; } ?>> >2B </option>
                                                         
 						</select>
 					</div>
@@ -357,7 +358,7 @@ $crf3 = '';
 <?php
 
 #print_r($_POST['formKeyword']);
-print_r($_POST['advSearch']);
+#print_r($_POST['advSearch']);
 
 #adv search variables
 #$search_in = "";
