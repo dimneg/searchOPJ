@@ -343,7 +343,7 @@ $crf3 = '';
 				</div>
 				
 				<div>
-					<input type="submit" name="Go" class="btnSearch" value="Search" action="index.php">
+					<input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>">
 				</div>
 
 </p>
