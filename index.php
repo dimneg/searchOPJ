@@ -1,6 +1,6 @@
 <?php
 //https://phppot.com/php/advanced-search-using-php/
-$search_in = '';
+$search_in_area = '';
 $search_in_amount = '';
 $crf1 = '';
 $crf2 = '';
@@ -320,18 +320,18 @@ $crf3 = '';
 					
 					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
-						<select name="advSearch[search_in]" id="search_in" class="demoInputBox">
+						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="Gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
-							<option value="Eu" <?php if($search_in=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
-                                                        <option value="Au" <?php if($search_in=="Au") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
-                                                         <option value="Sw" <?php if($search_in=="Sw") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
-                                                        <option value="Pp" <?php if($search_in=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
+							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
+							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
+                                                        <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
+                                                         <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
+                                                        <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
 						</select>
 					</div>
                                         <label class="amount-label">Με αξιά:</label>
 					<div>
-						<select name="advSearch[search_in_amount]" id="amount_in" class="demoInputBox">
+						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
 							<option value="">Επιλογή:</option>
 							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ<2M </option>
@@ -359,7 +359,7 @@ $crf3 = '';
 
 #print_r($_POST['formKeyword']);
 #print_r($_POST['advSearch']);
-$advChoiceArea = $_POST['advSearch']['searchIn'];
+$advChoiceArea = $_POST['advSearch']['search_in_area'];
 $advChoiceAmount = $_POST['advSearch']['search_in_amount'];
 echo $advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
