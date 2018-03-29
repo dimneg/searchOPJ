@@ -358,7 +358,7 @@ $crf3 = '';
 <?php
 
 #print_r($_POST['formKeyword']);
-#print_r($_POST['advSearch']);
+print_r($_POST['advSearch']);
 
 #adv search variables
 #$search_in = "";
