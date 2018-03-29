@@ -1,13 +1,11 @@
 <?php
-$source ='indexSearch.php';
-$destination ='indexSearch_en.php';
+$source =['index.php','collectData.php','showResults.php'];
+$destination =['index_en.php','collectData_en.php','showResults_en.php'];
 
-$path_to_file = 'C:\Users\dimitris negkas\Documents\repos\searchOPJ/'.$source;
-#$file_contents = file_get_contents($path_to_file);
-$file_contents = file_get_contents($path_to_file);
-//$file_contents = str_replace("ΑΠΘ","APTH",$file_contents);
-#file_put_contents('/var/www/linkedeconomy/searchDrupal/translate/out/'.$destination,$file_contents);
-file_put_contents('C:\Users\dimitris negkas\Documents\repos\searchOPJ/'.$destination,$file_contents);
+foreach ($source as $key => $value) {
+    $path_to_file = 'C:\Users\dimitris negkas\Documents\repos\searchOPJ/'.$value;
+    $file_contents = file_get_contents($path_to_file);
+
 
 if (($handle = fopen('C:\Users\dimitris negkas\Documents\repos\searchOPJ/searchTranslation.csv', "r")) !== FALSE){
 		while (($data = fgetcsv($handle, 100000, ",")) !== FALSE) {
@@ -20,6 +18,9 @@ if (($handle = fopen('C:\Users\dimitris negkas\Documents\repos\searchOPJ/searchT
 			
 	} //end of check if file exists//
 	
-file_put_contents('C:\Users\dimitris negkas\Documents\repos\searchOPJ/'.$destination,$file_contents);
+file_put_contents('C:\Users\dimitris negkas\Documents\repos\searchOPJ/'.$destination[$key],$file_contents);
+}
+
+
 
 ?>

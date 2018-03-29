@@ -1,3 +1,11 @@
+<?php
+//https://phppot.com/php/advanced-search-using-php/
+$search_in_area = '';
+$search_in_amount = '';
+$crf1 = '';
+$crf2 = '';
+$crf3 = '';
+?>
 <html> 
     <head>
         <!-- DataTables CSS -->
@@ -9,7 +17,7 @@
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-       <script> //090166291 090153025
+        <script> //090166291 090153025
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
@@ -42,6 +50,21 @@
 	
 	} ); 
 </script>
+       <script>
+		function showHideAdvanceSearch() {
+			if(document.getElementById("advanced-search-box").style.display=="none") {
+				document.getElementById("advanced-search-box").style.display = "block";
+				document.getElementById("advance_search_submit").value= "1";
+			} else {
+				document.getElementById("advanced-search-box").style.display = "none";
+				document.getElementById("crf1").value= "" 
+				document.getElementById("crf2").value= "";
+				document.getElementById("crf3").value= "";
+				document.getElementById("search_in").value= "";
+				document.getElementById("advance_search_submit").value= "";
+			}
+		}
+	</script>
        <style>
 
 
@@ -227,11 +250,49 @@
             a.nameLink{
             font-weight: bold;
             }
+       <!-- advanced search       -->     
+            body{
+			 <!--width: 900px;-->
+			font-family: "Segoe UI",Optima,Helvetica,Arial,sans-serif;
+			line-height: 25px;
+		}
+		.search-box {
+			padding: 30px;
+			background-color:#C8EEFD;
+		}
+		.search-label{
+			margin:2px;
+		}
+		.demoInputBox {    
+			padding: 10px;
+			border: 0;
+			border-radius: 4px;
+			margin: 0px 5px 15px;
+			width: 250px;
+		}
+		.btnSearch{    
+			padding: 8px;
+                        position: relative;
+                        /*left: -80px; */
+			background: #84D2A7;
+			border: 0;
+			border-radius: 4px;
+			margin: 0px 5px;
+			color: #FFF;
+			width: 150px;
+		}
+		#advance_search_link {
+			color: #001FFF;
+			cursor: pointer;
+		}
+		.result-description{
+			margin: 5px 0px 15px;
+		}
 
 
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>Search</title>
+      <title>Search OPJ</title>
       
            
                <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
@@ -245,38 +306,74 @@
 <form action="index_en.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >				
+<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+<span id="advance_search_link" onClick="showHideAdvanceSearch()"> Advanced Search</span>
+									
+				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
+					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
+					<div>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
+					</div>
+					<label class="search-label">Αναζήτηση με ΤΚ:</label>
+					<div>
+						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
+					</div>
+					
+					<label class="search-label">Αναζήτηση σε:</label>
+					<div>
+						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
+							<option value="">Επιλογή:</option>
+							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>> GREECE</option>
+							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
+                                                        <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>AUSTRALIA</option>
+                                                         <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>> SWITZERLAND</option>
+                                                        <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
+						</select>
+					</div>
+                                        <label class="amount-label">Με αξιά:</label>
+					<div>
+						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
+							<option value="">Επιλογή:</option>
+							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
+							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ<2M </option>
+                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M<2B </option>
+                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2B </option>
+                                                        
+						</select>
+					</div>
+				</div>
+				
+				<div>
+					<input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
+                                         <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> 
+                                         <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> 
+				</div>
+
 </p>
 <div align="center" >
- <!--<li  class="ex1" id="dim" > Public Procurement </li><li  class="ex1">Subsidies</li> <li  class="ex1">Βudgets</li> <li class="ex1"> Prices</li>  
-<a class="searchTabs" href="searchProcurement?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Public Procurement</a>
-<a class="searchTabs" href="searchCPV?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Categories Δαπανών</a>
- <a class="searchTabs" href="searchEspa?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"    >Subsidies</a>
- Βudgets
- <a class="searchTabs" href="searchPrices?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"   >Prices</a> -->
-  <!--style="color:#1C94C4"
-<!--<form method="post" action="searchKhmdhs.php">
-    <input type="hidden" name="varKeyword=" value="varKeyword">
-    <input type="submit" style="display: none;">
-</form> -->
+ 
  <br>
 <hr align="center" width="80%">
-<!--<li class="ex1" >Search</li> <li class="ex1">Results</li>  -->
-  <!-- <li class="ex1" ><?php include_once("languages/lang.php"); echo $langBlgl['results']; ?></li> -->
-<li class="ex1" >Search Results</li>
+
+<li class="ex1" >Αποτελέσματα</li>
 </div>
 </form>
 <?php
 
+#print_r($_POST['formKeyword']);
+#print_r($_POST['advSearch']);
+$advChoiceArea = $_POST['advSearch']['search_in_area'];
+$advChoiceAmount = $_POST['advSearch']['search_in_amount'];
+echo $advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
-include 'indexSearch_en.php'; 
+#adv search variables
+#$search_in = "";
+#adv search variables
+
+include 'collectData.php'; 
 include 'keyWord.php';
-include 'results_en.php';
+include 'showResults.php';
 include 'config.php';
-#include_once("languages/lang.php");
-#require_once "languages/lang.php";
-#$languages = new PHPClass($langBlgl);
-#$languages = new PHPClass($langBlgl);
 
 $time_pre = microtime(true);
 $prefix = '' ;
@@ -302,7 +399,7 @@ $term12 = '';
 
 $newKeyWord = new keyWord();
 
-if($_POST['formSubmit'] == "index_en.php") {   
+if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {   
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
         $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
@@ -312,13 +409,13 @@ if($_POST['formSubmit'] == "index_en.php") {
     $words = explode(' ', $varKeyword);  
 
  #read all data
-    $search = new indexSearch();
+    $search = new collectData();
     if (is_numeric($varKeyword)){ //probaby afm
         if (strlen(utf8_decode($varKeyword)) <=6 ) {
-             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);	
+             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );	
         }
         else {
-            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass);	
+            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
         }
     }
     else { #name
@@ -326,12 +423,12 @@ if($_POST['formSubmit'] == "index_en.php") {
         if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){  #greek found
            if (count($words) === 1){
                if (strlen(utf8_decode($varKeyword)) <= 4 ){ # greek  like
-                    $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass); 
+                    $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore); 
                }
                else { # exact, fuzzy and then like
-                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass);  	
-                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass);
-                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);  	
+                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                }
            }
            else{
@@ -341,21 +438,21 @@ if($_POST['formSubmit'] == "index_en.php") {
                    $term2 = $termsArray[1];
                    $term12 = $termsArray[2];
                    $varKeyword = $termsArray[3];
-                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass);
-                   $search->getAllGreek('',$term12,DbPath,couchUser,couchPass);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                   $search->getAllGreek('',$term12,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                    if (strlen(utf8_decode($term1)) <=4 ){	
-                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass);
+                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                    }
                    else {
-                        $search->getAllGreek('~0.75',$term1,DbPath,couchUser,couchPass);	
-                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass);	
+                        $search->getAllGreek('~0.75',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+                        $search->getAllGreek('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
                    }
                    if (strlen(utf8_decode($term2)) <=4 ){	
-                       $search->getAllGreek('',$term2,DbPath,couchUser,couchPass);	
+                       $search->getAllGreek('',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
                    }
                    else {
-                       $search->getAllGreek('~0.75',$term2,DbPath,couchUser,couchPass);	
-                       $search->getAllGreek('*',$term2,DbPath,couchUser,couchPass);
+                       $search->getAllGreek('~0.75',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+                       $search->getAllGreek('*',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                    }
                }
            }
@@ -363,12 +460,12 @@ if($_POST['formSubmit'] == "index_en.php") {
         else { #english and greek
             if (count($words) == 1){
                 if (strlen(utf8_decode($varKeyword)) <=4 ) {
-                    $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass);	
+                    $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
                 }
                 else {  # latin, >4,1 word : exact-> fuzzy-> like
-                     $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);
-                     $search->getAll('~0.75',$varKeyword,DbPath,couchUser,couchPass);	
-                     $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass);		
+                     $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                     $search->getAll('~0.75',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+                     $search->getAll('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);		
 
                 }
             }
@@ -379,21 +476,21 @@ if($_POST['formSubmit'] == "index_en.php") {
                     $term2 = $termsArray[1];
                     $term12 = $termsArray[2];
                     $varKeyword = rtrim($termsArray[3]);
-                    $search->getAll('',$varKeyword,DbPath,couchUser,couchPass);
-                    $search->getAll('',$term12,DbPath,couchUser,couchPass);
+                    $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                    $search->getAll('',$term12,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     if (strlen(utf8_decode($term1)) <=4 ){
-                        $search->getAll('*',$term1,DbPath,couchUser,couchPass);	  
+                        $search->getAll('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	  
                     }
                     else {
-                        $search->getAll('~0.75',$term1,DbPath,couchUser,couchPass);
-                        $search->getAll('*',$term1,DbPath,couchUser,couchPass);
+                        $search->getAll('~0.75',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                        $search->getAll('*',$term1,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     }
                     if (strlen(utf8_decode($term2)) <=4 ){
-                          $search->getAll('',$term2,DbPath,couchUser,couchPass);
+                          $search->getAll('',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     }
                     else {
-                        $search->getAll('~0.75',$term2,DbPath,couchUser,couchPass);
-                        $search->getAll('*',$term2,DbPath,couchUser,couchPass);
+                        $search->getAll('~0.75',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                        $search->getAll('*',$term2,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
                     }
 
                 }
@@ -401,14 +498,18 @@ if($_POST['formSubmit'] == "index_en.php") {
         }
 
     }
-    $showResults = new results();
-    $showResults ->showResults();
+    $resultsPresentation = new showResults();
+    
+    $resultsPresentation -> presentResults(solrPath, corpSolrCore);
+    
     
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
     echo  "<div ALIGN='CENTER'>";
     echo '(In '.number_format($exec_time,2).' seconds)' ;
     echo "</div>";
+    $varKeyword =  str_replace('+',' ',$varKeyword);
+    $varKeyword =  str_replace('"',' ',$varKeyword);
 }
 
 
