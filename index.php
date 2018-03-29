@@ -321,20 +321,20 @@ $crf3 = '';
 					<div>
 						<select name="search[search_in]" id="search_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
-							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
-                                                        <option value="di" <?php if($search_in=="di") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
-                                                         <option value="sw" <?php if($search_in=="di") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
-                                                        <option value="pp" <?php if($search_in=="pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
+							<option value="Gr" <?php if($search_in=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
+							<option value="Eu" <?php if($search_in=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
+                                                        <option value="Au" <?php if($search_in=="Au") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
+                                                         <option value="Sw" <?php if($search_in=="Sw") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
+                                                        <option value="Pp" <?php if($search_in=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
 						</select>
 					</div>
                                         <label class="amount-label">Με αξιά:</label>
 					<div>
 						<select name="advSearch[search_in]" id="amount_in" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="gr" <?php if($search_in=="Gr") { echo "selected"; } ?>> <2K </option>
-							<option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>> >2Κ<2M </option>
-                                                        <option value="noGR" <?php if($search_in=="noGR") { echo "selected"; } ?>>> >2M<2B </option>
+							<option value="1" <?php if($search_in=="1") { echo "selected"; } ?>> <2K </option>
+							<option value="2" <?php if($search_in=="2") { echo "selected"; } ?>> >2Κ<2M </option>
+                                                        <option value="3" <?php if($search_in=="3") { echo "selected"; } ?>> >2M<2B </option>
                                                         
 						</select>
 					</div>
