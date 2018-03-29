@@ -615,9 +615,7 @@ class collectData {
                
    }
    
-   function getCorporationSumsSolr($solrPath,$solrCore,$corpId){
-       
-   }
+ 
    function getTedDataRDF($vat,$sparqlServer){
       
        $ch = curl_init();
@@ -646,5 +644,48 @@ class collectData {
        if (isset ($json['results']['bindings'][0]['sumOfAmounts']) ){
             return $json['results']['bindings'][0] ['sumOfAmounts'];
        }
+   }
+   
+   function transliterate($word){
+        $word = $this-
+       
+       $word = str_replace("Α", "A",$word);
+       $word = str_replace("Β", "B",$word);
+       $word = str_replace("Γ", "G",$word);
+       $word = str_replace("Δ", "D",$word);
+       $word = str_replace("Ε", "E",$word);
+       $word = str_replace("Ζ", "Z",$word);
+       $word = str_replace("Η", "I",$word);
+       
+       $word = str_replace("Θ", "TH",$word);
+       $word = str_replace("Ι", "I",$word);
+       $word = str_replace("Κ", "K",$word);
+       $word = str_replace("Λ", "L",$word);
+       $word = str_replace("Μ", "M",$word);
+       
+       $word = str_replace("Ν", "N",$word);
+       $word = str_replace("Ξ", "X",$word);
+       $word = str_replace("Ο", "O",$word);
+       $word = str_replace("Π", "P",$word);
+       $word = str_replace("Ρ", "R",$word);
+       
+       $word = str_replace("Σ", "S",$word);
+       $word = str_replace("Τ", "T",$word);
+       $word = str_replace("Υ", "Y",$word);
+       $word = str_replace("Φ", "F",$word);
+       
+       $word = str_replace("Χ", "X",$word);
+       $word = str_replace("Ψ", "PS",$word);
+       $word = str_replace("Ω", "O",$word);
+       
+       return $word;
+   }
+   
+   function cleanSpecialChar($word){
+       $word = str_replace("Ά", "Α",$word);
+       $word = str_replace("Έ", "Ε",$word);
+       $word = str_replace("Ή", "Η",$word);
+       $word = str_replace("Ή", "Η",$word);
+       return $word;
    }
 }

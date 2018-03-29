@@ -89,14 +89,17 @@ isset($r['fields']['term'][1])) ? $r['fields']['term'][1],isset($r['fields']['te
 Επιμελητήριο,Chamber
 Αρ. Γ.Ε.Μ.Η.:,Business Registry Number:
 Ημ/νία:,Date:
-ΕΛΛΑΔΑ, GREECE
-ΕΛΒΕΤΙΑ, SWITZERLAND
-Σύνθετη Αναζήτηση, Advanced Search
-Αναζήτηση με Διεύθυνση, Search with Address
-Αναζήτηση με ΤΚ, Search with Postal Code
-ΕΥΡΩΠΗ, EUROPE
-ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ, PUBLIC PROCUREMENT
-Με αξιά:, Amount:
+ΕΛΛΑΔΑ,GREECE
+ΕΛΒΕΤΙΑ,SWITZERLAND
+"Σύνθετη Αναζήτηση","Advanced Search"
+"Αναζήτηση με Διεύθυνση","Search with Address"
+"Αναζήτηση με ΤΚ", "Search with Postal Code"
+ΕΥΡΩΠΗ,EUROPE
+"ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ","PUBLIC PROCUREMENT"
+"Με αξιά:","Amount:"
 "include 'collectData.php';","include 'collectData_en.php';"
 "include 'showResults.php';","include 'showResults_en.php';" 
 "require_once 'collectData.php';","require_once 'collectData_en.php';" 
+Περιέχει,Includes
+από,from
+Αποτελέσματα,Results

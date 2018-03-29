@@ -17,7 +17,7 @@ $crf3 = '';
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-       <script> //090166291 090153025
+        <script> //090166291 090153025
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
@@ -307,14 +307,14 @@ $crf3 = '';
 <p>			
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
-<span id="advance_search_link" onClick="showHideAdvanceSearch()"> Advanced Search</span>
+<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
-					<label class="search-label"> Search with Address:</label>
+					<label class="search-label">Search with Address:</label>
 					<div>
 						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
 					</div>
-					<label class="search-label"> Search with Postal Code:</label>
+					<label class="search-label">Search with Postal Code:</label>
 					<div>
 						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
 					</div>
@@ -323,14 +323,14 @@ $crf3 = '';
 					<div>
 						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>> GREECE</option>
-							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>> EUROPE</option>
+							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>>GREECE</option>
+							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>EUROPE</option>
                                                         <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>AUSTRALIA</option>
-                                                         <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>> SWITZERLAND</option>
-                                                        <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>> PUBLIC PROCUREMENT</option>
+                                                         <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>>SWITZERLAND</option>
+                                                        <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>PUBLIC PROCUREMENT</option>
 						</select>
 					</div>
-                                        <label class="amount-label"> Amount:</label>
+                                        <label class="amount-label">Amount:</label>
 					<div>
 						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
 							<option value="">Επιλογή:</option>
@@ -355,7 +355,7 @@ $crf3 = '';
  <br>
 <hr align="center" width="80%">
 
-<li class="ex1" >Αποτελέσματα</li>
+<li class="ex1" >Results</li>
 </div>
 </form>
 <?php

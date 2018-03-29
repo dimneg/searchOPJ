@@ -54,7 +54,7 @@ class showResults {
                 echo '</br>'; 
                # echo "<a class='nameLink' href='#' target='_blank' >$name</a> </br>";	
                 #echo ' <font class="dataset" color="#FF0000" style="font-size: 0.77em">CORPORATE GROUP</font></br> ';
-                echo 'Περιέχει:</br>';
+                echo 'Includes:</br>';
                 #$grouppedCorpData = $this->_group_by(corpData[1], $name);
                 $uniqueCompanies = $this->unique_multidim_array($corpData[1] , 'uniqueShow');
                 foreach (  $uniqueCompanies   as $key => $value) {                   
@@ -69,16 +69,16 @@ class showResults {
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
                switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Finalized: <B> €0.4M (5) </B> Awards: <B> €0.0K (0) </B>  [από 6/2014 until 7/2016]  </br>';
+                       echo  'Finalized: <B> €0.4M (5) </B> Awards: <B> €0.0K (0) </B>  [from 6/2014 until 7/2016]  </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Finalized: <B> €2.3M (2) </B> Awards: <B> €8.8M (4) </B> [από 6/2014 until 7/2016]  </br>';
+                       echo  'Finalized: <B> €2.3M (2) </B> Awards: <B> €8.8M (4) </B> [from 6/2014 until 7/2016]  </br>';
                        break;
                    case 'NOVARTIS CORPORATION':
-                       echo  'Finalized: <B>  €3.8M (226)</B>  Awards: <B> €0.0K (0) </B>   [από 6/2014 until 7/2016]  </br>';
+                       echo  'Finalized: <B>  €3.8M (226)</B>  Awards: <B> €0.0K (0) </B>   [from 6/2014 until 7/2016]  </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Finalized:<B> €0.0K (0) </B>  Awards: <B> €0.0K (0) </B>   [από 6/2014 until 7/2016]   </br>';
+                       echo  'Finalized:<B> €0.0K (0) </B>  Awards: <B> €0.0K (0) </B>   [from 6/2014 until 7/2016]   </br>';
                        break;
 
                    default:
@@ -89,20 +89,20 @@ class showResults {
                echo '&nbsp';
                switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Contracts: <B> €61.7K (4) </B> Payments: <B> €72.5K (11)  </B>  [από 2/2013 until 2/2015]</br>';
+                       echo  'Contracts: <B> €61.7K (4) </B> Payments: <B> €72.5K (11)  </B>  [from 2/2013 until 2/2015]</br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Contracts: <B> €0.0K (0) </B> Payments: <B> €0.0K (1) </B>  [από 2/2013 until 2/2015] </br>';
+                       echo  'Contracts: <B> €0.0K (0) </B> Payments: <B> €0.0K (1) </B>  [from 2/2013 until 2/2015] </br>';
                        break;
                    case 'NOVARTIS CORPORATION':
-                       echo  'Contracts: <B>  €56.6K (2) </B> Payments: <B> €0.2M (4)  </B>  [από 2/2013 until 2/2015] </br>';
+                       echo  'Contracts: <B>  €56.6K (2) </B> Payments: <B> €0.2M (4)  </B>  [from 2/2013 until 2/2015] </br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Contracts: <B> €0.0K (0) </B>Payments: <B> €0.0K (0)  </B>  [από 2/2013 until 2/2015] </br>';
+                       echo  'Contracts: <B> €0.0K (0) </B>Payments: <B> €0.0K (0)  </B>  [from 2/2013 until 2/2015] </br>';
                        break;
 
                    default:
-                       echo  'Contracts: <B> €0.0K (0) </B>Payments: <B> €0.0K (0)  </B> [από until] </br>';
+                       echo  'Contracts: <B> €0.0K (0) </B>Payments: <B> €0.0K (0)  </B> [from until] </br>';
                        break;
                }
                
@@ -119,20 +119,20 @@ class showResults {
               
                 switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Contracts: <B> €0.5Β (21) </B>  [από 2006 until 2015] </br>';
+                       echo  'Contracts: <B> €0.5Β (21) </B>  [from 2006 until 2015] </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Contracts: <B> €2.0B (87) </B> [από 2006 until 2015] </br>';
+                       echo  'Contracts: <B> €2.0B (87) </B> [from 2006 until 2015] </br>';
                        break;
                    case 'NOVARTIS CORPORATION':
-                       echo  'Contracts: <B> €2.6B (99)  </B>  [από 2006 until 2015]</br>';
+                       echo  'Contracts: <B> €2.6B (99)  </B>  [from 2006 until 2015]</br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Contracts: <B> €2.5B (48) </B> [από 2006 until 2015] </br>';
+                       echo  'Contracts: <B> €2.5B (48) </B> [from 2006 until 2015] </br>';
                        break;
 
                    default:
-                       echo  'Contracts: <B> €0.0B (0) </B>  [από until] </br>';
+                       echo  'Contracts: <B> €0.0B (0) </B>  [from until] </br>';
                        break;
                }
                 
@@ -142,20 +142,20 @@ class showResults {
                 
                 switch ($name) {
                    case 'ORACLE CORPORATION':
-                       echo  'Contracts: <B> $1.1Β (209) </B>  [από 1990 until 9/2016] </br>';
+                       echo  'Contracts: <B> $1.1Β (209) </B>  [from 1990 until 9/2016] </br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Contracts: <B> $3.8B (41) </B>  [από 1990 until 9/2016]</br>';
+                       echo  'Contracts: <B> $3.8B (41) </B>  [from 1990 until 9/2016]</br>';
                        break;
                    case 'NOVARTIS CORPORATION':
-                       echo  'Contracts: <B> $4.1M (2) </B>   [από 1990 until 9/2016]</br>';
+                       echo  'Contracts: <B> $4.1M (2) </B>   [from 1990 until 9/2016]</br>';
                        break;
                    case 'ATOS CORPORATION':
-                       echo  'Contracts: <B> $0.2M (2) </B> [από 1990 until 9/2016] </br>';
+                       echo  'Contracts: <B> $0.2M (2) </B> [from 1990 until 9/2016] </br>';
                        break;
 
                    default:
-                       echo  'Contracts: <B> $0.0B (0) </B> [από 1990 until 9/2016] </br>';
+                       echo  'Contracts: <B> $0.0B (0) </B> [from 1990 until 9/2016] </br>';
                        break;
                }
                
