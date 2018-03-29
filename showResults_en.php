@@ -13,7 +13,7 @@
  */
 class showResults {
     function presentResults($solrPath, $corpSolrCore){ //test 090166291
-        require_once 'collectData.php';
+        require_once 'collectData_en.php'; 
         global $Results;
        
         #$this->saveCsvCloud($Results, '/var/log/results.csv');
