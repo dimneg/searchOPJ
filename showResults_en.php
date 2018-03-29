@@ -58,7 +58,9 @@ class showResults {
                 #$grouppedCorpData = $this->_group_by(corpData[1], $name);
                 $uniqueCompanies = $this->unique_multidim_array($corpData[1] , 'uniqueShow');
                 foreach (  $uniqueCompanies   as $key => $value) {                   
-                    echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
+                  echo $solrDetails->transliterate($this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8"))).' ['.$value['country'].']';
+
+                    echo '<BR>';                    
                 }
                echo ' <font color="#FFA500" size="2">Public Procurement</font> <br> '; 
                 echo '<img src="languages/images/gr.png" alt="GREECE "  width="15" height="12" >';
@@ -296,7 +298,7 @@ class showResults {
                 if ($uniqueResults[$i]['dataGemh'] == 1){
                      echo ' <font class="dataset" color="#800080" style="font-size: 0.77em"> Business Registry.</font></br> '; 
                      echo 'Business Registry Number: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
-                     echo ' &nbsp Chamber: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);
+                     echo ' &nbsp Chamber: '.$this->hide_not_avail($solrDetails->transliterate($uniqueResults[$i]['chamber']));
                      echo  ' &nbsp [Date: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']</br>';	
                 }
                 
