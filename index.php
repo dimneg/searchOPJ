@@ -508,6 +508,11 @@ if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {
     echo  "<div ALIGN='CENTER'>";
     echo '(Σε '.number_format($exec_time,2).' δευτερόλεπτα)' ;
     echo "</div>";
+    echo  "<div ALIGN='LEFT'>";
+    echo 'The Open Journalism (OpJ) Project is funded by' ;
+    echo '<img src="logos/inn_fund.ong" alt="Innovation Fund" width="108" height="44">';
+    echo '<img src="logos/dni.ong" alt="Digital News Initiative" width="108" height="44">';
+    echo "</div>";
     $varKeyword =  str_replace('+',' ',$varKeyword);
     $varKeyword =  str_replace('"',' ',$varKeyword);
 }
