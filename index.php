@@ -519,9 +519,10 @@ if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {
 ?>
 <html> 
 <footer>
-  The Open Journalism (OpJ) Project is funded by:
- <img src="logos/inn_fund.png" alt="Innovation Fund" width="108" height="44">
- <img src="logos/dni.png" alt="Digital News Initiative" width="108" height="44">
+<p>  The Open Journalism (OpJ) Project is funded by:
+ <img src="logos/inn_fund.png" alt="Innovation Fund" width="108" height="44 "align="middle">
+ <img src="logos/dni.png" alt="Digital News Initiative" width="108" height="44"align="middle">
+ </p>
 </footer>
  </html> 
 
