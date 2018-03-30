@@ -265,10 +265,13 @@ $crf3 = '';
 		}
 		.search-label{
 			margin:2px;
+                        border: 1;
+                        border-radius: 4px;
+			
 		}
 		.demoInputBox {    
 			padding: 10px;
-			border: 0;
+			border: 2;
 			border-radius: 4px;
 			margin: 0px 5px 15px;
 			width: 250px;
@@ -288,16 +291,13 @@ $crf3 = '';
 			color: #001FFF;
 			cursor: pointer;
 		}
+                #search_link {
+			color: #001FFF;
+			cursor: pointer;
+		}
 		.result-description{
 			margin: 5px 0px 15px;
 		}
-                .aParent div {
-                 float: left;
-                 margin: auto;
-                 clear: none; 
-                 text-align: center;
-             
-                }
                 
 
 
