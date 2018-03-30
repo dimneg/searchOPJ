@@ -296,6 +296,7 @@ $crf3 = '';
                 clear: none; 
               align-content: center;
               align-items: center;
+              alignment-adjust: central
                 }
 
 
