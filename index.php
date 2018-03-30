@@ -309,8 +309,8 @@ $crf3 = '';
       <title>Search OPJ</title>
       <div >
           <p id="flags">
-            <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" style="left: 100px;"> </a>                 
-               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" style="left: 100px;" > </a> 
+            <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" > </a>                 
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right"  > </a> 
                  </p>
         </div>     
           
