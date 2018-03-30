@@ -311,7 +311,7 @@ $crf3 = '';
 <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
 <p>
   
-<span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
+<span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
