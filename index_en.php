@@ -292,7 +292,7 @@ $crf3 = '';
 			margin: 5px 0px 15px;
 		}
                 .aParent div {
-                 float: left;
+                 float: center;
                 clear: none; 
               align-content: center;
               align-items: center;
