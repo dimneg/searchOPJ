@@ -315,7 +315,7 @@ $crf3 = '';
 
 
      <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > 
-     <input id="search_link" onClick="index.php">Αναζήτηση>  
+     <input id="search_link" onClick="index.php" value="Αναζήτηση">  
  
     <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 									
