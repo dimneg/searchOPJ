@@ -295,7 +295,7 @@ $crf3 = '';
                  float: left;
                  margin: auto;
                  clear: none; 
-                  text-align: center;
+                 text-align: center;
              
                 }
 
