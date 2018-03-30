@@ -264,6 +264,7 @@ $crf3 = '';
 		}
 		.search-label{
 			margin:2px;
+                        border: 1;
 		}
 		.demoInputBox {    
 			padding: 10px;
@@ -315,7 +316,7 @@ $crf3 = '';
 
 <p>
      <input type="submit"  name="formSubmit" value="index.php"  style="display: none;" > 
-      <input type="search"  name="formSubmit" value="index.php"  style="display: inline;" > 
+      <input type="text"  name="formSubmit" value="search"  style="display: inline;" > 
 
  
     <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
