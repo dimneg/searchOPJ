@@ -302,7 +302,7 @@ $crf3 = '';
       
            
                <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" > </a>   
-               <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> -->
+              
                <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> 
           
 </head>
@@ -314,7 +314,8 @@ $crf3 = '';
 <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 
 <p>
-  <!--   <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > -->
+     <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > 
+     Αναζήτηση
     <input id="search_link" type="submit" name="formSubmit" action="index.php"  style="display: inline;" >
  
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
