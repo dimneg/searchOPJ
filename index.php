@@ -269,11 +269,11 @@ $crf3 = '';
 			margin:2px;
                         border: 1;
                         border-radius: 4px;
-			margin: 0px 5px;
+			
 		}
 		.demoInputBox {    
 			padding: 10px;
-			border: 0;
+			border: 2;
 			border-radius: 4px;
 			margin: 0px 5px 15px;
 			width: 250px;
