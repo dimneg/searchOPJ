@@ -201,7 +201,7 @@ class showResults {
                   #  echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$corporation</font></br> ";
                 #}
                 if (!empty($uniqueResults[$i]['altNames'])) {
-                     echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
+                     echo 'Also appears as:'.$solrDetails->transliterate($uniqueResults[$i]['altNames'])."</br>";
                      
                 }
                  //....basic view 2...\\
