@@ -7,9 +7,8 @@ $crf2 = '';
 $crf3 = '';
 ?>
 <html> 
-    <header>
-   
-    <p>Discover suppliers in public contracts</p>
+    <header>   
+    <center>Discover suppliers in public contracts align="middle"</center>
   </header>
     <head>
         <!-- DataTables CSS -->
@@ -525,7 +524,7 @@ if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {
 <footer>
 <p>  The Open Journalism (OpJ) Project is funded by:
  <img src="logos/inn_fund.png" alt="Innovation Fund" width="108" height="44 "align="middle">
- <img src="logos/dni.png" alt="Digital News Initiative" width="108" height="44"align="middle">
+ <img src="logos/dni.png" alt="Digital News Initiative" width="108" height="44" align="middle">
  </p>
 </footer>
  </html> 
