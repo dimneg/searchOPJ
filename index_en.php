@@ -298,6 +298,10 @@ $crf3 = '';
 		.result-description{
 			margin: 5px 0px 15px;
 		}
+                #flags img {
+                
+                margin-left: 160px;
+                }
                 
 
 
@@ -306,9 +310,9 @@ $crf3 = '';
       <title>Search OPJ</title>
       
            
-               <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right"> </a>   
-               <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> -->
-               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right"> </a> 
+             <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" id="flags" width="27" height="18" > </a>   
+               <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> -->
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" id="flags" width="27" height="18" > </a> 
           
 </head>
 <body>
