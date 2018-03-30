@@ -9,9 +9,7 @@ $crf3 = '';
 <html> 
     <header>   
     <h2><center>Discover suppliers in public contracts</center></h2>
-      <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" style="left: 100px;"> </a>   
-              
-               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" style="left: 100px;" > </a> 
+     
   </header>
     <head>
         <!-- DataTables CSS -->
@@ -300,14 +298,21 @@ $crf3 = '';
 		.result-description{
 			margin: 5px 0px 15px;
 		}
+                #flags img {
+                
+                margin-left: -60px;
+                }
 
 
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Search OPJ</title>
-      
-           
-             
+      <div >
+          <p id="flags">
+            <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" style="left: 100px;"> </a>                 
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" style="left: 100px;" > </a> 
+                 </p>
+        </div>     
           
 </head>
 <body>
