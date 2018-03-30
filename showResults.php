@@ -58,7 +58,8 @@ class showResults {
                 #$grouppedCorpData = $this->_group_by(corpData[1], $name);
                 $uniqueCompanies = $this->unique_multidim_array($corpData[1] , 'uniqueShow');
                 foreach (  $uniqueCompanies   as $key => $value) {                   
-                    echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; echo '<BR>';                    
+                    echo $this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8")).' ['.$value['country'].']'; 
+                    echo '<BR>';                    
                 }
                echo ' <font color="#FFA500" size="2">Δημόσιες Προμήθειες</font> <br> '; 
                 echo '<img src="languages/images/gr.png" alt="Ελλάδα"  width="15" height="12" >';

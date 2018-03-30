@@ -325,7 +325,8 @@ $crf3 = '';
 							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
 							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
                                                         <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
-                                                         <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
+                                                        <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
+                                                        <option value="Dk" <?php if($search_in_area=="Dk") { echo "selected"; } ?>>ΔΑΝΙΑ</option>
                                                         <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
 						</select>
 					</div>
@@ -334,9 +335,9 @@ $crf3 = '';
 						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
 							<option value="">Επιλογή:</option>
 							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
-							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ<2M </option>
-                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M<2B </option>
-                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2B </option>
+							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ <2M </option>
+                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M <2B </option>
+                                                        <option value="3" <?php if($search_in_amount=="4") { echo "selected"; } ?>> >2B </option>
                                                         
 						</select>
 					</div>

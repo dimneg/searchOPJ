@@ -364,7 +364,7 @@ class collectData {
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
                                 $Results[$key]['chamber'] =(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null;
                                 $Results[$key]['gemhNumber'] = (isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null;
-                                 $Results[$key]['score'] *= 1.1;
+                                $Results[$key]['score'] *= 1.1;
                                 break;
                              case "elod_main_orgv4_fr":
                                 $Results[$key]['gemhDate'] = (isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null;
