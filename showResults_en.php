@@ -298,7 +298,7 @@ class showResults {
                 if ($uniqueResults[$i]['dataGemh'] == 1){
                      echo ' <font class="dataset" color="#800080" style="font-size: 0.77em"> Business Registry.</font></br> '; 
                      echo 'Business Registry Number: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
-                     echo ' &nbsp Chamber: '.$this->hide_not_avail($solrDetails->transliterate($uniqueResults[$i]['chamber']));
+                     echo ' &nbsp Chamber: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);
                      echo  ' &nbsp [Date: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']</br>';	
                 }
                 

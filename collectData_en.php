@@ -243,7 +243,7 @@ class collectData {
                    #  'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
                      'altNames'=> $this->transliterate($this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),MB_CASE_UPPER, "UTF-8"),
                      'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
-                     'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
+                     'chamber'=>(isset($r['fields']['Chamber']) ) ? $this->transliterate($r['fields']['Chamber'],MB_CASE_UPPER, "UTF-8" ): null,
                      'gemhNumber'=>(isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null,
                      
                      #'dataDiaugeiaBuyers'=>  $this->defineSource($Db, 'dataDiaugeiaBuyers'),
