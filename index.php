@@ -287,6 +287,10 @@ $crf3 = '';
 			color: #001FFF;
 			cursor: pointer;
 		}
+                #search_link {
+			color: #001FFF;
+			cursor: pointer;
+		}
 		.result-description{
 			margin: 5px 0px 15px;
 		}
