@@ -7,6 +7,10 @@ $crf2 = '';
 $crf3 = '';
 ?>
 <html> 
+    <header>
+   
+    <p>Discover suppliers in public contracts</p>
+  </header>
     <head>
         <!-- DataTables CSS -->
         <link rel="stylesheet" type="text/css" href="/sites/all/js/DataTables/media/css/jquery.dataTables.css"> 
