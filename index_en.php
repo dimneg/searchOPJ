@@ -7,6 +7,9 @@ $crf2 = '';
 $crf3 = '';
 ?>
 <html> 
+    <header>   
+    <h2><center>Discover suppliers in public contracts</center></h2>
+  </header>
     <head>
         <!-- DataTables CSS -->
         <link rel="stylesheet" type="text/css" href="/sites/all/js/DataTables/media/css/jquery.dataTables.css"> 
@@ -305,14 +308,20 @@ $crf3 = '';
 <div class="row-fluid margin-bottom" align="center" >
 <form action="index_en.php" method="post" accept-charset="UTF-8"> 
 <p>			
-<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >
+<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
+<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+<p>
+    <div>
+			<input type="submit" name="Go"  value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
+                                       <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
+                                        <!--   <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> -->
+				</div>
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Search with Address:</label>
 					<div>
-						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index_en.php"  	/>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
 					</div>
 					<label class="search-label">Search with Postal Code:</label>
 					<div>
@@ -331,24 +340,21 @@ $crf3 = '';
                                                         <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>PUBLIC PROCUREMENT</option>
 						</select>
 					</div>
-                                        <label class="amount-label">Amount:</label>
+                                        <label class="amount-label">Με αξιά:</label>
 					<div>
 						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
-							<option value="">Select:</option>
+							<option value="">Επιλογή:</option>
 							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ <2M </option>
                                                         <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M <2B </option>
-                                                        <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2B </option>
+                                                        <option value="3" <?php if($search_in_amount=="4") { echo "selected"; } ?>> >2B </option>
                                                         
 						</select>
 					</div>
 				</div>
 				
-				<div>
-					<input type="submit" name="Go" class="btnSearch" value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
-                                       <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
-                                        <!--   <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> -->
-				</div>
+				
+</p>
 
 </p>
 <div align="center" >
@@ -513,6 +519,13 @@ if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {
     $varKeyword =  str_replace('"',' ',$varKeyword);
 }
 
+?>
 
-
- 
+ <html> 
+<footer>
+<p>  The Open Journalism (OpJ) Project is funded by:
+ <img src="logos/inn_fund.png" alt="Innovation Fund" width="108" height="44 "align="middle">
+ <img src="logos/dni.png" alt="Digital News Initiative" width="108" height="44" align="middle">
+ </p>
+</footer>
+ </html> 
