@@ -294,7 +294,7 @@ $crf3 = '';
                 .aParent div {
                  float: left;
                  margin: auto;
-                 clear: none; 
+                 clear: both;
                  text-align: center;
              
                 }
