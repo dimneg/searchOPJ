@@ -307,12 +307,11 @@ $crf3 = '';
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Search OPJ</title>
-      <div >
-          <p>
+   
+       
             <a   id="flags"href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" > </a>                 
                <a   id="flags" href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right"  > </a> 
-                 </p>
-        </div>     
+              
           
 </head>
 <body>
