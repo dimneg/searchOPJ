@@ -349,7 +349,7 @@ $crf3 = '';
                                         <label class="amount-label">Amount:</label>
 					<div>
 						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
-							<option value="">Επιλογή:</option>
+							<option value="">Select:</option>
 							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ <2M </option>
                                                         <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M <2B </option>
