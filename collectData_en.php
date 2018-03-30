@@ -241,7 +241,7 @@ class collectData {
                      'tedContracts' => (isset($r['fields']['contracts']) ) ? $r['fields']['contracts'] : 0,
                      
                    #  'altNames'=>(isset($r['fields']['altNames']) ) ? $r['fields']['altNames'] : null, 
-                     'altNames'=>  $this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),
+                     'altNames'=> $this->transliterate($this->getAltNamesSolr($solrPath, $solrCore, $r['fields']['term'][0]),MB_CASE_UPPER, "UTF-8"),
                      'gemhDate'=>(isset($r['fields']['Gemhdate']) ) ? $r['fields']['Gemhdate'] : null,
                      'chamber'=>(isset($r['fields']['Chamber']) ) ? $r['fields']['Chamber'] : null,
                      'gemhNumber'=>(isset($r['fields']['GemhNumber']) ) ? $r['fields']['GemhNumber'] : null,
