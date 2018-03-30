@@ -301,9 +301,9 @@ $crf3 = '';
       <title>Search OPJ</title>
       
            
-               <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" > </a>   
+               <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" style="left: 100px;"> </a>   
               
-               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> 
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" style="left: 100px;" > </a> 
           
 </head>
 <body>
@@ -313,13 +313,11 @@ $crf3 = '';
 <p>			
 <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 
-<p>
-     <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > 
-     <div id="search_link" onClick="">Αναζήτηση</div> 
 
+     <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > 
+     <div id="search_link" onClick="">Αναζήτηση</div>  
  
- 
-<span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
+    <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
@@ -362,7 +360,7 @@ $crf3 = '';
 				</div>
 				
 				
-</p>
+
 
 </p>
 <div align="center" >
