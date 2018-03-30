@@ -311,11 +311,11 @@ $crf3 = '';
 
 <p>
   <!--   <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > -->
-    <input id="search_link" type="submit" name="formSubmit" value="index.php"  style="display: none;" >
-  
+    <input id="search_link" type="submit" name="formSubmit" value="index.php"  style="display: inline;" >
+ 
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 									
-				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display: inline"<?php } ?>>
+				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
 					<div>
 						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
