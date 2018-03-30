@@ -308,8 +308,8 @@ $crf3 = '';
 <div class="row-fluid margin-bottom" align="center" >
 <form action="index_en.php" method="post" accept-charset="UTF-8"> 
 <p>			
-<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="Vat or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
+<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >
 <p>
     <div>
 			<input type="submit" name="Go"  value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
@@ -321,7 +321,7 @@ $crf3 = '';
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Search with Address:</label>
 					<div>
-						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
+						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index_en.php"  	/>
 					</div>
 					<label class="search-label">Search with Postal Code:</label>
 					<div>
@@ -340,7 +340,7 @@ $crf3 = '';
                                                         <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>PUBLIC PROCUREMENT</option>
 						</select>
 					</div>
-                                        <label class="amount-label">Με αξιά:</label>
+                                        <label class="amount-label">Amount:</label>
 					<div>
 						<select name="advSearch[search_in_amount]" id="search_in_amount" class="demoInputBox">
 							<option value="">Επιλογή:</option>
