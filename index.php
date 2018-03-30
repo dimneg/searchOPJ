@@ -300,7 +300,7 @@ $crf3 = '';
 		}
                 #flags img {
                 
-                margin-left: -60px;
+                margin-right: -60px;
                 }
 
 
