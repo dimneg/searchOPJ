@@ -8,7 +8,7 @@ $crf3 = '';
 ?>
 <html> 
     <header>   
-    <center>Discover suppliers in public contracts align="middle"</center>
+    <h1><center>Discover suppliers in public contracts</center></h1>
   </header>
     <head>
         <!-- DataTables CSS -->
