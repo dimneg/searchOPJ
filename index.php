@@ -9,6 +9,9 @@ $crf3 = '';
 <html> 
     <header>   
     <h2><center>Discover suppliers in public contracts</center></h2>
+      <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" style="left: 100px;"> </a>   
+              
+               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" style="left: 100px;" > </a> 
   </header>
     <head>
         <!-- DataTables CSS -->
@@ -304,9 +307,7 @@ $crf3 = '';
       <title>Search OPJ</title>
       
            
-               <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" style="left: 100px;"> </a>   
-              
-               <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" style="left: 100px;" > </a> 
+             
           
 </head>
 <body>
@@ -318,7 +319,7 @@ $crf3 = '';
 
 <p>
      <input type="submit"  name="formSubmit" value="index.php"  style="display: none;" > 
-     <label for="male">Αναζήτηση</label>
+     
 
  
     <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
@@ -352,7 +353,7 @@ $crf3 = '';
 							<option value="1" <?php if($search_in_amount=="1") { echo "selected"; } ?>> <2K </option>
 							<option value="2" <?php if($search_in_amount=="2") { echo "selected"; } ?>> >2Κ <2M </option>
                                                         <option value="3" <?php if($search_in_amount=="3") { echo "selected"; } ?>> >2M <2B </option>
-                                                        <option value="3" <?php if($search_in_amount=="4") { echo "selected"; } ?>> >2B </option>
+                                                        <option value="4" <?php if($search_in_amount=="4") { echo "selected"; } ?>> >2B </option>
                                                         
 						</select>
 					</div>
