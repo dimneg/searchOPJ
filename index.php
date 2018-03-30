@@ -307,14 +307,15 @@ $crf3 = '';
 <div class="row-fluid margin-bottom" align="center" >
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
-<input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
+<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 
 <p>
-    <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+  <!--   <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > -->
+    <input id="search_link" type="submit" name="formSubmit" value="index.php"  style="display: none;" >
   
 <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 									
-				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
+				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display: inline"<?php } ?>>
 					<label class="search-label">Αναζήτηση με Διεύθυνση:</label>
 					<div>
 						<input type="text" name="crf1" id="crf1" class="demoInputBox" action="index.php"  	/>
