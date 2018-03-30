@@ -313,10 +313,9 @@ $crf3 = '';
 <p>			
 <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 
-
+<p>
      <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > 
- 
-   
+     <div id="search_link" onClick="">Αναζήτηση</div>  
  
     <span id="advance_search_link" onClick="showHideAdvanceSearch()">Σύνθετη Αναζήτηση</span>
 									
@@ -361,7 +360,7 @@ $crf3 = '';
 				</div>
 				
 				
-
+</p>
 
 </p>
 <div align="center" >
