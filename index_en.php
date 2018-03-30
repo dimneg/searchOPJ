@@ -315,12 +315,14 @@ $crf3 = '';
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="Vat or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >
 <p>
-    <div class="aParent">
+<div class="aParent">
+    <div >
 			<input type="submit" name="Go"  value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
                                        <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
                                         <!--   <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> -->
-				</div>
+  </div>
  <div class="aParent"> <span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span></div>
+ </div>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Search with Address:</label>
