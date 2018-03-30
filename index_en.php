@@ -319,7 +319,7 @@ $crf3 = '';
 <input type="text" style="width: 450px; height: 32px;" name="formKeyword" placeholder="Vat or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
 <input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >
 <p>
-<div class="aParent" >
+<div >
     <div >
 			<input type="submit" name="Go"  value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
                                        <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
