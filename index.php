@@ -368,7 +368,7 @@ $crf3 = '';
                                        <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
                                         <!--   <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> -->
                                  </div> 
-                                              <form action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>" method="post">  
+                                              <form action="inde.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>" method="post">  
                                                   <input type="submit" name="Go" class="btnSearch"  value="Search" >
                                                    </form>
 				</div>
