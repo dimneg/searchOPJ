@@ -537,7 +537,7 @@ if(($_POST['formSubmit'] <> "") || (isset($_GET['varKeyword']))) {
     }
     $resultsPresentation = new showResults();
     
-    $resultsPresentation -> presentResults(solrPath, corpSolrCore,$advChoiceArea);
+    $resultsPresentation -> presentResults(solrPath, corpSolrCore,$advChoiceArea,$advChoiceAmount);
     
     
     $time_post = microtime(true);

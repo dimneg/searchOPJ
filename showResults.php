@@ -12,7 +12,7 @@
  * @author dimitris negkas
  */
 class showResults {
-    function presentResults($solrPath, $corpSolrCore,$advChoiceArea){ //test 090166291
+    function presentResults($solrPath, $corpSolrCore,$advChoiceArea,$advChoiceAmount){ //test 090166291
         require_once 'collectData.php';
         global $Results;
         switch ($advChoiceArea) {
@@ -187,9 +187,9 @@ class showResults {
             
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
+            $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']));
             
-            
-            if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) ) {    
+            if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) && ($advChoiceAmount ='' || $advChoiceAmount == $uniqueResults[$i]['amountClass']  ) ) {    
                 
                 if  (!is_numeric($uniqueResults[$i]['vat'])) { //boost step 2
                     $uniqueResults[$i]['score'] = bcmul(0.75,$uniqueResults[$i]['score'] ,4) ;
@@ -625,5 +625,28 @@ class showResults {
         }
     }
     
-    
+    function defineAmountClass($amount){
+         $class = 0;
+        if ($amount > 2000000000){
+            $class = 4;
+            return $class;
+        }
+        else {
+            if ($amount > 2000000){
+                 $class = 3;
+                 return $class;
+            }
+            else {
+                 if ($amount > 2000){
+                      $class = 2;
+                      return $class;
+                 }
+                 else {
+                     $class = 1;
+                     return $class;
+                 }
+            }
+        }
+        return $class;
+    }
 }
