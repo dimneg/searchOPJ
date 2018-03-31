@@ -183,11 +183,11 @@ class showResults {
                 #echo $advChoiceAmount;
                  if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){                     
                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2']));
-                     echo $uniqueResults[$i]['spend0']. $uniqueResults[$i]['spend1'].$uniqueResults[$i]['spend2'];
+                   
                  }
                  else {
                      if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1){
-                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['kb_contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['kb_contractAmountCur'])) ;
+                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCur'])) ;
                      }
                      else {
                           if ($uniqueResults[$i]['dataEspa'] == 1){
@@ -385,7 +385,7 @@ class showResults {
                      }
                 }
                 #echo 'score :'.$uniqueResults[$i]['score']; 
-                echo 'class: '.$uniqueResults[$i]['amountClass']; 
+                #echo 'class: '.$uniqueResults[$i]['amountClass']; 
                 
                 
                  
