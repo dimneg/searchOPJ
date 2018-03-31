@@ -12,9 +12,18 @@
  * @author dimitris negkas
  */
 class showResults {
-    function presentResults($solrPath, $corpSolrCore){ //test 090166291
+    function presentResults($solrPath, $corpSolrCore,$advChoiceArea){ //test 090166291
         require_once 'collectData.php';
         global $Results;
+        switch ($advChoiceArea) {
+            case 'Dk':
+            echo 'searching in Denmark'.PHP_EOL;
+
+                break;
+
+            default:
+                break;
+        }
        
         #$this->saveCsvCloud($Results, '/var/log/results.csv');
        
