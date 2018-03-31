@@ -384,9 +384,9 @@ $crf3 = '';
 <?php
 
 #print_r($_POST['formKeyword']);
-print_r($_POST['advSearch']);
-$advChoiceArea = $_POST['advSearch']['search_in_area'];
-$advChoiceAmount = $_POST['advSearch']['search_in_amount'];
+#print_r($_POST['advSearch']);
+#$advChoiceArea = $_POST['advSearch']['search_in_area'];
+#$advChoiceAmount = $_POST['advSearch']['search_in_amount'];
 echo 'choices:'.$advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
 #adv search variables
