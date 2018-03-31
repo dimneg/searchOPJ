@@ -675,16 +675,5 @@ class showResults {
         return $class;
     }
     
-    function defineAmountFieldPerDataset($db){
-        switch ($db) {
-            case 'yds_big_sellers':
-
-
-                break;
-
-            default:
-                break;
-        }
-        
-    }
+    
 }
