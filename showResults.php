@@ -627,7 +627,7 @@ class showResults {
     }
     
     function defineAmountClass($amount){
-         $class = 0;
+         $class = '';
         if ($amount > 2000000000){
             $class = 4;
             return $class;
@@ -643,8 +643,11 @@ class showResults {
                       return $class;
                  }
                  else {
-                     $class = 1;
-                     return $class;
+                     if ($amount > 2000){
+                         $class = 1;
+                         return $class;
+                     }
+                     
                  }
             }
         }
