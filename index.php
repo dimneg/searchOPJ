@@ -449,10 +449,10 @@ if(($_POST['formSubmit'] <> "") || (isset($_GET['varKeyword']))) {
     $search = new collectData();
     if (is_numeric($varKeyword)){ //probaby afm
         if (strlen(utf8_decode($varKeyword)) <=6 ) {
-             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );	
+             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore,$advChoiceArea,$advChoiceAmount );	
         }
         else {
-            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore,$advChoiceArea,$advChoiceAmount );	
         }
     }
     else { #name
@@ -463,9 +463,9 @@ if(($_POST['formSubmit'] <> "") || (isset($_GET['varKeyword']))) {
                     $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore); 
                }
                else { # exact, fuzzy and then like
-                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);  	
-                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
-                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );  	
+                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );
+                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );
                }
            }
            else{
@@ -537,7 +537,7 @@ if(($_POST['formSubmit'] <> "") || (isset($_GET['varKeyword']))) {
     }
     $resultsPresentation = new showResults();
     
-    $resultsPresentation -> presentResults(solrPath, corpSolrCore);
+    $resultsPresentation -> presentResults(solrPath, corpSolrCore,$advChoiceArea);
     
     
     $time_post = microtime(true);
