@@ -383,11 +383,11 @@ $crf3 = '';
 </form>
 <?php
 
-#print_r($_POST['formKeyword']);
-#print_r($_POST['advSearch']);
+print_r($_POST['formKeyword']);
+print_r($_POST['advSearch']);
 $advChoiceArea = $_POST['advSearch']['search_in_area'];
 $advChoiceAmount = $_POST['advSearch']['search_in_amount'];
-echo 'choises:'.$advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
+echo 'choices:'.$advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
 #adv search variables
 #$search_in = "";
