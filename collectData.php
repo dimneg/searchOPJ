@@ -138,6 +138,12 @@ class collectData {
                 }
                 }
             //echo $Boost;
+                if ($Db == 'yds_big_sellers'){ //got country info so, ignore
+                    $country = isset($r['fields']['countryName'])  ? $r['fields']['countryName'] : 'EU';
+                }
+                else {
+                     $country = $this->defineCountry($Db);
+                }
 
            #if(isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')== true || strpos($Db, 'yds_big')== true)) ) { //_links and wrong vats exluded for now
              if (isset ($json['rows']) && (strpos($r['id'], '_') == false || strpos($r['id'], 'TEDS_') !== false  ) && ($this->checkAFM($r['fields']['term'][0]) || (strpos($Db, 'australia')!== false || strpos($Db, 'yds_big')!== false)) ){
@@ -151,7 +157,7 @@ class collectData {
                       'pc'=>(isset($r['fields']['pc']) ) ? $r['fields']['pc'] : null ,   
                       'city'=>(isset($r['fields']['city']) ) ? $r['fields']['city'] : null ,
                       'locality'=>(isset($r['fields']['locality']) ) ? $r['fields']['locality'] : null ,
-                      'countryName'=>(isset($r['fields']['countryName']) ) ? $r['fields']['countryName'] : null ,
+                      'countryName'=> $country,
                       'score' =>  $r['score'],
                       'id' => $r['id'],
                       #'lastUpdate'=> $r['fields']['lastUpdate'],
@@ -694,5 +700,44 @@ class collectData {
        $word = str_replace("Ϋ", "Υ",$word);
        $word = str_replace("Ϊ", "Ι",$word);
        return $word;
+   }
+   
+   function defineCountry($db){
+       switch ($db) {
+           case 'elod_diaugeia_buyers':
+               $country = 'GR';
+               break;
+           case 'elod_diaugeia_sellers':
+               $country = 'GR';
+               break;
+           case 'elod_buyers':
+               $country = 'GR';
+               break;
+           case 'elod_sellers':
+               $country = 'GR';
+               break;
+           case 'elod_espa_beneficiaries':
+               $country = 'GR';
+               break;
+           case 'elod_main_orgv4_all':
+               $country = 'GR';
+               break;
+           case 'elod_main_orgv4_fr':
+               $country = 'GR';
+               break;
+           case 'elod_australia_buyers':
+               $country = 'AU';
+               break;
+           case 'elod_australia_sellers':
+               $country = 'AU';
+               break;
+           case 'yds_big_sellers':
+               $country = 'TED';
+               break;
+
+           default:
+               break;
+       }
+       return $country;
    }
 }
