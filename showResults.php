@@ -16,7 +16,7 @@ class showResults {
         require_once 'collectData.php';
         global $Results;
         
-        $this->saveCsvCloud($Results, '/var/log/results.csv');
+        #$this->saveCsvCloud($Results, '/var/log/results.csv');
        
         #$source = ' ';
         $i = 1;
@@ -181,7 +181,24 @@ class showResults {
             $uniqueResults[$i]['amountClass'] = '';
             if ($advChoiceAmount !== ''){
                 #echo $advChoiceAmount;
-                 if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){                     
+                 if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2']));
+                 }
+                 if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCur'])) ;
+                 }
+                 if ($uniqueResults[$i]['dataEspa'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                      $uniqueResults[$i]['amountClass'] =  $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['SubsContractsAmount'])); 
+                 }
+                 if ($uniqueResults[$i]['dataAustraliaSeller'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                    $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ; 
+                 }
+                 if ($uniqueResults[$i]['dataTedSeller'] == 1  &&  $uniqueResults[$i]['amountClass'] ==''){                     
+                     $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
+                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
+                 }
+                 
+                /* if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){                     
                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2']));
                    
                  }
@@ -195,12 +212,12 @@ class showResults {
                           }
                           else {
                                if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){
-                                   echo 'australia';
+                                  
                                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
                                }
                                else {
                                     if ($uniqueResults[$i]['dataTedSeller'] == 1){
-                                       echo 'ted';
+                                       
                                          $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
                                          $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
                                         
@@ -212,7 +229,7 @@ class showResults {
                              
                           }
                      }
-                 }
+                 } */
                  
             }
             
