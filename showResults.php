@@ -179,7 +179,8 @@ class showResults {
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
             $uniqueResults[$i]['amountClass'] = '';
-            if ($advChoiceAmount !=''){
+            if ($advChoiceAmount != ''){
+                echo $advChoiceAmount;
                  if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']));
                  }
