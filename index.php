@@ -318,7 +318,7 @@ $crf3 = '';
 
 <div class="row-fluid margin-bottom" align="center" >
  <!--<form action="index.php"  method="post" accept-charset="UTF-8"> -->
- <form action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"    method="post" accept-charset="UTF-8"> 
+ <form action="index.php?varKeyword=<?php if (isset( $_GET['varKeyword'])) echo  $_GET['varKeyword'];  else echo  $_POST['formKeyword']?>"    method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']; else echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 
  <!--<<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php  echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 	-->		
