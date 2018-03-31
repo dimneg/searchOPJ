@@ -183,6 +183,7 @@ class showResults {
                 #echo $advChoiceAmount;
                  if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){                     
                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']));
+                     echo  $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']);
                  }
                  else {
                      if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1){
@@ -654,32 +655,32 @@ class showResults {
         $class = '';
         if ($amount > 2000000000){
             $class = 4;
-            echo $class; 
+           # echo $class; 
             return $class;
         }
         else {
             if ($amount > 2000000 && $amount <= 2000000000){
                  $class = 3;
-                  echo $class; 
+                  #echo $class; 
                  return $class;
             }
             else {
                  if ($amount > 2000 && $amount <= 2000000){
                       $class = 2;
-                       echo $class; 
+                       #echo $class; 
                       return $class;
                  }
                  else {
                      if ($amount > 0){
                          $class = 1;
-                          echo $class; 
+                         # echo $class; 
                          return $class;
                      }
                      
                  }
             }
         }
-         echo 'empty class'; 
+        # echo 'empty class'; 
         return $class;
     }
     
