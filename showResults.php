@@ -679,7 +679,7 @@ class showResults {
                  }
             }
         }
-         echo $class; 
+         echo 'empty class'; 
         return $class;
     }
     
