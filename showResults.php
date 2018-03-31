@@ -178,7 +178,37 @@ class showResults {
             
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
-            $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']));
+            if ($advChoiceAmount !=''){
+                 if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
+                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']));
+                 }
+                 else {
+                     if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1){
+                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['kb_contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['kb_contractAmountCur'])) ;
+                     }
+                     else {
+                          if ($uniqueResults[$i]['dataEspa'] == 1){
+                             $uniqueResults[$i]['amountClass'] =  $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['SubsContractsAmount']));
+                          }
+                          else {
+                               if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){
+                                     $uniqueResults[$i]['amountClass']= $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
+                               }
+                               else {
+                                    if ($uniqueResults[$i]['dataTedSeller'] == 1){
+                                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']));
+                                    }
+                                    else {
+                                         $uniqueResults[$i]['amountClass'] ='';
+                                    }
+                               }
+                             
+                          }
+                     }
+                 }
+            }
+            
+           
             echo 'amount:'.preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']).'class: '.$uniqueResults[$i]['amountClass'].'</br>';
             
             if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) && ($advChoiceAmount ='' || $advChoiceAmount == $uniqueResults[$i]['amountClass']  ) ) {    
@@ -566,7 +596,7 @@ class showResults {
         return $string;
    }
    
-   function unique_multidim_array($array, $key){
+    function unique_multidim_array($array, $key){
         $temp_array = [[]]; //empty array
         $i = 0;
         $key_array = [[]]; //empty array           
@@ -643,5 +673,18 @@ class showResults {
             }
         }
         return $class;
+    }
+    
+    function defineAmountFieldPerDataset($db){
+        switch ($db) {
+            case 'yds_big_sellers':
+
+
+                break;
+
+            default:
+                break;
+        }
+        
     }
 }
