@@ -180,7 +180,7 @@ class showResults {
             # $corporation = $uniqueResults[$i]['corporate_id'];
             $uniqueResults[$i]['amountClass'] = '';
             if ($advChoiceAmount !== ''){
-                echo $advChoiceAmount;
+                #echo $advChoiceAmount;
                  if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']));
                  }
@@ -210,7 +210,7 @@ class showResults {
                  }
             }
             
-           
+           echo $uniqueResults[$i]['amountClass'];
            # echo 'amount:'.preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']).'class: '.$uniqueResults[$i]['amountClass'].'</br>';
             
             if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) && ($advChoiceAmount == '' || $advChoiceAmount == $uniqueResults[$i]['amountClass']  ) ) {    
