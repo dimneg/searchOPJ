@@ -320,7 +320,7 @@ $crf3 = '';
 <form action="index.php" method="post" accept-charset="UTF-8"> 
 <p>			
 <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']; else echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 			
-  <input type="submit"  name="formSubmit" value="Search OPJ"  style="display: none;" > 
+  <input type="submit"  name="formSubmit" value="index.php"  style="display: none;" > 
 <p>
    
      
@@ -402,6 +402,11 @@ $time_pre = microtime(true);
 $prefix = '' ;
 $varKeyword = $_POST['formKeyword']; 
 $rowKeyword = $varKeyword;
+$globalKeyword = $_GET['varKeyword'];
+if (isset($globalKeyword )) {
+
+    $varKeyword = $globalKeyword ;
+}
 
 $Db='';  
 $DesignDoc = '';
@@ -422,7 +427,9 @@ $term12 = '';
 
 $newKeyWord = new keyWord();
 
-if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {   
+#if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {   
+
+if(($_POST['formSubmit'] <> "") || (isset($_GET['varKeyword']))) {
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
         $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
