@@ -195,12 +195,13 @@ class showResults {
                           }
                           else {
                                if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){
-                                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
+                                   echo 'australia';
+                                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
                                }
                                else {
                                     if ($uniqueResults[$i]['dataTedSeller'] == 1){
-                                        echo 'tedseller';
-                                        $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
+                                       echo 'ted';
+                                         $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
                                          $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
                                         
                                     }
