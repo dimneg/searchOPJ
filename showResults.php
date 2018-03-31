@@ -189,7 +189,8 @@ class showResults {
             # $corporation = $uniqueResults[$i]['corporate_id'];
             
             
-            if  (isset($uniqueResults[$i]['vat'])) {        
+            if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) ) {    
+                
                 if  (!is_numeric($uniqueResults[$i]['vat'])) { //boost step 2
                     $uniqueResults[$i]['score'] = bcmul(0.75,$uniqueResults[$i]['score'] ,4) ;
                 }

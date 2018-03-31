@@ -344,11 +344,11 @@ $crf3 = '';
 					<div>
 						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
-							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
-                                                        <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
-                                                        <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
-                                                        <option value="Dk" <?php if($search_in_area=="Dk") { echo "selected"; } ?>>ΔΑΝΙΑ</option>
+							<option value="Gr" <?php if($search_in_area=="GR") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
+							<option value="Eu" <?php if($search_in_area=="EU") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
+                                                        <option value="Au" <?php if($search_in_area=="AU") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
+                                                        <option value="Sw" <?php if($search_in_area=="SW") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
+                                                        <option value="Dk" <?php if($search_in_area=="DK") { echo "selected"; } ?>>ΔΑΝΙΑ</option>
                                                         <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
 						</select>
 					</div>
