@@ -188,6 +188,7 @@ class showResults {
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
             $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']));
+            echo preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']).PHP_EOL;
             
             if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) && ($advChoiceAmount ='' || $advChoiceAmount == $uniqueResults[$i]['amountClass']  ) ) {    
                 
