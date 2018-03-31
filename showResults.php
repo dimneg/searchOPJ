@@ -633,17 +633,17 @@ class showResults {
             return $class;
         }
         else {
-            if ($amount > 2000000){
+            if ($amount > 2000000 && $amount <= 2000000000){
                  $class = 3;
                  return $class;
             }
             else {
-                 if ($amount > 2000){
+                 if ($amount > 2000 && $amount <= 2000000){
                       $class = 2;
                       return $class;
                  }
                  else {
-                     if ($amount > 2000){
+                     if ($amount > 0){
                          $class = 1;
                          return $class;
                      }
