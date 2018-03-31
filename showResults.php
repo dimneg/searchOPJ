@@ -382,6 +382,7 @@ class showResults {
                      }
                 }
                 #echo 'score :'.$uniqueResults[$i]['score']; 
+                echo 'class: '.$uniqueResults[$i]['amountClass']; 
                 
                 
                  
