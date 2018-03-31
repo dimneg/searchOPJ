@@ -182,8 +182,8 @@ class showResults {
             if ($advChoiceAmount !== ''){
                 #echo $advChoiceAmount;
                  if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){                     
-                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']));
-                     echo $uniqueResults[$i]['db_spend0']. $uniqueResults[$i]['db_spend1'].$uniqueResults[$i]['db_spend2'];
+                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2']));
+                     echo $uniqueResults[$i]['spend0']. $uniqueResults[$i]['spend1'].$uniqueResults[$i]['spend2'];
                  }
                  else {
                      if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1){
