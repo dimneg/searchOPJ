@@ -201,7 +201,7 @@ class showResults {
                                     if ($uniqueResults[$i]['dataTedSeller'] == 1){
                                         $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
                                          $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
-                                         echo  $tedSumAmount;
+                                         echo  tedamount.$tedSumAmount;
                                     }
                                     else {
                                          $uniqueResults[$i]['amountClass'] = '';
