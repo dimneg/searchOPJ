@@ -15,16 +15,7 @@ class showResults {
     function presentResults($solrPath, $corpSolrCore,$advChoiceArea,$advChoiceAmount){ //test 090166291
         require_once 'collectData.php';
         global $Results;
-        switch ($advChoiceArea) {
-            case 'Dk':
-            echo 'searching in Denmark'.PHP_EOL;
-
-                break;
-
-            default:
-                break;
-        }
-       
+        
         #$this->saveCsvCloud($Results, '/var/log/results.csv');
        
         #$source = ' ';
@@ -188,7 +179,7 @@ class showResults {
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
             $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']));
-            echo preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']).'class: '.$uniqueResults[$i]['amountClass'].PHP_EOL;
+            echo 'amount:'.preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']).'class: '.$uniqueResults[$i]['amountClass'].PHP_EOL;
             
             if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) && ($advChoiceAmount ='' || $advChoiceAmount == $uniqueResults[$i]['amountClass']  ) ) {    
                 
