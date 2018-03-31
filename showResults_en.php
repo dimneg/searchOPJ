@@ -12,10 +12,10 @@
  * @author dimitris negkas
  */
 class showResults {
-    function presentResults($solrPath, $corpSolrCore){ //test 090166291
+    function presentResults($solrPath, $corpSolrCore,$advChoiceArea,$advChoiceAmount){ //test 090166291
         require_once 'collectData_en.php'; 
         global $Results;
-       
+        
         #$this->saveCsvCloud($Results, '/var/log/results.csv');
        
         #$source = ' ';
@@ -59,13 +59,13 @@ class showResults {
                 $uniqueCompanies = $this->unique_multidim_array($corpData[1] , 'uniqueShow');
                 foreach (  $uniqueCompanies   as $key => $value) {                   
                   echo $solrDetails->transliterate($this->unaccent(mb_convert_case($value['name'], MB_CASE_UPPER, "UTF-8"))).' ['.$value['country'].']';
-
-                    echo '<BR>';                    
+                                      
+                  echo '<BR>';                    
                 }
                echo ' <font color="#FFA500" size="2">Public Procurement</font> <br> '; 
-                echo '<img src="languages/images/gr.png" alt="GREECE "  width="15" height="12" >';
+                echo '<img src="languages/images/gr.png" alt="Greece "  width="15" height="12" >';
                 echo '&nbsp';
-                echo 'GREECE  <br>' ;
+                echo 'Greece  <br>' ;
                 echo ' <font class="dataset" color="#006621" style="font-size: 0.77em">DIAVGEIA</font> '; 
                 echo '&nbsp';
                # echo ' (<B>'.round(($uniqueResults[$i]['db_awardCnt0']+$uniqueResults[$i]['db_awardCnt1']+$uniqueResults[$i]['db_awardCnt2']),0).'</B>) '; 
@@ -179,9 +179,66 @@ class showResults {
             
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
+            $uniqueResults[$i]['amountClass'] = '';
+            if ($advChoiceAmount !== ''){
+                #echo $advChoiceAmount;
+                 if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2']));
+                 }
+                 if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCur'])) ;
+                 }
+                 if ($uniqueResults[$i]['dataEspa'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                      $uniqueResults[$i]['amountClass'] =  $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['SubsContractsAmount'])); 
+                 }
+                 if ($uniqueResults[$i]['dataAustraliaSeller'] == 1 &&  $uniqueResults[$i]['amountClass'] ==''){
+                    $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ; 
+                 }
+                 if ($uniqueResults[$i]['dataTedSeller'] == 1  &&  $uniqueResults[$i]['amountClass'] ==''){                     
+                     $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
+                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
+                 }
+                 
+                /* if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){                     
+                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['spend0']) + $this->fromTextToNumber($uniqueResults[$i]['spend1']) + $this->fromTextToNumber($uniqueResults[$i]['spend2']));
+                   
+                 }
+                 else {
+                     if ($uniqueResults[$i]['dataKhmdhsSeller'] == 1){
+                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmountPrev']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmountCur'])) ;
+                     }
+                     else {
+                          if ($uniqueResults[$i]['dataEspa'] == 1){
+                             $uniqueResults[$i]['amountClass'] =  $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['SubsContractsAmount']));
+                          }
+                          else {
+                               if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){
+                                  
+                                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass($this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
+                               }
+                               else {
+                                    if ($uniqueResults[$i]['dataTedSeller'] == 1){
+                                       
+                                         $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
+                                         $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
+                                        
+                                    }
+                                    else {
+                                         $uniqueResults[$i]['amountClass'] = '';
+                                    }
+                               }
+                             
+                          }
+                     }
+                 } */
+                 
+            }
             
+          
+           # echo 'amount:'.preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']).'class: '.$uniqueResults[$i]['amountClass'].'</br>';
             
-            if  (isset($uniqueResults[$i]['vat'])) {        
+            if  (isset($uniqueResults[$i]['vat']) && ($advChoiceArea =='' || $advChoiceArea == $uniqueResults[$i]['countryName']) && ($advChoiceAmount == '' || $advChoiceAmount == $uniqueResults[$i]['amountClass']  ) ) {    
+                
                 if  (!is_numeric($uniqueResults[$i]['vat'])) { //boost step 2
                     $uniqueResults[$i]['score'] = bcmul(0.75,$uniqueResults[$i]['score'] ,4) ;
                 }
@@ -201,7 +258,7 @@ class showResults {
                   #  echo " <font class='dataset' color='#006621' style='font-size: 0.77em'>$corporation</font></br> ";
                 #}
                 if (!empty($uniqueResults[$i]['altNames'])) {
-                     echo 'Also appears as:'.$uniqueResults[$i]['altNames']."</br>";
+                     echo 'Eμφανίζεται και ως: '.$uniqueResults[$i]['altNames']."</br>";
                      
                 }
                  //....basic view 2...\\
@@ -298,7 +355,7 @@ class showResults {
                 if ($uniqueResults[$i]['dataGemh'] == 1){
                      echo ' <font class="dataset" color="#800080" style="font-size: 0.77em"> Business Registry.</font></br> '; 
                      echo 'Business Registry Number: '.$this->hide_not_avail($uniqueResults[$i]['gemhNumber']);	
-                     echo ' &nbsp Chamber: '.$this->hide_not_avail($uniqueResults[$i]['chamber']);
+                     echo ' &nbsp Chamber: '.$this->hide_not_avail($solrDetails->transliterate($uniqueResults[$i]['chamber']));
                      echo  ' &nbsp [Date: '.  $this->convertDate($uniqueResults[$i]['gemhDate']).']</br>';	
                 }
                 
@@ -346,11 +403,12 @@ class showResults {
                          #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'€').'</B>';
                          #echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
                          echo  ' &nbsp [until 2015]</br>';
-                         echo '</br>';
+                        
                          
                      }
                 }
                 #echo 'score :'.$uniqueResults[$i]['score']; 
+                #echo 'class: '.$uniqueResults[$i]['amountClass']; 
                 
                 
                  
@@ -565,7 +623,7 @@ class showResults {
         return $string;
    }
    
-   function unique_multidim_array($array, $key){
+    function unique_multidim_array($array, $key){
         $temp_array = [[]]; //empty array
         $i = 0;
         $key_array = [[]]; //empty array           
@@ -614,6 +672,39 @@ class showResults {
                 }
             }
         }
+    }
+    
+    function defineAmountClass($amount){
+        $class = '';
+        if ($amount > 2000000000){
+            $class = 4;
+           # echo $class; 
+            return $class;
+        }
+        else {
+            if ($amount > 2000000 && $amount <= 2000000000){
+                 $class = 3;
+                  #echo $class; 
+                 return $class;
+            }
+            else {
+                 if ($amount > 2000 && $amount <= 2000000){
+                      $class = 2;
+                       #echo $class; 
+                      return $class;
+                 }
+                 else {
+                     if ($amount > 0){
+                         $class = 1;
+                         # echo $class; 
+                         return $class;
+                     }
+                     
+                 }
+            }
+        }
+        # echo 'empty class'; 
+        return $class;
     }
     
     

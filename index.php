@@ -344,12 +344,15 @@ $crf3 = '';
 					<div>
 						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
 							<option value="">Επιλογή:</option>
-							<option value="GR" <?php if($search_in_area=="GR") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>
-							<option value="EU" <?php if($search_in_area=="EU") { echo "selected"; } ?>>ΕΥΡΩΠΗ</option>
+							<option value="GR" <?php if($search_in_area=="GR") { echo "selected"; } ?>>ΕΛΛΑΔΑ</option>							
                                                         <option value="AU" <?php if($search_in_area=="AU") { echo "selected"; } ?>>ΑΥΣΤΡΑΛΙΑ</option>
+                                                         <option value="DE" <?php if($search_in_area=="DE") { echo "selected"; } ?>>ΓΕΡΜΑΝΙΑ</option>
+                                                         <option value="UK" <?php if($search_in_area=="UK") { echo "selected"; } ?>>ΗΝΩΜΕΝΟ ΒΑΣΙΛΕΙΟ</option>
+                                                         <option value="FR" <?php if($search_in_area=="FR") { echo "selected"; } ?>>ΓΑΛΛΙΑ</option>
                                                         <option value="SW" <?php if($search_in_area=="SW") { echo "selected"; } ?>>ΕΛΒΕΤΙΑ</option>
                                                         <option value="DK" <?php if($search_in_area=="DK") { echo "selected"; } ?>>ΔΑΝΙΑ</option>
-                                                        <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>ΔΗΜΟΣΙΕΣ ΠΡΟΜΗΘΕΙΕΣ</option>
+                                                        
+                                                       
 						</select>
 					</div>
                                         <label class="amount-label">Με αξιά:</label>

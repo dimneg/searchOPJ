@@ -91,6 +91,10 @@ $Field='municipality';,$Field='municipalityEng';
 ΕΛΛΑΔΑ,GREECE
 Ελλάδα,Greece 
 ΕΛΒΕΤΙΑ,SWITZERLAND
+ΓΕΡΜΑΝΙΑ,GERMANY
+ΗΝΩΜΕΝΟ ΒΑΣΙΛΕΙΟ,UNITED KINGDOM
+ΓΑΛΛΙΑ,FRANCE
+ΔΑΝΙΑ,DENMARK
 "Σύνθετη Αναζήτηση","Advanced Search"
 "Αναζήτηση με Διεύθυνση","Search with Address"
 "Αναζήτηση με ΤΚ", "Search with Postal Code"

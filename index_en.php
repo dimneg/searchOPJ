@@ -9,6 +9,7 @@ $crf3 = '';
 <html> 
     <header>   
     <h2><center>Discover suppliers in public contracts</center></h2>
+     
   </header>
     <head>
         <!-- DataTables CSS -->
@@ -20,7 +21,7 @@ $crf3 = '';
         <script type="text/javascript" charset="utf8"  src="/sites/all/js/dataTable/dataTables/jquery.dataTables1.js"></script> 
         <script type="text/javascript" src="/sites/all/js/dataTable/dataTables/dataTables.sorting.js"></script>
         <script type="text/javascript" src="/sites/all/js/dataTable/date-eu.js"></script>
-       <script> 
+        <script> 
  	$(document).ready( function () {
  	$('#searchResults').DataTable(
 	{
@@ -302,31 +303,33 @@ $crf3 = '';
                 
                 margin-left: 160px;
                 }
-                
 
 
     </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Search OPJ</title>
-      
-           
-             <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" id="flags" width="27" height="18" > </a>   
+   
+       
+            <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" id="flags" width="27" height="18" > </a>   
                <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> -->
                <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" id="flags" width="27" height="18" > </a> 
-          
+        
 </head>
 <body>
 
 <div class="row-fluid margin-bottom" align="center" >
-<form action="index_en.php" method="post" accept-charset="UTF-8"> 
+ <!--<form action="index.php"  method="post" accept-charset="UTF-8"> -->
+ <form action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"    method="post" accept-charset="UTF-8"> 
 <p>			
-<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="Vat or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"  maxlength="70" autofocus /> 			
-<input type="submit" name="formSubmit" value="index_en.php"  style="display: none;" >
+ <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']; else echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 
+ <!--<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php  echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 	-->		
+  <input type="submit"  name="formSubmit" value="index_en.php"  style="display: none;" > 
 <p>
+   
+     
 
-    
- <div > <span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span></div>
-
+ 
+    <span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Search with Address:</label>
@@ -342,12 +345,15 @@ $crf3 = '';
 					<div>
 						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
 							<option value="">Select:</option>
-							<option value="Gr" <?php if($search_in_area=="Gr") { echo "selected"; } ?>>GREECE</option>
-							<option value="Eu" <?php if($search_in_area=="Eu") { echo "selected"; } ?>>EUROPE</option>
-                                                        <option value="Au" <?php if($search_in_area=="Au") { echo "selected"; } ?>>AUSTRALIA</option>
-                                                        <option value="Sw" <?php if($search_in_area=="Sw") { echo "selected"; } ?>>SWITZERLAND</option>
-                                                        <option value="Dk" <?php if($search_in_area=="Dk") { echo "selected"; } ?>>DENMARK</option>
-                                                        <option value="Pp" <?php if($search_in_area=="Pp") { echo "selected"; } ?>>PUBLIC PROCUREMENT</option>
+							<option value="GR" <?php if($search_in_area=="GR") { echo "selected"; } ?>>GREECE</option>							
+                                                        <option value="AU" <?php if($search_in_area=="AU") { echo "selected"; } ?>>AUSTRALIA</option>
+                                                         <option value="DE" <?php if($search_in_area=="DE") { echo "selected"; } ?>>GERMANY</option>
+                                                         <option value="UK" <?php if($search_in_area=="UK") { echo "selected"; } ?>>UNITED KINGDOM</option>
+                                                         <option value="FR" <?php if($search_in_area=="FR") { echo "selected"; } ?>>FRANCE</option>
+                                                        <option value="SW" <?php if($search_in_area=="SW") { echo "selected"; } ?>>SWITZERLAND</option>
+                                                        <option value="DK" <?php if($search_in_area=="DK") { echo "selected"; } ?>>DENMARK</option>
+                                                        
+                                                       
 						</select>
 					</div>
                                         <label class="amount-label">Amount:</label>
@@ -361,11 +367,17 @@ $crf3 = '';
                                                         
 						</select>
 					</div>
-                                        <div >
-                                        <input type="submit" name="Go"  class="btnSearch" value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>">
+                                          <div>
+                                 <div> <input type="submit" name="Go" class="btnSearch"  value="Search" action="index_en.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"  method="post" accept-charset="UTF-8" >
+                                     <!--  <input type="button" name="Go" value="Search" class="btnSearch" onclick="window.location.href='index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>'" /> -->
+                                          <!--    <a   type="submit" name="Go" class="btnSearch"  value="Search" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'] ?>"  >Search</a>-->
                                        <!--   <a class="searchTabs" href="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']?>"   >search</a> -->
                                         <!--   <a input type="submit" name="Go" class="btnSearch" value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"></a> -->
-                                     </div>
+                                 </div> 
+                                            <!--   <form action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>" method="post">   -->
+                                             <!--      <input type="submit" name="Go" class="btnSearch"  value="Search" > -->
+                                           <!--         </form>  -->
+				</div>
 				</div>
 				
 				
@@ -386,7 +398,8 @@ $crf3 = '';
 #print_r($_POST['advSearch']);
 $advChoiceArea = $_POST['advSearch']['search_in_area'];
 $advChoiceAmount = $_POST['advSearch']['search_in_amount'];
-#echo $advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
+#echo $advChoiceAmount; 
+#echo 'choices:'.$advChoiceArea.' '.$advChoiceAmount.PHP_EOL;   
 
 #adv search variables
 #$search_in = "";
@@ -401,6 +414,11 @@ $time_pre = microtime(true);
 $prefix = '' ;
 $varKeyword = $_POST['formKeyword']; 
 $rowKeyword = $varKeyword;
+/*$globalKeyword = $_GET['varKeyword'];
+if (isset($globalKeyword )) {
+
+    $varKeyword = $globalKeyword ;
+} */
 
 $Db='';  
 $DesignDoc = '';
@@ -421,7 +439,9 @@ $term12 = '';
 
 $newKeyWord = new keyWord();
 
-if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {   
+#if($_POST['formSubmit'] == "index.php" || (isset($_GET['varKeyword']))) {   
+
+if ((isset($_POST['formSubmit']) && ($_POST['formSubmit'] <> "") )|| (isset($_GET['varKeyword']))) {
     if(strlen($varKeyword) != mb_strlen($varKeyword, 'utf-8')){ #not only english     
         $varKeyword = $newKeyWord->prepareKeyword($varKeyword) ;   
     }
@@ -434,10 +454,10 @@ if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {
     $search = new collectData();
     if (is_numeric($varKeyword)){ //probaby afm
         if (strlen(utf8_decode($varKeyword)) <=6 ) {
-             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );	
+             $search->getAll('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore,$advChoiceArea,$advChoiceAmount );	
         }
         else {
-            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);	
+            $search->getAllShort('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore,$advChoiceArea,$advChoiceAmount );	
         }
     }
     else { #name
@@ -448,9 +468,9 @@ if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {
                     $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore); 
                }
                else { # exact, fuzzy and then like
-                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);  	
-                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
-                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore);
+                   $search->getAllGreek('',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );  	
+                   $search->getAllGreek('~0.75', $varKeyword, DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );
+                   $search->getAllGreek('*',$varKeyword,DbPath,couchUser,couchPass,solrPath,altNamesSolrCore,sparqlServer,corpSolrCore );
                }
            }
            else{
@@ -522,7 +542,7 @@ if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {
     }
     $resultsPresentation = new showResults();
     
-    $resultsPresentation -> presentResults(solrPath, corpSolrCore);
+    $resultsPresentation -> presentResults(solrPath, corpSolrCore,$advChoiceArea,$advChoiceAmount);
     
     
     $time_post = microtime(true);
@@ -530,13 +550,16 @@ if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {
     echo  "<div ALIGN='CENTER'>";
     echo '(In '.number_format($exec_time,2).' seconds)' ;
     echo "</div>";
+    #echo  "<div ALIGN='LEFT'>";
+ #   echo 'The Open Journalism (OpJ) Project is funded by' ;
+  #  echo '<img src="logos/inn_fund.ong" alt="Innovation Fund" width="108" height="44">';
+   # echo '<img src="logos/dni.ong" alt="Digital News Initiative" width="108" height="44">';
+    #echo "</div>";
     $varKeyword =  str_replace('+',' ',$varKeyword);
     $varKeyword =  str_replace('"',' ',$varKeyword);
 }
-
 ?>
-
- <html> 
+<html> 
 <footer>
 <p>  The Open Journalism (OpJ) Project is funded by:
  <img src="logos/inn_fund.png" alt="Innovation Fund" width="108" height="44 "align="middle">
@@ -544,3 +567,7 @@ if($_POST['formSubmit'] == "index_en.php" || (isset($_GET['varKeyword']))) {
  </p>
 </footer>
  </html> 
+
+
+
+ 
