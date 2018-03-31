@@ -16,7 +16,7 @@ class showResults {
         require_once 'collectData.php';
         global $Results;
         
-        #$this->saveCsvCloud($Results, '/var/log/results.csv');
+        $this->saveCsvCloud($Results, '/var/log/results.csv');
        
         #$source = ' ';
         $i = 1;
