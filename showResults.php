@@ -199,9 +199,10 @@ class showResults {
                                }
                                else {
                                     if ($uniqueResults[$i]['dataTedSeller'] == 1){
+                                        echo 'tedseller';
                                         $tedSumAmount = $uniqueResults[$i]['tedSumofAmounts'];
                                          $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$tedSumAmount));
-                                         echo  tedamount.$tedSumAmount;
+                                        
                                     }
                                     else {
                                          $uniqueResults[$i]['amountClass'] = '';
@@ -211,6 +212,7 @@ class showResults {
                           }
                      }
                  }
+                 
             }
             
           
