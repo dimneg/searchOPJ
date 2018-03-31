@@ -178,6 +178,7 @@ class showResults {
             
             $name = $this->unaccent(mb_convert_case($uniqueResults[$i]['name'],MB_CASE_UPPER, "UTF-8"));
             # $corporation = $uniqueResults[$i]['corporate_id'];
+            $uniqueResults[$i]['amountClass'] = '';
             if ($advChoiceAmount !=''){
                  if ($uniqueResults[$i]['dataDiaugeiaSeller'] == 1){
                      $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['db_spend0']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend1']) + $this->fromTextToNumber($uniqueResults[$i]['db_spend2']));
@@ -192,14 +193,14 @@ class showResults {
                           }
                           else {
                                if ($uniqueResults[$i]['dataAustraliaSeller'] == 1){
-                                     $uniqueResults[$i]['amountClass']= $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
+                                     $uniqueResults[$i]['amountClass'] = $this->defineAmountClass( $this->fromTextToNumber($uniqueResults[$i]['contractAmount0']) + $this->fromTextToNumber($uniqueResults[$i]['contractAmount1'])  + $this->fromTextToNumber($uniqueResults[$i]['contractAmount2'])    ) ;
                                }
                                else {
                                     if ($uniqueResults[$i]['dataTedSeller'] == 1){
                                          $uniqueResults[$i]['amountClass'] = $this->defineAmountClass(preg_replace('/\D/', '',$uniqueResults[$i]['tedSumofAmounts']));
                                     }
                                     else {
-                                         $uniqueResults[$i]['amountClass'] ='';
+                                         $uniqueResults[$i]['amountClass'] = '';
                                     }
                                }
                              
@@ -377,7 +378,7 @@ class showResults {
                          #echo '<B>'.$this->fromNumberToText($uniqueResults[$i]['tedSumofAmounts'],'€').'</B>';
                          #echo  ' (<B>'.round($uniqueResults[$i]['tedContracts'],0).'</B>) ';	
                          echo  ' &nbsp [Έως 2015]</br>';
-                         echo '</br>';
+                        
                          
                      }
                 }
