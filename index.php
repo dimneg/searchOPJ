@@ -302,6 +302,11 @@ $crf3 = '';
                 
                 margin-left: 160px;
                 }
+                .table a
+                {
+                display:block;
+                text-decoration:none;
+                }
 
 
     </style>
@@ -312,6 +317,14 @@ $crf3 = '';
             <a href="index_en.php"> <img src="languages/images/en.png" alt="english" align="right" id="flags" width="27" height="18" > </a>   
                <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> -->
                <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" id="flags" width="27" height="18" > </a> 
+               
+               <table width="200" border="1" class="table">
+                <tr>
+                <td><a href="#">&nbsp;</a></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+    </tr>
+</table>
         
 </head>
 <body>
