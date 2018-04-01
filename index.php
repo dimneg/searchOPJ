@@ -318,8 +318,8 @@ $crf3 = '';
                <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> -->
                <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" id="flags" width="27" height="18" > </a> 
                
-               <form action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"    method="post" accept-charset="UTF-8"> 
-               <table width="200" border="1" class="table">
+             
+             <!--   <table width="200" border="1" class="table">
                 <tr>
                 <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>
                 
@@ -333,14 +333,8 @@ $crf3 = '';
                  <tr>
                 <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>                
                  </tr>
-                 <tr>
-                <td><form action="index.php?varKeyword=pricewaterhousecoopers">
-    <input type="submit" value="PricewaterhouseCoopers Corporation" method="post" accept-charset="UTF-8"/>
-</form></td>        
- <td><input type="button" onclick="location.href='index.php?varKeyword=pricewaterhousecoopers';" value="PricewaterhouseCoopers Corporation" /></td>  
-                 </tr>
-</table>
-                   </form>
+                  -->
+              
         
 </head>
 <body>
@@ -367,6 +361,10 @@ $crf3 = '';
 					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
 						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
+                                                 <form action="index.php" method="post" accept-charset="UTF-8" target="_blank" >				
+			                               <input type="text" name="formKeyword" placeholder="ΤΚ" style="width: 220px; height: 23px;"  /> 
+			                               <input type="submit" name="formSubmit" value="pc"  style="display: none;" > 
+
 					</div>
 					
 					<label class="search-label">Αναζήτηση σε:</label>
