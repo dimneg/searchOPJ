@@ -335,7 +335,8 @@ $crf3 = '';
                  <tr>
                 <td><form action="index.php?varKeyword=pricewaterhousecoopers">
     <input type="submit" value="PricewaterhouseCoopers Corporation" method="post" accept-charset="UTF-8"/>
-</form></td>                
+</form></td>        
+ <td><input type="button" onclick="location.href='index.php?varKeyword=pricewaterhousecoopers';" value="PricewaterhouseCoopers Corporation" /></td>  
                  </tr>
 </table>
         
