@@ -318,6 +318,7 @@ $crf3 = '';
                <!-- <a href="index.php?lang=gr"> <img src="languages/images/gr.png" alt="greek" align="right" > </a> -->
                <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" id="flags" width="27" height="18" > </a> 
                
+               <form action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"    method="post" accept-charset="UTF-8"> 
                <table width="200" border="1" class="table">
                 <tr>
                 <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>
@@ -339,6 +340,7 @@ $crf3 = '';
  <td><input type="button" onclick="location.href='index.php?varKeyword=pricewaterhousecoopers';" value="PricewaterhouseCoopers Corporation" /></td>  
                  </tr>
 </table>
+                   </form>
         
 </head>
 <body>
