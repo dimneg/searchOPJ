@@ -361,9 +361,9 @@ $crf3 = '';
 					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
 						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/>
-                                                 <form action="index.php" method="post" accept-charset="UTF-8" target="_blank" >				
+                                                <!-- <form action="index.php"  class="demoInputBox" method="post" accept-charset="UTF-8" target="_blank" >				
 			                               <input type="text" name="formKeyword" placeholder="ΤΚ" style="width: 220px; height: 23px;"  /> 
-			                               <input type="submit" name="formSubmit" value="pc"  style="display: none;" > 
+			                               <input type="submit" name="formSubmit" value="pc"  style="display: none;" > -->
 
 					</div>
 					
