@@ -303,6 +303,17 @@ $crf3 = '';
                 
                 margin-left: 160px;
                 }
+                 .table a
+                {
+                display:inline;
+                text-decoration:none;
+                font-size: 6px;
+                color: #989898; 
+                border: 0;
+	        border-radius: 0px;
+                align-self: center;
+                align-items: center;
+                }
 
 
     </style>
@@ -324,6 +335,13 @@ $crf3 = '';
  <input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword']; else echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 
  <!--<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="VAT or Name" value="<?php  echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 	-->		
   <input type="submit"  name="formSubmit" value="index_en.php"  style="display: none;" > 
+  <table  border="0" class="table" >
+             <tr>
+                 <td><I>Example corporation keywords: Oracle, Novartis, Atos, PricewaterhouseCoopers</I></td>     
+                    
+                 
+                 </tr> 
+      </table> 
 <p>
    
      
