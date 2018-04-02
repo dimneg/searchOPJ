@@ -338,7 +338,7 @@ $crf3 = '';
  <!--<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php  echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 	-->		
   <input type="submit"  name="formSubmit" value="index.php"  style="display: none;" > 
   
-      <table width="1000" border="0" class="table" >
+      <table width="1000" border="0" class="table" align="center" >
              <tr>
                  <td><I>Example corporation keywords: Oracle, Novartis, Atos, PricewaterhouseCoopers</i></td>      
                     
