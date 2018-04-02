@@ -347,7 +347,7 @@ $crf3 = '';
               
                 
                   <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>  
-                 <td> <input type="submit" name="Go" class="btnSearch"  value="pricewaterhousecoopers" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"  method="post" accept-charset="UTF-8" ></td>
+                 <td> <input type="submit" name="Go" class="btnSearch"  value="pricewaterhousecoopers" action="index.php?varKeyword=<?php echo $_GET['varKeyword']?>"  method="post" accept-charset="UTF-8" ></td>
                    <td> <input type="submit" name="Go" class="btnSearch"  value="pricewaterhousecoopers" action="index.php?varKeyword=pricewaterhousecoopers"  method="post" accept-charset="UTF-8" ></td>
                 
                  </tr> </table> 
