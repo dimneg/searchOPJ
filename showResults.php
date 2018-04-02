@@ -93,7 +93,7 @@ class showResults {
                        echo  'Συμβάσεις: <B> €61.7K (4) </B> Πληρωμές: <B> €72.5K (11)  </B>  [από 2/2013 έως 2/2015]</br>';
                        break;
                    case 'PRICEWATERHOUSECOOPERS CORPORATION':
-                       echo  'Συμβάσεις: <B> €0.0K (0) </B> Πληρωμές: <B> €0.0K (1) </B>  [από 2/2013 έως 2/2015] </br>';
+                       echo  'Συμβάσεις: <B> €56.6K (2) </B> Πληρωμές: <B> €0.2M (4) </B>  [από 2/2013 έως 2/2015] </br>';
                        break;
                    case 'NOVARTIS CORPORATION':
                        echo  'Συμβάσεις: <B>  €56.6K (2) </B> Πληρωμές: <B> €0.2M (4)  </B>  [από 2/2013 έως 2/2015] </br>';
