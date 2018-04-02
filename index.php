@@ -338,19 +338,16 @@ $crf3 = '';
   
       <table width="100" border="0" class="table">
              <tr>
-                     <td>examples:</td>      
-                    <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>                        
+                     <td>example corporation keywords:</td>      
+                    <td>Oracle </a>td>                        
                  
-                   <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>               
+                   <td>Novartis </td>               
                 
-                   <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>             
+                   <td>Atos</td>             
               
                 
-                  <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>  
-                 <td> <input type="submit" name="Go" class="btnSearch"  value="pricewaterhousecoopers" action="index.php?varKeyword=<?php echo $_GET['varKeyword']?>"  method="post" accept-charset="UTF-8" ></td>
-                   <td> <input type="submit" name="Go" class="btnSearch"  value="pricewaterhousecoopers" action="index.php?varKeyword=pricewaterhousecoopers"  method="post" accept-charset="UTF-8" ></td>
-                   <td>  <input type="button" name="Go" value="Search" class="btnSearch" onclick="window.location.href='index.php?varKeyword=pricewaterhousecoopers'" /> </td>
-                
+                  <td>PricewaterhouseCoopers</td>  
+                 
                  </tr> </table> 
             
 <p>
