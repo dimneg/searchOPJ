@@ -322,21 +322,7 @@ $crf3 = '';
                <a href="index.php"> <img src="languages/images/gr.png" alt="greek" align="right" id="flags" width="27" height="18" > </a> 
                
              
-             <!--   <table width="200" border="1" class="table">
-                <tr>
-                <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>
-                
-                 </tr>
-                 <tr>
-                <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>                
-                 </tr>
-                 <tr>
-                <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>                
-                 </tr>
-                 <tr>
-                <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>                
-                 </tr> </table>
-                  -->
+             
               
         
 </head>
@@ -352,15 +338,16 @@ $crf3 = '';
   
       <table width="100" border="0" class="table">
              <tr>
-                     <td>e.g.</td>      
-                    <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>                          
+                     <td>examples:</td>      
+                    <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>                        
                  
-                <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>               
+                   <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>               
                 
-                <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>               
+                   <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>             
               
                 
-                <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>   
+                  <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>  
+                 <td> <input type="submit" name="Go" class="btnSearch"  value="Search" action="index.php?varKeyword=<?php if (isset($_POST['formKeyword'])) echo $_POST['formKeyword'];  else echo $_GET['varKeyword']?>"  method="post" accept-charset="UTF-8" ></td>
                 
                  </tr> </table> 
             
