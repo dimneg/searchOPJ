@@ -306,7 +306,7 @@ $crf3 = '';
                 {
                 display:inline;
                 text-decoration:none;
-                font-size: 5px;
+                font-size: 10px;
                 border: 0;
 	        border-radius: 0px;
                 }
@@ -350,8 +350,8 @@ $crf3 = '';
  <!--<input type="text" style="width: 580px; height: 32px;" name="formKeyword" placeholder="ΑΦΜ ή Όνομα" value="<?php  echo $_GET['varKeyword'] ?>"  maxlength="70" autofocus /> 	-->		
   <input type="submit"  name="formSubmit" value="index.php"  style="display: none;" > 
   
-   <table width="200" border="1" class="table">
-                <tr>
+      <table width="100" border="0" class="table">
+             <tr>
                      <td>e.g.</td>      
                     <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>                          
                  
@@ -361,8 +361,9 @@ $crf3 = '';
               
                 
                 <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>   
-                <td> <input type="submit" name="Go" class="btnSearch"  value="novartis" action="index.php?varKeyword=novartis"  method="post" accept-charset="UTF-8" ></td>
+                
                  </tr> </table> 
+            
 <p>
    
      
