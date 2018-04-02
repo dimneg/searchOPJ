@@ -360,10 +360,10 @@ $crf3 = '';
 					</div>
 					<label class="search-label">Αναζήτηση με ΤΚ:</label>
 					<div>
-						<!--<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/> -->
-                                                <form action="index.php?varKeyword=<?php echo $_POST['formKeyword']; ?>"    method="post" accept-charset="UTF-8" target="_blank" >				
+						<input type="text" name="crf2" id="crf2" class="demoInputBox" value="<?php echo $crf2; ?>"	/> 
+                                             <!--   <form action="index.php?varKeyword=<?php echo $_POST['formKeyword']; ?>"    method="post" accept-charset="UTF-8" target="_blank" >				
 			                               <input type="text" class="demoInputBox" name="formKeyword" placeholder="ΤΚ"   /> 
-			                               <input type="submit" name="formSubmit" value="index.php"  style="display: none;" >
+			                               <input type="submit" name="formSubmit" value="index.php"  style="display: none;" > -->
                                                        </form>
 
 					</div>
