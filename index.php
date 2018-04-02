@@ -368,7 +368,13 @@ $crf3 = '';
                                                        </form>
 
 					</div>
-					
+					 <table  border="0" class="table" >
+                                        <tr>
+                                        <td><I>Example: Name: "Oracle", Search in:  "Australia", Atos, Amount:">2M < 2B" </I></td>     
+                    
+                 
+                                        </tr> 
+                                        </table> 
 					<label class="search-label">Αναζήτηση σε:</label>
 					<div>
 						<select name="advSearch[search_in_area]" id="search_in_area" class="demoInputBox">
