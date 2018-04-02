@@ -338,7 +338,7 @@ $crf3 = '';
   
       <table width="1000" border="0" class="table">
              <tr>
-                 <td><I>Example corporation keywords:</i>></td>      
+                 <td><I>Example corporation keywords:</i></td>      
                     <td>Oracle</td>                        
                  
                    <td>Novartis</td>               
