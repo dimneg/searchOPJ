@@ -304,9 +304,9 @@ $crf3 = '';
                 }
                 .table a
                 {
-                display:block;
+                display:inline;
                 text-decoration:none;
-                font-size: 5px;
+                font-size: 10px;
                 border: 0;
 	        border-radius: 0px;
                 }
@@ -352,8 +352,8 @@ $crf3 = '';
   
    <table width="200" border="1" class="table">
                 <tr>
-                <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>              
-              
+                     <td>e.g.</td>      
+                    <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>                          
                  
                 <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>               
                 
