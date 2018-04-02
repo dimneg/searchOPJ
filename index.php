@@ -306,6 +306,7 @@ $crf3 = '';
                 {
                 display:block;
                 text-decoration:none;
+                font-size: 20px
                 }
 
 
@@ -349,16 +350,14 @@ $crf3 = '';
   
    <table width="200" border="1" class="table">
                 <tr>
-                <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>
+                <td><a href="index.php?varKeyword=oracle">Oracle Corporation</a></td>              
+              
+                 
+                <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>               
                 
-                 </tr>
-                 <tr>
-                <td><a href="index.php?varKeyword=novartis">Novartis Corporation</a></td>                
-                 </tr>
-                 <tr>
-                <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>                
-                 </tr>
-                 <tr>
+                <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>               
+              
+                
                 <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>                
                  </tr> </table>
 <p>
