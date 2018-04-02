@@ -339,9 +339,9 @@ $crf3 = '';
       <table width="100" border="0" class="table">
              <tr>
                      <td>example corporation keywords:</td>      
-                    <td>Oracle </a>td>                        
+                    <td>Oracle</td>                        
                  
-                   <td>Novartis </td>               
+                   <td>Novartis</td>               
                 
                    <td>Atos</td>             
               
