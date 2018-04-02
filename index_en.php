@@ -348,6 +348,13 @@ $crf3 = '';
 
  
     <span id="advance_search_link" onClick="showHideAdvanceSearch()">Advanced Search</span>
+    <table  border="0" class="table" >
+             <tr>
+                 <td><I>Example: Name: "Oracle", Search in:  "Australia", Atos, Amount:">2M < 2B" </I></td>     
+                    
+                 
+                 </tr> 
+      </table> 
 									
 				<div id="advanced-search-box" <?php if(empty($advance_search_submit)) { ?>style="display:none;"<?php } ?>>
 					<label class="search-label">Search with Address:</label>
