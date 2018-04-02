@@ -306,7 +306,9 @@ $crf3 = '';
                 {
                 display:block;
                 text-decoration:none;
-                font-size: 20px
+                font-size: 5px;
+                border: 0;
+	        border-radius: 0px;
                 }
 
 
