@@ -360,7 +360,8 @@ $crf3 = '';
                 <td><a href="index.php?varKeyword=atos">Atos Corporation</a></td>               
               
                 
-                <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>                
+                <td><a href="index.php?varKeyword=pricewaterhousecoopers">PricewaterhouseCoopers Corporation</a></td>   
+                <td> <input type="submit" name="Go" class="btnSearch"  value="novartis" action="index.php?varKeyword=novartis"  method="post" accept-charset="UTF-8" ></td>
                  </tr> </table> 
 <p>
    
